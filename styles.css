@@ -42,8 +42,31 @@ header.main, footer.main {
     text-align: center;
     max-width: 40rem;
     margin: auto;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Triplicate t4", Consolas, monospace;
 }
+
+header.main { margin-top: 1rem; }
+
+nav { padding-bottom: 3rem; }
+
+nav ul {
+    padding: 0; margin: 0;
+}
+
+nav li {
+    display: inline;
+    font-size: .7em;
+}
+
+nav li a:link {
+    text-decoration: none;
+    color: #700;
+    border: solid #755 1px;
+    border-radius: 4px;
+    padding: .3em .5em;
+}
+
+
 
 header.main a.home {
     display: block;
@@ -51,9 +74,9 @@ header.main a.home {
     background-size: 70px;
     background-position: top center;
     padding-top: 80px;
-    padding-bottom: 2rem;
-    font-family: Consolas, monospace;
+    padding-bottom: 0;
     text-decoration: none;
+    color: #700;
     text-transform: uppercase; letter-spacing: .1em;
 }
 
@@ -137,6 +160,22 @@ blockquote:after {
     margin-right: -.6em;
     margin-top: -.5em;
 }
+
+code {
+    font-family: "Triplicate t4";
+    background: #f1f1f1;
+    padding: 1px;
+    font-size: .9em;
+}
+
+pre.code { max-width: 90%;
+           padding-left: 2.5%;
+           overflow-x: scroll;
+           font-size: .9rem; line-height: 1.1rem;
+           border: solid #cacaca 1px;
+           padding: .5rem;
+           font-family: "triplicate t4", Consolas, Menlo, Monaco, "Courier Prime", monospace;
+       }
 
 .sidenote, .marginnote { float: right;
                          clear: right;
