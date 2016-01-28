@@ -167,7 +167,7 @@ handle it at the Pollen processing level.
       [(ltx pdf) `(txt "\\href{" ,url "}" "{" ,@words "}")]
       [else `(a [[href ,url]] ,@words)]))
 
-  (if (eq? 'hyperlink (get-tag inline-tx))
+  (if (eq? 'link (get-tag inline-tx))
       (apply hyperlinker (get-elements inline-tx))
       inline-tx))
 
