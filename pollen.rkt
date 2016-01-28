@@ -256,7 +256,7 @@ handle it at the Pollen processing level.
     [(ltx pdf) `(txt "\\begin{itemize}" ,@elements "\\end{itemize}")]
     [else `(ul ,@elements)]))
 
-(define (li . elements)
+(define (item . elements)
   (case (world:current-poly-target)
     [(ltx pdf) `(txt "\\item " ,@elements)]
     [else `(li ,@elements)]))
