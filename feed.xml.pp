@@ -48,7 +48,7 @@
   will get certain values.
 |#
 (define sym-author  'author)
-(define sym-pubdate 'publish-date)
+(define sym-pubdate 'published)
 (define sym-updated 'updated)
 (define sym-title   'title)
 (define sym-summary 'summary)
