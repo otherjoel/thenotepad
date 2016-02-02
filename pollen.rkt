@@ -299,6 +299,8 @@ handle it at the Pollen processing level.
 ; used for words or phrases that are intended to be emphasized. In LaTeX,
 ; if the surrounding text is already italic then the emphasized words will be
 ; non-italicized.
+;   A similar approach is offered for boldface text.
+;
 (define (i . text)
   (case (current-poly-target)
     [(ltx pdf) `(txt "{\\itshape " ,@text "}")]
@@ -308,6 +310,17 @@ handle it at the Pollen processing level.
   (case (current-poly-target)
     [(ltx pdf) `(txt "\\emph{" ,@text "}")]
     [else `(em ,@text)]))
+
+(define (b . text)
+  (case (current-poly-target)
+    [(ltf pdf) `(txt "{\\bfseries " ,@text "}")]
+    [else `(b ,@text)]))
+
+(define (strong . text)
+  (case (current-poly-target)
+    [(ltx pdf) `(txt "\\textbf{" ,@text "}")]
+    [else `(strong ,@text)]))
+
 
 #|
 Typesetting poetry in LaTeX or HTML. HTML uses a straightforward <pre> with
