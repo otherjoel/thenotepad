@@ -1,7 +1,9 @@
 #lang racket
 
 (require pollen/decode
-         pollen/world       ; For world:current-poly-target
+         pollen/core
+         pollen/cache
+         pollen/setup       ; For current-poly-target
          pollen/file
          txexpr
          pollen/tag
@@ -18,6 +20,8 @@
          attr-ref
          attrs-have-key?
          make-txexpr
+         string-split
+         get-markup-source
          string-contains)
 (provide (all-defined-out))
 
@@ -31,8 +35,10 @@
 (define (pdfname page) (string-replace (path->string (file-name-from-path page))
                                        "poly.pm" "pdf"))
 
+;(define (print-if thing) (when/splice thing thing))
+
 (define (root . elements)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf)
      (define first-pass (decode-elements elements
                                          #:inline-txexpr-proc (compose1 txt-decode hyperlink-decoder)
@@ -47,15 +53,15 @@
       (make-txexpr 'body null
                    (decode-elements first-pass
                                     #:block-txexpr-proc detect-newthoughts
-                                    #:txexpr-elements-proc splice
+                                    #:txexpr-elements-proc splicer
                                     #:inline-txexpr-proc hyperlink-decoder
                                     #:string-proc (compose1 smart-quotes smart-dashes)
-                                    #:exclude-tags '(script style)))]))
+                                    #:exclude-tags '(script style pre code)))]))
 
 #|
 `splice` lifts the elements of an X-expression into its enclosing X-expression.
 |#
-(define (splice xs)
+(define (splicer xs)
   (define tags-to-splice '(splice-me))
   (apply append (for/list ([x (in-list xs)])
                   (if (and (txexpr? x) (member (get-tag x) tags-to-splice))
@@ -114,7 +120,7 @@ handle it at the Pollen processing level.
 
 (define (numbered-note . text)
     (define refid (uuid-generate))
-    (case (world:current-poly-target)
+    (case (current-poly-target)
       [(ltx pdf)
        `(txt "\\footnote{" ,@(latex-no-hyperlinks-in-margin text) "}")]
       [else
@@ -124,7 +130,7 @@ handle it at the Pollen processing level.
 
 (define (margin-figure source . caption)
     (define refid (uuid-generate))
-    (case (world:current-poly-target)
+    (case (current-poly-target)
       [(ltx pdf)
        `(txt "\\begin{marginfigure}"
              "\\includegraphics{" ,source "}"
@@ -137,7 +143,7 @@ handle it at the Pollen processing level.
 
 (define (margin-note . text)
     (define refid (uuid-generate))
-    (case (world:current-poly-target)
+    (case (current-poly-target)
       [(ltx pdf)
        `(txt "\\marginnote{" ,@(latex-no-hyperlinks-in-margin text) "}")]
       [else
@@ -163,7 +169,7 @@ handle it at the Pollen processing level.
 
 (define (hyperlink-decoder inline-tx)
   (define (hyperlinker url . words)
-    (case (world:current-poly-target)
+    (case (current-poly-target)
       [(ltx pdf) `(txt "\\href{" ,url "}" "{" ,@words "}")]
       [else `(a [[href ,url]] ,@words)]))
 
@@ -171,50 +177,52 @@ handle it at the Pollen processing level.
       (apply hyperlinker (get-elements inline-tx))
       inline-tx))
 
+#|
 (register-block-tag 'pre)
 (register-block-tag 'figure)
 (register-block-tag 'center)
 (register-block-tag 'blockquote)
+|#
 
 (define (p . words)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt ,@words)]
     [else `(p ,@words)]))
 
 (define (blockquote . words)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "\\begin{quote}" ,@words "\\end{quote}")]
     [else `(blockquote ,@words)]))
 
 (define (newthought . words)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "\\newthought{" ,@words "}")]
     [else `(span [[class "newthought"]] ,@words)]))
 
 (define (smallcaps . words)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "\\smallcaps{" ,@words "}")]
     [else `(span [[class "smallcaps"]] ,@words)]))
 
 (define (∆ . elems)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt-noescape "$" ,@elems "$")]
     [else `(span "\\(" ,@elems "\\)")]))
 
 (define (center . words)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "\\begin{center}" ,@words "\\end{center}")]
     [else `(div [[style "text-align: center"]] ,@words)]))
 
 (define (section title . text)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "\\section*{" ,title "}"
                  "\\label{sec:" ,title ,(symbol->string (gensym)) "}"
                  ,@text)]
     [else `(section (h2 ,title) ,@text)]))
 
 (define (index-entry entry . text)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "\\index{" ,entry "}" ,@text)]
     [else
       (case (apply string-append text)
@@ -222,7 +230,7 @@ handle it at the Pollen processing level.
         [else `(a [[id ,entry] [class "index-entry"]] ,@text)])]))
 
 (define (figure source #:fullwidth [fullwidth #f] . caption)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf)
      (define figure-env (if fullwidth "figure*" "figure"))
      `(txt "\\begin{" ,figure-env "}"
@@ -237,32 +245,37 @@ handle it at the Pollen processing level.
               `(figure ,(apply margin-note caption) (img [[src ,source]])))]))
 
 (define (code . text)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "\\texttt{" ,@text "}")]
-    [else `(span [[class "code"]] ,@text)]))
+    [else `(code ,@text)]))
+
+(define (noun . text)
+  (case (current-poly-target)
+    [(ltx pdf) `(txt "\\texttt{" ,@text "}")]
+    [else `(span [[class "noun"]] ,@text)]))
 
 (define (blockcode . text)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "\\begin{verbatim}" ,@text "\\end{verbatim}")]
     [else `(pre [[class "code"]] ,@text)]))
 
 (define (ol . elements)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "\\begin{enumerate}" ,@elements "\\end{enumerate}")]
     [else `(ol ,@elements)]))
 
 (define (ul . elements)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "\\begin{itemize}" ,@elements "\\end{itemize}")]
     [else `(ul ,@elements)]))
 
 (define (item . elements)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "\\item " ,@elements)]
     [else `(li ,@elements)]))
 
 (define (sup . text)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "\\textsuperscript{" ,@text "}")]
     [else `(sup ,@text)]))
 
@@ -271,7 +284,7 @@ handle it at the Pollen processing level.
   in both HTML and (obv.) LaTeX.
 |#
 (define (Latex)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf)
      `(txt "\\LaTeX\\xspace")]      ; \xspace adds a space if the next char is not punctuation
     [else `(span [[class "latex"]]
@@ -287,12 +300,12 @@ handle it at the Pollen processing level.
 ; if the surrounding text is already italic then the emphasized words will be
 ; non-italicized.
 (define (i . text)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "{\\itshape " ,@text "}")]
     [else `(i ,@text)]))
 
 (define (emph . text)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "\\emph{" ,@text "}")]
     [else `(em ,@text)]))
 
@@ -303,7 +316,7 @@ purposes, and replace double-spaces with \vin to indent lines.
 |#
 (define verse
     (lambda (#:title [title ""] #:italic [italic #f] . text)
-     (case (world:current-poly-target)
+     (case (current-poly-target)
       [(ltx pdf)
        (define poem-title (if (non-empty-string? title)
                               (apply string-append `("\\poemtitle{" ,title "}"))
@@ -349,7 +362,7 @@ in LaTeX we need to tell it what the longest line is.
                    "\\1 \\\\\\\\\n"))
 
 (define (grey . text)
-  (case (world:current-poly-target)
+  (case (current-poly-target)
     [(ltx pdf) `(txt "\\textcolor{gray}{" ,@text "}")]
     [else `(span [[style "color: #777"]] ,@text)]))
 
