@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Troubleshooting TLS connections in email")
 ◊(define-meta published "2006-10-05")
-◊(define-meta tags "TLS,email,exchange")
+◊(define-meta tags "TLS,email,Exchange")
 
 
 So you ◊link["http://support.microsoft.com/kb/829721/en-us"]{set up your MS Exchange Server 2003 to use TLS connections for a specific domain}, and when you try and send email to that domain, it gets stuck in the queue. If you look in the Exchange System Manager, under Queues, you see those emails just sitting there with a status of “retry” and clicking on the affected queue shows ◊code{"The remote SMTP service does not support TLS."}

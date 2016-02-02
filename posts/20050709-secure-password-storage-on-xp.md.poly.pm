@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Secure Password Storage on XP")
 ◊(define-meta published "2005-07-09")
-◊(define-meta tags "security,windows,passwords,gpg,keepass,pgp")
+◊(define-meta tags "security,Windows,passwords,GPG,KeePass,PGP")
 
 ◊ul{
 ◊li{You have a lot of online accounts, and}

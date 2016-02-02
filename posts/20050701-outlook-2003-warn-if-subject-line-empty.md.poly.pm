@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Outlook 2003: Warn if Subject Line Empty")
 ◊(define-meta published "2005-07-01")
-◊(define-meta tags "email,vba,outlook")
+◊(define-meta tags "email,VBA,Outlook")
 
 Outlook does not have a built-in option to warn you if the subject line is empty. (Outlook ◊emph{Express} does, but for some reason Outlook doesn’t.) Here’s how to put one in.
 

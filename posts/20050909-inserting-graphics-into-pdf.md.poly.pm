@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Inserting graphics into a PDF")
 ◊(define-meta published "2005-09-09")
-◊(define-meta tags "acrobat,graphics,adobe,pdf")
+◊(define-meta tags "Acrobat,graphics,PDF")
 
 If you have Adobe Acrobat (the real deal, not just the reader) you can insert graphics into PDF docs, but it is not intuitive --- mainly because Acrobat can only cut and paste graphics ◊emph{within itself}, not to/from other programs.
 
