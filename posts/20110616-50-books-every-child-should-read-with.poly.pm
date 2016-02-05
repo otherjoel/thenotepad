@@ -2,7 +2,7 @@
 
 ◊(define-meta title "The 50 books every child should read - With Kindle Links")
 ◊(define-meta published "2011-06-16")
-◊(define-meta tags "kindle,ebooks")
+◊(define-meta tags "Kindle,books")
 
 The Independent recently asked three of Britain’s leading children’s authors and two of their in-house book experts to each pick 10 books, suitable for Year 7 students. Their original list is ◊link["http://www.independent.co.uk/arts-entertainment/books/news/the-50-books-every-child-should-read-2250138.html"]{here}.
 
@@ -10,7 +10,7 @@ Unfortunately, in typical traditional-media fashion, they neglected to add any l
 
 I linked to a free edition wherever possible. If a book was not available on the Kindle store, I marked it with an * asterisk. If you know of a Kindle version of a book I could not find, or of a free or better-formatted edition than the one I have linked, let me know via email or comments!
 
-◊h5[#:id "philip-pullman"]{Philip Pullman}
+◊h2[#:id "philip-pullman"]{Philip Pullman}
 
 ◊ul{
 ◊li{◊link["http://www.amazon.com/gp/product/B003B657NK/ref=as_li_ss_tl?ie=UTF8&tag=thloya-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=B003B657NK"]{◊emph{Alice’s Adventures in Wonderland}} and ◊link["http://www.amazon.com/gp/product/B003B657NK/ref=as_li_ss_tl?ie=UTF8&tag=thloya-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=B003B657NK"]{◊emph{Through the Looking Glass}} by Lewis Carroll. Indispensable. The great classic beginning of English children’s literature.}

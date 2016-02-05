@@ -2,11 +2,11 @@
 
 ◊(define-meta title "Instapaper Auto-send to Kindle not working")
 ◊(define-meta published "2011-05-23")
-◊(define-meta tags "kindle,instapaper")
+◊(define-meta tags "Kindle,Instapaper")
 
-This is a current, unresolved problem: ◊link["http://instapaper.com/"]{Instapaper} does not automatically send new articles to my ◊link["http://www.amazon.com/Kindle-Wireless-Reader-Wifi-Graphite/dp/B002Y27P3M?ie=UTF8&tag=joelsimprpers-20&link_code=btl&camp=213689&creative=392969"]{Kindle} every day. This, despite the fact that my Instapaper account is correctly set up to auto-send new articles to my Kindle, and my Kindle account is properly set up to receive them.
+This is a current, unresolved problem: ◊link["http://instapaper.com/"]{Instapaper} does not automatically send new articles to my ◊amazon["B002Y27P3M"]{Kindle} every day. This, despite the fact that my Instapaper account is correctly set up to auto-send new articles to my Kindle, and my Kindle account is properly set up to receive them.
 
-◊link["http://1.bp.blogspot.com/-oE9pD71hZv4/TdqX1KbAe9I/AAAAAAAAAUk/YGD9DlfLUt8/s1600/kindle.jpg"]{◊figure["/img/kindle.jpg"]{}}
+◊figure["/img/kindle.jpg"]{◊i{Manage Your Kindle} on Instapaper's web site}
 
 Here’s the scenario:
 
@@ -22,11 +22,11 @@ The status just above the ◊code{Send Now} button commonly reads “Your last c
 
 I conclude that Instapaper simply is not sending the emails for some reason. Any guesses as to why?
 
-◊strong{Update:} Apparently this is a known issue; ◊link["http://www.amazon.com/Wired-1-year-auto-renewal/dp/B001U5SPME?ie=UTF8&tag=joelsimprpers-20&link_code=btl&camp=213689&creative=392969"]{Wired} published ◊link["http://www.wired.com/gadgetlab/2010/09/how-to-do-almost-everything-with-a-kindle-3/"]{an article} which says “Unfortunately, for reasons I’m not smart enough to understand, Instapaper can’t automate delivery to your <span class="cite" data-citation-ids="free.kindle.com">@free.kindle.com</span> address.” This tells us nothing about what causes the problem, only that it’s a known issue and, for whatever reason, nothing has been done about it.
+◊strong{◊smallcaps{Update:}} Apparently this is a known issue; ◊amazon["B001U5SPME"]{Wired} published ◊link["http://www.wired.com/gadgetlab/2010/09/how-to-do-almost-everything-with-a-kindle-3/"]{an article} which says “Unfortunately, for reasons I’m not smart enough to understand, Instapaper can’t automate delivery to your ◊code{@free.kindle.com} address.” This tells us nothing about what causes the problem, only that it’s a known issue and, for whatever reason, nothing has been done about it.
 
-◊strong{Second Update:} — Marco seems to have been working on the problem. On May 25, <span class="cite" data-citation-ids="Instapaper">@Instapaper</span> ◊link["https://twitter.com/#!/instapaper/status/73584811683487746"]{tweeted}: “Sending tomorrow morning’s Kindle auto-deliveries early, now. I think I finally found the bug that prevented so many from being delivered.” Then ◊link["https://twitter.com/#!/instapaper/status/73622208060198913"]{on May 26}: “<span class="cite" data-citation-ids="jeremyisweary">@jeremyisweary</span> Have you changed your Instapaper username since setting it up, possibly when I moved to requiring emails-as-usernames?” The problem has not yet been solved for me personally, or for others, as seen in the comments to this blog post. Will keep you posted.
+◊strong{◊smallcaps{Second Update:}} — Marco seems to have been working on the problem. On May 25, @Instapaper ◊link["https://twitter.com/#!/instapaper/status/73584811683487746"]{tweeted}: “Sending tomorrow morning’s Kindle auto-deliveries early, now. I think I finally found the bug that prevented so many from being delivered.” Then ◊link["https://twitter.com/#!/instapaper/status/73622208060198913"]{on May 26}: “@jeremyisweary Have you changed your Instapaper username since setting it up, possibly when I moved to requiring emails-as-usernames?” The problem has not yet been solved for me personally, or for others, as seen in the comments to this blog post. Will keep you posted.
 
-◊strong{Third Update:} — I’ve been receiving my unread articles from Instapaper on my Kindle, and it seems the problem has been fixed. On October 5th 2011 (the day Steve Jobs died), <span class="cite" data-citation-ids="Instapaper">@Instapaper</span> ◊link["https://twitter.com/#!/instapaper/status/121779764930428928"]{tweeted} that Marco believed he had fixed the problem. The same day, he ◊link["https://twitter.com/#!/instapaper/status/121780105356906496"]{said}, “By a few hours from now, all deliveries should be made. If you’re one of those who haven’t been getting them, let me know whether you do.” I’ve been getting my deliveries ever since, and so have others.
+◊strong{◊smallcaps{Third Update:}} — I’ve been receiving my unread articles from Instapaper on my Kindle, and it seems the problem has been fixed. On October 5th 2011 (the day Steve Jobs died), @Instapaper ◊link["https://twitter.com/#!/instapaper/status/121779764930428928"]{tweeted} that Marco believed he had fixed the problem. The same day, he ◊link["https://twitter.com/#!/instapaper/status/121780105356906496"]{said}, “By a few hours from now, all deliveries should be made. If you’re one of those who haven’t been getting them, let me know whether you do.” I’ve been getting my deliveries ever since, and so have others.
 
 If you’re still having problems, let us know in the comments!
 
@@ -46,7 +46,7 @@ Same issue here - did you get any progress?
 
 ◊h3[#:id "mike-said"]{◊link["https://www.blogger.com/profile/03949187896206172372"]{Mike} said:}
 
-Yep same problem. It never worked, even though I had daily delivery set and was regularly adding new articles - then I randomly got a delivery the other day - then nothing since…
+Yep same problem. It never worked, even though I had daily delivery set and was regularly adding new articles - then I randomly got a delivery the other day --- then nothing since…
 
 (Comment posted May 30, 2011)
 
@@ -58,7 +58,7 @@ Same issue here.
 
 ◊h3[#:id "james-said"]{◊link["https://www.blogger.com/profile/13169706717050069732"]{James} said:}
 
-Yep same here - lets all tweet <span class="cite" data-citation-ids="instaper">@instaper</span> and ask?
+Yep same here --- lets all tweet @instaper and ask?
 
 (Comment posted June 01, 2011)
 
@@ -80,13 +80,13 @@ Put me down as having this problem as well. I thought I was the only one. I sent
 
 There’s been some work on this since late May, apparently - see the updates above. Still not workign though.
 
-If everyone who is still having this problem could tweet this post to <span class="cite" data-citation-ids="Instapaper">@Instapaper</span>, perhaps we could make him more aware of it and help him track down the problem.
+If everyone who is still having this problem could tweet this post to @Instapaper, perhaps we could make him more aware of it and help him track down the problem.
 
 (Comment posted June 14, 2011)
 
 ◊h3[#:id "n8henrie-said"]{◊link["https://www.blogger.com/profile/01824579072337279035"]{n8henrie} said:}
 
-I’ve had this problem on-and-off for months. It seemed to work well if I did the <span class="cite" data-citation-ids="kindle.com">@kindle.com</span> and set my Amazon charge maximum to $0.00, but it has never worked right with the <span class="cite" data-citation-ids="free.kindle.com">@free.kindle.com</span> address.
+I’ve had this problem on-and-off for months. It seemed to work well if I did the ◊code{@kindle.com} and set my Amazon charge maximum to $0.00, but it has never worked right with the ◊code{@free.kindle.com} address.
 
 (Comment posted June 17, 2011)
 
@@ -122,7 +122,7 @@ Same here - not working
 
 ◊h3[#:id "yioann-said"]{◊link["https://www.blogger.com/profile/04656031571092114149"]{yioann} said:}
 
-same here. it does not work. I will try with <span class="cite" data-citation-ids="kindle.com">@kindle.com</span> and I will let you know.
+same here. it does not work. I will try with ◊code{@kindle.com} and I will let you know.
 
 (Comment posted July 27, 2011)
 
@@ -136,7 +136,7 @@ The problem persists. I even deleted my account and recreated it. It still does 
 
 It started working out of the blue today, but I can not trust the service anymore.
 
-I will give http://klip.me a try. They added a functionality to save articles and send them as a periodical to kindle.
+I will give ◊link["http://klip.me"] a try. They added a functionality to save articles and send them as a periodical to kindle.
 
 (Comment posted August 07, 2011)
 
@@ -184,7 +184,7 @@ It looks like it’s working! I’ll update the post.
 
 ◊h3[#:id "sebo-said"]{◊link["https://www.blogger.com/profile/03477768609763934721"]{sebo} said:}
 
-I still have this problem; using the <span class="cite" data-citation-ids="kindle.com">@kindle.com</span> address with a Kindle 4 (non-keyboard). Anyone else?
+I still have this problem; using the ◊code{@kindle.com} address with a Kindle 4 (non-keyboard). Anyone else?
 
 (Comment posted January 15, 2012)
 
