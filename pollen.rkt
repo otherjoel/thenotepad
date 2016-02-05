@@ -155,13 +155,20 @@ handle it at the Pollen processing level.
 
 (define (hyperlink-decoder inline-tx)
   (define (hyperlinker url . words)
+    (define tag-contents (if (empty? words)
+                             (list url)
+                             words))
     (case (current-poly-target)
-      [(ltx pdf) `(txt "\\href{" ,url "}" "{" ,@words "}")]
-      [else `(a [[href ,url]] ,@words)]))
+      [(ltx pdf) `(txt "\\href{" ,url "}" "{" ,@tag-contents "}")]
+      [else `(a [[href ,url]] ,@tag-contents)]))
 
   (if (eq? 'link (get-tag inline-tx))
       (apply hyperlinker (get-elements inline-tx))
       inline-tx))
+
+(define (amazon product-id . contents)
+  (define affiliate-id "thloya-20")
+  `(link ,(format "https://amzn.com/~a/?tag=~a" product-id affiliate-id) ,@contents))
 
 (define (p . words)
   (case (current-poly-target)
