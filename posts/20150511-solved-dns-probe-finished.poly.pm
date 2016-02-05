@@ -1,27 +1,20 @@
 #lang pollen
 
-◊(define-meta title "")
-◊(define-meta published "")
+◊(define-meta title "(Solved) DNS_PROBE_FINISHED error, degraded internet performance")
+◊(define-meta published "2015-05-15")
 
-
-◊h2[#:id "title-solved-dns_probe_finished-error-degraded-internet-performance"]{Title: (Solved) DNS_PROBE_FINISHED error, degraded internet performance}
-
-◊h2[#:id "tags-dns-network-switches"]{Tags: dns, network, switches}
-
-◊h2[#:id "date-2015-05-15"]{Date: 2015-05-15}
-
-Text: Recently at the office we started having major network issues:
+Recently at the office we started having major network issues:
 
 ◊ul{
 ◊li{On my own computer, the problem surfaced as a ◊code{DNS_PROBE_FINISHED} error when I tried to load any websites in Chrome (sometimes instead the error would be ◊code{DNS_PROBE_STARTED} or ◊code{DNS_PROBE_NXDOMAIN}).}
 ◊li{I would then open up my command prompt and attempt to ◊code{ping google.com} -- sometimes this would result in &quot;unable to find google.com&quot; and sometimes it would find a specific IP address to try but none of the pings would go through.}
-◊li{I also tried ◊code{ping 8.8.8.8} (Google&#39;s DNS servers) or ◊code{ping 75.75.75.75} (Comcast DNS) -- interestingly, the first 4-6 pings would fail, and then the rest would go through reliably at about 10ms every time thereafter.}
+◊li{I also tried ◊code{ping 8.8.8.8} (Google's DNS servers) or ◊code{ping 75.75.75.75} (Comcast DNS) -- interestingly, the first 4-6 pings would fail, and then the rest would go through reliably at about 10ms every time thereafter.}
 ◊li{Ping traffic between any two points within the LAN (including the firewall) was completely unaffected.}
 }
 
 ◊h2[#:id "troubleshooting"]{Troubleshooting}
 
-Google searches for the ◊code{DNS_PROBE_FINISHED} error invariably lead you to advice suggesting that you perform a ◊code{netsh winsock reset} and restart your computer. However this didn&#39;t work in our case, unsurprisingly. The problem began affecting everyone at once, so unless there had been a bad Windows update or something (our IT support agency hadn&#39;t heard of any) this would be unlikely to help.
+Google searches for the ◊code{DNS_PROBE_FINISHED} error invariably lead you to advice suggesting that you perform a ◊code{netsh winsock reset} and restart your computer. However this didn't work in our case, unsurprisingly. The problem began affecting everyone at once, so unless there had been a bad Windows update or something (our IT support agency hadn&#39;t heard of any) this would be unlikely to help.
 
 We also ruled out the ISP as the cause. We have two WAN connections -- one fiber and one cable -- and switching to one or the other exclusively did not resolve the issue. Support tickets with ISPs confirmed there were no upstream connection or network problems.
 
@@ -43,8 +36,7 @@ I was able to track down the computer with this IP address, it happened to be on
 
 By looking at the CPU usage it appears that the process ◊code{discovery.exe} was abnormally high. A Google search finally turned up this article: ◊link["https://forums.lenovo.com/t5/LenovoEMC-Network-Desktop/Excessive-network-traffic-and-wifi-drops-linked-to-LenovoEMC/ta-p/1513962"]{Excessive network traffic and wifi drops linked to LenovoEMC Storage connector}, which stated:
 
-◊blockquote{
-Corporate networks or ISPs may detect an excessive amount of unusual network traffic coming from ThinkPad systems preloaded with Microsoft Windows 8.1. The network traffic may be interpreted as a network flood or denial-of-service attack. As a result, the system may become restricted on the network or the network may stop functioning normally.
+◊blockquote{Corporate networks or ISPs may detect an excessive amount of unusual network traffic coming from ThinkPad systems preloaded with Microsoft Windows 8.1. The network traffic may be interpreted as a network flood or denial-of-service attack. As a result, the system may become restricted on the network or the network may stop functioning normally.
 
 “LenovoEMC Storage Connector” is preloaded on some ThinkPad models to help customers discover and connect to LenovoEMC storage devices on their network. The process causing the network flood is ◊code{discovery.exe}, which is a component of “LenovoEMC Storage Connector”.
 }
