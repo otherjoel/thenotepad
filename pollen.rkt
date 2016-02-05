@@ -9,8 +9,7 @@
          pollen/tag
          pollen/template
          pollen/pagetree
-         racket/date
-         libuuid)            ; for uuid-generate
+         racket/date)
 
 ; We want srfi/13 for string-contains but need to avoid collision between
 ; its string-replace function and the one in racket/string
@@ -106,7 +105,7 @@ handle it at the Pollen processing level.
 |#
 
 (define (numbered-note . text)
-    (define refid (uuid-generate))
+    (define refid (symbol->string (gensym 'footnote)))
     (case (current-poly-target)
       [(ltx pdf)
        `(txt "\\footnote{" ,@(latex-no-hyperlinks-in-margin text) "}")]
@@ -116,7 +115,7 @@ handle it at the Pollen processing level.
             (span [(class "sidenote")] ,@text))]))
 
 (define (margin-figure source . caption)
-    (define refid (uuid-generate))
+    (define refid (symbol->string (gensym 'marginfigure)))
     (case (current-poly-target)
       [(ltx pdf)
        `(txt "\\begin{marginfigure}"
@@ -129,7 +128,7 @@ handle it at the Pollen processing level.
             (span [[class "marginnote"]] (img [[src ,source]]) ,@caption))]))
 
 (define (margin-note . text)
-    (define refid (uuid-generate))
+    (define refid (symbol->string (gensym 'marginnote)))
     (case (current-poly-target)
       [(ltx pdf)
        `(txt "\\marginnote{" ,@(latex-no-hyperlinks-in-margin text) "}")]
