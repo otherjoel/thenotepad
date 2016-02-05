@@ -46,7 +46,7 @@
     [else
       (define first-pass (decode-elements elements
                                           #:txexpr-elements-proc detect-paragraphs
-                                          #:exclude-tags '(script style figure)))
+                                          #:exclude-tags '(script style figure table)))
       (make-txexpr 'body null
                    (decode-elements first-pass
                                     #:block-txexpr-proc detect-newthoughts
