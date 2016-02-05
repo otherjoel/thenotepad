@@ -229,18 +229,25 @@ code {
     font-size: .8em;
     border-radius: 2px;
 }
-pre.code {
-    padding-left: 2.5%;
-    overflow-x: scroll;
+pre.code, table {
     font-size: .75em;
     line-height: 1.6em;
     padding-top: 0.8em;
     padding-bottom: 0.8em;
+    width: 100%;
+}
+
+pre.code {
+    padding-left: 2.5%;
+    overflow-x: scroll;
     margin: 2em 0;
     border: solid #cacaca 1px;
     font-family: triplicate, monospace;
-    width: 130%;
     border-radius: 3px;
+}
+@media (min-width: 749px) {
+  pre.code { width: 130%; }
+  table { max-width: 130%; }
 }
 
 .noun {
