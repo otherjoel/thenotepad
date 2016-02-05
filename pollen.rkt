@@ -25,7 +25,7 @@
          string-contains)
 (provide (all-defined-out))
 
-(module config racket/base
+(module setup racket/base
     (provide (all-defined-out))
     (define poly-targets '(html ltx pdf)))
 
@@ -34,8 +34,6 @@
 
 (define (pdfname page) (string-replace (path->string (file-name-from-path page))
                                        "poly.pm" "pdf"))
-
-;(define (print-if thing) (when/splice thing thing))
 
 (define (root . elements)
   (case (current-poly-target)
@@ -53,20 +51,9 @@
       (make-txexpr 'body null
                    (decode-elements first-pass
                                     #:block-txexpr-proc detect-newthoughts
-                                    #:txexpr-elements-proc splicer
                                     #:inline-txexpr-proc hyperlink-decoder
                                     #:string-proc (compose1 smart-quotes smart-dashes)
                                     #:exclude-tags '(script style pre code)))]))
-
-#|
-`splice` lifts the elements of an X-expression into its enclosing X-expression.
-|#
-(define (splicer xs)
-  (define tags-to-splice '(splice-me))
-  (apply append (for/list ([x (in-list xs)])
-                  (if (and (txexpr? x) (member (get-tag x) tags-to-splice))
-                      (get-elements x)
-                      (list x)))))
 
 ; Escape $,%,# and & for LaTeX
 (define (ltx-escape-str str)
@@ -124,9 +111,9 @@ handle it at the Pollen processing level.
       [(ltx pdf)
        `(txt "\\footnote{" ,@(latex-no-hyperlinks-in-margin text) "}")]
       [else
-        `(splice-me (label [[for ,refid] [class "margin-toggle sidenote-number"]])
-                    (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
-                    (span [(class "sidenote")] ,@text))]))
+        `(@ (label [[for ,refid] [class "margin-toggle sidenote-number"]])
+            (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
+            (span [(class "sidenote")] ,@text))]))
 
 (define (margin-figure source . caption)
     (define refid (uuid-generate))
@@ -137,9 +124,9 @@ handle it at the Pollen processing level.
              "\\caption{" ,@(latex-no-hyperlinks-in-margin caption) "}"
              "\\end{marginfigure}")]
       [else
-        `(splice-me (label [[for ,refid] [class "margin-toggle"]] 8853)
-                    (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
-                    (span [[class "marginnote"]] (img [[src ,source]]) ,@caption))]))
+        `(@ (label [[for ,refid] [class "margin-toggle"]] 8853)
+            (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
+            (span [[class "marginnote"]] (img [[src ,source]]) ,@caption))]))
 
 (define (margin-note . text)
     (define refid (uuid-generate))
@@ -147,9 +134,9 @@ handle it at the Pollen processing level.
       [(ltx pdf)
        `(txt "\\marginnote{" ,@(latex-no-hyperlinks-in-margin text) "}")]
       [else
-        `(splice-me (label [[for ,refid] [class "margin-toggle"]] 8853)
-                    (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
-                    (span [[class "marginnote"]] ,@text))]))
+        `(@ (label [[for ,refid] [class "margin-toggle"]] 8853)
+            (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
+            (span [[class "marginnote"]] ,@text))]))
 #|
   This function is called from within the margin/sidenote functions when
   targeting Latex/PDF, to filter out hyperlinks from within those tags.
@@ -176,13 +163,6 @@ handle it at the Pollen processing level.
   (if (eq? 'link (get-tag inline-tx))
       (apply hyperlinker (get-elements inline-tx))
       inline-tx))
-
-#|
-(register-block-tag 'pre)
-(register-block-tag 'figure)
-(register-block-tag 'center)
-(register-block-tag 'blockquote)
-|#
 
 (define (p . words)
   (case (current-poly-target)
