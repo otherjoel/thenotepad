@@ -2,19 +2,19 @@
 
 ◊(define-meta title "How to publish a better podcast using Tumblr, Textpattern, or anything else")
 ◊(define-meta published "2011-07-01")
-◊(define-meta tags "feedburner,itunes,textpattern,podcasting,tumblr")
+◊(define-meta tags "Feedburner,iTunes,Textpattern,podcasting,Tumblr")
 
 This isn’t about ◊link["http://hivelogic.com/articles/podcasting-equipment-software-guide-2011/"]{equipment} or ◊link["http://ftrain.com/LearningToSpeak.html"]{recording technique}, but just the cranky details of ◊emph{publishing} a podcast that I have found by trial and error. This article assumes you have some basic computer/web/HTML know-how.
 
 I publish a couple of podcasts: ◊link["http://jdueck.net/radio"]{Howell Creek Radio} uses Textpattern, and ◊link["http://anythingandeverythinggood.tumblr.com"]{Anything Good} uses Tumblr. So in some of the steps I have given some examples that are specific to those CMSs, in order to help you along; but the important thing is that these steps can be easily adapted to any CMS such as Blogger, WordPress, etc.
 
-◊h4[#:id "create-a-separate-tag-or-category-for-your-podcast-posts-on-your-blog."]{Create a separate tag or category for your podcast posts on your blog.}
+◊h2[#:id "create-a-separate-tag-or-category-for-your-podcast-posts-on-your-blog."]{Create a separate tag or category for your podcast posts on your blog.}
 
 This is optional; I recommend it because it allows the website for your podcast to be more flexible. For example, if you use Tumblr, you can create a ◊code{podcast} tag, and then continue posting a mix of videos, photos, quotes, etc. alongside your podcast episodes. This way your podcast subscribers will get a clean feed containing only audio downloads, while your website readers will be able to see all your other posts as well.
 
 Even if your website is pretty much exclusively a vehicle for your podcast, you may want to publish other kinds of things posts now and then for administrative purposes, and this will give you the freedom to keep those posts separate.
 
-◊h4[#:id "make-sure-you-have-cover-art-where-you-need-it"]{Make sure you have cover art where you need it}
+◊h2[#:id "make-sure-you-have-cover-art-where-you-need-it"]{Make sure you have cover art where you need it}
 
 You need to create and use cover art in ◊strong{two places}: first you create cover art for your podcast as a whole, and then you also embed cover art in every individual podcast recording. ◊strong{If you use nothing else from this article, please:} add cover art to your mp3 files. Without it, your episodes show up with blank covers in iPods and most mp3 players! Your podcast episodes will look dorky without it! It’s not enough to add cover art to your itunes feed, you need to embed the cover art in every finished mp3 file. This is easy to do, yet many beginners forget to do it.
 
@@ -40,7 +40,7 @@ You need to create and use cover art in ◊strong{two places}: first you create 
 ◊li{The cover art is now embedded, you can now upload your MP3 file.}
 }
 
-◊h4[#:id "create-a-subscribe-link-on-your-website."]{Create a “subscribe” link on your website.}
+◊h2[#:id "create-a-subscribe-link-on-your-website."]{Create a “subscribe” link on your website.}
 
 Lots of folks use iTunes, so it’s nice to provide an iTunes instant-subscribe link for them and a standard RSS link for everyone else. To create an iTunes link, just prefix the URL of your FeedBurner feed with ◊code{itpc://} instead of ◊code{http://}. So, for example, you could place this prominently on your website:
 
@@ -48,11 +48,11 @@ Lots of folks use iTunes, so it’s nice to provide an iTunes instant-subscribe 
 ◊code{Subscribe in <a href="itpc://feeds.feedburner.com/MyPodcast">iTunes</a> or <a href="http://feeds.feedburner.com/MyPodcast">RSS</a>}
 }
 
-◊h4[#:id "record-and-upload-your-podcast-episodes"]{Record and upload your podcast episodes}
+◊h2[#:id "record-and-upload-your-podcast-episodes"]{Record and upload your podcast episodes}
 
 I use ◊link["http://audacity.sourceforge.net/"]{Audacity} to record, then upload the MP3 to my website using ◊span[#:class "caps"]{FTP}. If you don’t have any hosted space, you can use a free ◊link["http://dropbox.com"]{Dropbox} account and host your files in a public folder. The bonus with this approach is that uploading is automatic.
 
-◊h4[#:id "format-your-podcast-posts-properly"]{Format your podcast posts properly}
+◊h2[#:id "format-your-podcast-posts-properly"]{Format your podcast posts properly}
 
 A properly-formatted post ensures that your subscribers will get their episodes automatically with no hiccups.
 
@@ -69,7 +69,7 @@ A properly-formatted post ensures that your subscribers will get their episodes 
 The ◊code{for-syndicate} class will render the paragraph invisible on your website, but it will be visible when imported into Facebook or when the feed is viewed in a newsreader, since these other sites do not import your CSS styles. (If you like, this quasi-hidden paragraph can also serve as the required MP3 link.)}
 }
 
-◊h4[#:id "letting-people-listen-from-your-website"]{Letting people listen from your website}
+◊h2[#:id "letting-people-listen-from-your-website"]{Letting people listen from your website}
 
 People will listen to your podcast in one of two ways: by subscribing in iTunes or some similar program (which we’ve already covered) or by going to your web page and listening on their computer. Although they can click to listen to the MP3 file using the link you provided, it’s nice to embed some kind of player that will stream the audio and let them listen right there.
 
@@ -83,7 +83,7 @@ There are lots of ways to do this:
 
 These methods use Flash programs for the audio players, which don’t run on iPhone or iPad browsers. I’ve been tinkering with ways to use HTML5 audio players when the browser supports them, but HTML5 audio support is still flaky for the time being. Check back again in a year or so and maybe I’ll have something for you.
 
-◊h4[#:id "get-listed-in-the-itunes-store"]{Get listed in the iTunes Store}
+◊h2[#:id "get-listed-in-the-itunes-store"]{Get listed in the iTunes Store}
 
 After you’ve gotten your production groove down and can demonstrate that your episodes come out at least somewhat regularly, it’s worth trying to get your podcast added into the iTunes store. Read Apple’s ◊link["http://www.apple.com/itunes/whatson/podcasts/creatorfaq.html"]{FAQ for Podcast Makers}.
 
