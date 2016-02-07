@@ -2,13 +2,13 @@
 
 ◊(define-meta title "How to Sync Calendars on Two (or more) iPhones or iPads")
 ◊(define-meta published "2012-02-03")
-◊(define-meta tags "iCloud,iOS,iphone,calendars")
+◊(define-meta tags "iCloud,iOS,iPhone,calendars")
 
 My wife and I each use an iPhone, but it wasn’t until recently that I got around to syncing our calendars. Now that we actually have a synced calendar system that we can both view and update from our phones, we’ve begun actually using it for planning and apponintments. In this how-to, I’ll show you how to do the same thing for yourself.
 
-These instructions assume that each iPhone user has their own, separate Apple ID and iCloud◊link["#fn:1"]{1}.
+◊margin-note{If you happen to be using the same Apple ID/iCloud account on two phones, I would assume you don’t need this article since everything is already syncing across all devices within your single account.} These instructions assume that each iPhone user has their own, separate Apple ID and iCloud.
 
-◊h3[#:id "use-icloud-for-your-calendar-account"]{1. Use iCloud for Your Calendar Account}
+◊h2[#:id "use-icloud-for-your-calendar-account"]{1. Use iCloud for Your Calendar Account}
 
 I’m not saying you ◊emph{have} to use iCloud. I’m saying it’s by far the simplest and easiest way.
 
@@ -16,13 +16,13 @@ Make sure each user has iCloud set up on his or her device. If you have iOS 5 or
 
 If iCloud is not set up on your device, read these ◊link["http://www.apple.com/icloud/setup/"]{simple iCloud setup instrctions} from Apple.
 
-◊h4[#:id "other-calendar-accounts"]{Other Calendar Accounts}
+◊h3[#:id "other-calendar-accounts"]{Other Calendar Accounts}
 
 ◊strong{Gmail accounts} come with a pretty useable calendar system, so a lot of people use those; but I found the instructions and process for syncing GMail calendars between multiple Google accounts/iPhones very clumsy, complicated, and unintuitive, even for a geek like myself. If you have tips on that, let us know in the comments.
 
 ◊strong{Exchange accounts} also include calendar functionality. I have one of these at my job, and it syncs to my phone also, but I don’t really need to share it with my wife so I haven’t tried. I expect the only way to do this would be to add my exchange account to her phone with my own password, and turn off the mail part of the account in the iPhone’s settings. Again, let us know in the comments if you’ve experimented with this.
 
-◊h3[#:id "share-your-icloud-calendars"]{2. Share Your iCloud Calendar(s)}
+◊h2[#:id "share-your-icloud-calendars"]{2. Share Your iCloud Calendar(s)}
 
 This is an easy process, but not entirely obvious because you have to use a laptop/desktop computer, and not your iOS device, to start the process.
 
@@ -31,7 +31,7 @@ This is an easy process, but not entirely obvious because you have to use a lapt
 ◊li{Open your web browser on your desktop or laptop computer and go to ◊link["http//icloud.com"]{icloud.com}.}
 ◊li{Sign in using the account of the “owner” and click on ◊code{Calendar}.}
 ◊li{Click on the small circle to the right of the calendar you wish to share. Under ◊code{Private Calendar}, enter the email address for the user of the “other” iPhone/iPad. It can be any email address for that person (it doesn’t have to be the one they use to sign in to iCloud) but it should be one that they have set up on their iPhone/iPad.
-◊link["http://3.bp.blogspot.com/-ko9TJ2kc2fg/Tywk7yfJDTI/AAAAAAAAAZc/1YquxPMmooI/s1600/20120203-icloudsharing1.jpg"]{◊figure["/img/20120203icloudsharing1.jpg"]{}}}
+◊figure["/img/20120203icloudsharing1.jpg"]{iCloud sharing}}
 ◊li{After entering the email address, click ◊code{Share}.}
 }
 
@@ -39,7 +39,7 @@ Now the other user can grab his or her device, open the email, and click the “
 
 Voila, you now have a calendar shared between two devices. Any events or appointments you create or change on the shared calendar on one device will automatically show up on the other device pretty quickly, and without any additional steps.
 
-◊h4[#:id "some-additional-notes"]{Some additional notes:}
+◊h3[#:id "some-additional-notes"]{Some additional notes:}
 
 ◊ul{
 ◊li{You can of course share multiple calendars with this process, and you can even share them with different multiple people. My wife and I share three calendars, because this allows us to easily colour-code different kinds of events simply by putting them on different calendars. (There are some calendar apps that let you colour-cde different events within the same calendar, but not the one we happen to use.)}
@@ -50,15 +50,9 @@ Voila, you now have a calendar shared between two devices. Any events or appoint
 }}
 }
 
-◊h3[#:id "get-a-better-calendar-app"]{3. Get a Better Calendar App}
+◊h2[#:id "get-a-better-calendar-app"]{3. Get a Better Calendar App}
 
-The calendar app that comes with iOS is plain, and has many shortcomings: the interface for creating new appointments is clumsy, the colour-coding is not visible in month view, and there’s no week view at all, to name a few. For notes and recommendations on iOS calendar apps, read my post on ◊link["http://notely.blogspot.com/2012/02/recommended-calendar-apps-for-iphone.html"]{iOS Calendar App Recommendations}.
-
-◊hr{}
-
-◊ol{
-◊li{If you happen to be using the same Apple ID/iCloud account on two phones, I would assume you don’t need this article since everything is already syncing across all devices within your single account. ◊link["#fnref:1"]{↩}}
-}
+The calendar app that comes with iOS is plain, and has many shortcomings: the interface for creating new appointments is clumsy, the colour-coding is not visible in month view, and there’s no week view at all, to name a few. For notes and recommendations on iOS calendar apps, read my post on ◊link["20120203-recommended-calendar-apps-for-iphone.html"]{iOS Calendar App Recommendations}.
 
 ◊h2[#:id "comments"]{Comments}
 

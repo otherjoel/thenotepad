@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Encryption and DropBox: Comparing TrueCrypt and BoxCryptor")
 ◊(define-meta published "2012-01-04")
-◊(define-meta tags "cloud-storage,encryption,boxcryptor,dropbox,iphone,truecrypt,android")
+◊(define-meta tags "encryption,BoxCryptor,Dropbox,TrueCrypt")
 
 If you’re a ◊link["http://dropbox.com"]{DropBox} user, you may have heard about the security weakpoints associated with their cloud storage service (or any such service):
 
@@ -17,18 +17,18 @@ It’s important to note that if you’re putting sensitive files on DropBox pur
 
 There are two good ways that I have found to do this. Both are free, and neither involve sending any of your data or keys to an additional third party — all the magic happens on your computer or device. However, there are trade-offs associated with each.
 
-◊h3[#:id "the-truecrypt-option"]{The TrueCrypt Option}
+◊h2[#:id "the-truecrypt-option"]{The TrueCrypt Option}
 
 The most commonly offered solution is to place your sensitive files in a ◊link["http://www.truecrypt.org"]{TrueCrypt} volume and save that volume file into your DropBox.
 
-◊h4[#:id "pros"]{Pros:}
+◊h3[#:id "pros"]{Pros:}
 
 ◊ul{
 ◊li{TrueCrypt is open source, making it the most trustworthy and future-proof option}
 ◊li{For extremely sensitive info, TrueCrypt allows you to maintain ◊link["http://www.truecrypt.org/docs/?s=plausible-deniability"]{plausible deniability}.}
 }
 
-◊h4[#:id "cons"]{Cons:}
+◊h3[#:id "cons"]{Cons:}
 
 ◊ul{
 ◊li{There is currently no way to use or access TrueCrypt volumes on your phone. This is true both for iPhones and Android phones.}
@@ -37,11 +37,11 @@ The most commonly offered solution is to place your sensitive files in a ◊link
 ◊li{Because DropBox can’t back up changes to any of your encrypted files until you actually unmount the whole volume, you have to remember to unmount it periodically, which can be cumbersome.}
 }
 
-◊h3[#:id "the-boxcryptor-option"]{The BoxCryptor option}
+◊h2[#:id "the-boxcryptor-option"]{The BoxCryptor option}
 
 ◊link["http://www.boxcryptor.com/"]{BoxCryptor} is a newer solution that works by encrypting individual files on your computer, before they are sent to DropBox. Like TrueCrypt, the software runs on both Windows and Mac OS.
 
-◊h4[#:id "pros-1"]{Pros:}
+◊h3[#:id "pros-1"]{Pros:}
 
 ◊ul{
 ◊li{BoxCryptor has an Android and an iPhone version of their software, making it possible to access encrypted DropBox files from your phone.}
@@ -49,7 +49,7 @@ The most commonly offered solution is to place your sensitive files in a ◊link
 ◊li{File-level encryption makes it much less clumsy to use, and allows DropBox to sync encrypted files just as seamlessly as normal files, and without additional likelihood of conflicts where multiple computers are involved.}
 }
 
-◊h4[#:id "cons-1"]{Cons:}
+◊h3[#:id "cons-1"]{Cons:}
 
 ◊ul{
 ◊li{The iPhone app is $8 for non-commercial use. This seems stupidly high, considering the Windows and Mac versions are free and they have no back-end infrastructure to maintain.}

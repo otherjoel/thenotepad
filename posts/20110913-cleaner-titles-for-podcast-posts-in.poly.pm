@@ -2,13 +2,11 @@
 
 ◊(define-meta title "Cleaner titles for podcast posts in Tumblr")
 ◊(define-meta published "2011-09-13")
-◊(define-meta tags "feedburner,itunes,rss,podcasting,tumblr")
+◊(define-meta tags "FeedBurner,iTunes,Podcasting,Tumblr")
 
 After reading my post ◊link["http://notely.blogspot.com/2011/07/tips-for-better-podcast-publishing.html"]{◊emph{How to publish a better podcast using Textpattern, Tumblr, or anything else}}, Lars Jannsen of ◊link["http://gamesandmacs.de/"]{gamesandmacs.de}, a new German website/podcast, wrote me a question:
 
-◊blockquote{
-“When I use an audio post to publish my latest podcast episode as .mp3 (since I want my listeners to get the Flash audio player on Tumblr) and put the link to the .mp3 file in the description of that audio post it also shows up in the iTunes description of the episode when I use FeedBurner to get my podcast on iTunes. In order to get ‘cleaner’ show notes, I’d like to exclude the link from the iTunes info field. Looks a bit weird if there’s stuff like ◊code{(‘Download MP3 file’)} in the show notes.”
-}
+◊blockquote{When I use an audio post to publish my latest podcast episode as .mp3 (since I want my listeners to get the Flash audio player on Tumblr) and put the link to the .mp3 file in the description of that audio post it also shows up in the iTunes description of the episode when I use FeedBurner to get my podcast on iTunes. In order to get ‘cleaner’ show notes, I’d like to exclude the link from the iTunes info field. Looks a bit weird if there’s stuff like ◊code{(‘Download MP3 file’)} in the show notes.}
 
 I noticed the same thing on my tumblr-based podcast. This titling originates with how Tumblr serves up its feeds to FeedBurner. Tumblr has no descreet “Title” field for audio posts; instead Tumblr takes, from the ◊emph{description} field, the first however-many complete words there are before the 63-character mark (or thereabouts, including spaces and punctuation), slaps an ellipses (…) on the end, and uses that as the title. This title is the one that gets passed to Feedburner and the one that your listeners eventually see in iTunes. This is what causes ugly things like seeing “Download Mp3 file” as the episode’s title in iTunes.
 
@@ -45,16 +43,5 @@ Can you please help me?
 thanks,
 Dan
 d.fishgold@gmail.com
-
-(Comment posted December 29, 2012)
-
-◊h3[#:id "שניצל-said-1"]{◊link["https://www.blogger.com/profile/12107533202914200359"]{שניצל} said:}
-
-Hi.
-I read your guide on how to publish podcasts with tumblr, but for some reason it doesn’t work for me - it uses the tumblr flash player as the episode file. the mp3 link is the first link after the 63 characters (where there aren’t any links).
-Can you please help me?
-
-thanks,
-Dan
 
 (Comment posted December 29, 2012)

@@ -2,7 +2,7 @@
 
 ◊(define-meta title "The Best Data Collection App (And Format) for iPhone")
 ◊(define-meta published "2011-11-08")
-◊(define-meta tags "daytum,data-collection,iphone,text-editing")
+◊(define-meta tags "Daytum,quantified self,data collection")
 
 I’ve long been intrigued by ◊link["http://feltron.com"]{Nick Felton’s Annual Reports}. Felton has become the poster child for a new kind of a ◊link["http://quantifiedself.com/"]{subculture} growing up around this idea of “personal metrics.” Measuring and reporting esoteric and insane amounts of data about your personal habits can be a great way to Meet People And Make Friends.
 
@@ -12,7 +12,7 @@ In data collection, your smartphone is your friend. You want to make sure collec
 
 There are a lot of apps out there for collecting and reporting various kinds of data — running times/length, weight loss/gain, sex, sleep and eating habits — and these can be great if you’re only interested in tracking one or two aspects of your life. But as soon as you begin to raise your sights a little and think about comprehensive Felton-scale data collection, you realize what a pain it’s going to be to have a herd of seventeen apps to manage. Another problem with most of these apps is that they don’t provide any access to the actual data.
 
-◊h4[#:id "daytum"]{Daytum}
+◊h2[#:id "daytum"]{Daytum}
 
 For awhile, Felton was working on a project called ◊link["http://daytum.com"]{Daytum} that would help people create their personal reports similar to his. Daytum has always had a lot of promise, but there are a few major problems with it that need to change before it can be really useful:
 
@@ -22,7 +22,7 @@ For awhile, Felton was working on a project called ◊link["http://daytum.com"]{
 ◊li{The ◊link["http://itunes.apple.com/us/app/daytum/id352646537?mt=8"]{iPhone app} — which would ordinarily be the ideal channel for collecting data — is buggy, infrequently updated, and (worst of all) has been known to randomly erase data}
 }
 
-◊h3[#:id "the-format-is-text"]{The Format is Text}
+◊h2[#:id "the-format-is-text"]{The Format is Text}
 
 I found what I was looking for in Ben Lipkowitz’s ◊link["http://fennetic.net/sleep/"]{lifelog project}. He developed a simple text format that allows you to quickly capture personal events and data as they happen. A self-explanatory sample is below:
 
@@ -60,15 +60,16 @@ This format doesn’t work well for capturing broader categories of events that 
 
 I don’t recommend trying to record your moment-to-moment moods for any reason whatsoever. That way lies self-referential madness.
 
-◊h3[#:id "the-app-is-nebulous-notes"]{The App is Nebulous Notes}
+◊h2[#:id "the-app-is-nebulous-notes"]{The App is Nebulous Notes}
 
-◊link["http://4.bp.blogspot.com/-RVnyleohOf0/Trly0YDnrKI/AAAAAAAAAYA/i0M2TGbkdo0/s1600/Photo%2BNov%2B08%252C%2B11%2B14%2B47%2BAM.png"]{◊figure["/img/photonov082c111447am.png"]{}}   ◊link["http://3.bp.blogspot.com/-9DHgnYlJ0sI/Trly_AV7jqI/AAAAAAAAAYY/kZZLCjGMrBo/s1600/Photo%2BNov%2B08%252C%2B11%2B15%2B48%2BAM.png"]{◊figure["/img/photonov082c111548am.png"]{}}
+◊figure["/img/photonov082c111447am.png"]{ }
+
+◊figure["/img/photonov082c111548am.png"]{ }
 
 ◊link["http://itunes.apple.com/us/app/nebulous-notes-for-dropbox/id375006422?mt=8#"]{Nebulous Notes} has a couple of great features that make it great for this kind of data collection:
 
 ◊ul{
 ◊li{◊strong{Shortcut keys:} You can set up shortcut keys to quickly insert date and timestamps in right format, as well as skip forward and backwards by word or character (see screenshots above)}
-◊li{◊strong{Dropbox support:} Store your text file on your Dropbox account and it will be auto-saved to the cloud every time you edit it, and you can easily pull it into your laptop for analytics.}
-}
+◊li{◊strong{Dropbox support:} Store your text file on your Dropbox account and it will be auto-saved to the cloud every time you edit it, and you can easily pull it into your laptop for analytics.}}
 
 I recently switched to the iPhone, so if you have an Android or Blackberry you’ll need to find your own favorite app for that platform. (Personally I can’t imagine attempting anything like this on my laggy old Blackberry.) Let me know in the comments if you find anything!

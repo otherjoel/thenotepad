@@ -1,8 +1,8 @@
 #lang pollen
 
-◊(define-meta title "Solution for persisting &quot;Windows created a temporary paging file on your computer&quot; error")
+◊(define-meta title "Solution for persisting ‘Windows created a temporary paging file on your computer’ error")
 ◊(define-meta published "2011-08-18")
-◊(define-meta tags "windows,virtual-memory")
+◊(define-meta tags "Windows,virtual memory")
 
 Solution for persisting “Windows created a temporary paging file on your computer” error
 
@@ -16,7 +16,7 @@ After clicking OK, it would open the virtual memory settings without any explana
 
 This evidently happens because ◊code{pagefile.sys}, the file that Windows uses for virtual memory, has become corrupted in some way.
 
-◊link["http://answers.microsoft.com/en-us/windows/forum/windows_7-performance/windows-7-virtual-memory-keeps-resetting-on/e7ba857a-ba74-4978-9ea7-0c929f75a19d"]{This Microsoft Answers article} recommends running an SFC (system file check). Here’s ◊link["http://support.microsoft.com/kb/936212/en-us"]{how to run an SFC}. This did not solve the problem for me, but it is something you should try first.
+◊link["http://answers.microsoft.com/en-us/windows/forum/windows_7-performance/windows-7-virtual-memory-keeps-resetting-on/e7ba857a-ba74-4978-9ea7-0c929f75a19d"]{This Microsoft Answers article} recommends running a system file check. Here’s ◊link["http://support.microsoft.com/kb/936212/en-us"]{how to run an SFC}. This did not solve the problem for me, but it is something you should try first.
 
 Here’s how I cleared it up:
 

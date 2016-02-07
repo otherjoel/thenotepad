@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to use Markdown in Blogspot posts")
 ◊(define-meta published "2011-08-18")
-◊(define-meta tags "future-proofing,markdown,blogging,html")
+◊(define-meta tags "future-proofing,Markdown,Blogger")
 
 If your blog is hosted on running Blogspot and you want to use ◊link["http://daringfireball.net/projects/markdown/basics"]{Markdown} for your posts, here’s how to do it and future-proof your writing in the process.
 
@@ -19,18 +19,16 @@ This has two advantages. First, it future-proofs your blog. No matter what happe
 This is the area people seem to have trouble with, but it’s really quite simple.
 
 ◊ol{
-◊li{In Blogspot, go to ◊code{Settings} tab, then the ◊code{Formatting} section. Set “Convert Line Breaks” to ◊code{No}.}
-◊li{In your New Posts,
-
-◊ul{
-◊li{Make sure you are using the “Edit HTML” tab}
-◊li{Under “Post Options” (at the bottom) make sure
-
-◊ul{
-◊li{“Edit HTML Line Breaks” is set to ◊code{Use <br /> tags}}
-◊li{“Compose Settings” is set to ◊code{Interpret typed HTML}}
-}}
-}}
+    ◊li{In Blogspot, go to ◊code{Settings} tab, then the ◊code{Formatting} section. Set “Convert Line Breaks” to ◊code{No}.}
+    ◊li{In your New Posts,
+        ◊ul{
+            ◊li{Make sure you are using the “Edit HTML” tab}
+            ◊li{Under “Post Options” (at the bottom) make sure
+                ◊ul{
+                    ◊li{“Edit HTML Line Breaks” is set to ◊code{Use <br /> tags}}
+                    ◊li{“Compose Settings” is set to ◊code{Interpret typed HTML}}
+            }}
+    }}
 }
 
 It’s that simple really. Now you can paste in your Markdown-generated HTML without getting extra linebreaks or other wierdnesses.

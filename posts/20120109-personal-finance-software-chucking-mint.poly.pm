@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Personal finance software: chucking Mint for YNAB")
 ◊(define-meta published "2012-01-09")
-◊(define-meta tags "mint,finance,quicken,ynab")
+◊(define-meta tags "Mint,finance,Quicken,YNAB")
 
 A cousin recently put me on to ◊link["http://www.youneedabudget.com/"]{You Need A Budget} — a personal finance software package. I just spent some time this weekend setting it up with my wife. Maybe we’re still in the ‘honeymoon phase’ of budgeting, but it feels really good to be on top of our finances and to have a ◊emph{flexible} plan for our spending.
 
@@ -10,28 +10,19 @@ YNAB feels refreshingly like a “Quicken Rebooted” would feel. After a couple
 
 YNAB insists that you manage your transactions the Old Way: by entering them yourself. The fact that this feels very ◊emph{right} was/is quite a surprise to me, but when it “clicked,” it felt like it had been a long time coming. When I signed up for Mint, the automatic behind-the-scenes importing of all my transactions seemed like a brilliant way to streamline things, but it turned out to have some fatal downsides. Mint’s connection with my bank was always spotty, and their automatic categorization of my spending was never more than about 60-70% accurate. This meant I had to go in and regularly sift through all my spending, making sure each transaction was properly categorized — a process even more unpleasant and tedious than just entering them myself. It wasn’t long before I stopped using it altogether. So when I read this on YNAB’s website, it jived ◊emph{a lot}:
 
-◊blockquote{
-“We do not directly connect with your bank, log in with your username and password, and download transactions for you. That kills awareness and promotes a “set it and forget it” mentality that lets you not revisit your budget for months, leaving you right back where you started. We’ll import downloaded transactions (OFX, QFX, QIF) to make sure you’ve captured every transaction, but bank importation should not be the primary means of entering data into YNAB. (Use your phone and record it as the transaction happens, or make entering receipts a 5-minute daily ritual. Your money will thank you for it. Promise.)”
-}
+◊blockquote{We do not directly connect with your bank, log in with your username and password, and download transactions for you. That kills awareness and promotes a “set it and forget it” mentality that lets you not revisit your budget for months, leaving you right back where you started. We’ll import downloaded transactions (OFX, QFX, QIF) to make sure you’ve captured every transaction, but bank importation should not be the primary means of entering data into YNAB. (Use your phone and record it as the transaction happens, or make entering receipts a 5-minute daily ritual. Your money will thank you for it. Promise.)}
 
-But the biggest difference between YNAB and the Mint approach is that while Mint is geared towards passive capture of past spending, YNAB’s workflow puts planning future spending at the center◊link["#fn:1"]{1}. I won’t dive into that here, but you should know that this approach is what will make even using finance software worth your while. If you are familiar with the increasingly-popular ◊link["http://en.wikipedia.org/wiki/Envelope_system"]{envelope system} of budgeting, or with financial planning evangelists like Dave Ramsey, YNAB will fit right in with those paradigms and help you implement them.
+But the biggest difference between YNAB and the Mint approach is that while Mint is geared towards passive capture of past spending, YNAB’s workflow puts planning future spending at the center. I won’t dive into that here, but you should know that this approach is what will make even using finance software worth your while. If you are familiar with the increasingly-popular ◊link["http://en.wikipedia.org/wiki/Envelope_system"]{envelope system} of budgeting, or with financial planning evangelists like Dave Ramsey, YNAB will fit right in with those paradigms and help you implement them.
 
-◊h3[#:id "coming-down-from-the-cloud"]{Coming down from the cloud}
+◊h2[#:id "coming-down-from-the-cloud"]{Coming down from the cloud}
 
 YNAB’s non-cloud approach means you won’t have completely seamless access to your main financial data store from any browser or from your iPhone. When you think about it, that actually might not be a problem. Do you really need that kind of access? Financial planning isn’t one of those things that inherently benefits from being decentralized.
 
 YNAB tries to strike a middle course by supplying iPhone and Android apps that let you record transactions on the go for easy syncing later. I haven’t yet tried these apps out; I’m not yet sure whether it’s even worth the added complexity for me personally. I can just as easily keep receipts or type transactions into a note app on my phone.
 
-Ideally, a YNAB mobile app would allow automatic background syncing between two phones, so that my wife and I would have quick, seamless access to where our budgets are at, but YNAB’s app isn’t there yet◊link["#fn:2"]{2}. But in my view, it all goes back to a focus on ◊emph{planning} rather than ◊emph{capture}. If my wife and I actually have a plan in place for our monthly spending, we pretty much know going into the day where our money is going to go, and up-to-the-minute syncing becomes much less important. Again, I wonder if this is one of those situations where automatic syncing — an inherent “feature” of the cloud approach — would actually be counterproductive in this field, by allowing you to take the easy road and ◊emph{react} to spending events, rather than relying on proactive planning.
+Ideally, a YNAB mobile app would allow automatic background syncing between two phones, so that my wife and I would have quick, seamless access to where our budgets are at, but YNAB’s app isn’t there yet. But in my view, it all goes back to a focus on ◊emph{planning} rather than ◊emph{capture}. If my wife and I actually have a plan in place for our monthly spending, we pretty much know going into the day where our money is going to go, and up-to-the-minute syncing becomes much less important. Again, I wonder if this is one of those situations where automatic syncing — an inherent “feature” of the cloud approach — would actually be counterproductive in this field, by allowing you to take the easy road and ◊emph{react} to spending events, rather than relying on proactive planning.
 
 ◊emph{NB: I’m not an affiliate of YNAB in any way, nor am I being compensated in any way for this overview.}
-
-◊hr{}
-
-◊ol{
-◊li{Mint had budgeting tools, but they were clumsy to use and always felt like something of an afterthought. ◊link["#fnref:1"]{↩}}
-◊li{YNAB’s website ◊link["http://www.youneedabudget.com/support/article/keeping-more-than-one-device-in-sync"]{says} that they “are actively working on ways to improve the entire synchronization of your budget data across not only the mobile apps but multiple desktop installations as well,” but they decline to offer a timeline. ◊link["#fnref:2"]{↩}}
-}
 
 ◊h2[#:id "comments"]{Comments}
 
