@@ -170,6 +170,38 @@ handle it at the Pollen processing level.
   (define affiliate-id "thloya-20")
   `(link ,(format "https://amzn.com/~a/?tag=~a" product-id affiliate-id) ,@contents))
 
+#|
+  ◊tweet and ◊retweet handle markup for embedded tweets. I use a Python script
+  to generate the tags in my Pollen markup (github.com/otherjoel/blackbirdpy).
+|#
+(define (tweet #:id tweet-id #:handle tweeter #:realname tweeter-IRL
+               #:permlink tweet-link #:timestamp tweet-time . contents)
+  (case (current-poly-target)
+    [(ltx pdf) `(txt "Tweet: " ,@contents)]
+    [else
+      `(blockquote [[id ,(string-append "t" tweet-id)] [class "tweet"]]
+        (div [[class "twContent"]] ,@contents)
+        (footer [[class "twMeta"]]
+          (span [[class "twDecoration"]] "— ")
+          (span [[class "twRealName"]] ,tweeter-IRL)
+          (span [[class "twDecoration"]] " (")
+          (span [[class "twScreenName"]]
+                (a [[href ,(format "https://twitter.com/~a" tweeter)]] ,(format "@~a" tweeter)))
+          (span [[class "twDecoration"]] ") ")
+          (span [[class "twTimeStamp"]]
+                (a [[href ,tweet-link]] ,tweet-time))))]))
+
+(define (retweet #:id tweet-id #:handle tweeter #:realname tweeter-IRL
+               #:permlink tweet-link #:timestamp tweet-time . contents)
+  (case (current-poly-target)
+    [(ltx pdf) `(txt "Tweet: " ,@contents)]
+    [else
+      `(blockquote [[class "retweet"]]
+        (p [[class "twRetweetMeta"]] (b ,tweeter-IRL)
+           (span [[class "twScreenName"]] ,(format " (@~a) " tweeter))
+           (span [[class "twTimeStamp"]] (a [[href ,tweet-link]] ,tweet-time)))
+        ,@contents)]))
+
 (define (p . words)
   (case (current-poly-target)
     [(ltx pdf) `(txt ,@words)]
@@ -229,6 +261,11 @@ handle it at the Pollen processing level.
               ; (apply) to pass the values in that list as individual arguments.
               `(figure [[class "fullwidth"]] ,(apply margin-note caption) (img [[src ,source]]))
               `(figure ,(apply margin-note caption) (img [[src ,source]])))]))
+
+(define (image src)
+  (case (current-poly-target)
+    [(ltx pdf) `(txt "\\includegraphics{" ,src "}")]
+    [else `(img [[src ,src]])]))
 
 (define (code . text)
   (case (current-poly-target)
@@ -360,10 +397,10 @@ in LaTeX we need to tell it what the longest line is.
                    text
                    "\\1 \\\\\\\\\n"))
 
-(define (grey . text)
+(define (color c . text)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\textcolor{gray}{" ,@text "}")]
-    [else `(span [[style "color: #777"]] ,@text)]))
+    [(ltx pdf) `(txt "\\textcolor{" ,c "}{" ,@text "}")]
+    [else `(span [[style ,(string-append "color: " c)]] ,@text)]))
 
 #|
 Index functionality: allows creation of a book-style keyword index.

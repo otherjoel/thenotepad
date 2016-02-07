@@ -27,7 +27,7 @@
     box-shadow: 1px 0px 0px hsla(200, 100%, 50%, .3), -1px 0px 0px hsla(200, 100%, 50%, .3);
 }
 body {
-    /* background-color: #fefefe; */
+    background-color: #fefefe;
     font-family: Charter, serif;
     color: #333;
     font-size: 1em;
@@ -201,6 +201,13 @@ span.newthought {
 p + p.pause-before, ul + p.pause-before, ol + p.pause-before, blockquote + p.pause-before, table + p.pause-before, figure + p.pause-before {
     margin-top: 3.9em;
 }
+
+figure { margin: 1.5em 0; padding: 0; }
+figure img {
+    max-width: 100%;
+    margin: 0;
+}
+
 blockquote:before {
     content: '“';
     font-size: 4em;
@@ -220,6 +227,49 @@ blockquote:before {
     margin-right: -.6em;
     margin-top: -.5em;
 } */
+blockquote.tweet:before, blockquote.retweet:before { content: none; }
+blockquote.tweet {
+    border: solid #9ae4e8 .5em; /* or 00aced */
+    border-radius: 5px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    padding: 1em;
+}
+blockquote.tweet p, .twContent { width: 100% }
+blockquote.tweet img {
+    max-width: 100%;
+    border: solid #eee 1px;
+    margin: 15px auto 0 auto;
+}
+blockquote.tweet footer {
+    border-top: solid #999 1px;
+    margin-top: 0.5625em;
+    padding-top: 0.5625em;
+    clear: both;
+}
+blockquote.tweet a:link { text-decoration: none; }
+blockquote.tweet a:hover { text-decoration: underline; }
+.twRealName { font-weight: bold; }
+.twScreenName { color: gray; }
+.twScreenName:before { content: " · "; color: #ccc; }
+.twDecoration { display: none; }
+.twContent {
+    font-size: 1.3888888888888888em;
+    line-height: 1.23em;
+}
+.twContent p { margin-bottom: 1.08em; }
+.twContent p:last-child { margin-bottom: 0; }
+.twTimeStamp {float: right; text-align: right; font-size: .75em;}
+p.twRetweetMeta {margin-bottom: 0;}
+blockquote.retweet {
+    border: solid #ccc 1px;
+    border-radius: 4px;
+    font-size: 0.54em;
+    line-height: 1.6em;
+    width: 90%;
+    margin: -1em 0 0 .8em;
+    padding: 0.8em;
+}
 
 code {
     font-family: triplicate, monospace;
