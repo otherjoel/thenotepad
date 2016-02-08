@@ -2,13 +2,13 @@
 
 ◊(define-meta title "Formatting and Typesetting your Book in MS Word")
 ◊(define-meta published "2012-03-12")
-◊(define-meta tags "typography,word,books,writing")
+◊(define-meta tags "Typography,Word")
 
-◊h3[#:id "format-your-page-and-text-block"]{Format your page and text block}
+You can actually get some good-quality typesetting from Microsoft Word if you just change a few options.
 
 It starts with your page size. If you are self-publishing with a service like Lulu or CreateSpace, you select the size of your book, and this will give you a set of constraints (margins, etc.) to start with. Your page size and maximum margins will generally determine roughly how wide your text block can be.
 
-Next, you want to find a matching set of values for your final font size, line height, and line width. The method I’m going to give you here is based on the fact that there is a set of ideal proportions between font size, line height, and line width, that give maximum readability and aesthetic appeal. See ◊link["http://www.pearsonified.com/2011/12/golden-ratio-typography.php"]{this article about golden ratio typography} for more information.
+Next, you want to find a matching set of values for your final font size, line height, and line width. The method I’m going to give you here is based on one possible set of proportions between font size, line height, and line width. See ◊link["http://www.pearsonified.com/2011/12/golden-ratio-typography.php"]{this article about golden ratio typography} for more information.
 
 ◊ol{
 ◊li{Take the width of your text block in inches and multiply by 72. This tells you how many “points” there are in one line of text.}
@@ -18,9 +18,7 @@ Next, you want to find a matching set of values for your final font size, line h
 
 You may need to reiterate a few times until you get a matching set of numbers that fit well on your page and do not need too much rounding.
 
-◊h3[#:id "configure-words-typesetting"]{Configure Word’s typesetting}
-
-You can actually get book-quality typesetting from Word if you just change a few options.
+◊h2[#:id "configure-words-typesetting"]{Configure Word’s typesetting}
 
 A couple of points about paragraph formatting:
 
@@ -30,7 +28,7 @@ A couple of points about paragraph formatting:
 ◊li{Paragraphs should have a first-line indent of the width of about 2 or 3 characters, but only where two or more paragraphs are joined together: the first paragraph of any group of paragraphs should have no first-line indent. (This could be a pain to manage; I tend to handle it by making all paragraphs indented by default, then going back and manually removing the indent from first paragraphs at some later stage in the editing.)}
 }
 
-Make sure the following settings are enabled under the “Compatibility” options. To get to these options, click on the circular “Office Button” in the upper left corner, and then click ◊code{Word Options} at the very bottom of the menu. Then click ◊code{Advanced}, scroll down to the bottom of that section, and click the ◊code{+} next to ◊code{Layout Options}. On older versions, click the ◊code{Tools} menu, then ◊code{Options} (or ◊code{Edit} → ◊code{Preferences} on a Mac) then click the ◊code{Compatibility} tab.
+Make sure the following settings are enabled under the “Compatibility” options. To get to these options, click on the circular “Office Button” in the upper left corner, and then click ◊noun{Word Options} at the very bottom of the menu. Then click ◊noun{Advanced}, scroll down to the bottom of that section, and click the ◊noun{+} next to ◊noun{Layout Options}. On older versions, click the ◊noun{Tools} menu, then ◊noun{Options} (or ◊noun{Edit} → ◊noun{Preferences} on a Mac) then click the ◊noun{Compatibility} tab.
 
 ◊ul{
 ◊li{Put a check next to “Do full justification like WordPerfect 6.x for Windows.” This allows justified text to contract as well as expand, making the automatic adjustments look a lot better.}
@@ -39,7 +37,7 @@ Make sure the following settings are enabled under the “Compatibility” optio
 ◊li{“Suppress ‘Space Before’ after a hard page or column break.”}
 }
 
-Configure Word’s hyphenation settings. On the toolbar, click the ◊code{Page Layout} tab, then ◊code{Hyphenation} drop-down button → ◊code{Hyphenation Options}. (On older versions, click ◊code{Tools} menu → ◊code{Language} → ◊code{Hyphenation}.)
+Configure Word’s hyphenation settings. On the toolbar, click the ◊noun{Page Layout} tab, then ◊noun{Hyphenation} drop-down button → ◊noun{Hyphenation Options}. (On older versions, click ◊noun{Tools} menu → ◊noun{Language} → ◊noun{Hyphenation}.)
 
 ◊ul{
 ◊li{Put a check next to “Automatically hyphenate document.”}
@@ -50,8 +48,8 @@ Configure Word’s hyphenation settings. On the toolbar, click the ◊code{Page 
 Finally, enable ligatures. If your font is of good quality and has alternates for character combinations like fi and ffi, this will tell Word to use them automatically. This can only be done in MS Word 2010 or later.
 
 ◊ul{
-◊li{Open the ◊code{Font} settings window. You can do this by selecting some text, right-clicking and selecting ◊code{Font} from the menu, but I recommend setting this up in whatever “style” you use for your body text (e.g., “Normal”): ◊code{Home} tab, right click the style, select ◊code{Modifiy}, then ◊code{Format} button → ◊code{Font}.}
-◊li{Click the ◊code{Advanced} tab, then next to the ◊code{Ligatures} option, select ◊code{Standard Only}.}
+◊li{Open the ◊noun{Font} settings window. You can do this by selecting some text, right-clicking and selecting ◊noun{Font} from the menu, but I recommend setting this up in whatever “style” you use for your body text (e.g., “Normal”): ◊noun{Home} tab, right click the style, select ◊noun{Modifiy}, then ◊noun{Format} button → ◊noun{Font}.}
+◊li{Click the ◊noun{Advanced} tab, then next to the ◊noun{Ligatures} option, select ◊noun{Standard Only}.}
 }
 
 ◊h3[#:id "sources"]{Sources}

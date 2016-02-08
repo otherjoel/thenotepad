@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Fix severe delays when loading Excel 2003 files from network drives")
 ◊(define-meta published "2012-06-01")
-◊(define-meta tags "excel,autocad,office")
+◊(define-meta tags "Excel,AutoCAD")
 
 I was recently made aware of a problem where Excel 2003 would take several minutes to load a spreadsheet from a network drive. What made it even worse was that several of these sheets were referenced inside a CAD drawing (meaning AutoCAD would open Excel in the background for each spreadsheet referenced), and the load delay for each individual spreadsheet made it was near-impossible for the drawing to ◊emph{ever} finish loading.
 

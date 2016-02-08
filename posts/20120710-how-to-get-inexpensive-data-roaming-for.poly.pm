@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How To Get Inexpensive Data Roaming For International Travel on Verizon")
 ◊(define-meta published "2012-07-10")
-◊(define-meta tags "blackberry,roaming,travel,verizon,data (cell phone),iphone,android,smartphones")
+◊(define-meta tags "Travel,Verizon,cell phone data")
 
 ◊strong{Update, Sep 17 2012:} Also read this excellent article: ◊link["http://duncandavidson.com/blog/2012/09/which_iphone5"]{Which iPhone 5 for a Global Traveller?}
 
@@ -41,7 +41,7 @@ Either way, here’s how to make sure you don’t use up your “cheap” data:
 ◊li{Don’t stream any music when not on wifi (Spotify, Pandora, iCloud, Amazon, etc.)}
 ◊li{If you’ll need maps during the day, look them up ahead of time while on wifi, making sure to zoom in and out to download the tiles at various zoom levels}
 ◊li{(For iPhone users) Turn off Push for email — instead set it to Fetch Hourly (or Fetch Manually).
-Go to ◊code{Settings} — ◊code{Mail, Contacts, Calendars} — ◊code{Fetch New Data}, turn off the Push option and set the frequency to Hourly or Manually.}
+Go to ◊noun{Settings} — ◊noun{Mail, Contacts, Calendars} — ◊noun{Fetch New Data}, turn off the Push option and set the frequency to Hourly or Manually.}
 }
 
 ◊h2{What about the inconvenient and totally free method?}
@@ -50,7 +50,7 @@ Depending on your phone, it’s possible that you ◊emph{may} be able to avoid 
 
 When your phone is connected to a network of any kind, it is constantly “sipping” data. True, it’s a miniscule amount, but as soon as it sips even one kilobyte while you’re out of the country, you get that $25 charge for a block of 100MB of roaming data.
 
-On an iPhone, you need to turn off cellular data under ◊code{Settings} → ◊code{General} → ◊code{Network}. (Turning off “Data Roaming” will ◊emph{not} work — it’s notoriously unreliable.) Another option, if you want to avoid voice roaming charges as well, is to turn on Airplane Mode and then re-enable WiFi. Remember you can’t place or take any cellular calls in Airplane Mode, but you could use Skype or FaceTime to make calls while connected to WiFi.
+On an iPhone, you need to turn off cellular data under ◊noun{Settings} → ◊noun{General} → ◊noun{Network}. (Turning off “Data Roaming” will ◊emph{not} work — it’s notoriously unreliable.) Another option, if you want to avoid voice roaming charges as well, is to turn on Airplane Mode and then re-enable WiFi. Remember you can’t place or take any cellular calls in Airplane Mode, but you could use Skype or FaceTime to make calls while connected to WiFi.
 
 The catch with this method is that it can never actually eliminate your risk. Unforeseen circumstances can very easily require you to grab an email or place a call when you’re not near wifi, and even if it’s technically possible to change your phone’s settings back and forth in just the right ways, you always risk slipping up even for a second and incurring that $25 charge. Personally I’d much rather be realistic and plan ahead so I can be flexible without breaking the bank. For short trips especially, I really don’t believe it’s worth the mental hassle, unless you want to take the challenge as sort of a game with yourself.
 

@@ -6,11 +6,11 @@
 
 Recently my iPhone 4S suddenly began exhibiting symptoms of the famous ◊link["http://www.loopinsight.com/2011/11/02/apple-confirms-battery-life-issues-in-ios-5/"]{“hot battery drain” problem}, where the phone would become much warmer to the touch then normal, the battery would drain more quickly, and the phone would charge much more slowly than normal.
 
-It’s been known for some time now that this is often an iOS 5 bug caused by a contact sync process that gets out of hand◊link["#fn:1"]{1}. In the process of fixing this problem for myself, I discovered an alternative to ◊link["http://lifehacker.com/5859854/how-to-set-up-gmail-google-calendar-and-google-contacts-on-ios"]{the commonly-used practice of using an extra Exchange account for syncing Gmail contacts}. This new setup has dramatically increased my battery life even beyond what it was before I started having the battery drain issue.
+It’s been known for some time now that this is often an iOS 5 bug caused by a contact sync process that gets out of hand◊numbered-note{No one seems to be sure why, however. The ◊link["http://www.macworld.com/article/1163200/troubleshoot_iphone4s_battery.html"]{most extensive troubleshooting that has been made public} seems to leave a lot of unanswered questions.}. In the process of fixing this problem for myself, I discovered an alternative to ◊link["http://lifehacker.com/5859854/how-to-set-up-gmail-google-calendar-and-google-contacts-on-ios"]{the commonly-used practice of using an extra Exchange account for syncing Gmail contacts}. This new setup has dramatically increased my battery life even beyond what it was before I started having the battery drain issue.
 
 ◊strong{Note:} I use Gmail, and I like all my contacts to be available from there. These instructions are thus somewhat Gmail-centric, but you should be able to improve your battery life by following the general principles shown. If you have tips for other email/contact setups, please let us all know in the comments.
 
-First, solve the battery drain issue. The following steps solved the problem for me◊link["#fn:2"]{2}:
+First, solve the battery drain issue. The following steps solved the problem for me◊numbered-note{I based this off of ◊link["https://discussions.apple.com/thread/2481216?start=0&tstart=0"]{this thread at Apple support} — they seem to work even though they were posted as a solution to a similar problem that was before iOS 5}:
 
 ◊ol{
 ◊li{Remove all the messaging accounts on your phone, including iCloud. Remove all Calendars, Contacts, Notes and Bookmarks from the phone (so you don’t have duplicates when you re-add the accounts later).}
@@ -23,25 +23,17 @@ You now have a blank slate: no email, calendars, or contacts. A blank slate mean
 ◊ol{
 ◊li{Re-add your iCloud account. Wait long enough for contacts and calendars to sync, check to make sure.}
 ◊li{Re-add your Gmail account ◊emph{as a Gmail account}. This means it will only pull in mail (and calendar), not contacts.}
-◊li{Clean up your Gmail contacts by opening your contacts in Gmail (i.e., open the website on your computer), clicking the ◊code{More} button at the top, and clicking ◊code{Find and merge duplicates...}}
+◊li{Clean up your Gmail contacts by opening your contacts in Gmail (i.e., open the website on your computer), clicking the ◊noun{More} button at the top, and clicking ◊noun{Find and merge duplicates...}}
 ◊li{Purchase the ◊link["http://itunes.apple.com/us/app/contacts-sync-for-google-gmail/id451691288?mt=12"]{Contacts Sync For Google GMail} app. Yes it’s $4.99. It’s worth it.}
 ◊li{Run the app, making sure to read the User Guide to make sure it will be syncing contacts the way you want it to. (I used 2-way, so all my contacts live in both my iCloud and my Gmail accounts.)}
-◊li{Finally, go to the Settings app, and go to the ◊code{Mail, Contacts, Calendars} section. Click on ◊code{Fetch New Data}. Make sure ◊code{Push} is turned ◊strong{off}, and select the ◊code{Hourly} fetch schedule.}
+◊li{Finally, go to the Settings app, and go to the ◊noun{Mail, Contacts, Calendars} section. Click on ◊noun{Fetch New Data}. Make sure ◊noun{Push} is turned ◊strong{off}, and select the ◊noun{Hourly} fetch schedule.}
 }
 
 Now you have all your contacts synced by an app that knows how to do its job better than iOS does (seriously, check out the reviews), and you have an email connection that is lightweight and uses minimal battery life.
 
 For what it’s worth, I also have an Exchange account for work that syncs mail, contacts, calendars and reminders — also on the hourly fetch schedule.
 
-◊strong{Wait, won’t there be a big delay for receiving emails this way?} No, not really. The fact is that whenever you open an email inbox in the Mail app, your iPhone instantly re-checks the account for new mail anyway. The Fetch setting only limits the background checking that the phone does when you’re not looking, so setting it to hourly just means the red “new email” number on the Mail icon won’t update itself more than once an hour◊link["#fn:3"]{3}. You can always get an up-to-the-minute check by just opening the Mail app.
-
-◊hr{}
-
-◊ol{
-◊li{No one seems to be sure why, however. The ◊link["http://www.macworld.com/article/1163200/troubleshoot_iphone4s_battery.html"]{most extensive troubleshooting that has been made public} seems to leave a lot of unanswered questions. ◊link["#fnref:1"]{↩}}
-◊li{I based this off of ◊link["https://discussions.apple.com/thread/2481216?start=0&tstart=0"]{this thread at Apple support} — they seem to work even though they were posted as a solution to a similar problem that was before iOS 5. ◊link["#fnref:2"]{↩}}
-◊li{Seriously, how often do you really need to check your email? More than once an hour and I’d say you have serious productivity issues. ◊link["#fnref:3"]{↩}}
-}
+◊strong{Wait, won’t there be a big delay for receiving emails this way?} No, not really. The fact is that whenever you open an email inbox in the Mail app, your iPhone instantly re-checks the account for new mail anyway. The Fetch setting only limits the background checking that the phone does when you’re not looking, so setting it to hourly just means the red “new email” number on the Mail icon won’t update itself more than once an hour◊numbered-note{Seriously, how often do you really need to check your email? More than once an hour and I’d say you have serious productivity issues.}. You can always get an up-to-the-minute check by just opening the Mail app.
 
 ◊h2[#:id "comments"]{Comments}
 
@@ -59,11 +51,11 @@ Yes! THANK YOU! This was perfect and fixed my problem, along with getting all my
 
 (Comment posted September 13, 2012)
 
-◊h3[#:id "joseph-dcruz-said"]{◊link["https://www.blogger.com/profile/10707415689731186668"]{Joseph D&#39;Cruz} said:}
+◊h3[#:id "joseph-dcruz-said"]{◊link["https://www.blogger.com/profile/10707415689731186668"]{Joseph D’Cruz} said:}
 
 Google have just added the CardDAV protocol to their Google Contacts service, which means you can directly sync iOS devices with your Google contacts. There are instructions on the Google support site here:
 
-http://support.google.com/mail/bin/answer.py?hl=en&amp;answer=2753077
+◊link["http://support.google.com/mail/bin/answer.py?hl=en&amp;answer=2753077"]
 
 (Comment posted September 27, 2012)
 

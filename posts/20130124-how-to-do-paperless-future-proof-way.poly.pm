@@ -7,9 +7,9 @@
 The short version:
 
 ◊ul{
-◊li{Get a ◊link["http://www.amazon.com/gp/product/B008ASBFM6/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B008ASBFM6&linkCode=as2&tag=thloya-20"]{Doxie One scanner}. For (optional) convenience, get an ◊link["http://www.amazon.com/gp/product/B003DV4234/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B003DV4234&linkCode=as2&tag=thloya-20"]{Eye-Fi SD card} for $35, which will send documents from the scanner to your computer wirelessly and automatically.
+◊li{Get a ◊amazon["B008ASBFM6"]{Doxie One scanner}. For (optional) convenience, get an ◊amazon["B003DV4234"]{Eye-Fi SD card} for $35, which will send documents from the scanner to your computer wirelessly and automatically.
 
-◊strong{Update:} If you want to cut your scanning time by more than half, spend a few bucks more and get the ◊link["http://www.amazon.com/gp/product/B00671E4B2/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B00671E4B2&linkCode=as2&tag=thloya-20"]{Canon P-215 scanner} (as ◊link["http://thewirecutter.com/reviews/the-best-portable-scanner-is-the-canon-p-215/"]{recommended} by The Wirecutter). It scans twice as fast, it scans both sides of the page at the same time, it has a document feeder, and it has built-in OCR.}
+◊strong{Update:} If you want to cut your scanning time by more than half, spend a few bucks more and get the ◊amazon["B00671E4B2"]{Canon P-215 scanner} (as ◊link["http://thewirecutter.com/reviews/the-best-portable-scanner-is-the-canon-p-215/"]{recommended} by The Wirecutter). It scans twice as fast, it scans both sides of the page at the same time, it has a document feeder, and it has built-in OCR.}
 ◊li{Scan your documents to your hard drive. Put them all in one big folder. If you want, use the OCR option in Doxie’s software to make your PDFs searchable.}
 ◊li{Date and tag the documents: use this format for filenames:
 ◊code{[year]-[month] name of document #tag1 #tag2 #tag3.pdf}}
@@ -24,7 +24,7 @@ No subscriptions. No extra software. Guaranteed to be stay portable and useful f
 
 ◊h2[#:id "why-the-hashtags-what-about-folders"]{Why the hashtags? What about folders?}
 
-◊margin-note{This is a marginal note. One never knows if it is going to end up in the right place, but an empirical test is possible.} Using ◊code{#tags #like #this} in the filename is a universal tagging mechanism. It works on Mac OS and on Windows, and the searches on those systems will have no problem finding your files.
+Using ◊code{#tags #like #this} in the filename is a universal tagging mechanism. It works on Mac OS and on Windows, and the searches on those systems will have no problem finding your files.
 
 Sticking files in a folder hierarchy is a poor way of filing that is on its way out. For example, what do you do if a document is both medical and tax-related in nature? Do you create a ◊code{Taxes → Medical} folder structure, or ◊code{Medical → Taxes}?
 

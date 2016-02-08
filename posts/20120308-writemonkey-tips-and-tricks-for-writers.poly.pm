@@ -2,15 +2,15 @@
 
 ◊(define-meta title "WriteMonkey: Tips and Tricks for Writers")
 ◊(define-meta published "2012-03-08")
-◊(define-meta tags "markdown,writemonkey,text-editing")
+◊(define-meta tags "Markdown,WriteMonkey,text editing")
 
 I use WriteMonkey for almost all my writing. It’s the best Windows-based text editor I have found for writing prose (as opposed to programming code).
 
-WriteMonkey is extremely ◊link["http://daringfireball.net/projects/markdown/"]{Markdown}-friendly — useful if, for example, like me you ◊link["http://notely.blogspot.com/2011/08/how-to-use-markdown-in-blogspot-posts.html"]{write all your blog posts in Markdown format}.
+WriteMonkey is extremely ◊link["http://daringfireball.net/projects/markdown/"]{Markdown}-friendly — useful if, for example, like me you ◊link["20110818-how-to-use-markdown-in-blogspot-posts.html"]{write all your blog posts in Markdown format}.
 
 Not all of WriteMonkey’s features are well-explained or documented, so I’m writing them up here.
 
-◊h3[#:id "configure-markdown-features"]{Configure Markdown features}
+◊h2[#:id "configure-markdown-features"]{Configure Markdown features}
 
 ◊ul{
 ◊li{Markdown highlighting will not work unless you have Markdown set as your “Markup Standard” — set this in the ◊code{Print & Export} section of your Preferences screen.}
@@ -23,14 +23,14 @@ Not all of WriteMonkey’s features are well-explained or documented, so I’m w
 }}
 }
 
-◊h3[#:id "some-undocumented-features-i-found-by-accident"]{Some undocumented features I found by accident}
+◊h2[#:id "some-undocumented-features-i-found-by-accident"]{Some undocumented features I found by accident}
 
 ◊ul{
 ◊li{You can toggle whether WM will use normal quotes or “smart quotes” with ◊code{CTRL+SHIFT+'} (apostrophe).}
 ◊li{Out of the box: type ◊code{/now} to insert the timestamp. You can format this timestamp in the Preferences screen.}
 }
 
-◊h3[#:id "use-writemonkey-to-write-your-book"]{Use WriteMonkey to write your book}
+◊h2[#:id "use-writemonkey-to-write-your-book"]{Use WriteMonkey to write your book}
 
 WriteMonkey has a number of great features for writers:
 
@@ -62,7 +62,7 @@ Let us know of any additional tips in the comments!
 
 ◊h3[#:id "kabi-park-said"]{◊link["https://www.blogger.com/profile/06871116148520330540"]{Kabi Park} said:}
 
-I like writing using ◊link["https://draftin.com/"]{Draft} which is online editor and supporting markdown &amp; version control instead of WriteMonkey.
+I like writing using ◊link["https://draftin.com/"]{Draft} which is online editor and supporting markdown & version control instead of WriteMonkey.
 
 (Comment posted April 02, 2013)
 
