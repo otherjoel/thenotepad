@@ -34,6 +34,7 @@ body {
     line-height: 1.5em;
     padding: 1.5em;
     margin: 0 auto;
+    counter-reset: sidenote-counter;
 }
 @media (min-width: 749px) {
     body {
@@ -202,10 +203,10 @@ p + p.pause-before, ul + p.pause-before, ol + p.pause-before, blockquote + p.pau
     margin-top: 3.9em;
 }
 
-figure { margin: 1.5em 0; padding: 0; }
+figure { margin: 1.5em 0; padding: 0; width: 100%; text-align: center;}
 figure img {
+    margin: 0 auto;
     max-width: 100%;
-    margin: 0;
 }
 
 blockquote:before {
@@ -305,6 +306,19 @@ pre.code {
     color: navy;
 }
 
+.updateBox {
+    background: white;
+    position: relative;
+    margin: 20px;
+    padding: 0 0.5em;
+    box-shadow:
+        0 0 0 5px hsl(200, 100%, 60%),
+        0 0 0 10px hsl(200, 100%, 70%),
+        0 0 0 15px hsl(200, 100%, 80%),
+        0 0 0 20px hsl(200, 100%, 90%);
+}
+.updateBox p:first-child { margin-bottom: 0em; }
+
 .sidenote, .marginnote {
     float: right;
     clear: right;
@@ -392,6 +406,25 @@ label.margin-toggle:not(.sidenote-number) {
         width: 100%;
     }
 }
+
+.latex-sub, .latex-sup { text-transform: uppercase;
+                         font-size: smaller;
+                         position: relative; }
+
+.latex-sub { top: 0.2rem;
+             margin-left: -2px;
+             margin-right: 0; }
+
+.latex-sup { top: -0.3rem;
+             margin-left: -2px;
+             margin-right: -1px;
+             text-shadow: none; }
+
+.latex::selection, .latex span:not(.latex-sup)::selection { text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
+                    background: #b4d5fe; }
+
+.latex::-moz-selection, .latex span:not(.latex-sup)::-moz-selection { text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
+                         background: #b4d5fe; }
 
 @font-face {
     font-family: triplicate;

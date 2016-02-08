@@ -202,6 +202,14 @@ handle it at the Pollen processing level.
            (span [[class "twTimeStamp"]] (a [[href ,tweet-link]] ,tweet-time)))
         ,@contents)]))
 
+(define (updatebox d . contents)
+  (case (current-poly-target)
+    [(ltx pdf) `(txt ,@contents)]
+    [else
+      `(div [[class "updateBox"]]
+            (p (b (span [[class "smallcaps"]] "Update, " ,d)))
+            ,@contents)]))
+
 (define (p . words)
   (case (current-poly-target)
     [(ltx pdf) `(txt ,@words)]
