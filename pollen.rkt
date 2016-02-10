@@ -144,7 +144,7 @@ handle it at the Pollen processing level.
 (define (latex-no-hyperlinks-in-margin txpr)
   ; First define a local function that will transform each ◊hyperlink
   (define (cleanlinks inline-tx)
-      (if (eq? 'hyperlink (get-tag inline-tx))
+      (if (eq? 'link (get-tag inline-tx))
         `(txt ,@(cdr (get-elements inline-tx))
               ; Return the text with the URI in parentheses
               " (\\url{" ,(ltx-escape-str (car (get-elements inline-tx))) "})")
@@ -177,7 +177,16 @@ handle it at the Pollen processing level.
 (define (tweet #:id tweet-id #:handle tweeter #:realname tweeter-IRL
                #:permlink tweet-link #:timestamp tweet-time . contents)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "Tweet: " ,@contents)]
+    [(ltx pdf)
+     (define (zap-links t)
+       (if (and (txexpr? t) (equal? 'link (get-tag t))) (get-elements t) t))
+
+     `(txt "\\begin{quote}"
+                     ,@(map zap-links contents)
+                     "\n\\attrib{" ,tweeter-IRL " (@" ,tweeter
+                     "), \\href{" ,tweet-link "}{" ,tweet-time "}}"
+
+                     "\\end{quote}")]
     [else
       `(blockquote [[id ,(string-append "t" tweet-id)] [class "tweet"]]
         (div [[class "twContent"]] ,@contents)
@@ -194,7 +203,7 @@ handle it at the Pollen processing level.
 (define (retweet #:id tweet-id #:handle tweeter #:realname tweeter-IRL
                #:permlink tweet-link #:timestamp tweet-time . contents)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "Tweet: " ,@contents)]
+    [(ltx pdf) `(txt "\n\n(@" ,tweeter ", " ,tweet-time ": " ,@contents)]
     [else
       `(blockquote [[class "retweet"]]
         (p [[class "twRetweetMeta"]] (b ,tweeter-IRL)
@@ -209,6 +218,18 @@ handle it at the Pollen processing level.
       `(div [[class "updateBox"]]
             (p (b (span [[class "smallcaps"]] "Update, " ,d)))
             ,@contents)]))
+
+(define (comment #:author author #:datetime comment-date #:authorlink author-url . comment-text)
+  (case (current-poly-target)
+    [(ltx pdf) `(txt "\\begin {quote}" ,@comment-text
+                     "\n\\attrib{" ,author ", " ,comment-date "}"
+                     "\\end{quote}")]
+    [else `(div [[class "comment-box"]]
+                (p [[class "comment-meta"]]
+                   (span [[class "comment-name"]]
+                         (a [[href ,author-url]] ,author))
+                   (span [[class "comment-time"]] ,comment-date))
+                ,@comment-text)]))
 
 (define (p . words)
   (case (current-poly-target)
@@ -240,12 +261,16 @@ handle it at the Pollen processing level.
     [(ltx pdf) `(txt "\\begin{center}" ,@words "\\end{center}")]
     [else `(div [[style "text-align: center"]] ,@words)]))
 
-(define (section title . text)
+(define (section title)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\section*{" ,title "}"
-                 "\\label{sec:" ,title ,(symbol->string (gensym)) "}"
-                 ,@text)]
-    [else `(section (h2 ,title) ,@text)]))
+    [(ltx pdf) `(txt "\\section{" ,title "}"
+                 "\\label{sec:" ,title ,(symbol->string (gensym)) "}")]
+    [else `(h2 ,title)]))
+
+(define (subsection title)
+  (case (current-poly-target)
+    [(ltx pdf) `(txt "\\subsection{" ,title "}")]
+    [else `(h3 ,title)]))
 
 (define (index-entry entry . text)
   (case (current-poly-target)
