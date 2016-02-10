@@ -13,13 +13,13 @@ Here is a pic of Quick Media Converter’s main screen, with some annotation:
 ◊figure["/img/image2.jpg"]{Quick Media Converter}
 
 ◊ol{
-◊li{Click the DivX button (1) and select the “Win Media Player Compatible” option.}
-◊li{Drag and drop your MOV movie clip file into the file list area (2)}
-◊li{Click the (i) button (3) to display information about the clip in the pane at right (5)}
-◊li{Click the folder button (4) and select a place to save the converted file (e.g., My Documents)}
-◊li{In the file information area (5) scroll down until you see Width and Height information, as shown. Ideally this should be 640x480 but if not it’s not a dealbreaker :)}
-◊li{If necessary, change the output width and height numbers (6) to match the numbers in the info area (5)}
-◊li{Click the convert button (7).}
+◊item{Click the DivX button (1) and select the “Win Media Player Compatible” option.}
+◊item{Drag and drop your MOV movie clip file into the file list area (2)}
+◊item{Click the (i) button (3) to display information about the clip in the pane at right (5)}
+◊item{Click the folder button (4) and select a place to save the converted file (e.g., My Documents)}
+◊item{In the file information area (5) scroll down until you see Width and Height information, as shown. Ideally this should be 640x480 but if not it’s not a dealbreaker :)}
+◊item{If necessary, change the output width and height numbers (6) to match the numbers in the info area (5)}
+◊item{Click the convert button (7).}
 }
 
 The program will then convert and drop an AVI file into your selected folder, for use in the editing software of your choice!

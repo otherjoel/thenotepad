@@ -7,15 +7,15 @@
 The short version:
 
 ◊ul{
-◊li{Get a ◊amazon["B008ASBFM6"]{Doxie One scanner}. For (optional) convenience, get an ◊amazon["B003DV4234"]{Eye-Fi SD card} for $35, which will send documents from the scanner to your computer wirelessly and automatically.
+◊item{Get a ◊amazon["B008ASBFM6"]{Doxie One scanner}. For (optional) convenience, get an ◊amazon["B003DV4234"]{Eye-Fi SD card} for $35, which will send documents from the scanner to your computer wirelessly and automatically.
 
 ◊strong{Update:} If you want to cut your scanning time by more than half, spend a few bucks more and get the ◊amazon["B00671E4B2"]{Canon P-215 scanner} (as ◊link["http://thewirecutter.com/reviews/the-best-portable-scanner-is-the-canon-p-215/"]{recommended} by The Wirecutter). It scans twice as fast, it scans both sides of the page at the same time, it has a document feeder, and it has built-in OCR.}
-◊li{Scan your documents to your hard drive. Put them all in one big folder. If you want, use the OCR option in Doxie’s software to make your PDFs searchable.}
-◊li{Date and tag the documents: use this format for filenames:
+◊item{Scan your documents to your hard drive. Put them all in one big folder. If you want, use the OCR option in Doxie’s software to make your PDFs searchable.}
+◊item{Date and tag the documents: use this format for filenames:
 ◊code{[year]-[month] name of document #tag1 #tag2 #tag3.pdf}}
-◊li{Get an ◊link["http://www.amazon.com/gp/bestsellers/office-products/1069596/?ie=UTF8&camp=1789&creative=390957&linkCode=ur2&tag=thloya-20"]{expanding file jacket}. Put all your important papers in there and out of the way, and scan them all once every quarter or so (I usually do my scans once a year just before I do my taxes).}
-◊li{Shred the original documents.}
-◊li{Keep backups.}
+◊item{Get an ◊link["http://www.amazon.com/gp/bestsellers/office-products/1069596/?ie=UTF8&camp=1789&creative=390957&linkCode=ur2&tag=thloya-20"]{expanding file jacket}. Put all your important papers in there and out of the way, and scan them all once every quarter or so (I usually do my scans once a year just before I do my taxes).}
+◊item{Shred the original documents.}
+◊item{Keep backups.}
 }
 
 When you want to run a search, open your archive folder and run a search. Need all tax-related documents for last year? Search for ◊code{2012 #taxes}.
@@ -37,9 +37,9 @@ There have been a ◊link["http://shawnblanc.net/2012/09/the-paperless-puzzel/"]
 I agree it must be nice to have someone else run OCR on my documents and host them for me. But let’s look at the drawbacks:
 
 ◊ul{
-◊li{I have to pay someone else $60 a year in case I need to perform occasional full-text searches on my own documents.}
-◊li{Long-term uncertainty. Will Evernote be around in 10 years? 20 years? How do I know I’ll be able to get my massive archive back out again when they go out of business?}
-◊li{Handing off responsibility for your sensitive documents to someone else’s computers — this is just asking for trouble. Data corruption, security breaches, warrantless searches. Over the next 10 years, it’s almost a given that your hosted service of choice will be hit by at least one of them.}
+◊item{I have to pay someone else $60 a year in case I need to perform occasional full-text searches on my own documents.}
+◊item{Long-term uncertainty. Will Evernote be around in 10 years? 20 years? How do I know I’ll be able to get my massive archive back out again when they go out of business?}
+◊item{Handing off responsibility for your sensitive documents to someone else’s computers — this is just asking for trouble. Data corruption, security breaches, warrantless searches. Over the next 10 years, it’s almost a given that your hosted service of choice will be hit by at least one of them.}
 }
 
 ◊h2[#:id "comments"]{Comments}

@@ -6,10 +6,10 @@
 Recently at the office we started having major network issues:
 
 ◊ul{
-◊li{On my own computer, the problem surfaced as a ◊code{DNS_PROBE_FINISHED} error when I tried to load any websites in Chrome (sometimes instead the error would be ◊code{DNS_PROBE_STARTED} or ◊code{DNS_PROBE_NXDOMAIN}).}
-◊li{I would then open up my command prompt and attempt to ◊code{ping google.com} --- sometimes this would result in ◊code{unable to find google.com} and sometimes it would find a specific IP address to try but none of the pings would go through.}
-◊li{I also tried ◊code{ping 8.8.8.8} (Google's DNS servers) or ◊code{ping 75.75.75.75} (Comcast DNS) --- interestingly, the first 4-6 pings would fail, and then the rest would go through reliably at about 10ms every time thereafter.}
-◊li{Ping traffic between any two points within the LAN (including the firewall) was completely unaffected.}
+◊item{On my own computer, the problem surfaced as a ◊code{DNS_PROBE_FINISHED} error when I tried to load any websites in Chrome (sometimes instead the error would be ◊code{DNS_PROBE_STARTED} or ◊code{DNS_PROBE_NXDOMAIN}).}
+◊item{I would then open up my command prompt and attempt to ◊code{ping google.com} --- sometimes this would result in ◊code{unable to find google.com} and sometimes it would find a specific IP address to try but none of the pings would go through.}
+◊item{I also tried ◊code{ping 8.8.8.8} (Google's DNS servers) or ◊code{ping 75.75.75.75} (Comcast DNS) --- interestingly, the first 4-6 pings would fail, and then the rest would go through reliably at about 10ms every time thereafter.}
+◊item{Ping traffic between any two points within the LAN (including the firewall) was completely unaffected.}
 }
 
 ◊h2[#:id "troubleshooting"]{Troubleshooting}

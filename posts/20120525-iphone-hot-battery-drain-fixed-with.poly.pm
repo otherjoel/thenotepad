@@ -13,20 +13,20 @@ It’s been known for some time now that this is often an iOS 5 bug caused by a 
 First, solve the battery drain issue. The following steps solved the problem for me◊numbered-note{I based this off of ◊link["https://discussions.apple.com/thread/2481216?start=0&tstart=0"]{this thread at Apple support} — they seem to work even though they were posted as a solution to a similar problem that was before iOS 5}:
 
 ◊ol{
-◊li{Remove all the messaging accounts on your phone, including iCloud. Remove all Calendars, Contacts, Notes and Bookmarks from the phone (so you don’t have duplicates when you re-add the accounts later).}
-◊li{Power down your phone (the normal way, by holding down the power button and sliding to power off).}
-◊li{Let it cool off, and start it up again.}
+◊item{Remove all the messaging accounts on your phone, including iCloud. Remove all Calendars, Contacts, Notes and Bookmarks from the phone (so you don’t have duplicates when you re-add the accounts later).}
+◊item{Power down your phone (the normal way, by holding down the power button and sliding to power off).}
+◊item{Let it cool off, and start it up again.}
 }
 
 You now have a blank slate: no email, calendars, or contacts. A blank slate means a chance to clean up and streamline.
 
 ◊ol{
-◊li{Re-add your iCloud account. Wait long enough for contacts and calendars to sync, check to make sure.}
-◊li{Re-add your Gmail account ◊emph{as a Gmail account}. This means it will only pull in mail (and calendar), not contacts.}
-◊li{Clean up your Gmail contacts by opening your contacts in Gmail (i.e., open the website on your computer), clicking the ◊noun{More} button at the top, and clicking ◊noun{Find and merge duplicates...}}
-◊li{Purchase the ◊link["http://itunes.apple.com/us/app/contacts-sync-for-google-gmail/id451691288?mt=12"]{Contacts Sync For Google GMail} app. Yes it’s $4.99. It’s worth it.}
-◊li{Run the app, making sure to read the User Guide to make sure it will be syncing contacts the way you want it to. (I used 2-way, so all my contacts live in both my iCloud and my Gmail accounts.)}
-◊li{Finally, go to the Settings app, and go to the ◊noun{Mail, Contacts, Calendars} section. Click on ◊noun{Fetch New Data}. Make sure ◊noun{Push} is turned ◊strong{off}, and select the ◊noun{Hourly} fetch schedule.}
+◊item{Re-add your iCloud account. Wait long enough for contacts and calendars to sync, check to make sure.}
+◊item{Re-add your Gmail account ◊emph{as a Gmail account}. This means it will only pull in mail (and calendar), not contacts.}
+◊item{Clean up your Gmail contacts by opening your contacts in Gmail (i.e., open the website on your computer), clicking the ◊noun{More} button at the top, and clicking ◊noun{Find and merge duplicates...}}
+◊item{Purchase the ◊link["http://itunes.apple.com/us/app/contacts-sync-for-google-gmail/id451691288?mt=12"]{Contacts Sync For Google GMail} app. Yes it’s $4.99. It’s worth it.}
+◊item{Run the app, making sure to read the User Guide to make sure it will be syncing contacts the way you want it to. (I used 2-way, so all my contacts live in both my iCloud and my Gmail accounts.)}
+◊item{Finally, go to the Settings app, and go to the ◊noun{Mail, Contacts, Calendars} section. Click on ◊noun{Fetch New Data}. Make sure ◊noun{Push} is turned ◊strong{off}, and select the ◊noun{Hourly} fetch schedule.}
 }
 
 Now you have all your contacts synced by an app that knows how to do its job better than iOS does (seriously, check out the reviews), and you have an email connection that is lightweight and uses minimal battery life.

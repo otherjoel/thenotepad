@@ -14,8 +14,8 @@ I found the solution in ◊link["http://answers.microsoft.com/en-us/windows/foru
 Assuming the updates-in-question include KB2515325, KB2492386, KB2506928, KB2512715 and/or KB982018, and all is well with your computer otherwise:
 
 ◊ol{
-◊li{Run a manual check for updates per ◊link["http://windows.microsoft.com/en-us/windows7/How-can-I-tell-if-my-computer-is-up-to-date"]{http://windows.microsoft.com/en-us/windows7/How-can-I-tell-if-my-computer-is-up-to-date}}
-◊li{Select (check) only ◊code{KB2515325}, ◊code{KB2492386}, ◊code{KB2506928} and/or ◊code{KB2512715}, and install them; follow all prompts.}
-◊li{Now run another manual check for updates, if necessary, and install ◊code{KB982018} by itself; again, follow all prompts.}
+◊item{Run a manual check for updates per ◊link["http://windows.microsoft.com/en-us/windows7/How-can-I-tell-if-my-computer-is-up-to-date"]{http://windows.microsoft.com/en-us/windows7/How-can-I-tell-if-my-computer-is-up-to-date}}
+◊item{Select (check) only ◊code{KB2515325}, ◊code{KB2492386}, ◊code{KB2506928} and/or ◊code{KB2512715}, and install them; follow all prompts.}
+◊item{Now run another manual check for updates, if necessary, and install ◊code{KB982018} by itself; again, follow all prompts.}
 }
 }

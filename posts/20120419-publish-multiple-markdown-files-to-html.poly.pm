@@ -13,8 +13,8 @@ In order for this script to work, you need to be on Windows, and you need to ◊
 How to use it:
 
 ◊ol{
-◊li{Save a copy of this script file in any folder containing a bunch of Markdown-formatted text files. Include a ◊code{stylesheet.css} file in this folder as well if you want the HTML files to have CSS styling.}
-◊li{Run the script (double-click it) — it will silently create updated HTML files for every text file in the folder. Only text files whose HTML counterparts are out of date or nonexistent will be processed.}
+◊item{Save a copy of this script file in any folder containing a bunch of Markdown-formatted text files. Include a ◊code{stylesheet.css} file in this folder as well if you want the HTML files to have CSS styling.}
+◊item{Run the script (double-click it) — it will silently create updated HTML files for every text file in the folder. Only text files whose HTML counterparts are out of date or nonexistent will be processed.}
 }
 
 You can either copy and paste the code below into Notepad and save it as a ◊code{.vbs} file, or you can ◊link["https://docs.google.com/open?id=0B9SDJ22NRBkrcEgtcWsyMi1pTFU"]{download the latest version} in a zip file. The code in the download will be more extensively commented, and may also contain enhancements developed since this post was written.
@@ -62,6 +62,6 @@ Next}
 Possible Future Improvements:
 
 ◊ul{
-◊li{The script isn’t very helpful about telling you how long the process is going to take. I looked at several options for providing a progress bar or some kind of status output, but ultimately VBScript is just really sucky at this.}
-◊li{Pandoc is a very powerful converter. One could easily tweak the script to add options for producing LaTeX or even PDF files.}
+◊item{The script isn’t very helpful about telling you how long the process is going to take. I looked at several options for providing a progress bar or some kind of status output, but ultimately VBScript is just really sucky at this.}
+◊item{Pandoc is a very powerful converter. One could easily tweak the script to add options for producing LaTeX or even PDF files.}
 }

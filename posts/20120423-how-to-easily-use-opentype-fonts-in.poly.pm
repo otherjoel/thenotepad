@@ -16,10 +16,10 @@ That being understood, here’s how to use your system fonts in your TeX documen
 
 ◊blockquote{
 ◊ol{
-◊li{Use the ◊code{xelatex} command in place of ◊code{pdflatex}}
-◊li{Add ◊code{\usepackage{xltxtra}} at the beginning of your preamble (enables some XeTeX goodies, in particular it also loads fontspec, which is needed for font selection).}
-◊li{Add ◊code{\setmainfont{Name of OTF font}} in the preamble.}
-◊li{No step 4.}
+◊item{Use the ◊code{xelatex} command in place of ◊code{pdflatex}}
+◊item{Add ◊code{\usepackage{xltxtra}} at the beginning of your preamble (enables some XeTeX goodies, in particular it also loads fontspec, which is needed for font selection).}
+◊item{Add ◊code{\setmainfont{Name of OTF font}} in the preamble.}
+◊item{No step 4.}
 }
 }
 

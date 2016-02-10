@@ -9,10 +9,10 @@ When I started this blog it was at ◊link["http://blogger.com"]{Blogger}. I eve
 There are a lot of guides for moving from Blogger to Wordpress, but nothing about moving to any other type of blog. Nearly all of those guides are incomplete, but by adapting and adding to them I was able to achieve all my goals for the move:
 
 ◊ul{
-◊li{Automatically migrate posts with their metadata into Kirby’s text format}
-◊li{Make copies of all images in blog posts so they are included in the move}
-◊li{Retain each blog post’s comments}
-◊li{Automatically redirect posts at the old blog to the new one without loosing Google juice}
+◊item{Automatically migrate posts with their metadata into Kirby’s text format}
+◊item{Make copies of all images in blog posts so they are included in the move}
+◊item{Retain each blog post’s comments}
+◊item{Automatically redirect posts at the old blog to the new one without loosing Google juice}
 }
 
 ◊h2[#:id "migrating-posts-comments-and-images"]{1. Migrating Posts, Comments and Images}
@@ -28,9 +28,9 @@ Place the ◊code{.xml} file exported from Blogger in the same folder as the scr
 The script will create a folder called ◊code{out} containing subfolders for each post. These subfolders are named using a straightforward pattern:
 
 ◊ul{
-    ◊li{Old Blogger URL: ◊code{myblog.blogspot.com/2010/03/my-trip-to-philly.html}}
-    ◊li{blogger2kirby output folder: ◊code{20100317-my-trip-to-philly}}
-    ◊li{Resulting New Kirby URL: ◊code{mysite.com/blog/my-trip-to-philly}}}
+    ◊item{Old Blogger URL: ◊code{myblog.blogspot.com/2010/03/my-trip-to-philly.html}}
+    ◊item{blogger2kirby output folder: ◊code{20100317-my-trip-to-philly}}
+    ◊item{Resulting New Kirby URL: ◊code{mysite.com/blog/my-trip-to-philly}}}
 
 Upload all these folders to the relevant content folder on your Kirby site and they will be available immediately.
 
@@ -86,13 +86,13 @@ Edit the template and past in the following code just before the ◊code{</head>
 This does two things.
 
 ◊ol{
-◊li{It sets a ◊code{link rel="canonical"} tag for each page on your blog listing the new URL for that page on your new site. Several search engines (◊link["https://support.google.com/webmasters/answer/139066?hl=en"]{including Google}) use this tag to update their search results with the new URL instead of the old one. ◊strong{This ensures you continue to get traffic from search engines at the new blog instead of the old one.}}
-◊li{It uses javascript to instantly redirect visitors to a page at your new blog.}
+◊item{It sets a ◊code{link rel="canonical"} tag for each page on your blog listing the new URL for that page on your new site. Several search engines (◊link["https://support.google.com/webmasters/answer/139066?hl=en"]{including Google}) use this tag to update their search results with the new URL instead of the old one. ◊strong{This ensures you continue to get traffic from search engines at the new blog instead of the old one.}}
+◊item{It uses javascript to instantly redirect visitors to a page at your new blog.}
 }
 
 Once you’ve saved this template, any hit to any page on your old blog should magically land you at the new one.
 
 I’d advise leaving the old blog in place for as long as possible (at least a year).
 
-◊updatebox["4 Feb 2016"]{◊ul{◊li{I didn’t stick with Kirby, but this code still came in handy.}
-◊li{Even with that redirect in place, my search traffic (and my ad clicks) ◊emph{totally tanked}.}}}
+◊updatebox["4 Feb 2016"]{◊ul{◊item{I didn’t stick with Kirby, but this code still came in handy.}
+◊item{Even with that redirect in place, my search traffic (and my ad clicks) ◊emph{totally tanked}.}}}

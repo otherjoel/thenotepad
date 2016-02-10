@@ -21,20 +21,20 @@ This evidently happens because ◊code{pagefile.sys}, the file that Windows uses
 Here’s how I cleared it up:
 
 ◊ol{
-◊li{Log in under a local Administrator account. (Do this after each restart in these instructions as well.)}
-◊li{If it’s not already open, open the virtual memory settings by rich-clicking on Computer, → ◊code{Properties} → ◊code{Advanced System Settings} → click the ◊code{Advanced} tab → Under Performance, click ◊code{Settings}, go to ◊code{Advanced} tab, finally under Virtual Memory section click the ◊code{Change} button.}
-◊li{Uncheck the ◊code{Autmatically manage paging file size for all drives} checkbox.}
-◊li{Set a “Custom size” for the paging file on the C drive: 0MB initial, 0MB maximum.}
-◊li{Click OK, close all dialog boxes, and restart your computer.}
-◊li{After logging in again, delete the file ◊code{C:\pagefile.sys}
+◊item{Log in under a local Administrator account. (Do this after each restart in these instructions as well.)}
+◊item{If it’s not already open, open the virtual memory settings by rich-clicking on Computer, → ◊code{Properties} → ◊code{Advanced System Settings} → click the ◊code{Advanced} tab → Under Performance, click ◊code{Settings}, go to ◊code{Advanced} tab, finally under Virtual Memory section click the ◊code{Change} button.}
+◊item{Uncheck the ◊code{Autmatically manage paging file size for all drives} checkbox.}
+◊item{Set a “Custom size” for the paging file on the C drive: 0MB initial, 0MB maximum.}
+◊item{Click OK, close all dialog boxes, and restart your computer.}
+◊item{After logging in again, delete the file ◊code{C:\pagefile.sys}
 
 ◊ol{
-◊li{To do this, you may need to change your folder settings so you can see it first. Open a window of your C: drive and click ◊code{Organize} at the top, then ◊code{Folder and Search Options}}
-◊li{Click the ◊code{View} tab, and make sure ◊code{Show hidden files, folders and drives} is turned on, and that ◊code{Hide protected system files} is ◊strong{not} checked.}
-◊li{Click OK and go back to your C: drive, find ◊code{pagefile.sys} and delete it.}
+◊item{To do this, you may need to change your folder settings so you can see it first. Open a window of your C: drive and click ◊code{Organize} at the top, then ◊code{Folder and Search Options}}
+◊item{Click the ◊code{View} tab, and make sure ◊code{Show hidden files, folders and drives} is turned on, and that ◊code{Hide protected system files} is ◊strong{not} checked.}
+◊item{Click OK and go back to your C: drive, find ◊code{pagefile.sys} and delete it.}
 }}
-◊li{Now go back to the virtual memory settings (see step 2 above) and set the paging file for the C: drive to ◊code{System managed size}, and then make sure the ◊code{Automatically manage paging file size for all drives} checkbox is ◊strong{checked}.}
-◊li{Click OK, close all dialog boxes, and restart your computer.}
+◊item{Now go back to the virtual memory settings (see step 2 above) and set the paging file for the C: drive to ◊code{System managed size}, and then make sure the ◊code{Automatically manage paging file size for all drives} checkbox is ◊strong{checked}.}
+◊item{Click OK, close all dialog boxes, and restart your computer.}
 }
 
 ◊strong{A summary of what this does:} By temporarily turning off virtual memory, you allow yourself to delete the (now-corrupt) paging file. Then when you re-enable virtual memory, Windows automatically builds a new paging file from scratch, and ◊emph{voilà}, problem solved.

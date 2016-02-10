@@ -17,11 +17,11 @@ An icon for the imported movie clip will appear in the upper middle area of Movi
 You can play around with adding music, editing and effects to your movie, or combining multiple clips (by simply repeating the three steps above for each movie clip). However, if your whole movie is in this one clip and you don’t need to edit anything out, then you are essentially ready to save your movie!
 
 ◊ol{
-◊li{Click the ◊strong{Publish Movie} button in the toolbar.}
-◊li{In the next screen choose ◊strong{This Computer} and click Next}
-◊li{Type a unique and super-creative name and location for the saved movie file and click Next}
-◊li{On the ◊emph{Choose settings for your movie} screen, select the ◊strong{Compress to} option. You will need to find the right file size for this option, which is easy. Start with a low size (in MB) and go up, keeping an eye on the “Bit Rate” option at the bottom left of the screen. When it reads 1.8◊margin-note{The 1.8 Mbps number comes from ◊link["http://vimeo.com/help/compression"]{Vimeo’s compression guidelines} for standard definition video.} or 1.9 Mbps, you’ve found the optimum file size .}
-◊li{Click Publish!}
+◊item{Click the ◊strong{Publish Movie} button in the toolbar.}
+◊item{In the next screen choose ◊strong{This Computer} and click Next}
+◊item{Type a unique and super-creative name and location for the saved movie file and click Next}
+◊item{On the ◊emph{Choose settings for your movie} screen, select the ◊strong{Compress to} option. You will need to find the right file size for this option, which is easy. Start with a low size (in MB) and go up, keeping an eye on the “Bit Rate” option at the bottom left of the screen. When it reads 1.8◊margin-note{The 1.8 Mbps number comes from ◊link["http://vimeo.com/help/compression"]{Vimeo’s compression guidelines} for standard definition video.} or 1.9 Mbps, you’ve found the optimum file size .}
+◊item{Click Publish!}
 }
 
 Go to the Vimeo group and upload your newly created movie.

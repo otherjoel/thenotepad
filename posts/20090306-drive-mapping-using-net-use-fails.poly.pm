@@ -13,10 +13,10 @@ I had a user today who couldn’t access our file server over our ◊link["http:
 So evidently, it simply couldn’t find the ◊code{net} program, which is weird, because it is a standard Windows command. The file net.exe was located right where it should be (in ◊code{C:\Windows\system32}). This is where a knowledge of the old ◊link["http://www.operating-system.org/betriebssystem/_english/bs-msdos.htm"]{DOS} days still comes in handy even in the 21st century. DOS had a system setting called the ◊code{PATH}, which told it which folders to look in when the user typed in a command. The ◊code{PATH} ◊link["http://vlaurie.com/computers2/Articles/environment.htm"]{environment variable} persists in Windows’ use of command-line programs to this day, and when the command prompt tells you it can’t recognize a file you know is there, you can be sure the ◊code{PATH} has become messed up somehow. To view and change your ◊code{PATH} setting:
 
 ◊ol{
-◊li{Right-click My Computer and hit properties}
-◊li{Click the Advanced tab}
-◊li{Click the Environment Variables button at the bottom}
-◊li{In the list at the bottom, click on the Path entry}
+◊item{Right-click My Computer and hit properties}
+◊item{Click the Advanced tab}
+◊item{Click the Environment Variables button at the bottom}
+◊item{In the list at the bottom, click on the Path entry}
 }
 
 ◊figure["/img/image1.jpg"]{Environment variables dialog}

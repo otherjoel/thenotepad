@@ -17,9 +17,9 @@ I use/used a ◊amazon["B002VA464S"]{Yeti} on ◊link["http://howellcreekradio.c
 In my experience, you can get a very clean signal with very little background noise from just about any mic if you use the Right Technique. That technique is:
 
 ◊ol{
-    ◊li{Use a pop filter}
-    ◊li{Turn gain on the mic ◊emph{way} down}
-    ◊li{Speak super close to the mic}
+    ◊item{Use a pop filter}
+    ◊item{Turn gain on the mic ◊emph{way} down}
+    ◊item{Speak super close to the mic}
 }
 
 ◊figure["/img/mymicsetup.jpg"]{My super inexpensive, terrible mic setup.}
@@ -33,11 +33,11 @@ Additionally, I run Chris’s Dynamic Compressor plugin on voice tracks after al
 ◊figure["/img/audacity-compress.png"]{My settings for Chris’s Dynamic Compressor}
 
 ◊ul{
-◊li{Compress Ratio: ◊code{0.7}}
-◊li{Compression Hardness: ◊code{0.7}}
-◊li{Floor: ◊code{-14.0}}
-◊li{Noise gate falloff: ◊code{6.0}}
-◊li{Maximum amplitude: ◊code{0.95}}
+◊item{Compress Ratio: ◊code{0.7}}
+◊item{Compression Hardness: ◊code{0.7}}
+◊item{Floor: ◊code{-14.0}}
+◊item{Noise gate falloff: ◊code{6.0}}
+◊item{Maximum amplitude: ◊code{0.95}}
 }
 
 I may normalize the track to -2db before or after running the compressor, or both.

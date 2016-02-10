@@ -17,9 +17,9 @@ There are a lot of apps out there for collecting and reporting various kinds of 
 For awhile, Felton was working on a project called ◊link["http://daytum.com"]{Daytum} that would help people create their personal reports similar to his. Daytum has always had a lot of promise, but there are a few major problems with it that need to change before it can be really useful:
 
 ◊ol{
-◊li{Felton was hired by Facebook recently, and doesn’t seem to be actively maintaining the service anymore}
-◊li{The web interface is clumsy for entering anything more than simple quantities}
-◊li{The ◊link["http://itunes.apple.com/us/app/daytum/id352646537?mt=8"]{iPhone app} — which would ordinarily be the ideal channel for collecting data — is buggy, infrequently updated, and (worst of all) has been known to randomly erase data}
+◊item{Felton was hired by Facebook recently, and doesn’t seem to be actively maintaining the service anymore}
+◊item{The web interface is clumsy for entering anything more than simple quantities}
+◊item{The ◊link["http://itunes.apple.com/us/app/daytum/id352646537?mt=8"]{iPhone app} — which would ordinarily be the ideal channel for collecting data — is buggy, infrequently updated, and (worst of all) has been known to randomly erase data}
 }
 
 ◊h2[#:id "the-format-is-text"]{The Format is Text}
@@ -48,10 +48,10 @@ The syntax is pretty self-explanatory. Each interval is given an activity (e.g.,
 The advantages of capturing data in this way are obvious:
 
 ◊ul{
-◊li{Both the ◊emph{time length} and ◊emph{frequency} of activities is captured}
-◊li{It’s easy to add custom data to different kinds of activities (such as the quantities given in the ◊code{food} activity above)}
-◊li{You can easily enter and read the data without any special software}
-◊li{The data will still be easy to read ten or fifty years from now}
+◊item{Both the ◊emph{time length} and ◊emph{frequency} of activities is captured}
+◊item{It’s easy to add custom data to different kinds of activities (such as the quantities given in the ◊code{food} activity above)}
+◊item{You can easily enter and read the data without any special software}
+◊item{The data will still be easy to read ten or fifty years from now}
 }
 
 ◊strong{How to actually use the data:} Creating any visual displays of all this data is going to involve brushing off your script-writing chops. The good news is if you have any programming ability whatsoever, you should be able to cobble something together quite easily for whatever you want to do. Check out the ◊link["http://fennetic.net/sleep/"]{lifelog project} for examples of scripts for parsing and displaying the data. Ben currently produces graphs showing time intervals colored by activity, but you could just as easily build a script in your favourite language to build reports for things like average commute times, top five conversation topics, or total times you had to look for things and how many of those times you found them, etc. If you have your script output the results in a ◊link["http://en.wikipedia.org/wiki/Comma-separated_values"]{◊code{CSV} format}, you can open those reports directly in Excel and create charts from there.
@@ -69,7 +69,7 @@ I don’t recommend trying to record your moment-to-moment moods for any reason 
 ◊link["http://itunes.apple.com/us/app/nebulous-notes-for-dropbox/id375006422?mt=8#"]{Nebulous Notes} has a couple of great features that make it great for this kind of data collection:
 
 ◊ul{
-◊li{◊strong{Shortcut keys:} You can set up shortcut keys to quickly insert date and timestamps in right format, as well as skip forward and backwards by word or character (see screenshots above)}
-◊li{◊strong{Dropbox support:} Store your text file on your Dropbox account and it will be auto-saved to the cloud every time you edit it, and you can easily pull it into your laptop for analytics.}}
+◊item{◊strong{Shortcut keys:} You can set up shortcut keys to quickly insert date and timestamps in right format, as well as skip forward and backwards by word or character (see screenshots above)}
+◊item{◊strong{Dropbox support:} Store your text file on your Dropbox account and it will be auto-saved to the cloud every time you edit it, and you can easily pull it into your laptop for analytics.}}
 
 I recently switched to the iPhone, so if you have an Android or Blackberry you’ll need to find your own favorite app for that platform. (Personally I can’t imagine attempting anything like this on my laggy old Blackberry.) Let me know in the comments if you find anything!

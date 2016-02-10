@@ -11,9 +11,9 @@ This is a current, unresolved problem: ◊link["http://instapaper.com/"]{Instapa
 Here’s the scenario:
 
 ◊ol{
-◊li{There are new unread articles in my Instapaper account that are more than a day old.}
-◊li{My Instapaper account is configured to email new articles to my Kindle every day (see above). I have a Kindle 3 wifi-only.}
-◊li{I never receive any emails from Instapaper unless I click the ◊code{Send Now} button. Then, the new Instapaper issue is sent and arrives on my Kindle exactly as expected.}
+◊item{There are new unread articles in my Instapaper account that are more than a day old.}
+◊item{My Instapaper account is configured to email new articles to my Kindle every day (see above). I have a Kindle 3 wifi-only.}
+◊item{I never receive any emails from Instapaper unless I click the ◊code{Send Now} button. Then, the new Instapaper issue is sent and arrives on my Kindle exactly as expected.}
 }
 
 The manual sends arrive just fine; ◊strong{ergo:} the Kindle email address is properly configured, and the Kindle account is properly set up to receive the emails.

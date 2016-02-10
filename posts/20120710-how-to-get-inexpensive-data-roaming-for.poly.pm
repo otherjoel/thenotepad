@@ -23,8 +23,8 @@ Here’s what to do. Call customer service ahead of time◊margin-note{From your
 For example, supposing you’ll be out of the country for 11 days. Here’s how the costs for this method would work out (for each line, remember):
 
 ◊ul{
-◊li{Cost: ◊code{($25 / 31) x 11 = $8.87}}
-◊li{Data: ◊code{(100MB / 31) x 11 = 35MB} ◊emph{(round down to nearest MB)}}
+◊item{Cost: ◊code{($25 / 31) x 11 = $8.87}}
+◊item{Data: ◊code{(100MB / 31) x 11 = 35MB} ◊emph{(round down to nearest MB)}}
 }
 
 Now (in this example) you’re only paying $9 extra per phone instead of $25. On a two-phone account, that would be a savings of $31.
@@ -36,11 +36,11 @@ If you’re going to be out of the country for more than 20 days, the savings fr
 Either way, here’s how to make sure you don’t use up your “cheap” data:
 
 ◊ul{
-◊li{Save your data usage for when you’re at a wifi hotspot (any data you use over wifi doesn’t count against you). This includes websites, email, Instagram, Facebook, etc. — pretty much app that communicates in any way. Some games don’t use data, but many do. Light usage of these things is ok, but the more you can save for wifi, the more likely you won’t break your data cap.}
-◊li{Don’t watch videos when not on wifi (Netflix, YouTube, Vimeo, etc.)}
-◊li{Don’t stream any music when not on wifi (Spotify, Pandora, iCloud, Amazon, etc.)}
-◊li{If you’ll need maps during the day, look them up ahead of time while on wifi, making sure to zoom in and out to download the tiles at various zoom levels}
-◊li{(For iPhone users) Turn off Push for email — instead set it to Fetch Hourly (or Fetch Manually).
+◊item{Save your data usage for when you’re at a wifi hotspot (any data you use over wifi doesn’t count against you). This includes websites, email, Instagram, Facebook, etc. — pretty much app that communicates in any way. Some games don’t use data, but many do. Light usage of these things is ok, but the more you can save for wifi, the more likely you won’t break your data cap.}
+◊item{Don’t watch videos when not on wifi (Netflix, YouTube, Vimeo, etc.)}
+◊item{Don’t stream any music when not on wifi (Spotify, Pandora, iCloud, Amazon, etc.)}
+◊item{If you’ll need maps during the day, look them up ahead of time while on wifi, making sure to zoom in and out to download the tiles at various zoom levels}
+◊item{(For iPhone users) Turn off Push for email — instead set it to Fetch Hourly (or Fetch Manually).
 Go to ◊noun{Settings} — ◊noun{Mail, Contacts, Calendars} — ◊noun{Fetch New Data}, turn off the Push option and set the frequency to Hourly or Manually.}
 }
 

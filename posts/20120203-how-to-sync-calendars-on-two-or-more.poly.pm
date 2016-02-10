@@ -27,12 +27,12 @@ If iCloud is not set up on your device, read these ◊link["http://www.apple.com
 This is an easy process, but not entirely obvious because you have to use a laptop/desktop computer, and not your iOS device, to start the process.
 
 ◊ol{
-◊li{First of all, pick which iCloud account is going to “own” the shared calendar(s). It really makes no difference because both parties will have full access.}
-◊li{Open your web browser on your desktop or laptop computer and go to ◊link["http//icloud.com"]{icloud.com}.}
-◊li{Sign in using the account of the “owner” and click on ◊code{Calendar}.}
-◊li{Click on the small circle to the right of the calendar you wish to share. Under ◊code{Private Calendar}, enter the email address for the user of the “other” iPhone/iPad. It can be any email address for that person (it doesn’t have to be the one they use to sign in to iCloud) but it should be one that they have set up on their iPhone/iPad.
+◊item{First of all, pick which iCloud account is going to “own” the shared calendar(s). It really makes no difference because both parties will have full access.}
+◊item{Open your web browser on your desktop or laptop computer and go to ◊link["http//icloud.com"]{icloud.com}.}
+◊item{Sign in using the account of the “owner” and click on ◊code{Calendar}.}
+◊item{Click on the small circle to the right of the calendar you wish to share. Under ◊code{Private Calendar}, enter the email address for the user of the “other” iPhone/iPad. It can be any email address for that person (it doesn’t have to be the one they use to sign in to iCloud) but it should be one that they have set up on their iPhone/iPad.
 ◊figure["/img/20120203icloudsharing1.jpg"]{iCloud sharing}}
-◊li{After entering the email address, click ◊code{Share}.}
+◊item{After entering the email address, click ◊code{Share}.}
 }
 
 Now the other user can grab his or her device, open the email, and click the “Join Calendar” button.
@@ -42,11 +42,11 @@ Voila, you now have a calendar shared between two devices. Any events or appoint
 ◊h3[#:id "some-additional-notes"]{Some additional notes:}
 
 ◊ul{
-◊li{You can of course share multiple calendars with this process, and you can even share them with different multiple people. My wife and I share three calendars, because this allows us to easily colour-code different kinds of events simply by putting them on different calendars. (There are some calendar apps that let you colour-cde different events within the same calendar, but not the one we happen to use.)}
-◊li{When creating/changing an event that you want shared, you do have to make sure it is in fact created on one of the shared calendars. That should seem obvious, but it can be an easy step to miss. You can make it easier for yourself by setting your ◊emph{default} calendar on your iOS device to the shared calendar you use most often: click ◊code{Settings}, then ◊code{Mail, Contacts, Calendars}, and then ◊emph{scroll down} to the Calendars section and click on the ◊code{Default Calendars} setting to change it. Otherwise (if you’d rather not default to sharing all your events) just be aware that your iOS device does have multiple calendars and remember to pick the right one when setting up an appointment.
+◊item{You can of course share multiple calendars with this process, and you can even share them with different multiple people. My wife and I share three calendars, because this allows us to easily colour-code different kinds of events simply by putting them on different calendars. (There are some calendar apps that let you colour-cde different events within the same calendar, but not the one we happen to use.)}
+◊item{When creating/changing an event that you want shared, you do have to make sure it is in fact created on one of the shared calendars. That should seem obvious, but it can be an easy step to miss. You can make it easier for yourself by setting your ◊emph{default} calendar on your iOS device to the shared calendar you use most often: click ◊code{Settings}, then ◊code{Mail, Contacts, Calendars}, and then ◊emph{scroll down} to the Calendars section and click on the ◊code{Default Calendars} setting to change it. Otherwise (if you’d rather not default to sharing all your events) just be aware that your iOS device does have multiple calendars and remember to pick the right one when setting up an appointment.
 
 ◊ul{
-◊li{If you use Calvetica Classic as your calendar app, you can have it ask you which calendar to use every time you set up an event, which is nice.}
+◊item{If you use Calvetica Classic as your calendar app, you can have it ask you which calendar to use every time you set up an event, which is nice.}
 }}
 }
 

@@ -21,23 +21,23 @@ You need to create and use cover art in ◊strong{two places}: first you create 
 ◊strong{Set up your podcast feed with cover art:} Create a 600×600px cover art image for your podcast and upload it to your site, or somewhere publicly accessible. (In some places Apple says 300px is OK but their ◊link["http://www.apple.com/itunes/whatson/podcasts/specs.html"]{technical spec} says 600.) I recommend using JPEG&lt;, not PNG — the latter is allowed but will look blocky when viewed at reduced sizes in iTunes.
 
 ◊ol{
-◊li{Get a ◊link["http://feedburner.com"]{FeedBurner} account and set up your podcast feed:
+◊item{Get a ◊link["http://feedburner.com"]{FeedBurner} account and set up your podcast feed:
 
 ◊ol{
-◊li{Tumblr: Set the “original feed” on FeedBurner to the RSS feed for the specific tag you created for your podcast. To get this feed, add ◊code{tagged/YOURTAG/rss} to your tumblr’s address. (Example: ◊code{http://mytumblr.tumblr.comn/tagged/podcast/rss})}
-◊li{Textpattern: Set the “original feed” on FeedBurner to Textpattern’s atom feed for that category (e.g., ◊code{http://foopaux.com/atom/?category=podcast}).}
-◊li{Blogger: Set the “original feed” on FeedBurner to ◊code{http://www.YOURBLOG.blogspot.com/feeds/posts/default/-/PODCASTTAG} (per ◊link["http://www.google.com/support/blogger/bin/answer.py?hl=en&answer=97933"]{these instructions from Google}).}
+◊item{Tumblr: Set the “original feed” on FeedBurner to the RSS feed for the specific tag you created for your podcast. To get this feed, add ◊code{tagged/YOURTAG/rss} to your tumblr’s address. (Example: ◊code{http://mytumblr.tumblr.comn/tagged/podcast/rss})}
+◊item{Textpattern: Set the “original feed” on FeedBurner to Textpattern’s atom feed for that category (e.g., ◊code{http://foopaux.com/atom/?category=podcast}).}
+◊item{Blogger: Set the “original feed” on FeedBurner to ◊code{http://www.YOURBLOG.blogspot.com/feeds/posts/default/-/PODCASTTAG} (per ◊link["http://www.google.com/support/blogger/bin/answer.py?hl=en&answer=97933"]{these instructions from Google}).}
 }}
-◊li{Under FeedBurner’s ◊code{Optimize} tab, add the ◊code{SmartCast} service to make your feed podcast-friendly. Set the cover art to the URL of your covert art image and add as much description, keywords and categories as you can muster.}
+◊item{Under FeedBurner’s ◊code{Optimize} tab, add the ◊code{SmartCast} service to make your feed podcast-friendly. Set the cover art to the URL of your covert art image and add as much description, keywords and categories as you can muster.}
 }
 
 ◊strong{Embed cover art for individual episodes:} You’ll find that iTunes does ◊emph{not} automatically use your cover art for downloaded episodes when they are playing in your iPod. The cover art you created in the steps above is only used in the iTunes ◊emph{store listing} for your podcast (if you get one). In order for your cover art to actually display in people’s iPods when your episodes are playing, you need to embed the cover art into each episode’s MP3 file. Luckily, this is easy to do using only the iTunes (the simplest way I know how):
 
 ◊ol{
-◊li{Prior to uploading, open add the episode’s MP3 to your iTunes library.}
-◊li{Right-click the episode in iTunes, click Get Info.}
-◊li{Go to the Artwork tab, manually add your cover art to the file, and click OK. (Tip: in Windows you can actually copy/paste the artwork JPG file from Explorer directly into this tab.)}
-◊li{The cover art is now embedded, you can now upload your MP3 file.}
+◊item{Prior to uploading, open add the episode’s MP3 to your iTunes library.}
+◊item{Right-click the episode in iTunes, click Get Info.}
+◊item{Go to the Artwork tab, manually add your cover art to the file, and click OK. (Tip: in Windows you can actually copy/paste the artwork JPG file from Explorer directly into this tab.)}
+◊item{The cover art is now embedded, you can now upload your MP3 file.}
 }
 
 ◊h2[#:id "create-a-subscribe-link-on-your-website."]{Create a “subscribe” link on your website.}
@@ -57,10 +57,10 @@ I use ◊link["http://audacity.sourceforge.net/"]{Audacity} to record, then uplo
 A properly-formatted post ensures that your subscribers will get their episodes automatically with no hiccups.
 
 ◊ol{
-◊li{Don’t forget to set the post’s category (or tag) to the podcast category you created earlier.}
-◊li{Each podcast post should contain a manual, direct download link to the MP3 file for that episode. This is non-optional, and it should be the first link in the post. This will allow FeedBurner to correctly detect and include your audio in the podcast feed. For the text of the link, I recommend something like “Download MP3 audio (14.76 mb, 19:32)”
+◊item{Don’t forget to set the post’s category (or tag) to the podcast category you created earlier.}
+◊item{Each podcast post should contain a manual, direct download link to the MP3 file for that episode. This is non-optional, and it should be the first link in the post. This will allow FeedBurner to correctly detect and include your audio in the podcast feed. For the text of the link, I recommend something like “Download MP3 audio (14.76 mb, 19:32)”
 (◊strong{Update, Sep 13, 2011:} this link doesn’t have to be at the very front of your post, it just has to be the first ◊emph{link} in the post. Also, when using Tumblr, to ensure cleaner descriptions see ◊link["http://notely.blogspot.com/2011/09/cleaner-titles-for-podcast-posts-in.html"]{this follow-up post}.)}
-◊li{One nice thing to do if you will be syndicating onto another service, such as Facebook notes etc., is to create a special CSS class called ◊code{for-syndicate} and set it to ◊code{display: none}. Then add a little “helper” boilerplate on the bottom of each post, in a paragraph set to that class:
+◊item{One nice thing to do if you will be syndicating onto another service, such as Facebook notes etc., is to create a special CSS class called ◊code{for-syndicate} and set it to ◊code{display: none}. Then add a little “helper” boilerplate on the bottom of each post, in a paragraph set to that class:
 
 ◊blockquote{
 ◊code{<p class="for-syndicate">This is a podcast post: <a href="http://site.com/episode.mp3">click here</a> to download the MP3 audio, or visit <a href="http://site.com/podcast">site.com</a> to listen online and subscribe in iTunes.</p>}
@@ -76,9 +76,9 @@ People will listen to your podcast in one of two ways: by subscribing in iTunes 
 There are lots of ways to do this:
 
 ◊ol{
-◊li{In Textpattern, install the ◊link["http://textpattern.org/plugins/603/jnm_audio"]{jnm:audio} textpattern plugin and include a ◊code{<txp:jnm_audio>} tag in each podcast post.}
-◊li{In Tumblr, create your podcast post as an “audio post” and Tumblr will automatically embed an audio player. (Don’t forget to also include the download link in the text portion of the post though.)}
-◊li{Other platforms (WordPress, etc): Let me know how you do it in the comments!}
+◊item{In Textpattern, install the ◊link["http://textpattern.org/plugins/603/jnm_audio"]{jnm:audio} textpattern plugin and include a ◊code{<txp:jnm_audio>} tag in each podcast post.}
+◊item{In Tumblr, create your podcast post as an “audio post” and Tumblr will automatically embed an audio player. (Don’t forget to also include the download link in the text portion of the post though.)}
+◊item{Other platforms (WordPress, etc): Let me know how you do it in the comments!}
 }
 
 These methods use Flash programs for the audio players, which don’t run on iPhone or iPad browsers. I’ve been tinkering with ways to use HTML5 audio players when the browser supports them, but HTML5 audio support is still flaky for the time being. Check back again in a year or so and maybe I’ll have something for you.

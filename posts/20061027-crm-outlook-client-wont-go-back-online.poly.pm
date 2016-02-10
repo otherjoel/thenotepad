@@ -15,8 +15,8 @@ Often when this is the case, you are also unable to access CRM directly through 
 First of all, make sure of the following:
 
 ◊ol{
-◊li{That you are connected to the LAN and logged in to the Windows domain}
-◊li{That the url of your CRM server is in your “Trusted Sites” list in Internet Explorer, and that the security level for “Trusted Sites” is set to “Low”.}
+◊item{That you are connected to the LAN and logged in to the Windows domain}
+◊item{That the url of your CRM server is in your “Trusted Sites” list in Internet Explorer, and that the security level for “Trusted Sites” is set to “Low”.}
 }
 
 What’s happening is that IE has cached a username/password combo for the CRM server that is incorrect. It fails in the background, and gives up without ever letting you know what happened or giving you a chance to enter it correctly.
@@ -24,6 +24,6 @@ What’s happening is that IE has cached a username/password combo for the CRM s
 To fix it:
 
 ◊ol{
-◊li{Go to Control Panel → User Accounts. Click the ◊code{Advanced} tab, and click “Manage Passwords”.}
-◊li{If we’re on the right track, you will see an entry for the CRM server among the list of stored passwords. Go ahead and delete it.}
+◊item{Go to Control Panel → User Accounts. Click the ◊code{Advanced} tab, and click “Manage Passwords”.}
+◊item{If we’re on the right track, you will see an entry for the CRM server among the list of stored passwords. Go ahead and delete it.}
 }

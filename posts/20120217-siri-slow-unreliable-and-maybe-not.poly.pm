@@ -13,11 +13,11 @@ The biggest killers of my enthusiasm for using Siri are ◊emph{laggy interactio
 ◊strong{There are five ◊emph{possible} outcomes to each Siri interaction:}
 
 ◊ol{
-◊li{Siri misunderstands what you said due to you speaking incorrectly, or}
-◊li{Siri misunderstands what you said because of a voice recognition error, or}
-◊li{Siri understands what you said but misunderstands what you ◊emph{meant}, or}
-◊li{Siri is unable to connect to its servers, or}
-◊li{Siri connects and responds correctly}
+◊item{Siri misunderstands what you said due to you speaking incorrectly, or}
+◊item{Siri misunderstands what you said because of a voice recognition error, or}
+◊item{Siri understands what you said but misunderstands what you ◊emph{meant}, or}
+◊item{Siri is unable to connect to its servers, or}
+◊item{Siri connects and responds correctly}
 }
 
 Four out of these five outcomes result in a failed interaction. While you can get better at speaking correctly, there are few to no workarounds for the other three error conditions.

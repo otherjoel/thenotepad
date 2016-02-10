@@ -15,7 +15,7 @@ Once you have the BBM log file on your computer (email it there from your phone,
 Version 1.1 (◊emph{Feb 20, 2010})
 
 ◊ul{
-◊li{Added ◊code{GMTOffset} constant to allow timestamps to be properly adjusted for time zones.}
+◊item{Added ◊code{GMTOffset} constant to allow timestamps to be properly adjusted for time zones.}
 }
 
 ◊h2[#:id "comments"]{Comments}
