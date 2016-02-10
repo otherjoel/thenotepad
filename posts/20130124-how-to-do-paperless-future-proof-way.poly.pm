@@ -22,7 +22,7 @@ When you want to run a search, open your archive folder and run a search. Need a
 
 No subscriptions. No extra software. Guaranteed to be stay portable and useful for the next 20 years.
 
-◊h2[#:id "why-the-hashtags-what-about-folders"]{Why the hashtags? What about folders?}
+◊section{Why the hashtags? What about folders?}
 
 Using ◊code{#tags #like #this} in the filename is a universal tagging mechanism. It works on Mac OS and on Windows, and the searches on those systems will have no problem finding your files.
 
@@ -30,7 +30,7 @@ Sticking files in a folder hierarchy is a poor way of filing that is on its way 
 
 Tags allow a document to live in more than one box at a time, are easy to add, and are easy to search for.
 
-◊h2[#:id "why-not-evernote-reasons-thats-why."]{Why Not Evernote? Reasons, that’s why.}
+◊section{Why Not Evernote? Reasons, that’s why.}
 
 There have been a ◊link["http://shawnblanc.net/2012/09/the-paperless-puzzel/"]{couple} of ◊link["http://toolsandtoys.net/the-tools-and-toys-paperless-guide/"]{great} ◊link["http://lifehacker.com/5973033/how-i-turned-three-years-of-paper-into-a-highly-organized-searchable-document-database-in-two-days"]{posts} by others lately about going paperless, and they’re definitely worth reading. But they all assume you need some kind of fancy software setup, including (most commonly) a subscription plan to Evernote.
 
@@ -42,28 +42,23 @@ I agree it must be nice to have someone else run OCR on my documents and host th
 ◊item{Handing off responsibility for your sensitive documents to someone else’s computers — this is just asking for trouble. Data corruption, security breaches, warrantless searches. Over the next 10 years, it’s almost a given that your hosted service of choice will be hit by at least one of them.}
 }
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "noel-said"]{◊link["https://www.blogger.com/profile/13989236703149454350"]{Noel} said:}
-
-You are that one person I was looking for, who went paperless without Evernote.
+◊comment[#:author "Noel"
+         #:datetime "January 11, 2014"
+         #:authorlink "https://www.blogger.com/profile/13989236703149454350"]{You are that one person I was looking for, who went paperless without Evernote.
+             
 I have a question about your tags. Does your file name really look like you suggest in your format? If yes, how do you search these files in Windows OS? I do have Everything installed and use it quite often, still I can’t figure out, how can I use hashtags to search? Any pointers?
-Thanks in advance.
+Thanks in advance.}
 
-(Comment posted January 11, 2014)
-
-◊h3[#:id "renaud-guerin-said"]{◊link["https://www.blogger.com/profile/03391430212755922220"]{Renaud Guerin} said:}
-
-On a Mac, you don’t even need to use the #ugly #filenames : Tags are natively supported in the Finder since OS X 10.9 Mavericks, and you can add any number of tags to any file.
+◊comment[#:author "Renaud Guerin"
+         #:datetime "February 28, 2014"
+         #:authorlink "https://www.blogger.com/profile/03391430212755922220"]{On a Mac, you don’t even need to use the #ugly #filenames : Tags are natively supported in the Finder since OS X 10.9 Mavericks, and you can add any number of tags to any file.
 
 Better yet, if OCR has done its job properly, your PDFs content will all be indexed by Spotlight already (this has existed since 10.4 Tiger in 2004, I believe) : you can just search for them from anywhere on your Mac.
 
-The indexing / OCR features of Evernote are really useful for Windows users who lack all of that functionality built into the OS.
+The indexing / OCR features of Evernote are really useful for Windows users who lack all of that functionality built into the OS.}
 
-(Comment posted February 28, 2014)
-
-◊h3[#:id "david-bennett-said"]{◊link["https://www.blogger.com/profile/16686797817060943830"]{David Bennett} said:}
-
-This is great! I have been concerned about Evernotes proprietary formatting.
-
-(Comment posted July 23, 2014)
+◊comment[#:author "David Bennett"
+         #:datetime "July 23, 2014"
+         #:authorlink "https://www.blogger.com/profile/16686797817060943830"]{This is great! I have been concerned about Evernotes proprietary formatting.}

@@ -306,6 +306,30 @@ pre.code {
     color: navy;
 }
 
+div.comment-box {
+    background: #eee;
+    border: dotted black 1px;
+    border-radius: 3px;
+    padding: 0 0.5em;
+    margin-top: 1.5em;
+    color: #555;
+}
+
+div.comment-box:last-of-type {
+    margin-bottom: 1.5em;
+}
+
+.comment-meta {
+    font-size: 0.666666667em;
+    line-height: 2.25em;
+    font-family: triplicate;
+}
+
+.comment-time {
+    float: right;
+    text-align: right;
+}
+
 .updateBox {
     background: white;
     position: relative;

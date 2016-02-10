@@ -8,7 +8,7 @@ My wife and I each use an iPhone, but it wasn’t until recently that I got arou
 
 ◊margin-note{If you happen to be using the same Apple ID/iCloud account on two phones, I would assume you don’t need this article since everything is already syncing across all devices within your single account.} These instructions assume that each iPhone user has their own, separate Apple ID and iCloud.
 
-◊h2[#:id "use-icloud-for-your-calendar-account"]{1. Use iCloud for Your Calendar Account}
+◊section{1. Use iCloud for Your Calendar Account}
 
 I’m not saying you ◊emph{have} to use iCloud. I’m saying it’s by far the simplest and easiest way.
 
@@ -16,13 +16,13 @@ Make sure each user has iCloud set up on his or her device. If you have iOS 5 or
 
 If iCloud is not set up on your device, read these ◊link["http://www.apple.com/icloud/setup/"]{simple iCloud setup instrctions} from Apple.
 
-◊h3[#:id "other-calendar-accounts"]{Other Calendar Accounts}
+◊subsection{Other Calendar Accounts}
 
 ◊strong{Gmail accounts} come with a pretty useable calendar system, so a lot of people use those; but I found the instructions and process for syncing GMail calendars between multiple Google accounts/iPhones very clumsy, complicated, and unintuitive, even for a geek like myself. If you have tips on that, let us know in the comments.
 
 ◊strong{Exchange accounts} also include calendar functionality. I have one of these at my job, and it syncs to my phone also, but I don’t really need to share it with my wife so I haven’t tried. I expect the only way to do this would be to add my exchange account to her phone with my own password, and turn off the mail part of the account in the iPhone’s settings. Again, let us know in the comments if you’ve experimented with this.
 
-◊h2[#:id "share-your-icloud-calendars"]{2. Share Your iCloud Calendar(s)}
+◊section{2. Share Your iCloud Calendar(s)}
 
 This is an easy process, but not entirely obvious because you have to use a laptop/desktop computer, and not your iOS device, to start the process.
 
@@ -39,7 +39,7 @@ Now the other user can grab his or her device, open the email, and click the “
 
 Voila, you now have a calendar shared between two devices. Any events or appointments you create or change on the shared calendar on one device will automatically show up on the other device pretty quickly, and without any additional steps.
 
-◊h3[#:id "some-additional-notes"]{Some additional notes:}
+◊subsection{Some additional notes:}
 
 ◊ul{
 ◊item{You can of course share multiple calendars with this process, and you can even share them with different multiple people. My wife and I share three calendars, because this allows us to easily colour-code different kinds of events simply by putting them on different calendars. (There are some calendar apps that let you colour-cde different events within the same calendar, but not the one we happen to use.)}
@@ -50,49 +50,37 @@ Voila, you now have a calendar shared between two devices. Any events or appoint
 }}
 }
 
-◊h2[#:id "get-a-better-calendar-app"]{3. Get a Better Calendar App}
+◊section{3. Get a Better Calendar App}
 
 The calendar app that comes with iOS is plain, and has many shortcomings: the interface for creating new appointments is clumsy, the colour-coding is not visible in month view, and there’s no week view at all, to name a few. For notes and recommendations on iOS calendar apps, read my post on ◊link["20120203-recommended-calendar-apps-for-iphone.html"]{iOS Calendar App Recommendations}.
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "brent-said"]{◊link["https://www.blogger.com/profile/15089526498016743276"]{Brent} said:}
+◊comment[#:author "Brent"
+         #:datetime "February 03, 2012"
+         #:authorlink "https://www.blogger.com/profile/15089526498016743276"]{I wonder if you have tried Cozi. It seems to be the best ”family” calendering service I have found. It has clients for iOS, Android etc, and is fairly simple to sty up and use.}
 
-I wonder if you have tried Cozi. It seems to be the best ”family” calendering service I have found. It has clients for iOS, Android etc, and is fairly simple to sty up and use.
-
-(Comment posted February 03, 2012)
-
-◊h3[#:id "fitzage-said"]{◊link["https://www.blogger.com/profile/13811974447327211236"]{fitzage} said:}
-
-My wife and I have a shared iCloud account because this is the best way to share Photo Stream and Contacts. Then we each have separate accounts as well.
+◊comment[#:author "fitzage"
+         #:datetime "February 03, 2012"
+         #:authorlink "https://www.blogger.com/profile/13811974447327211236"]{My wife and I have a shared iCloud account because this is the best way to share Photo Stream and Contacts. Then we each have separate accounts as well.
 
 We share a joint calendar on the shared account, and then we have individual calendars that we share with each other on our individual accounts. We then have the option to set these shared ones to not give us notifications for the other person’s calendar, which has really been a big benefit. We wouldn’t really need the joint iCloud account to do the joint calendar, but I figured I may as well do it that way since we were using the joint account anyway.
 
-My thoughts about the whole thing ◊link["http://fitzage.com/article/thoughts-on-a-multi-user-icloud-setup"]{are here}. There are pros and cons to this setup, and I’m still not 100% sure it’s the best, but it’s working for us now.
+My thoughts about the whole thing ◊link["http://fitzage.com/article/thoughts-on-a-multi-user-icloud-setup"]{are here}. There are pros and cons to this setup, and I’m still not 100% sure it’s the best, but it’s working for us now.}
 
-(Comment posted February 03, 2012)
+◊comment[#:author "Joel A."
+         #:datetime "February 03, 2012"
+         #:authorlink "https://www.blogger.com/profile/13646393468637062885"]{Brent, Cozi looks interesting. I wonder, does its iOS app integrate with the iOS calendar system, or does it maintain its own completely separate calendar? I can think of pros and cons to either approach.}
 
-◊h3[#:id "joel-a.-said"]{◊link["https://www.blogger.com/profile/13646393468637062885"]{Joel A.} said:}
+◊comment[#:author "Joel A."
+         #:datetime "February 03, 2012"
+         #:authorlink "https://www.blogger.com/profile/13646393468637062885"]{Fitzage, I didn’t even realize you could have multiple iCloud accounts. I assume the additional shared account is set up by going through Settings - Mail/Contacts/Calendars, clicking Add Account and creating a new Apple ID? (Frankly the relationship between Apple IDs and iCloud accounts is still rather fuzzy to me)}
 
-Brent, Cozi looks interesting. I wonder, does its iOS app integrate with the iOS calendar system, or does it maintain its own completely separate calendar? I can think of pros and cons to either approach.
+◊comment[#:author "Brent"
+         #:datetime "February 03, 2012"
+         #:authorlink "https://www.blogger.com/profile/15089526498016743276"]{Joel, it’s a separate calendar, but you can export a read only ical that can be imported into the iOS calendar. I haven’t actually tried to set this up yet.}
 
-(Comment posted February 03, 2012)
-
-◊h3[#:id "joel-a.-said-1"]{◊link["https://www.blogger.com/profile/13646393468637062885"]{Joel A.} said:}
-
-Fitzage, I didn’t even realize you could have multiple iCloud accounts. I assume the additional shared account is set up by going through Settings - Mail/Contacts/Calendars, clicking Add Account and creating a new Apple ID? (Frankly the relationship between Apple IDs and iCloud accounts is still rather fuzzy to me)
-
-(Comment posted February 03, 2012)
-
-◊h3[#:id "brent-said-1"]{◊link["https://www.blogger.com/profile/15089526498016743276"]{Brent} said:}
-
-Joel, it’s a separate calendar, but you can export a read only ical that can be imported into the iOS calendar. I haven’t actually tried to set this up yet.
-
-(Comment posted February 03, 2012)
-
-◊h3[#:id "todd-beard-said"]{◊link["https://www.blogger.com/profile/07262557618352583388"]{Todd Beard} said:}
-
-What a great help this was. We’d not realized an old email address was in the icloud id and then presto, sharing our dates.
-Thank you for being there for us.
-
-(Comment posted September 06, 2014)
+◊comment[#:author "Todd Beard"
+         #:datetime "September 06, 2014"
+         #:authorlink "https://www.blogger.com/profile/07262557618352583388"]{What a great help this was. We’d not realized an old email address was in the icloud id and then presto, sharing our dates.
+Thank you for being there for us.}

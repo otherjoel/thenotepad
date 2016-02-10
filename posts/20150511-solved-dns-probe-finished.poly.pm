@@ -12,13 +12,13 @@ Recently at the office we started having major network issues:
 ◊item{Ping traffic between any two points within the LAN (including the firewall) was completely unaffected.}
 }
 
-◊h2[#:id "troubleshooting"]{Troubleshooting}
+◊section{Troubleshooting}
 
 Google searches for the ◊code{DNS_PROBE_FINISHED} error invariably lead you to advice suggesting that you perform a ◊code{netsh winsock reset} and restart your computer. However this didn't work in our case, unsurprisingly. The problem began affecting everyone at once, so unless there had been a bad Windows update or something (our IT support agency hadn’t heard of any) this would be unlikely to help.
 
 We also ruled out the ISP as the cause. We have two WAN connections -- one fiber and one cable -- and switching to one or the other exclusively did not resolve the issue. Support tickets with ISPs confirmed there were no upstream connection or network problems.
 
-◊h3[#:id "examining-switches"]{Examining Switches}
+◊subsection{Examining Switches}
 
 We had just that day moved a bunch of desks around one part of the office. Our IT support agency suggested we had some kind of switch-level ◊link["http://www.networkworld.com/article/2223757/cisco-subnet/9-common-spanning-tree-mistakes.html"]{spanning tree problem} -- a switch plugged into itself, perhaps, in some roundabout way. I tried rebooting the main switch used for non-VoIP traffic, and the problem immediately cleared up -- for about ten minutes, and then it returned. We also tried disconnecting all the jacks for each person who had been affected by the move to rule out any subtle looping issues created (even though only one or two jacks had been affected); no dice.
 
@@ -28,7 +28,7 @@ We upgraded the firmware, which dated from 2011, and restarted the switch. Again
 
 At this point we were ready to try unplugging every person, port by port, waiting 5 seconds, and pinging google, to see if we could narrow the problem down to a particular network jack/user. Thankfully it didn’t come to that.
 
-◊h2[#:id "the-culprit"]{The culprit}
+◊section{The culprit}
 
 This time on our firewall I noticed that the “connection count” was hovering close to or even above the stated maximum of 10,000. Occasionally the connection utilization would drop to 5–6% and then the problem would go away. I used the firewall’s “packet capture” interface to look at a few seconds’ worth of network traffic and noticed a high number of UDP packets coming from a particular LAN IP address, with sequential foreign destination IPs.
 

@@ -14,7 +14,7 @@ YNAB insists that you manage your transactions the Old Way: by entering them you
 
 But the biggest difference between YNAB and the Mint approach is that while Mint is geared towards passive capture of past spending, YNAB’s workflow puts planning future spending at the center. I won’t dive into that here, but you should know that this approach is what will make even using finance software worth your while. If you are familiar with the increasingly-popular ◊link["http://en.wikipedia.org/wiki/Envelope_system"]{envelope system} of budgeting, or with financial planning evangelists like Dave Ramsey, YNAB will fit right in with those paradigms and help you implement them.
 
-◊h2[#:id "coming-down-from-the-cloud"]{Coming down from the cloud}
+◊section{Coming down from the cloud}
 
 YNAB’s non-cloud approach means you won’t have completely seamless access to your main financial data store from any browser or from your iPhone. When you think about it, that actually might not be a problem. Do you really need that kind of access? Financial planning isn’t one of those things that inherently benefits from being decentralized.
 
@@ -24,30 +24,22 @@ Ideally, a YNAB mobile app would allow automatic background syncing between two 
 
 ◊emph{NB: I’m not an affiliate of YNAB in any way, nor am I being compensated in any way for this overview.}
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "devony-said"]{◊link["https://www.blogger.com/profile/13750373958965356599"]{Devony} said:}
+◊comment[#:author "Devony"
+         #:datetime "January 09, 2012"
+         #:authorlink "https://www.blogger.com/profile/13750373958965356599"]{This is a fantastic overview. Thanks for doing such a thorough job! Also, we should probably send your cousin a t-shirt or something…}
 
-This is a fantastic overview. Thanks for doing such a thorough job! Also, we should probably send your cousin a t-shirt or something…
+◊comment[#:author "Bob"
+         #:datetime "January 09, 2012"
+         #:authorlink "https://www.blogger.com/profile/05892684959472842360"]{You can actually get the ‘cloud’ like support by just storing your main YNAB file in an online file syncing service, like Dropbox, or Microsoft’s Skydrive. I’ve been doing that for a couple of years and it’s really convenient having access to my file on both the home and work computers}
 
-(Comment posted January 09, 2012)
+◊comment[#:author "Joel A."
+         #:datetime "January 10, 2012"
+         #:authorlink "https://www.blogger.com/profile/13646393468637062885"]{Ah, excellent point Bob. That would allow use of the software on two desktop/laptops, as long as you’re careful about not opening the same file on two machines at the same time. I’d recommend ◊link["http://notely.blogspot.com/2012/01/ncryption-and-dropbox-comparing.html"]{using some security measures on YNAB data stored in DropBox} of course.}
 
-◊h3[#:id "bob-said"]{◊link["https://www.blogger.com/profile/05892684959472842360"]{Bob} said:}
-
-You can actually get the ‘cloud’ like support by just storing your main YNAB file in an online file syncing service, like Dropbox, or Microsoft’s Skydrive. I’ve been doing that for a couple of years and it’s really convenient having access to my file on both the home and work computers
-
-(Comment posted January 09, 2012)
-
-◊h3[#:id "joel-a.-said"]{◊link["https://www.blogger.com/profile/13646393468637062885"]{Joel A.} said:}
-
-Ah, excellent point Bob. That would allow use of the software on two desktop/laptops, as long as you’re careful about not opening the same file on two machines at the same time. I’d recommend ◊link["http://notely.blogspot.com/2012/01/ncryption-and-dropbox-comparing.html"]{using some security measures on YNAB data stored in DropBox} of course.
-
-(Comment posted January 10, 2012)
-
-◊h3[#:id "anti-axcon-said"]{◊link["https://www.blogger.com/profile/14174507367868589557"]{Anti-Axcon} said:}
-
-A personal financial budgeting software is a great thing to use when you care about your money.
+◊comment[#:author "Anti-Axcon"
+         #:datetime "January 27, 2012"
+         #:authorlink "https://www.blogger.com/profile/14174507367868589557"]{A personal financial budgeting software is a great thing to use when you care about your money.
 I used for almost 10 years an excel file for such a thing.
-I recently found this website: https://www.planthebudget.com and switched to it.
-
-(Comment posted January 27, 2012)
+I recently found this website: ◊link["https://www.planthebudget.com"] and switched to it.}

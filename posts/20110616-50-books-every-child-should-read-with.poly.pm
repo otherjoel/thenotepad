@@ -10,7 +10,7 @@ Unfortunately, in typical traditional-media fashion, they neglected to add any l
 
 I linked to a free edition wherever possible. If a book was not available on the Kindle store, I marked it with an ◊color["red"]{*} asterisk. If you know of a Kindle version of a book I could not find, or of a free or better-formatted edition than the one I have linked, let me know via email or comments!
 
-◊h2[#:id "philip-pullman"]{Philip Pullman}
+◊section{Philip Pullman}
 
 ◊ul{
 ◊item{◊amazon["B003B657NK"]{◊emph{Through the Looking Glass}} by Lewis Carroll. Indispensable. The great classic beginning of English children’s literature.}
@@ -25,7 +25,7 @@ I linked to a free edition wherever possible. If a book was not available on the
 ◊item{◊amazon["0316358428"]{◊emph{The Castafiore Emerald}}◊color["red"]{*} by Hergé. Three generations of this family have loved Tintin. Perfect timing, perfect narrative tact and command, blissfully funny.}
 }
 
-◊h2[#:id "michael-morpurgo"]{Michael Morpurgo}
+◊section{Michael Morpurgo}
 
 ◊ul{
 ◊item{◊amazon["B003GGSTQ2"]{◊emph{The Star of Kazan}} by Eva Ibbotson. The heroine is blessed with such wonderful friends who help her through the twists and turns of this incredible journey.}
@@ -40,7 +40,7 @@ I linked to a free edition wherever possible. If a book was not available on the
 ◊item{◊amazon["B002RKSZT4"]{◊emph{The Secret Garden}} ◊color["red"]{(free)} by Frances Hodgson-Burnett. I love this story of a girl’s life being changed by nature.}
 }
 
-◊h2[#:id "katy-guest-literary-editor-for-the-independent-on-sunday"]{Katy Guest, literary editor for The Independent on Sunday}
+◊section{Katy Guest, literary editor for The Independent on Sunday}
 
 ◊ul{
 ◊item{◊amazon["B0058RE06K"]{◊emph{Refugee Boy}} by Benjamin Zephaniah. Story of a young Ethiopian boy, whose parents abandon him in London to save his life.}
@@ -55,7 +55,7 @@ I linked to a free edition wherever possible. If a book was not available on the
 ◊item{◊emph{◊amazon["B001V7U6GY"]{The Story of Tracy Beaker}} by Jacqueline Wilson. The pinnacle of the wonderful Jacqueline Wilson’s brilliant and enormous output.}
 }
 
-◊h2[#:id "john-walsh-author-and-independent-columnist"]{John Walsh, author and Independent columnist}
+◊section{John Walsh, author and Independent columnist}
 
 ◊ul{
 ◊item{◊emph{◊amazon["B000JQU1VS"]{The Adventures of Sherlock Holmes}} ◊color["red"]{(free)} by Sir Arthur Conan Doyle. Irresistible puzzle-solving tales of the chilly Victorian master-sleuth and his dim medical sidekick.}
@@ -70,7 +70,7 @@ I linked to a free edition wherever possible. If a book was not available on the
 ◊item{◊emph{◊amazon["B004G8P0UW"]{Animal Farm}} ◊color["red"]{(free)} by George Orwell. Smart 11-year-olds won’t need any pre-knowledge of Marx, Lenin, Trotsky and 1917 to appreciate this brilliantly-told fable.}
 }
 
-◊h2[#:id "michael-rosen"]{Michael Rosen}
+◊section{Michael Rosen}
 
 ◊ul{
 ◊item{◊emph{◊amazon["B000FC1KGG"]{Skellig}} by David Almond. Brings magical realism to working-class North-east England.}

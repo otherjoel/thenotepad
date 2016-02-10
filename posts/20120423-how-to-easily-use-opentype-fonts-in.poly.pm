@@ -25,16 +25,12 @@ That being understood, here’s how to use your system fonts in your TeX documen
 
 ◊strong{Note:} If you are using the aforementioned pandoc to generate your TeX documents, you do not need to do step 2 — pandoc already includes the fontspec package in its default template. Also, you can set the main font by adding the option ◊code{--variable=mainfont:"font name"} when calling the ◊code{pandoc} command.
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "soramimi-said"]{◊link["http://soramimi.wordpress.com/"]{soramimi} said:}
+◊comment[#:author "soramimi"
+         #:datetime "May 15, 2012"
+         #:authorlink "http://soramimi.wordpress.com/"]{Wow, awesome! Just tried this out and it worked quite very well. Thanks!}
 
-Wow, awesome! Just tried this out and it worked quite very well. Thanks!
-
-(Comment posted May 15, 2012)
-
-◊h3[#:id "james-plant-said"]{◊link["https://www.blogger.com/profile/12119364791147441592"]{James Plant} said:}
-
-Worked! Thanks!
-
-(Comment posted January 30, 2013)
+◊comment[#:author "James Plant"
+         #:datetime "January 30, 2013"
+         #:authorlink "https://www.blogger.com/profile/12119364791147441592"]{Worked! Thanks!}

@@ -62,10 +62,8 @@ Set the import settings as follows: AAC encoder, 22.050kHz sample rate, 32kbps b
 
 Click OK to close all the dialog boxes. Now go to the ◊code{.m4a} file in iTunes (or the ◊code{.mp3} file you may have created earlier for that matter, it’s up to you), right-click it and click ◊noun{Create AAC version}. iTunes will re-encode the file using your new settings and you should be able to open that new ◊code{.m4a} file in Chapter and Verse.
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "eliz-said"]{◊link["https://www.blogger.com/profile/14318503352356678310"]{eLiz} said:}
-
-Just popping into to say you are such a cool brother.
-
-(Comment posted December 18, 2009)
+◊comment[#:author "eLiz"
+         #:datetime "December 18, 2009"
+         #:authorlink "https://www.blogger.com/profile/14318503352356678310"]{Just popping into to say you are such a cool brother.}

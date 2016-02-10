@@ -30,12 +30,10 @@ The access time is still pretty low, but the average transfer rate has droppped 
 
 It’s possible that a normal spinning disk would actually experience gains as a byproduct of TrueCrypt encryption, but I haven’t had time to try it out and I probably won’t get to it anytime soon.
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "eric-said"]{◊link["https://www.blogger.com/profile/04935278065939914567"]{eric} said:}
+◊comment[#:author "eric"
+         #:datetime "August 13, 2009"
+         #:authorlink "https://www.blogger.com/profile/04935278065939914567"]{Very helpful article. I was wondering if TrueCrypt would impact hard drive performance and peg the CPU. I’ve tested Guardian Edge’s solution as well with pretty much the same results as you:
 
-Very helpful article. I was wondering if TrueCrypt would impact hard drive performance and peg the CPU. I’ve tested Guardian Edge’s solution as well with pretty much the same results as you:
-
-◊link["http://www.isyougeekedup.com/guardian-edge-encryption-benchmarks-and-performance/"]{http://www.isyougeekedup.com/guardian-edge-encryption-benchmarks-and-performance/}
-
-(Comment posted August 13, 2009)
+◊link["http://www.isyougeekedup.com/guardian-edge-encryption-benchmarks-and-performance/"]{http://www.isyougeekedup.com/guardian-edge-encryption-benchmarks-and-performance/}}

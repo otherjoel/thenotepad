@@ -46,45 +46,33 @@ start: function(imageLink) {
 
 Save the file. Now all you have to do is add ◊code{rel="lightbox"} to your ◊code{<area>} tags, just as you would with normal links.
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "jean-said"]{◊link["http://deepthoughtsbyjean.wordpress.com/"]{Jean} said:}
+◊comment[#:author "Jean"
+         #:datetime "April 30, 2011"
+         #:authorlink "http://deepthoughtsbyjean.wordpress.com/"]{Thanks for this! Exactly what I was looking for. I’m using v2.05 of the script.}
 
-Thanks for this! Exactly what I was looking for. I’m using v2.05 of the script.
+◊comment[#:author "Baeta"
+         #:datetime "November 21, 2011"
+         #:authorlink "https://www.blogger.com/profile/11334348926905674777"]{Thanks man. Simple and work perfectly!}
 
-(Comment posted April 30, 2011)
+◊comment[#:author "LeE"
+         #:datetime "February 04, 2012"
+         #:authorlink "https://www.blogger.com/profile/09716083308964829701"]{Thank you very much! I was also looking for this. Solved my problem easily!}
 
-◊h3[#:id "baeta-said"]{◊link["https://www.blogger.com/profile/11334348926905674777"]{Baeta} said:}
+◊comment[#:author "hiram"
+         #:datetime "March 18, 2012"
+         #:authorlink "https://www.blogger.com/profile/05790412345718286045"]{I am currently working with lightbox2.05 and image map and your 1 line addition worked to link them up. Thank you. I also found a way to pin the image container more or less where I wanted it.
 
-Thanks man. Simple and work perfectly!
-
-(Comment posted November 21, 2011)
-
-◊h3[#:id "lee-said"]{◊link["https://www.blogger.com/profile/09716083308964829701"]{LeE} said:}
-
-Thank you very much! I was also looking for this. Solved my problem easily!
-
-(Comment posted February 04, 2012)
-
-◊h3[#:id "hiram-said"]{◊link["https://www.blogger.com/profile/05790412345718286045"]{hiram} said:}
-
-I am currently working with lightbox2.05 and image map and your 1 line addition worked to link them up. Thank you.
-I also found a way to pin the image container more or less where I wanted it.
 Now I would like to have the NEXT and PREV tabs appear in the box with CloseX in the same manner without the rollover needed. I found 1 hint about changing 15% in a line in the css style file, but that did not move it down to the box with CloseX, only to the bottom of the image frame.
 Does anyone have any ideas?
 Thank you
-Hiram Levy
+Hiram Levy}
 
-(Comment posted March 18, 2012)
+◊comment[#:author "Meldraw"
+         #:datetime "March 22, 2012"
+         #:authorlink "https://www.blogger.com/profile/01484364710815612789"]{Perfect. Exactly what I needed, and a simple fix. THANK YOU!}
 
-◊h3[#:id "meldraw-said"]{◊link["https://www.blogger.com/profile/01484364710815612789"]{Meldraw} said:}
-
-Perfect. Exactly what I needed, and a simple fix. THANK YOU!
-
-(Comment posted March 22, 2012)
-
-◊h3[#:id "h_charles67-said"]{◊link["https://www.blogger.com/profile/10807685903622185588"]{h_charles67} said:}
-
-This fix didn’t work for version 2.51. The solution was to find line 286: ◊code{var anchors = document.getElementsByTagName("a");} and change ◊code{a} to ◊code{area}. That will, of course, stop lightbox from working with ordinary ‘a’ tags.
-
-(Comment posted November 11, 2012)
+◊comment[#:author "h_charles67"
+         #:datetime "November 11, 2012"
+         #:authorlink "https://www.blogger.com/profile/10807685903622185588"]{This fix didn’t work for version 2.51. The solution was to find line 286: ◊code{var anchors = document.getElementsByTagName("a");} and change ◊code{a} to ◊code{area}. That will, of course, stop lightbox from working with ordinary ‘a’ tags.}

@@ -12,7 +12,7 @@ Keep in mind, it’s not uncommon for Verizon to alter the options they offer. I
 
 Be sure to leave a comment with your findings!
 
-◊h2{The penny-pincher method (for trips of less than three weeks)}
+◊section{The penny-pincher method (for trips of less than three weeks)}
 
 My wife is from Canada and we do this regularly during our visits to family there.
 
@@ -44,7 +44,7 @@ Either way, here’s how to make sure you don’t use up your “cheap” data:
 Go to ◊noun{Settings} — ◊noun{Mail, Contacts, Calendars} — ◊noun{Fetch New Data}, turn off the Push option and set the frequency to Hourly or Manually.}
 }
 
-◊h2{What about the inconvenient and totally free method?}
+◊section{What about the inconvenient and totally free method?}
 
 Depending on your phone, it’s possible that you ◊emph{may} be able to avoid any extra overseas data charges altogether by turning off cellular data.
 
@@ -54,6 +54,6 @@ On an iPhone, you need to turn off cellular data under ◊noun{Settings} → ◊
 
 The catch with this method is that it can never actually eliminate your risk. Unforeseen circumstances can very easily require you to grab an email or place a call when you’re not near wifi, and even if it’s technically possible to change your phone’s settings back and forth in just the right ways, you always risk slipping up even for a second and incurring that $25 charge. Personally I’d much rather be realistic and plan ahead so I can be flexible without breaking the bank. For short trips especially, I really don’t believe it’s worth the mental hassle, unless you want to take the challenge as sort of a game with yourself.
 
-◊h2{What if I’ll be out of the country for more than three weeks?}
+◊section{What if I’ll be out of the country for more than three weeks?}
 
 Then you really need to read this article: ◊link["http://a.wholelottanothing.org/2012/02/world-travel-with-the-unlocked-us-verizon-iphone-4s.html"]{World travel with the unlocked US Verizon iPhone 4S} — check out the comments as well.

@@ -15,7 +15,7 @@ There are a lot of guides for moving from Blogger to Wordpress, but nothing abou
 ◊item{Automatically redirect posts at the old blog to the new one without loosing Google juice}
 }
 
-◊h2[#:id "migrating-posts-comments-and-images"]{1. Migrating Posts, Comments and Images}
+◊section{1. Migrating Posts, Comments and Images}
 
 First of all, download a copy of your Blogger blog: once logged in to Blogger, go to the dashboard for your blog, then click ◊noun{Settings} → ◊noun{Other}. There will be a link at the top to export your blog -- this will allow you to download a ◊code{.xml} file containing your entire blog, including your template, all configuration settings, posts and comments.
 
@@ -36,7 +36,7 @@ Upload all these folders to the relevant content folder on your Kirby site and t
 
 The folders include copies of any images referenced in the post, and all image links in each post are converted to Kirby’s own format.
 
-◊h2[#:id "redirecting-from-the-old-blog"]{2. Redirecting From the Old Blog}
+◊section{2. Redirecting From the Old Blog}
 
 Create a folder ◊code{blogger} on the server for your ◊emph{new} website, accessible at the URL ◊code{mysite.com/blogger}. Make a file in that folder called ◊code{index.php} and paste in this code:
 

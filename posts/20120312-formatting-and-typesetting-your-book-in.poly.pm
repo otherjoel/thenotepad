@@ -18,7 +18,7 @@ Next, you want to find a matching set of values for your final font size, line h
 
 You may need to reiterate a few times until you get a matching set of numbers that fit well on your page and do not need too much rounding.
 
-◊h2[#:id "configure-words-typesetting"]{Configure Word’s typesetting}
+◊section{Configure Word’s typesetting}
 
 A couple of points about paragraph formatting:
 
@@ -52,7 +52,7 @@ Finally, enable ligatures. If your font is of good quality and has alternates fo
 ◊item{Click the ◊noun{Advanced} tab, then next to the ◊noun{Ligatures} option, select ◊noun{Standard Only}.}
 }
 
-◊h3[#:id "sources"]{Sources}
+◊subsection{Sources}
 
 These tips are compiled from many sources, and in many cases updated for clarity or accuracy with newer versions of Word.
 
@@ -62,14 +62,12 @@ These tips are compiled from many sources, and in many cases updated for clarity
 ◊item{◊link["http://www.pearsonified.com/2011/12/golden-ratio-typography.php"]{Golden Ratio typography} by Chris Pearson}
 }
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "rundy-said"]{◊link["https://www.blogger.com/profile/01047159380596730164"]{Rundy} said:}
-
-I am not familiar with Word since I use OpenOffice/LibreOffice but here is an additional tip from my experience:
+◊comment[#:author "Rundy"
+         #:datetime "March 12, 2012"
+         #:authorlink "https://www.blogger.com/profile/01047159380596730164"]{I am not familiar with Word since I use OpenOffice/LibreOffice but here is an additional tip from my experience:
 
 Set the first paragraph in each chapter (or whatever body of text the first paragraph will not be indented in) to a different style (with no indent) than the rest of the body text. I call the style something like “first paragraph.” Instead of going back and deleting the indent from the first paragraph of each section, I change the style for the paragraph to the no indent “first paragraph” style.
 
-At the time this is no more or less work than simply deleting the indent, but should you ever want to add some stylized feature to the first paragraph (like dropped caps) you can do this to all beginning paragraphs with one simple edit of the “first paragraph” style.
-
-(Comment posted March 12, 2012)
+At the time this is no more or less work than simply deleting the indent, but should you ever want to add some stylized feature to the first paragraph (like dropped caps) you can do this to all beginning paragraphs with one simple edit of the “first paragraph” style.}

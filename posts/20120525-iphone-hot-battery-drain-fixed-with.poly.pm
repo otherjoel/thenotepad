@@ -35,48 +35,36 @@ For what it’s worth, I also have an Exchange account for work that syncs mail,
 
 ◊strong{Wait, won’t there be a big delay for receiving emails this way?} No, not really. The fact is that whenever you open an email inbox in the Mail app, your iPhone instantly re-checks the account for new mail anyway. The Fetch setting only limits the background checking that the phone does when you’re not looking, so setting it to hourly just means the red “new email” number on the Mail icon won’t update itself more than once an hour◊numbered-note{Seriously, how often do you really need to check your email? More than once an hour and I’d say you have serious productivity issues.}. You can always get an up-to-the-minute check by just opening the Mail app.
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "susan-said"]{◊link["https://www.blogger.com/profile/01163256334849940206"]{Susan} said:}
+◊comment[#:author "Susan"
+         #:datetime "September 05, 2012"
+         #:authorlink "https://www.blogger.com/profile/01163256334849940206"]{This was incredibly helpful and easy to follow (although I had to look up solutions separately on how to delete all my contacts from my iphone easily). I’m going to test it out over the next few days to see if power drain has been helped.
 
-This was incredibly helpful and easy to follow (although I had to look up solutions separately on how to delete all my contacts from my iphone easily). I’m going to test it out over the next few days to see if power drain has been helped.
+One follow up question: In the Info tab on Itunes for your iphone, what have you selected with regards to Syncing your contacts? Nothing? Is it just syncing with icloud?}
 
-One follow up question: In the Info tab on Itunes for your iphone, what have you selected with regards to Syncing your contacts? Nothing? Is it just syncing with icloud?
+◊comment[#:author "Matt"
+         #:datetime "September 13, 2012"
+         #:authorlink "https://www.blogger.com/profile/14454517341881101636"]{Yes! THANK YOU! This was perfect and fixed my problem, along with getting all my contacts synced up and on my phone. Thanks for sharing!}
 
-(Comment posted September 05, 2012)
+◊comment[#:author "Joseph D’Cruz"
+         #:datetime "September 27, 2012"
+         #:authorlink "https://www.blogger.com/profile/10707415689731186668"]{Google have just added the CardDAV protocol to their Google Contacts service, which means you can directly sync iOS devices with your Google contacts. There are instructions on the Google support site here:
 
-◊h3[#:id "matt-said"]{◊link["https://www.blogger.com/profile/14454517341881101636"]{Matt} said:}
+◊link["http://support.google.com/mail/bin/answer.py?hl=en&amp;answer=2753077"]}
 
-Yes! THANK YOU! This was perfect and fixed my problem, along with getting all my contacts synced up and on my phone. Thanks for sharing!
-
-(Comment posted September 13, 2012)
-
-◊h3[#:id "joseph-dcruz-said"]{◊link["https://www.blogger.com/profile/10707415689731186668"]{Joseph D’Cruz} said:}
-
-Google have just added the CardDAV protocol to their Google Contacts service, which means you can directly sync iOS devices with your Google contacts. There are instructions on the Google support site here:
-
-◊link["http://support.google.com/mail/bin/answer.py?hl=en&amp;answer=2753077"]
-
-(Comment posted September 27, 2012)
-
-◊h3[#:id "malbino-said"]{◊link["https://www.blogger.com/profile/10784730407744980843"]{Malbino} said:}
-
-Apple have replaced 2 iphones with this issue blaming it on bugs in apps.
+◊comment[#:author "Malbino"
+         #:datetime "November 14, 2012"
+         #:authorlink "https://www.blogger.com/profile/10784730407744980843"]{Apple have replaced 2 iphones with this issue blaming it on bugs in apps.
 I tried what u suggested and it worked.
-brilliant.
+brilliant.}
 
-(Comment posted November 14, 2012)
+◊comment[#:author "Yogesh Dandawate"
+         #:datetime "November 24, 2012"
+         #:authorlink "https://www.blogger.com/profile/10517578576588077213"]{Thanks for this ! Seems to work for mw
 
-◊h3[#:id "yogesh-dandawate-said"]{◊link["https://www.blogger.com/profile/10517578576588077213"]{Yogesh Dandawate} said:}
+~Yogesh D. India}
 
-Thanks for this ! Seems to work for mw
-
-~Yogesh D. India
-
-(Comment posted November 24, 2012)
-
-◊h3[#:id "yogesh-nogia-said"]{◊link["https://www.blogger.com/profile/16888284555835013628"]{Yogesh Nogia} said:}
-
-Hmmmm Im gonna try this on my iPhone4s. Cuz im having the same prblm. Thank
-
-(Comment posted March 09, 2013)
+◊comment[#:author "Yogesh Nogia"
+         #:datetime "March 09, 2013"
+         #:authorlink "https://www.blogger.com/profile/16888284555835013628"]{Hmmmm Im gonna try this on my iPhone4s. Cuz im having the same prblm. Thank}

@@ -12,7 +12,7 @@ In data collection, your smartphone is your friend. You want to make sure collec
 
 There are a lot of apps out there for collecting and reporting various kinds of data — running times/length, weight loss/gain, sex, sleep and eating habits — and these can be great if you’re only interested in tracking one or two aspects of your life. But as soon as you begin to raise your sights a little and think about comprehensive Felton-scale data collection, you realize what a pain it’s going to be to have a herd of seventeen apps to manage. Another problem with most of these apps is that they don’t provide any access to the actual data.
 
-◊h2[#:id "daytum"]{Daytum}
+◊section{Daytum}
 
 For awhile, Felton was working on a project called ◊link["http://daytum.com"]{Daytum} that would help people create their personal reports similar to his. Daytum has always had a lot of promise, but there are a few major problems with it that need to change before it can be really useful:
 
@@ -22,7 +22,7 @@ For awhile, Felton was working on a project called ◊link["http://daytum.com"]{
 ◊item{The ◊link["http://itunes.apple.com/us/app/daytum/id352646537?mt=8"]{iPhone app} — which would ordinarily be the ideal channel for collecting data — is buggy, infrequently updated, and (worst of all) has been known to randomly erase data}
 }
 
-◊h2[#:id "the-format-is-text"]{The Format is Text}
+◊section{The Format is Text}
 
 I found what I was looking for in Ben Lipkowitz’s ◊link["http://fennetic.net/sleep/"]{lifelog project}. He developed a simple text format that allows you to quickly capture personal events and data as they happen. A self-explanatory sample is below:
 
@@ -60,7 +60,7 @@ This format doesn’t work well for capturing broader categories of events that 
 
 I don’t recommend trying to record your moment-to-moment moods for any reason whatsoever. That way lies self-referential madness.
 
-◊h2[#:id "the-app-is-nebulous-notes"]{The App is Nebulous Notes}
+◊section{The App is Nebulous Notes}
 
 ◊figure["/img/photonov082c111447am.png"]{ }
 

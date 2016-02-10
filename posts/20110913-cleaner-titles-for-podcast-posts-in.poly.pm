@@ -32,16 +32,13 @@ By the time I got your e-mail I also figured that iTunes takes the first 63 char
 
 I currently don’t know of any tweaks that are possible; neither Tumblr nor Feedburner seem to expose the kind of functionality that would allow for this tweaking. Any suggestions are welcome!
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "שניצל-said"]{◊link["https://www.blogger.com/profile/12107533202914200359"]{שניצל} said:}
+◊comment[#:author "שניצל"
+         #:datetime "December 29, 2012"
+         #:authorlink "https://www.blogger.com/profile/12107533202914200359"]{Hi. I read your guide on how to publish podcasts using tumblr, but it doesn’t work - for some reason it uses the flash player as the episode file. the .mp3 link is the first link after the 63 characters, but it still doesn’t work.
 
-Hi.
-I read your guide on how to publish podcasts using tumblr, but it doesn’t work - for some reason it uses the flash player as the episode file. the .mp3 link is the first link after the 63 characters, but it still doesn’t work.
 Can you please help me?
 
 thanks,
-Dan
-d.fishgold@gmail.com
-
-(Comment posted December 29, 2012)
+Dan}

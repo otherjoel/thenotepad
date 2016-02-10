@@ -20,22 +20,17 @@ It all comes down to, what do you need? A communications and scheduling tool? Or
 
 Other than that, there is this ◊link["http://en.wikipedia.org/wiki/List_of_project_management_software"]{list of project management software}, but I of course have not experimented with any of those in depth. I don’t get the impression that industrial-quality file management is a big component of any of them, however. Finally, the biggest part of any solution is getting people to use it. If you can discern what your users really want (e.g., mainly want to shuffle files around, or track schedules), then it is probably better to find a tool that scratches just that one itch really well. Whereas more “comprehensive” products often require an overhaul of everyone’s workflow — if you are in a position to “sell” a new approach and get everyone to buy in on it and actually open up their browsers and ◊emph{use} it every day, so much the better.
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "jjriv-said"]{◊link["https://www.blogger.com/profile/15903971177129603875"]{jjriv} said:}
+◊comment[#:author "jjriv"
+         #:datetime "March 16, 2009"
+         #:authorlink "https://www.blogger.com/profile/15903971177129603875"]{Another great alternative to Basecamp that includes more functionality is ◊link["http://www.myintervals.com"]{Intervals}. It includes time tracking, task management, and several other project management features that make it ideal for managing everything in one place.}
 
-Another great alternative to Basecamp that includes more functionality is ◊link["http://www.myintervals.com"]{Intervals}. It includes time tracking, task management, and several other project management features that make it ideal for managing everything in one place.
+◊comment[#:author "tiajones"
+         #:datetime "June 07, 2009"
+         #:authorlink "https://www.blogger.com/profile/17182939622668582660"]{I wrote an article “Tips for Choosing a SharePoint Alternative” that you might find interesting. Check it out when you have a moment. Let me know what you think!
 
-(Comment posted March 16, 2009)
-
-◊h3[#:id "tiajones-said"]{◊link["https://www.blogger.com/profile/17182939622668582660"]{tiajones} said:}
-
-I wrote an article “Tips for Choosing a SharePoint Alternative” that you might find interesting. Check it out when you have a moment. Let me know what you think!
-
-http://budurl.com/bpzj
+◊link["http://budurl.com/bpzj"]
 
 Best,
-Tia
-http://budurl.com/bybt
-
-(Comment posted June 07, 2009)
+Tia}

@@ -14,7 +14,7 @@ If your blog is hosted on running Blogspot and you want to use ◊link["http://d
 
 This has two advantages. First, it future-proofs your blog. No matter what happens, if Blogger ever gets shut down or becomes undesirable to use for any reason, in ten years you’ll still have a very useable copy of all your writing. Second, a text-editing program is much less likely to crash than your browser. This approach eliminates the risk of a browser crash causing you to lose large amounts of work.
 
-◊h3[#:id "getting-blogspot-to-play-nice-with-your-markdown-generated-html"]{Getting Blogspot to play nice with your Markdown-generated HTML}
+◊subsection{Getting Blogspot to play nice with your Markdown-generated HTML}
 
 This is the area people seem to have trouble with, but it’s really quite simple.
 

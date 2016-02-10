@@ -22,182 +22,128 @@ The status just above the ◊code{Send Now} button commonly reads “Your last c
 
 I conclude that Instapaper simply is not sending the emails for some reason. Any guesses as to why?
 
-◊strong{◊smallcaps{Update:}} Apparently this is a known issue; ◊amazon["B001U5SPME"]{Wired} published ◊link["http://www.wired.com/gadgetlab/2010/09/how-to-do-almost-everything-with-a-kindle-3/"]{an article} which says “Unfortunately, for reasons I’m not smart enough to understand, Instapaper can’t automate delivery to your ◊code{@free.kindle.com} address.” This tells us nothing about what causes the problem, only that it’s a known issue and, for whatever reason, nothing has been done about it.
+◊updatebox["No. 1"]{Apparently this is a known issue; ◊amazon["B001U5SPME"]{Wired} published ◊link["http://www.wired.com/gadgetlab/2010/09/how-to-do-almost-everything-with-a-kindle-3/"]{an article} which says “Unfortunately, for reasons I’m not smart enough to understand, Instapaper can’t automate delivery to your ◊code{@free.kindle.com} address.” This tells us nothing about what causes the problem, only that it’s a known issue and, for whatever reason, nothing has been done about it.}
 
-◊strong{◊smallcaps{Second Update:}} — Marco seems to have been working on the problem. On May 25, @Instapaper ◊link["https://twitter.com/#!/instapaper/status/73584811683487746"]{tweeted}: “Sending tomorrow morning’s Kindle auto-deliveries early, now. I think I finally found the bug that prevented so many from being delivered.” Then ◊link["https://twitter.com/#!/instapaper/status/73622208060198913"]{on May 26}: “@jeremyisweary Have you changed your Instapaper username since setting it up, possibly when I moved to requiring emails-as-usernames?” The problem has not yet been solved for me personally, or for others, as seen in the comments to this blog post. Will keep you posted.
+◊updatebox["No. 2"]{Marco seems to have been working on the problem. On May 25, @Instapaper ◊link["https://twitter.com/#!/instapaper/status/73584811683487746"]{tweeted}: “Sending tomorrow morning’s Kindle auto-deliveries early, now. I think I finally found the bug that prevented so many from being delivered.” Then ◊link["https://twitter.com/#!/instapaper/status/73622208060198913"]{on May 26}: “@jeremyisweary Have you changed your Instapaper username since setting it up, possibly when I moved to requiring emails-as-usernames?” The problem has not yet been solved for me personally, or for others, as seen in the comments to this blog post. Will keep you posted.}
 
-◊strong{◊smallcaps{Third Update:}} — I’ve been receiving my unread articles from Instapaper on my Kindle, and it seems the problem has been fixed. On October 5th 2011 (the day Steve Jobs died), @Instapaper ◊link["https://twitter.com/#!/instapaper/status/121779764930428928"]{tweeted} that Marco believed he had fixed the problem. The same day, he ◊link["https://twitter.com/#!/instapaper/status/121780105356906496"]{said}, “By a few hours from now, all deliveries should be made. If you’re one of those who haven’t been getting them, let me know whether you do.” I’ve been getting my deliveries ever since, and so have others.
+◊updatebox["No. 3"]{I’ve been receiving my unread articles from Instapaper on my Kindle, and it seems ◊strong{the problem has been fixed.} On October 5th 2011 (the day Steve Jobs died), @Instapaper ◊link["https://twitter.com/#!/instapaper/status/121779764930428928"]{tweeted} that Marco believed he had fixed the problem. The same day, he ◊link["https://twitter.com/#!/instapaper/status/121780105356906496"]{said}, “By a few hours from now, all deliveries should be made. If you’re one of those who haven’t been getting them, let me know whether you do.” I’ve been getting my deliveries ever since, and so have others.}
 
 If you’re still having problems, let us know in the comments!
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "nickv-said"]{◊link["https://www.blogger.com/profile/18399331908951458413"]{nickv} said:}
+◊comment[#:author "nickv"
+         #:datetime "May 24, 2011"
+         #:authorlink "https://www.blogger.com/profile/18399331908951458413"]{I’m having the same problem, but no solution. Please keep us updated if you figure anything out.}
 
-I’m having the same problem, but no solution. Please keep us updated if you figure anything out.
+◊comment[#:author "Marcel"
+         #:datetime "May 27, 2011"
+         #:authorlink "https://www.blogger.com/profile/05840728983080661886"]{Same issue here - did you get any progress?}
 
-(Comment posted May 24, 2011)
+◊comment[#:author "Mike"
+         #:datetime "May 30, 2011"
+         #:authorlink "https://www.blogger.com/profile/03949187896206172372"]{Yep same problem. It never worked, even though I had daily delivery set and was regularly adding new articles - then I randomly got a delivery the other day --- then nothing since…}
 
-◊h3[#:id "marcel-said"]{◊link["https://www.blogger.com/profile/05840728983080661886"]{Marcel} said:}
+◊comment[#:author "Tiago"
+         #:datetime "May 30, 2011"
+         #:authorlink "https://www.blogger.com/profile/04637355777980911953"]{Same issue here.}
 
-Same issue here - did you get any progress?
+◊comment[#:author "James"
+         #:datetime "June 01, 2011"
+         #:authorlink "https://www.blogger.com/profile/13169706717050069732"]{Yep same here --- lets all tweet @instaper and ask?}
 
-(Comment posted May 27, 2011)
+◊comment[#:author "nickv"
+         #:datetime "June 02, 2011"
+         #:authorlink "https://www.blogger.com/profile/18399331908951458413"]{I hit the “reset history” button on ◊link["http://www.instapaper.com/user/kindle"]{IP’s kindle settings page}, and it has successfully made my delivery two days in a row.
 
-◊h3[#:id "mike-said"]{◊link["https://www.blogger.com/profile/03949187896206172372"]{Mike} said:}
+I’m not sure why I didn’t try that sooner, as it’s literally the only thing on that page that sounds remotely like it might do something, but hopefully it will help the rest of you too.}
 
-Yep same problem. It never worked, even though I had daily delivery set and was regularly adding new articles - then I randomly got a delivery the other day --- then nothing since…
+◊comment[#:author "James"
+         #:datetime "June 09, 2011"
+         #:authorlink "https://www.blogger.com/profile/15529710001567905650"]{Put me down as having this problem as well. I thought I was the only one. I sent email but I’m sure Marco is very busy. I’ve tried resetting the history many times and also created another instapaper account. Neither has worked.}
 
-(Comment posted May 30, 2011)
+◊comment[#:author "Joel"
+         #:datetime "June 14, 2011"
+         #:authorlink "https://www.blogger.com/profile/13646393468637062885"]{There’s been some work on this since late May, apparently - see the updates above. Still not workign though.
 
-◊h3[#:id "tiago-said"]{◊link["https://www.blogger.com/profile/04637355777980911953"]{Tiago} said:}
+If everyone who is still having this problem could tweet this post to @Instapaper, perhaps we could make him more aware of it and help him track down the problem.}
 
-Same issue here.
+◊comment[#:author "n8henrie"
+         #:datetime "June 17, 2011"
+         #:authorlink "https://www.blogger.com/profile/01824579072337279035"]{I’ve had this problem on-and-off for months. It seemed to work well if I did the ◊code{@kindle.com} and set my Amazon charge maximum to $0.00, but it has never worked right with the ◊code{@free.kindle.com} address.}
 
-(Comment posted May 30, 2011)
+◊comment[#:author "Dr Citrus"
+         #:datetime "July 02, 2011"
+         #:authorlink "https://www.blogger.com/profile/16265718649436015704"]{I’ve had this issue from day one. Has never worked.}
 
-◊h3[#:id "james-said"]{◊link["https://www.blogger.com/profile/13169706717050069732"]{James} said:}
+◊comment[#:author "Marcel"
+         #:datetime "July 06, 2011"
+         #:authorlink "https://www.blogger.com/profile/05840728983080661886"]{It looks like something has changed and my auto delivery has started to work again. I noticed this a couple of days ago, but it may have been back longer as I had my wireless switched off. Happy Days!}
 
-Yep same here --- lets all tweet @instaper and ask?
+◊comment[#:author "SoundExplorer"
+         #:datetime "July 06, 2011"
+         #:authorlink "https://www.blogger.com/profile/10577771258342042112"]{I first tried setting this up about two weeks ago, but it has never worked. Only doing the manual “send now” works. I also find the 20 article limit to be too limiting.}
 
-(Comment posted June 01, 2011)
+◊comment[#:author "Dreyfusard"
+         #:datetime "July 09, 2011"
+         #:authorlink "https://www.blogger.com/profile/01507488016177522587"]{Same here. Only manual send works with free Kindle account. Trying now with non-free address…}
 
-◊h3[#:id "nickv-said-1"]{◊link["https://www.blogger.com/profile/18399331908951458413"]{nickv} said:}
+◊comment[#:author "tiede"
+         #:datetime "July 10, 2011"
+         #:authorlink "http://openid.tiede.dk/"]{Same here - not working}
 
-I hit the “reset history” button on ◊link["http://www.instapaper.com/user/kindle"]{IP’s kindle settings page}, and it has successfully made my delivery two days in a row.
+◊comment[#:author "yioann"
+         #:datetime "July 27, 2011"
+         #:authorlink "https://www.blogger.com/profile/04656031571092114149"]{same here. it does not work. I will try with ◊code{@kindle.com} and I will let you know.}
 
-I’m not sure why I didn’t try that sooner, as it’s literally the only thing on that page that sounds remotely like it might do something, but hopefully it will help the rest of you too.
+◊comment[#:author "yioann"
+         #:datetime "August 02, 2011"
+         #:authorlink "https://www.blogger.com/profile/04656031571092114149"]{The problem persists. I even deleted my account and recreated it. It still does not work}
 
-(Comment posted June 02, 2011)
+◊comment[#:author "yioann"
+         #:datetime "August 07, 2011"
+         #:authorlink "https://www.blogger.com/profile/04656031571092114149"]{It started working out of the blue today, but I can not trust the service anymore.
 
-◊h3[#:id "james-said-1"]{◊link["https://www.blogger.com/profile/15529710001567905650"]{James} said:}
+I will give ◊link["http://klip.me"] a try. They added a functionality to save articles and send them as a periodical to kindle.}
 
-Put me down as having this problem as well. I thought I was the only one. I sent email but I’m sure Marco is very busy. I’ve tried resetting the history many times and also created another instapaper account. Neither has worked.
+◊comment[#:author "Gary Cheeseman"
+         #:datetime "August 07, 2011"
+         #:authorlink "https://www.blogger.com/profile/06156654472173541262"]{I’m having the exact same problem as described in the post too.}
 
-(Comment posted June 09, 2011)
+◊comment[#:author "Mark Wills"
+         #:datetime "August 24, 2011"
+         #:authorlink "https://www.blogger.com/profile/07032214119201061215"]{Not working for me either. :-(}
 
-◊h3[#:id "joel-said"]{◊link["https://www.blogger.com/profile/13646393468637062885"]{Joel} said:}
+◊comment[#:author "Dreyfusard"
+         #:datetime "August 24, 2011"
+         #:authorlink "https://www.blogger.com/profile/01507488016177522587"]{I increasingly turn to Readability for precisely this reason. But Readability does not appear to let one “save” an article from a mobile device…}
 
-There’s been some work on this since late May, apparently - see the updates above. Still not workign though.
+◊comment[#:author "sygyzy"
+         #:datetime "August 30, 2011"
+         #:authorlink "https://www.blogger.com/profile/17681416792612410666"]{Same here. not working for me as well. Very frustrating!}
 
-If everyone who is still having this problem could tweet this post to @Instapaper, perhaps we could make him more aware of it and help him track down the problem.
+◊comment[#:author "Kevin"
+         #:datetime "September 15, 2011"
+         #:authorlink "https://www.blogger.com/profile/13901022813088087935"]{September now. The problem continues…}
 
-(Comment posted June 14, 2011)
+◊comment[#:author "Dreyfusard"
+         #:datetime "October 06, 2011"
+         #:authorlink "https://www.blogger.com/profile/01507488016177522587"]{Unexpectedly received a digest last night. Maybe the problem’s been resolved?}
 
-◊h3[#:id "n8henrie-said"]{◊link["https://www.blogger.com/profile/01824579072337279035"]{n8henrie} said:}
-
-I’ve had this problem on-and-off for months. It seemed to work well if I did the ◊code{@kindle.com} and set my Amazon charge maximum to $0.00, but it has never worked right with the ◊code{@free.kindle.com} address.
-
-(Comment posted June 17, 2011)
-
-◊h3[#:id "dr-citrus-said"]{◊link["https://www.blogger.com/profile/16265718649436015704"]{Dr Citrus} said:}
-
-I’ve had this issue from day one. Has never worked.
-
-(Comment posted July 02, 2011)
-
-◊h3[#:id "marcel-said-1"]{◊link["https://www.blogger.com/profile/05840728983080661886"]{Marcel} said:}
-
-It looks like something has changed and my auto delivery has started to work again. I noticed this a couple of days ago, but it may have been back longer as I had my wireless switched off. Happy Days!
-
-(Comment posted July 06, 2011)
-
-◊h3[#:id "soundexplorer-said"]{◊link["https://www.blogger.com/profile/10577771258342042112"]{SoundExplorer} said:}
-
-I first tried setting this up about two weeks ago, but it has never worked. Only doing the manual “send now” works. I also find the 20 article limit to be too limiting.
-
-(Comment posted July 06, 2011)
-
-◊h3[#:id "dreyfusard-said"]{◊link["https://www.blogger.com/profile/01507488016177522587"]{Dreyfusard} said:}
-
-Same here. Only manual send works with free Kindle account. Trying now with non-free address…
-
-(Comment posted July 09, 2011)
-
-◊h3[#:id "tiede-said"]{◊link["http://openid.tiede.dk/"]{tiede} said:}
-
-Same here - not working
-
-(Comment posted July 10, 2011)
-
-◊h3[#:id "yioann-said"]{◊link["https://www.blogger.com/profile/04656031571092114149"]{yioann} said:}
-
-same here. it does not work. I will try with ◊code{@kindle.com} and I will let you know.
-
-(Comment posted July 27, 2011)
-
-◊h3[#:id "yioann-said-1"]{◊link["https://www.blogger.com/profile/04656031571092114149"]{yioann} said:}
-
-The problem persists. I even deleted my account and recreated it. It still does not work
-
-(Comment posted August 02, 2011)
-
-◊h3[#:id "yioann-said-2"]{◊link["https://www.blogger.com/profile/04656031571092114149"]{yioann} said:}
-
-It started working out of the blue today, but I can not trust the service anymore.
-
-I will give ◊link["http://klip.me"] a try. They added a functionality to save articles and send them as a periodical to kindle.
-
-(Comment posted August 07, 2011)
-
-◊h3[#:id "gary-cheeseman-said"]{◊link["https://www.blogger.com/profile/06156654472173541262"]{Gary Cheeseman} said:}
-
-I’m having the exact same problem as described in the post too.
-
-(Comment posted August 07, 2011)
-
-◊h3[#:id "mark-wills-said"]{◊link["https://www.blogger.com/profile/07032214119201061215"]{Mark Wills} said:}
-
-Not working for me either. :-(
-
-(Comment posted August 24, 2011)
-
-◊h3[#:id "dreyfusard-said-1"]{◊link["https://www.blogger.com/profile/01507488016177522587"]{Dreyfusard} said:}
-
-I increasingly turn to Readability for precisely this reason. But Readability does not appear to let one “save” an article from a mobile device…
-
-(Comment posted August 24, 2011)
-
-◊h3[#:id "sygyzy-said"]{◊link["https://www.blogger.com/profile/17681416792612410666"]{sygyzy} said:}
-
-Same here. not working for me as well. Very frustrating!
-
-(Comment posted August 30, 2011)
-
-◊h3[#:id "kevin-said"]{◊link["https://www.blogger.com/profile/13901022813088087935"]{Kevin} said:}
-
-September now. The problem continues…
-
-(Comment posted September 15, 2011)
-
-◊h3[#:id "dreyfusard-said-2"]{◊link["https://www.blogger.com/profile/01507488016177522587"]{Dreyfusard} said:}
-
-Unexpectedly received a digest last night. Maybe the problem’s been resolved?
-
-(Comment posted October 06, 2011)
-
-◊h3[#:id "joel-a.-said"]{◊link["https://www.blogger.com/profile/13646393468637062885"]{Joel A.} said:}
-
-It looks like it’s working! I’ll update the post.
-
-(Comment posted October 13, 2011)
-
-◊h3[#:id "sebo-said"]{◊link["https://www.blogger.com/profile/03477768609763934721"]{sebo} said:}
-
-I still have this problem; using the ◊code{@kindle.com} address with a Kindle 4 (non-keyboard). Anyone else?
-
-(Comment posted January 15, 2012)
-
-◊h3[#:id "federico-solazzo-said"]{◊link["https://www.blogger.com/profile/09801446663816990155"]{Federico Solazzo} said:}
-
-How to tell Instapaper to send to my Kindle unread posts only once? Because always I still have already sent posts! It always sends me 10 posts, including the ones it already sent me..So, if I mark one to “to read”, it send me 1 unread + 9 already sent. And it’s quite annoying :S
-
-(Comment posted May 30, 2012)
-
-◊h3[#:id "mihkelgysson-said"]{◊link["https://www.blogger.com/profile/11877463872894460936"]{mihkelgysson} said:}
-
-I have the same problem :(
-
-Any help?
-
-(Comment posted July 22, 2012)
+◊comment[#:author "Joel A."
+         #:datetime "October 13, 2011"
+         #:authorlink "https://www.blogger.com/profile/13646393468637062885"]{It looks like it’s working! I’ll update the post.}
+
+◊comment[#:author "sebo"
+         #:datetime "January 15, 2012"
+         #:authorlink "https://www.blogger.com/profile/03477768609763934721"]{I still have this problem; using the ◊code{@kindle.com} address with a Kindle 4 (non-keyboard). Anyone else?}
+
+◊comment[#:author "Federico Solazzo"
+         #:datetime "May 30, 2012"
+         #:authorlink "https://www.blogger.com/profile/09801446663816990155"]{How to tell Instapaper to send to my Kindle unread posts only once? Because always I still have already sent posts! It always sends me 10 posts, including the ones it already sent me..So, if I mark one to “to read”, it send me 1 unread + 9 already sent. And it’s quite annoying :S}
+
+◊comment[#:author "mihkelgysson"
+         #:datetime "July 22, 2012"
+         #:authorlink "https://www.blogger.com/profile/11877463872894460936"]{I have the same problem :(
+
+Any help?}

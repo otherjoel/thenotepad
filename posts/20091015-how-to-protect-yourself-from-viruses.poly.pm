@@ -40,11 +40,11 @@ Comments and proposed changes/additions welcome!
 
 ◊emph{◊strong{Update}, Nov 11 2009} — After I submitted this post a couple of times at Lifehacker, they came up with their own variant: ◊link["http://lifehacker.com/5401453/stop-paying-for-windows-security-microsofts-security-tools-are-good-enough?skyline=true&s=x"]{Stop Paying for Windows Security; Microsoft’s Security Tools Are Good Enough} [sic]. (Not suggesting there’s a relationship there. Well OK maybe I am.) I still believe Microsoft’s security tools are ◊emph{unnecessary}, however supremely adequate they may be for the job they’re supposed to do, but there are a lot of good points in the article, and I highly recommend it.
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "larry-said"]{◊link["https://www.blogger.com/profile/01994382985383873333"]{Larry} said:}
-
-I’ll bite.
+◊comment[#:author "Larry"
+         #:datetime "November 06, 2009"
+         #:authorlink "https://www.blogger.com/profile/01994382985383873333"]{I’ll bite.
 
 For the most part I agree, with a couple of exceptions. First, this only works if you can ◊emph{guarantee} than no one else will ◊emph{ever} use your computer.
 
@@ -54,6 +54,4 @@ So my second point would be to suggest Opera as an alternative browser rather th
 
 I agree with you regarding IE, but a lot of corporate types and schools pretty much insist on it. My wife’s college e-mail is broken in all browsers save IE. I tried to ban IE from my house, and she beat me down. So, again, your prescription only works if you have ◊emph{100% control} over your computers at ◊emph{all} times. Most of us don’t.
 
-Norton sucks. It’s a pig, makes your computer run like crap, takes over the computer at inconvenient times, won’t protect you much, and the Norton customer service is egregious. If you need something, I’d suggest ESET Nod32.
-
-(Comment posted November 06, 2009)
+Norton sucks. It’s a pig, makes your computer run like crap, takes over the computer at inconvenient times, won’t protect you much, and the Norton customer service is egregious. If you need something, I’d suggest ESET Nod32.}

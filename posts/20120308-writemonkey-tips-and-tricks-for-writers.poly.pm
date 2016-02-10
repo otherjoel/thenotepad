@@ -10,7 +10,7 @@ WriteMonkey is extremely ◊link["http://daringfireball.net/projects/markdown/"]
 
 Not all of WriteMonkey’s features are well-explained or documented, so I’m writing them up here.
 
-◊h2[#:id "configure-markdown-features"]{Configure Markdown features}
+◊section{Configure Markdown features}
 
 ◊ul{
 ◊item{Markdown highlighting will not work unless you have Markdown set as your “Markup Standard” — set this in the ◊code{Print & Export} section of your Preferences screen.}
@@ -23,14 +23,14 @@ Not all of WriteMonkey’s features are well-explained or documented, so I’m w
 }}
 }
 
-◊h2[#:id "some-undocumented-features-i-found-by-accident"]{Some undocumented features I found by accident}
+◊section{Some undocumented features I found by accident}
 
 ◊ul{
 ◊item{You can toggle whether WM will use normal quotes or “smart quotes” with ◊code{CTRL+SHIFT+'} (apostrophe).}
 ◊item{Out of the box: type ◊code{/now} to insert the timestamp. You can format this timestamp in the Preferences screen.}
 }
 
-◊h2[#:id "use-writemonkey-to-write-your-book"]{Use WriteMonkey to write your book}
+◊section{Use WriteMonkey to write your book}
 
 WriteMonkey has a number of great features for writers:
 
@@ -58,16 +58,12 @@ The upcoming version (2.3.5.0 as of this writing), however, will have some great
 
 Let us know of any additional tips in the comments!
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "kabi-park-said"]{◊link["https://www.blogger.com/profile/06871116148520330540"]{Kabi Park} said:}
+◊comment[#:author "Kabi Park"
+         #:datetime "April 02, 2013"
+         #:authorlink "https://www.blogger.com/profile/06871116148520330540"]{I like writing using ◊link["https://draftin.com/"]{Draft} which is online editor and supporting markdown & version control instead of WriteMonkey.}
 
-I like writing using ◊link["https://draftin.com/"]{Draft} which is online editor and supporting markdown & version control instead of WriteMonkey.
-
-(Comment posted April 02, 2013)
-
-◊h3[#:id "apps4all-said"]{◊link["https://www.blogger.com/profile/02574603827688030109"]{apps4all} said:}
-
-You should have a look at SmartDown : ◊link["http://www.aflava.com/"]{More infos} which provides a zen UI and advanced features like focus mode or is able to “fold” markdown
-
-(Comment posted November 11, 2014)
+◊comment[#:author "apps4all"
+         #:datetime "November 11, 2014"
+         #:authorlink "https://www.blogger.com/profile/02574603827688030109"]{You should have a look at SmartDown : ◊link["http://www.aflava.com/"]{More infos} which provides a zen UI and advanced features like focus mode or is able to “fold” markdown}

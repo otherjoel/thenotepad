@@ -28,68 +28,50 @@ I don’t have UltraEdit but I was able to make this work using ◊link["http://
 ◊item{Do it again using ◊code{R/Fit(.*)]} as your search string and the same replace string as above.}
 }
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "rob-said"]{◊link["https://www.blogger.com/profile/10021798230734615659"]{Rob} said:}
+◊comment[#:author "Rob"
+         #:datetime "May 27, 2011"
+         #:authorlink "https://www.blogger.com/profile/10021798230734615659"]{Hey I tried this using Notepad++ on a pdf that has a bunch of bookmarks with different zoom levels. The find/replace didn’t find any matches to the strings.}
 
-Hey I tried this using Notepad++ on a pdf that has a bunch of bookmarks with different zoom levels. The find/replace didn’t find any matches to the strings.
+◊comment[#:author "Rob"
+         #:datetime "May 27, 2011"
+         #:authorlink "https://www.blogger.com/profile/10021798230734615659"]{This was using the TextFX find/replace. Any suggestions to get it to work? It would be great if I could get it to work}
 
-(Comment posted May 27, 2011)
+◊comment[#:author "Shane"
+         #:datetime "June 24, 2011"
+         #:authorlink "https://www.blogger.com/profile/02454026051373796378"]{Thanks for the tip. For the folks running into trouble with Notepad++, just remove the space between the “R” and “/” in “R /XYZ(.*)]”, it should be “R/XYZ(.*)]” same thing applies to the repalcement text.}
 
-◊h3[#:id "rob-said-1"]{◊link["https://www.blogger.com/profile/10021798230734615659"]{Rob} said:}
+◊comment[#:author "Joshua"
+         #:datetime "March 01, 2012"
+         #:authorlink "https://www.blogger.com/profile/08903612467158866477"]{I couldn’t get it to work using Notepad++, but came up with another solution using JPDFBookmarks…
 
-This was using the TextFX find/replace. Any suggestions to get it to work? It would be great if I could get it to work
+◊link["http://codebyjoshua.blogspot.com/2012/02/easily-change-pdf-zoom-level-and-name.html"]}
 
-(Comment posted May 27, 2011)
-
-◊h3[#:id "shane-said"]{◊link["https://www.blogger.com/profile/02454026051373796378"]{Shane} said:}
-
-Thanks for the tip. For the folks running into trouble with Notepad++, just remove the space between the “R” and “/” in “R /XYZ(.*)]”, it should be “R/XYZ(.*)]” same thing applies to the repalcement text.
-
-(Comment posted June 24, 2011)
-
-◊h3[#:id "joshua-said"]{◊link["https://www.blogger.com/profile/08903612467158866477"]{Joshua} said:}
-
-I couldn’t get it to work using Notepad++, but came up with another solution using JPDFBookmarks…
-
-◊link["http://codebyjoshua.blogspot.com/2012/02/easily-change-pdf-zoom-level-and-name.html"]
-
-(Comment posted March 01, 2012)
-
-◊h3[#:id "daniel-kraus-said"]{◊link["https://www.blogger.com/profile/02046983092294373360"]{Daniel Kraus} said:}
-
-I wrote a small java application which is based on the PDF Clown library. It allows you to easily apply various bookmark configurations, such as ‘Inherit zoom’, to multiple PDF files within a desired directory.
+◊comment[#:author "Daniel Kraus"
+         #:datetime "January 11, 2014"
+         #:authorlink "https://www.blogger.com/profile/02046983092294373360"]{I wrote a small java application which is based on the PDF Clown library. It allows you to easily apply various bookmark configurations, such as ‘Inherit zoom’, to multiple PDF files within a desired directory.
 
 This is my first public project and due to the fact that I’m taking my exams in the next couple of weeks, I’m running out of time. But afterwards, which should be in mid-February, I’ll keep on developing.
 
 In the meantime, feel free to use the application and give some feedback.
 
-◊link["https://bitbucket.org/beatngu13/pdfbookmarkwizard/downloads"]
+◊link["https://bitbucket.org/beatngu13/pdfbookmarkwizard/downloads"]}
 
-(Comment posted January 11, 2014)
+◊comment[#:author "Werner Heckel"
+         #:datetime "March 21, 2014"
+         #:authorlink "https://www.blogger.com/profile/00817185928224919763"]{Thanks Daniel. Your tool was a great help.}
 
-◊h3[#:id "werner-heckel-said"]{◊link["https://www.blogger.com/profile/00817185928224919763"]{Werner Heckel} said:}
+◊comment[#:author "N. Jones"
+         #:datetime "May 27, 2014"
+         #:authorlink "https://www.blogger.com/profile/08891272085176919152"]{Daniel,
 
-Thanks Daniel. Your tool was a great help.
+Thanks for the java app. It works like a charm! Great time-saver too.}
 
-(Comment posted March 21, 2014)
+◊comment[#:author "SergioUrra"
+         #:datetime "August 03, 2014"
+         #:authorlink "https://www.blogger.com/profile/13821816373936026294"]{@Joshua, thanks a lot. I did use JPDFBookmarks. Really nice app.}
 
-◊h3[#:id "n.-jones-said"]{◊link["https://www.blogger.com/profile/08891272085176919152"]{N. Jones} said:}
-
-Daniel,
-
-Thanks for the java app. It works like a charm! Great time-saver too.
-
-(Comment posted May 27, 2014)
-
-◊h3[#:id "sergiourra-said"]{◊link["https://www.blogger.com/profile/13821816373936026294"]{SergioUrra} said:}
-
-@Joshua, thanks a lot. I did use JPDFBookmarks. Really nice app.
-
-(Comment posted August 03, 2014)
-
-◊h3[#:id "jonnie-tyler-said"]{◊link["https://www.blogger.com/profile/03832919638641651711"]{Jonnie Tyler} said:}
-
-Thank you Daniel!
-
-(Comment posted August 19, 2015)
+◊comment[#:author "Jonnie Tyler"
+         #:datetime "August 19, 2015"
+         #:authorlink "https://www.blogger.com/profile/03832919638641651711"]{Thank you Daniel!}

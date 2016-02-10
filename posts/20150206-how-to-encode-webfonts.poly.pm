@@ -8,7 +8,7 @@ These days many of us use ◊link["http://typekit.com"]{Typekit} for serving web
 
 Webfonts have gotten much easier to implement. Because ◊link["http://caniuse.com/#search=woff"]{nearly all browsers support WOFF}, you no longer need to supply four different file formats for each font in order to be sure it will be supported on all browsers. You can simply convert any binary font file into ◊link["http://en.wikipedia.org/wiki/Base64"]{Base64 encoding} and embed the resulting text/data right into your CSS file. However, there are additional steps you should take in order to optimize the size and downloading of your webfonts.
 
-◊h2[#:id "base64-encoding"]{Base64 Encoding}
+◊section{Base64 Encoding}
 
 This part is easy. The command ◊code{base64 filename} will take any file and encode it. This works on Linux and Mac OS X.
 
@@ -47,7 +47,7 @@ Once you’ve done all that, you can include the above stylesheet in your HTML (
 
 ◊strong{Note:} The original font file needs to have its &quot;embeddable&quot; flag set to ◊code{0x0000} or the font loading will fail in Internet Explorer (at least in versions 9 through 11). Other browsers do not seem to check for this value. If your font license allows embedding, you can find some more Python code for modifying the flag here: ◊link["http://www.typophile.com/node/102671"]{http://www.typophile.com/node/102671}.
 
-◊h2[#:id "subsetting-your-fonts"]{Subsetting your fonts}
+◊section{Subsetting your fonts}
 
 If you create your own webfonts using only the above steps, your files will be huge -- likely around 1 MB per typeface once you include bold and italic versions. This is because most typefaces (the good ones, at least) include characters for Russian, Greek, Hebrew, Arabic, and many other character sets. You can speed up your site a lot by whittling each font down to only the characters you’re likely to need.
 
@@ -106,7 +106,7 @@ Now encode the new “minimized” font using the script we created above:
 
 ◊blockcode{./webfont-encode AS-R.otf alegreyasans-1 >> fonts.css}
 
-◊h2[#:id "results"]{Results}
+◊section{Results}
 
 To get an idea of the size reduction, I used these methods to produce a single CSS file containing regular, italic, bold, and bold italic versions of two typefaces (a total of eight ◊code{@font-face}s).
 
@@ -116,6 +116,6 @@ For comparison, Typekit reports a size of 339K for a kit containing the same two
 
 I could probably save even more space by omitting the Latin Extended-A and Extended-B blocks in my character set.
 
-◊h2[#:id "speeding-it-up-even-more"]{Speeding it up even more}
+◊section{Speeding it up even more}
 
 Once you have your fonts set the way you like them, you should do yourself a further favour and check out Adam Beres-Deak’s post ◊link["http://bdadam.com/blog/loading-webfonts-with-high-performance.html"]{Loading webfonts with high performance on responsive websites}. Using the simple Javascript in his post, you can make your fonts load and perform ◊emph{much} faster than they would if you were using Typekit or Google Fonts.

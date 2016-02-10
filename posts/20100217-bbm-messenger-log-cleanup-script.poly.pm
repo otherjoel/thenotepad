@@ -10,7 +10,7 @@ You can download the VBScript here: ◊link["https://docs.google.com/leaf?id=0B9
 
 Once you have the BBM log file on your computer (email it there from your phone, again, see the ◊link["20100212-blackberry-messenger-logs-timestamp.html"]{last post} on this subject), just drag and drop it onto this ◊code{.vbs} file, and a “clean” version will be produced as a separate file in the same directory. The new file will have human-readable dates and the message will be properly escaped – in short, it will be something you can just open and use in Excel (e.g.).
 
-◊h2[#:id "change-log"]{Change Log}
+◊section{Change Log}
 
 Version 1.1 (◊emph{Feb 20, 2010})
 
@@ -18,38 +18,30 @@ Version 1.1 (◊emph{Feb 20, 2010})
 ◊item{Added ◊code{GMTOffset} constant to allow timestamps to be properly adjusted for time zones.}
 }
 
-◊h2[#:id "comments"]{Comments}
+◊section{Comments}
 
-◊h3[#:id "denise-said"]{◊link["https://www.blogger.com/profile/01695068080007560560"]{Denise} said:}
+◊comment[#:author "Denise"
+         #:datetime "May 29, 2010"
+         #:authorlink "https://www.blogger.com/profile/01695068080007560560"]{I get an error when I tried this.
 
-I get an error when I tried this.
-
-http://docs.google.com/Doc?docid=0Abg5wFZeGIUcZGQ3NGMyd3JfMmZnZjlkNWho&amp;hl=en
+◊link["http://docs.google.com/Doc?docid=0Abg5wFZeGIUcZGQ3NGMyd3JfMmZnZjlkNWho&amp;hl=en"]
 
 I’m not sure if that link will work. I’m new to googledocs. My apologies.
 
-Can you please help me?
+Can you please help me?}
 
-(Comment posted May 29, 2010)
+◊comment[#:author "Joel (author)"
+         #:datetime "June 17, 2011"
+         #:authorlink "https://www.blogger.com/profile/13646393468637062885"]{I tried opening that link but it says I do not have access to that file.
 
-◊h3[#:id "joel-said"]{◊link["https://www.blogger.com/profile/13646393468637062885"]{Joel} said:}
+Can you explain what you did, and exactly what the error message said?}
 
-I tried opening that link but it says I do not have access to that file.
+◊comment[#:author "Gretchen Nobles"
+         #:datetime "November 02, 2011"
+         #:authorlink "https://www.blogger.com/profile/14130558180346013746"]{Hey --- Great script! I have a couple of questions. How do I adjust to make the time display in 12 hour format? Also --- is there a way to set my time zone? Central Standard}
 
-Can you explain what you did, and exactly what the error message said?
+◊comment[#:author "Joel (author)"
+         #:datetime "November 02, 2011"
+         #:authorlink "https://www.blogger.com/profile/13646393468637062885"]{If you open the .vbs script file in Notepad, you’ll see there is a place to edit the timezone.
 
-(Comment posted June 17, 2011)
-
-◊h3[#:id "gretchen-nobles-said"]{◊link["https://www.blogger.com/profile/14130558180346013746"]{Gretchen Nobles} said:}
-
-Hey - Great script! I have a couple of questions. How do I adjust to make the time display in 12 hour format? Also - is there a way to set my time zone? Central Standard
-
-(Comment posted November 02, 2011)
-
-◊h3[#:id "joel-a.-said"]{◊link["https://www.blogger.com/profile/13646393468637062885"]{Joel A.} said:}
-
-If you open the .vbs script file in Notepad, you’ll see there is a place to edit the timezone.
-
-The format of the time display actually ◊emph{is} in 12hr format in the output csv file, but by default Excel converts it to 24hr format when displaying the time value. You can display it however you want by changing the cell formatting in Excel.
-
-(Comment posted November 02, 2011)
+The format of the time display actually ◊emph{is} in 12hr format in the output csv file, but by default Excel converts it to 24hr format when displaying the time value. You can display it however you want by changing the cell formatting in Excel.}

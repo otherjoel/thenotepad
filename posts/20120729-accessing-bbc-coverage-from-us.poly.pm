@@ -46,7 +46,7 @@ Now every thing is set up.
 
 ◊emph{Thanks to ◊link["https://twitter.com/mja"]{@mja} for the original tip about Brad’s post, and the one about where to go directly to watch specific events.}
 
-◊h2[#:id "other-approaches"]{Other approaches}
+◊section{Other approaches}
 
 I did attempt to use a VPN service to do essentially the same thing, but it was far too slow.
 
