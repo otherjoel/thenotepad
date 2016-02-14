@@ -2,7 +2,7 @@
 
 ◊(define-meta title "The 50 Books Every Child Should Read")
 ◊(define-meta published "2011-06-16")
-◊(define-meta tags "Kindle,ebooks,books")
+◊(define-meta topics "Kindle,ebooks,books")
 
 The Independent recently asked three of Britain’s leading children’s authors and two of their in-house book experts to each pick 10 books, suitable for Year 7 students. Their original list is ◊link["http://www.independent.co.uk/arts-entertainment/books/news/the-50-books-every-child-should-read-2250138.html"]{here}.
 

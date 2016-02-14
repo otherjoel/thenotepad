@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to Easily Use OpenType Fonts in LaTeX")
 ◊(define-meta published "2012-04-23")
-◊(define-meta tags "latex,typography,opentype,pandoc,pdf")
+◊(define-meta topics "latex,typography,opentype,pandoc,pdf")
 
 I became interested in ◊Latex[] out of a desire to be able to produce high-quality PDFs for self-published books. Someday I hope to be able to produce books of comparable quality to ◊link["http://www.tsengbooks.com/"]{these humanities books} typeset in TeX. This idea became even more feasible when I discovered the text content could be written in Markdown and converted to ◊Latex[] with ◊link["http://johnmacfarlane.net/pandoc/index.html"]{◊code{pandoc}} (More information in ◊link["http://www.charlietanksley.net/philtex/primarily-pandoc/"]{this article}).
 

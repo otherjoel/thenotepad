@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Encryption and DropBox: Comparing TrueCrypt and BoxCryptor")
 ◊(define-meta published "2012-01-04")
-◊(define-meta tags "encryption,BoxCryptor,Dropbox,TrueCrypt")
+◊(define-meta topics "encryption,BoxCryptor,Dropbox,TrueCrypt")
 
 If you’re a ◊link["http://dropbox.com"]{DropBox} user, you may have heard about the security weakpoints associated with their cloud storage service (or any such service):
 

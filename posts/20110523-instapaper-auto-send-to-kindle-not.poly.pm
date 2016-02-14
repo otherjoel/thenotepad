@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Instapaper Auto-send to Kindle not working")
 ◊(define-meta published "2011-05-23")
-◊(define-meta tags "Kindle,Instapaper")
+◊(define-meta topics "Kindle,Instapaper")
 
 This is a current, unresolved problem: ◊link["http://instapaper.com/"]{Instapaper} does not automatically send new articles to my ◊amazon["B002Y27P3M"]{Kindle} every day. This, despite the fact that my Instapaper account is correctly set up to auto-send new articles to my Kindle, and my Kindle account is properly set up to receive them.
 

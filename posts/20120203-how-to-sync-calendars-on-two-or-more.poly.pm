@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to Sync Calendars on Two (or more) iPhones or iPads")
 ◊(define-meta published "2012-02-03")
-◊(define-meta tags "iCloud,iOS,iPhone,calendars")
+◊(define-meta topics "iCloud,iOS,iPhone,calendars")
 
 My wife and I each use an iPhone, but it wasn’t until recently that I got around to syncing our calendars. Now that we actually have a synced calendar system that we can both view and update from our phones, we’ve begun actually using it for planning and apponintments. In this how-to, I’ll show you how to do the same thing for yourself.
 

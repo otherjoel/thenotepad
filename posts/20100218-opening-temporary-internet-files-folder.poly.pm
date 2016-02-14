@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Opening the Temporary Internet Files folder for Outlook attachments (OLK5A, for example)")
 ◊(define-meta published "2010-02-18")
-◊(define-meta tags "email,attachments,windows,registry,outlook")
+◊(define-meta topics "email,attachments,windows,registry,outlook")
 
 One of our employees opened up a PowerPoint attachment from an email in Outlook. He then edited it extensively and saved it using the ◊noun{File → Save As} menu command. Unfortunately he did not bother changing the folder he was saving it to, with the result that it was saved in whatever temporary folder Outlook uses for holding email file attachments. The problem is that this folder is hidden and very hard to find. Even typing in the path directly in Windows Explorer does not work. So when he closed out of PowerPoint he realized he was in danger of losing all the work he had done unless he could find and open that folder.
 

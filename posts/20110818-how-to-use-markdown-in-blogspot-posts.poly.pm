@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to use Markdown in Blogspot posts")
 ◊(define-meta published "2011-08-18")
-◊(define-meta tags "future-proofing,Markdown,Blogger")
+◊(define-meta topics "future-proofing,Markdown,Blogger")
 
 If your blog is hosted on running Blogspot and you want to use ◊link["http://daringfireball.net/projects/markdown/basics"]{Markdown} for your posts, here’s how to do it and future-proof your writing in the process.
 

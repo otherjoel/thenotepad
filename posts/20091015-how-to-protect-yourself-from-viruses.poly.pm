@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to protect yourself from viruses without installing anti-virus software.")
 ◊(define-meta published "2009-10-15")
-◊(define-meta tags "security,Windows,antivirus,malware")
+◊(define-meta topics "security,Windows,antivirus,malware")
 
 You don’t really need antivirus software on your Windows computer. Over the past several years, antivirus scanning has become much more centralized. Most of what you download over email or at work has already been scanned for viruses and malware anyway — why pay Norton or McAffee to have it scanned again once it reaches your hard drive? And why have another program running on your computer, slowing it down and wasting resources?
 

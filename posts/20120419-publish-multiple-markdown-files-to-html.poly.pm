@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Publish multiple Markdown files to HTML in Windows")
 ◊(define-meta published "2012-04-19")
-◊(define-meta tags "Markdown,pandoc,VBscript")
+◊(define-meta topics "Markdown,pandoc,VBscript")
 
 I wrote this script as a means of setting up a dead-simple “knowledge base” in HTML format.
 

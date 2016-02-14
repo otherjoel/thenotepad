@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to find free e-books for your Kindle using Google")
 ◊(define-meta published "2011-08-31")
-◊(define-meta tags "Kindle,eBooks")
+◊(define-meta topics "Kindle,eBooks")
 
 Google already indexes the locations of many ebooks, you just need to know how to find them.
 

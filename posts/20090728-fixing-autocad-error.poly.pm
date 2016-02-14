@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Fixing AutoCAD error: ARX_ERROR:eNotThatKindOfClass")
 ◊(define-meta published "2009-07-28")
-◊(define-meta tags "AutoCAD")
+◊(define-meta topics "AutoCAD")
 
 Some of our users have the old AutoCAD 2005 version, while a lucky few have the newer 2009 version (licenses are danged expensive, you know). We had a case where a drawing was being opened in AutoCAD 2009 and “saved-as” back to the 2004 format so the other users could open it. When attempting to perform commands on the drawing in in the old 2005 version, however, the following error messages would come up:
 

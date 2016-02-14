@@ -2,7 +2,7 @@
 
 ◊(define-meta title "BBM Messenger Log Cleanup Script")
 ◊(define-meta published "2010-02-17")
-◊(define-meta tags "csv,blackberry,vbscript,bbm")
+◊(define-meta topics "csv,blackberry,vbscript,bbm")
 
 As ◊link["20100212-blackberry-messenger-logs-timestamp.html"]{mentioned previously}, the CSV files produced by Blackberry Messenger 5.0+ need some cleaning up before they can be properly used. I finally wrote a short script for doing just that.
 

@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Quickly apply “Inherit Zoom” to all bookmarks in a PDF file")
 ◊(define-meta published "2010-07-02")
-◊(define-meta tags "acrobat,regular-expressions,bookmarks,adobe,pdf")
+◊(define-meta topics "acrobat,regular-expressions,bookmarks,adobe,pdf")
 
 I often compile PDF reports totaling 1,000 to 2,000 pages, and am always creating hierarchical bookmarks for these files. One of my beefs is that often, clicking a bookmark will change the magnification setting to “fit width” from whatever you had it set at. Ideally, clicking a bookmark should default to just leaving the zoom level at whatever the reader is currently set to use (“Inherit zoom”). I’ve found no way in Acrobat to set the default behaviour for newly-created bookmarks, and changing these links one at a time in Acrobat is extremely tedious.
 

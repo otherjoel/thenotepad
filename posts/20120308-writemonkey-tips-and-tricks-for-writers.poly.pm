@@ -2,7 +2,7 @@
 
 ◊(define-meta title "WriteMonkey: Tips and Tricks for Writers")
 ◊(define-meta published "2012-03-08")
-◊(define-meta tags "Markdown,WriteMonkey,text editing")
+◊(define-meta topics "Markdown,WriteMonkey,text editing")
 
 I use WriteMonkey for almost all my writing. It’s the best Windows-based text editor I have found for writing prose (as opposed to programming code).
 

@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Automatically sort social networking notifications in your Gmail")
 ◊(define-meta published "2009-03-11")
-◊(define-meta tags "email,GMail")
+◊(define-meta topics "email,GMail")
 
 ◊figure["/img/image202.jpg"]{My inbox, full of ◊link["http://www.npr.org/templates/story/story.php?storyId=14032271"]{bacn}}
 

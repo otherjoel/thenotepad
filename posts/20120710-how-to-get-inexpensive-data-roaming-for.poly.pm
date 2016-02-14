@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How To Get Inexpensive Data Roaming For International Travel on Verizon")
 ◊(define-meta published "2012-07-10")
-◊(define-meta tags "Travel,Verizon,cell phone data")
+◊(define-meta topics "Travel,Verizon,cell phone data")
 
 ◊strong{Update, Sep 17 2012:} Also read this excellent article: ◊link["http://duncandavidson.com/blog/2012/09/which_iphone5"]{Which iPhone 5 for a Global Traveller?}
 

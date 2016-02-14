@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Formatting and Typesetting your Book in MS Word")
 ◊(define-meta published "2012-03-12")
-◊(define-meta tags "Typography,Word")
+◊(define-meta topics "Typography,Word")
 
 You can actually get some good-quality typesetting from Microsoft Word if you just change a few options.
 

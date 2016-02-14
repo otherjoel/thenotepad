@@ -2,7 +2,7 @@
 
 ◊(define-meta title "The iPhone Hot Battery Drain, Fixed with a Lightweight Email Setup")
 ◊(define-meta published "2012-05-25")
-◊(define-meta tags "email,battery,contacts,google,iphone")
+◊(define-meta topics "email,battery,contacts,google,iphone")
 
 Recently my iPhone 4S suddenly began exhibiting symptoms of the famous ◊link["http://www.loopinsight.com/2011/11/02/apple-confirms-battery-life-issues-in-ios-5/"]{“hot battery drain” problem}, where the phone would become much warmer to the touch then normal, the battery would drain more quickly, and the phone would charge much more slowly than normal.
 

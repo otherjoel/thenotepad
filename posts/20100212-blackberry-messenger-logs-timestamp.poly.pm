@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Blackberry Messenger Logs — Timestamp Format")
 ◊(define-meta published "2010-02-12")
-◊(define-meta tags "Blackberry Messenger")
+◊(define-meta topics "Blackberry Messenger")
 
 (◊emph{Update: I’ve ◊link["20100217-bbm-messenger-log-cleanup-script.html"]{written a VBScript} to convert BBM logs into something cleaner and a bit easier to read.}) The newer versions of Blackberry Messenger (BBM) include an option to save chat history to your device memory or media card. I was glad to find it save chats in ◊link["http://en.wikipedia.org/wiki/Comma-separated_values"]{comma-separated value format} (CSV) — or at least that the files it creates have a .csv extension — since CSV has been around for decades and is easy to read on any platform. There are a few caveats with BBM’s particular log file format, however.
 

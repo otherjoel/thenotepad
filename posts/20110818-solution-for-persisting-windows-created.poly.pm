@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Solution for persisting ‘Windows created a temporary paging file on your computer’ error")
 ◊(define-meta published "2011-08-18")
-◊(define-meta tags "Windows,virtual memory")
+◊(define-meta topics "Windows,virtual memory")
 
 Solution for persisting “Windows created a temporary paging file on your computer” error
 

@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to go paperless the future-proof way (without using Evernote)")
 ◊(define-meta published "2013-01-24")
-◊(define-meta tags "tags,eye-fi,doxie,evernote,pdf,paperless,scanning")
+◊(define-meta topics "tags,eye-fi,doxie,evernote,pdf,paperless,scanning")
 
 The short version:
 

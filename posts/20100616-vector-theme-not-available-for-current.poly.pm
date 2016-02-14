@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Vector Theme not available for current version of MediaWiki")
 ◊(define-meta published "2010-06-16")
-◊(define-meta tags "MediaWiki")
+◊(define-meta topics "MediaWiki")
 
 You may have noticed ◊link["http://en.wikipedia.org/wiki/Two_Harbors,_Minnesota"]{Wikipedia} has ◊link["http://blog.wikimedia.org/2010/wikimedia-gets-ready-for-some-big-changes/"]{a new interface} these days. If you run your own ◊link["http://www.mediawiki.org/wiki/MediaWiki"]{MediaWiki} website, the obvious question in your mind is, how can I get these improvements on my site too?
 

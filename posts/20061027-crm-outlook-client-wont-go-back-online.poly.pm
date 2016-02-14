@@ -2,7 +2,7 @@
 
 ◊(define-meta title "CRM Outlook client won’t go back online; IE CRM client closes abruptly")
 ◊(define-meta published "2006-10-27")
-◊(define-meta tags "Outlook")
+◊(define-meta topics "Outlook")
 
 When using the outlook client for MS CRM 3.0, and trying to click the Go Online button, you may get an error message saying:
 

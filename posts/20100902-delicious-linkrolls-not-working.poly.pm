@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Delicious Linkrolls Not Working")
 ◊(define-meta published "2010-09-02")
-◊(define-meta tags "linkrolls,delicious,javascript,bookmarks")
+◊(define-meta topics "linkrolls,delicious,javascript,bookmarks")
 
 I wanted to create a linkroll on my website, an embedded list of my ◊link["http://delicious.com"]{delicious.com} links. Problem was, the ◊link["http://www.delicious.com/help/linkrolls"]{linkroll code they generated} resulted in…nothing. No links appeared on my website using their code.
 

@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Windows error: Directory or File could not be created")
 ◊(define-meta published "2006-10-31")
-◊(define-meta tags "FAT,Windows,USB drives,Filesystem")
+◊(define-meta topics "FAT,Windows,USB drives,Filesystem")
 
 I once helped a guy out with a wierd problem: he was trying to save an Excel Spreadsheet to a USB flash drive, and kept coming up with this error:
 

@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Windows 7 updates keep installing, restarting and failing")
 ◊(define-meta published "2011-05-11")
-◊(define-meta tags "windows")
+◊(define-meta topics "windows")
 
 Over the past week and a half, my Win 7 laptop has been trying to automatically install the same set of updates and failing over and over again. Sometimes the automatic install/restart cycle would happen in the middle of the night when the dumb thing was supposed to be sleeping. It would restart, say “Configuring Windows Updates”, then “Updates Failed, Reverting Changes” (or something like that).
 

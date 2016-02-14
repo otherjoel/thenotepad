@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Removing DRM from your audiobooks")
 ◊(define-meta published "2009-12-18")
-◊(define-meta tags "audiobook,audio,iTunes,Audible")
+◊(define-meta topics "audiobook,audio,iTunes,Audible")
 
 Like many, I was dismayed to find, after signing up for a year at ◊link["http://audible.com/"]{audible.com}, that their audiobooks are still in a proprietary DRM format. Ten and twenty years from now, after iTunes and audible are both gone, I still want to be able to listen to these audiobooks for which I’ve paid good money, so I set out to find a way to free the data.
 

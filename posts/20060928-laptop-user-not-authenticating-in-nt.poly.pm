@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Laptop User Not Authenticating in an NT Domain After Changing Password")
 ◊(define-meta published "2006-09-28")
-◊(define-meta tags "Windows,passwords,Active Directory")
+◊(define-meta topics "Windows,passwords,Active Directory")
 
 I just spent a ton of time figuring this one out, so maybe it will help someone else out there doing a Google search (which is kind of the point of everything on this blog). We had a user with an XP pro laptop who changed his password one morning (it was going to expire soon). Later he noticed that none of his drives were mapped, and that his Outlook client not connecting properly. Normally the problem in this scenario is ◊strong{cached logon credentials}. When you change your domain password, the laptop doesn’t cache your credentials until the next time you log in. So, to ensure that they get cached properly, you need to log out and log back in again using your new password while still connected to the domain network (i.e., do this before disconnecting the laptop and bringing it home). Now, we reset the password several times and it still didn’t work. A capture of all network packets during the login (using Ethereal on the server) showed that the Kerberos authentication was failing but of course didn’t say why. Articles and mailing lists found while googling for an answer suggested the following:
 

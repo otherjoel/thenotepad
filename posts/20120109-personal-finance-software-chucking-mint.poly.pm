@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Personal finance software: chucking Mint for YNAB")
 ◊(define-meta published "2012-01-09")
-◊(define-meta tags "Mint,finance,Quicken,YNAB")
+◊(define-meta topics "Mint,finance,Quicken,YNAB")
 
 A cousin recently put me on to ◊link["http://www.youneedabudget.com/"]{You Need A Budget} — a personal finance software package. I just spent some time this weekend setting it up with my wife. Maybe we’re still in the ‘honeymoon phase’ of budgeting, but it feels really good to be on top of our finances and to have a ◊emph{flexible} plan for our spending.
 

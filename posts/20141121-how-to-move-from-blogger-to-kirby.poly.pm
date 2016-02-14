@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to move from Blogger to another CMS")
 ◊(define-meta published "2014-11-20")
-◊(define-meta tags "Blogger,Kirby,Python")
+◊(define-meta topics "Blogger,Kirby,Python")
 
 When I started this blog it was at ◊link["http://blogger.com"]{Blogger}. I eventually decided I wanted to move the blog into a system I owned and controlled. I chose ◊link["http://getkirby.com/"]{Kirby} on a lark. It’s very simple; no database, just a collection of text files.
 

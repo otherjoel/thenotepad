@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Cleaner titles for podcast posts in Tumblr")
 ◊(define-meta published "2011-09-13")
-◊(define-meta tags "FeedBurner,iTunes,Podcasting,Tumblr")
+◊(define-meta topics "FeedBurner,iTunes,Podcasting,Tumblr")
 
 After reading my post ◊link["http://notely.blogspot.com/2011/07/tips-for-better-podcast-publishing.html"]{◊emph{How to publish a better podcast using Textpattern, Tumblr, or anything else}}, Lars Jannsen of ◊link["http://gamesandmacs.de/"]{gamesandmacs.de}, a new German website/podcast, wrote me a question:
 

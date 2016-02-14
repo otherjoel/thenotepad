@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Using LightBox with Image Maps")
 ◊(define-meta published "2009-08-01")
-◊(define-meta tags "JavaScript")
+◊(define-meta topics "JavaScript")
 
 I ran across this while assembling the website for my brothers’ new film ◊em{The Little Red Plane}. Don’t ask why I needed to do use image maps in this day and age. But I did.
 

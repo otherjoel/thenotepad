@@ -2,7 +2,7 @@
 
 ◊(define-meta title "A look at project management platforms")
 ◊(define-meta published "2009-03-10")
-◊(define-meta tags "activeCollab,SharePoint,Basecamp,Project management")
+◊(define-meta topics "activeCollab,SharePoint,Basecamp,Project management")
 
 I had a question from Stephen, and thought I’d post my response here for public benefit and/or comment. The core of the question:
 

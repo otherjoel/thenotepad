@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Marked 2 Previews of Scrivener Files Coming Up Blank")
 ◊(define-meta published "2015-03-03")
-◊(define-meta tags "Scrivener,Marked")
+◊(define-meta topics "Scrivener,Marked")
 
 You’re ◊emph{supposed} to be able to drag and drop a ◊link["http://www.literatureandlatte.com/scrivener.php"]{Scrivener} file onto the ◊link["http://marked2app.com"]{Marked} app icon in the dock and have Marked open a preview for you.
 

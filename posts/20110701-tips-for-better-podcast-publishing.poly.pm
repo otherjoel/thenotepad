@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to publish a better podcast using Tumblr, Textpattern, or anything else")
 ◊(define-meta published "2011-07-01")
-◊(define-meta tags "Feedburner,iTunes,Textpattern,podcasting,Tumblr")
+◊(define-meta topics "Feedburner,iTunes,Textpattern,podcasting,Tumblr")
 
 This isn’t about ◊link["http://hivelogic.com/articles/podcasting-equipment-software-guide-2011/"]{equipment} or ◊link["http://ftrain.com/LearningToSpeak.html"]{recording technique}, but just the cranky details of ◊emph{publishing} a podcast that I have found by trial and error. This article assumes you have some basic computer/web/HTML know-how.
 
