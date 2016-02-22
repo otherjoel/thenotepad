@@ -12,18 +12,15 @@
 |#
 
 (require xml
+         txexpr
          pollen/template
          pollen/file
          racket/date
          racket/format)   ; For ~r
 
-#|
-  Really only need datestring->date from here. If you wanted to make this file
-  entirely self-contained you could copy/paste that function's definition here.
-  This is the function that interprets datestrings in the markup sources, in
-  this case in the format "yyyy-mm-dd" or "yyyy-mm-dd hh:mm".
-|#
-(require (only-in "pollen.rkt" datestring->date))
+(require "util-date.rkt"
+         "util-template.rkt"
+         pollen/core)
 
 #|
   Customizeable values
@@ -34,6 +31,7 @@
 (define opt-author-email "joel@jdueck.net")    ; Email for the feed's <author>
 (define opt-feed-title   "The Notepad")
 (define opt-feed-site    "https://thenotepad.org/") ; This should end with /
+(define opt-feed-limit   5)                    ; Max items in feed
 
 #|
   You should customize the timezone/DST settings to match those of the
@@ -100,10 +98,7 @@
                             (link [[rel "alternate"] [href ,item-url]])
                             (id ,item-url)
                             (summary [[type "html"]]
-                                     ,(as-cdata (string-append "<p>" (rss-item-summary ri) "</p>"
-                                                               (xexpr->string `(p (a ((href ,item-url))
-                                                                                     "Click here to read "
-                                                                                     (i ,(rss-item-title ri)))))))))))
+                                     ,(as-cdata (rss-item-summary ri))))))
 
   `(feed [[xml:lang "en-us"] [xmlns "http://www.w3.org/2005/Atom"]]
          (title ,title)
@@ -159,7 +154,7 @@
                                        (define item-path (get-markup-source item-link))
                                        (define item-metas (dynamic-require item-path 'metas))
                                        (define item-author (or (select-from-metas sym-author item-metas) opt-author-name))
-                                       (define item-summary (or (select-from-metas sym-summary item-metas) "(No summary given)"))
+                                       (define item-summary (->html (get-elements (get-post-body ri))))
                                        (define item-pubdate (select-from-metas sym-pubdate item-metas))
                                        (define item-updated (or (select-from-metas sym-updated item-metas) item-pubdate))
                                        (define item-title (or (select-from-metas sym-title item-metas)
@@ -182,7 +177,7 @@
   be stored in the target file).
 |#
 (provide doc metas)
-(define rss-xpr (make-feed-xexpr opt-feed-title opt-feed-site feed-item-structs))
+(define rss-xpr (make-feed-xexpr opt-feed-title opt-feed-site (take feed-item-structs opt-feed-limit)))
 (define doc (complete-feed rss-xpr))
 (define metas (hash))
 (module+ main
