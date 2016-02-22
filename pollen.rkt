@@ -11,28 +11,18 @@
          pollen/pagetree
          racket/date)
 
-; We want srfi/13 for string-contains but need to avoid collision between
-; its string-replace function and the one in racket/string
-(require (only-in srfi/13 string-contains))
-
 (provide add-between
          attr-ref
          attrs-have-key?
          make-txexpr
          string-split
          get-markup-source
-         string-contains)
+         string-contains?)
 (provide (all-defined-out))
 
 (module setup racket/base
     (provide (all-defined-out))
     (define poly-targets '(html ltx pdf)))
-
-(define (pdfable? file-path)
-  (string-contains? file-path ".poly"))
-
-(define (pdfname page) (string-replace (path->string (file-name-from-path page))
-                                       "poly.pm" "pdf"))
 
 (define (root . elements)
   (case (current-poly-target)
@@ -41,18 +31,29 @@
                                          #:inline-txexpr-proc (compose1 txt-decode hyperlink-decoder)
                                          #:string-proc (compose1 ltx-escape-str smart-quotes smart-dashes)
                                          #:exclude-tags '(script style figure txt-noescape)))
-     (make-txexpr 'body null (decode-elements first-pass #:inline-txexpr-proc txt-decode))]
+     (txexpr 'body null (decode-elements first-pass #:inline-txexpr-proc txt-decode))]
 
     [else
       (define first-pass (decode-elements elements
                                           #:txexpr-elements-proc detect-paragraphs
                                           #:exclude-tags '(script style figure table)))
-      (make-txexpr 'body null
-                   (decode-elements first-pass
-                                    #:block-txexpr-proc detect-newthoughts
-                                    #:inline-txexpr-proc hyperlink-decoder
-                                    #:string-proc (compose1 smart-quotes smart-dashes)
-                                    #:exclude-tags '(script style pre code)))]))
+      (define second-pass (decode-elements first-pass
+                                           #:block-txexpr-proc detect-newthoughts
+                                           #:inline-txexpr-proc hyperlink-decoder
+                                           #:string-proc (compose1 smart-quotes smart-dashes)
+                                           #:exclude-tags '(script style pre code)))
+      (wrap-comment-section (txexpr 'body null second-pass))]))
+
+(define (wrap-comment-section txpr)
+  (define (is-comment? tx)
+    (and (txexpr? tx)
+         (equal? 'div (get-tag tx))
+         (attrs-have-key? tx 'class)
+         (string=? "comment-box" (attr-ref tx 'class))))
+  (let-values ([(splut comments) (splitf-txexpr txpr is-comment?)])
+    (if (not (empty? comments))
+        (txexpr 'body null (apply append (list (get-elements splut) `(,(apply comment-section comments)))))
+        txpr)))
 
 ; Escape $,%,# and & for LaTeX
 (define (ltx-escape-str str)
@@ -218,6 +219,12 @@ handle it at the Pollen processing level.
       `(div [[class "updateBox"]]
             (p (b (span [[class "smallcaps"]] "Update, " ,d)))
             ,@contents)]))
+
+
+(define (comment-section . contents)
+  (case (current-poly-target)
+    [(ltx pdf) `(txt ,(section "Comments") ,@contents)]
+    [else `(section [[class "comments"]] ,@contents)]))
 
 (define (comment #:author author #:datetime comment-date #:authorlink author-url . comment-text)
   (case (current-poly-target)
@@ -434,78 +441,3 @@ in LaTeX we need to tell it what the longest line is.
   (case (current-poly-target)
     [(ltx pdf) `(txt "\\textcolor{" ,c "}{" ,@text "}")]
     [else `(span [[style ,(string-append "color: " c)]] ,@text)]))
-
-#|
-Index functionality: allows creation of a book-style keyword index.
-
-* An index ENTRY refers to the heading that will appear in the index.
-* An index LINK is a txexpr that has class="index-entry" and
-  id="ENTRY-WORD". (Created in docs with the ◊index-entry tag above)
-
-|#
-
-; Returns a list of all elements in xpr that have class="index-entry"
-; and an id key.
-(define (filter-index-entries xpr)
-  (define is-index-entry? (λ(x) (and (txexpr? x)
-                                     (attrs-have-key? x 'class)
-                                     (attrs-have-key? x 'id)
-                                     (equal? "index-entry" (attr-ref x 'class)))))
-  (let-values ([(x y) (splitf-txexpr xpr is-index-entry?)]) y))
-
-; Given a file, returns a list of links to each index entry within that file
-(define (get-index-links file)
-  (define file-body (select-from-doc 'body file))
-  (if file-body
-      (map (λ(x)
-             `(a [[href ,(string-append (symbol->string file) "#" (attr-ref x 'id))]
-                  [id ,(attr-ref x 'id)]]
-                 ,(select-from-metas 'title file)))
-           (filter-index-entries (make-txexpr 'div '() file-body)))
-      ; return a dummy entry when `file` has no 'body (for debugging)
-      (list `(a [[class "index-entry"] [id ,(symbol->string file)]]
-                "Not a txexpr: " ,(symbol->string file)))))
-
-; Returns a list of index links (not entries!) for all files in file-list.
-(define (collect-index-links file-list)
-  (apply append (map get-index-links file-list)))
-
-; Given a list of index links, returns a list of headings (keywords). This list
-; has duplicates removed and is sorted in ascending alphabetical order.
-; Note that the list is case-sensitive by design; "thing" and "Thing" are
-; treated as separate keywords.
-(define (index-headings entrylink-list)
-  (sort (remove-duplicates (map (λ(tx) (attr-ref tx 'id))
-                                entrylink-list))
-        string-ci<?))
-
-; Given a heading and a list of index links, returns only the links that match
-; the heading.((
-(define (match-index-links keyword entrylink-list)
-  (filter (λ(link)(string=? (attr-ref link 'id) keyword))
-          entrylink-list))
-
-; Modified from https://github.com/malcolmstill/mstill.io/blob/master/blog/pollen.rkt
-; Converts a string "2015-12-19" or "2015-12-19 16:02" to a Racket date value
-(define (datestring->date datetime)
-  (match (string-split datetime)
-    [(list date time) (match (map string->number (append (string-split date "-") (string-split time ":")))
-                        [(list year month day hour minutes) (seconds->date (find-seconds 0
-                                                                                         minutes
-                                                                                         hour
-                                                                                         day
-                                                                                         month
-                                                                                         year))])]
-    [(list date) (match (map string->number (string-split date "-"))
-                   [(list year month day) (seconds->date (find-seconds 0
-                                                                       0
-                                                                       0
-                                                                       day
-                                                                       month
-                                                                       year))])]))
-#|
-  Converts a string "2015-12-19" or "2015-12-19 16:02" to a string
-  "Saturday, December 19th, 2015" by way of the datestring->date function above
-|#
-(define (pubdate->english datetime)
-  (date->string (datestring->date datetime)))
