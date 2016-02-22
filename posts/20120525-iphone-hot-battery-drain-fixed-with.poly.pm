@@ -2,7 +2,7 @@
 
 ◊(define-meta title "The iPhone Hot Battery Drain, Fixed with a Lightweight Email Setup")
 ◊(define-meta published "2012-05-25")
-◊(define-meta topics "email,battery,contacts,google,iphone")
+◊(define-meta topics "battery life,iOS")
 
 Recently my iPhone 4S suddenly began exhibiting symptoms of the famous ◊link["http://www.loopinsight.com/2011/11/02/apple-confirms-battery-life-issues-in-ios-5/"]{“hot battery drain” problem}, where the phone would become much warmer to the touch then normal, the battery would drain more quickly, and the phone would charge much more slowly than normal.
 
@@ -34,8 +34,6 @@ Now you have all your contacts synced by an app that knows how to do its job bet
 For what it’s worth, I also have an Exchange account for work that syncs mail, contacts, calendars and reminders — also on the hourly fetch schedule.
 
 ◊strong{Wait, won’t there be a big delay for receiving emails this way?} No, not really. The fact is that whenever you open an email inbox in the Mail app, your iPhone instantly re-checks the account for new mail anyway. The Fetch setting only limits the background checking that the phone does when you’re not looking, so setting it to hourly just means the red “new email” number on the Mail icon won’t update itself more than once an hour◊numbered-note{Seriously, how often do you really need to check your email? More than once an hour and I’d say you have serious productivity issues.}. You can always get an up-to-the-minute check by just opening the Mail app.
-
-◊section{Comments}
 
 ◊comment[#:author "Susan"
          #:datetime "September 05, 2012"

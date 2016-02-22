@@ -2,6 +2,7 @@
 
 ◊(define-meta title "No internet access over wifi (the infamous “local access only” problem)")
 ◊(define-meta published "2010-02-12")
+◊(define-meta topics "Windows problems,wifi")
 
 On my Windows laptop, wifi connnects easily to all wireless routers, but every once in awhile it will not allow connections all the way out to the internet. This mainly seems to happen when I switch to a new environment, such as bringing my laptop out of the home and out to a coffee shop. This first ◊link["http://notely.blogspot.com/2009/08/ready-for-desktop.html"]{started happening to me in Vista}, and the problem has persisted in Windows 7 Pro.
 

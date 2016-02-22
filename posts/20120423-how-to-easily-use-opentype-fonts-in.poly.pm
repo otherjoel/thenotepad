@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to Easily Use OpenType Fonts in LaTeX")
 ◊(define-meta published "2012-04-23")
-◊(define-meta topics "latex,typography,opentype,pandoc,pdf")
+◊(define-meta topics "latex,typography,pandoc,PDF")
 
 I became interested in ◊Latex[] out of a desire to be able to produce high-quality PDFs for self-published books. Someday I hope to be able to produce books of comparable quality to ◊link["http://www.tsengbooks.com/"]{these humanities books} typeset in TeX. This idea became even more feasible when I discovered the text content could be written in Markdown and converted to ◊Latex[] with ◊link["http://johnmacfarlane.net/pandoc/index.html"]{◊code{pandoc}} (More information in ◊link["http://www.charlietanksley.net/philtex/primarily-pandoc/"]{this article}).
 
@@ -24,8 +24,6 @@ That being understood, here’s how to use your system fonts in your TeX documen
 }
 
 ◊strong{Note:} If you are using the aforementioned pandoc to generate your TeX documents, you do not need to do step 2 — pandoc already includes the fontspec package in its default template. Also, you can set the main font by adding the option ◊code{--variable=mainfont:"font name"} when calling the ◊code{pandoc} command.
-
-◊section{Comments}
 
 ◊comment[#:author "soramimi"
          #:datetime "May 15, 2012"

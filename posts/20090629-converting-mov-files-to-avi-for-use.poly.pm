@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Converting MOV files to AVI for use with video editing software")
 ◊(define-meta published "2009-06-29")
-◊(define-meta topics "Windows,video")
+◊(define-meta topics "video")
 
 If your camera records in MOV format, you may find it difficult to use with Windows Movie Maker or other Windows-platform movie editors. Fortunately there is a way to convert these files to AVI format.
 

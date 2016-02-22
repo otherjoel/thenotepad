@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Recommended Calendar Apps for iPhone")
 ◊(define-meta published "2012-02-03")
-◊(define-meta topics "iOS,iPhone,calendars,apps")
+◊(define-meta topics "iOS,calendars")
 
 The calendar app that comes with iOS is plain, and has many shortcomings: the interface for creating new appointments is clumsy, the colour-coding is not visible in month view, and there’s no week view at all, to name a few.
 

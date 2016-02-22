@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Solution for persisting ‘Windows created a temporary paging file on your computer’ error")
 ◊(define-meta published "2011-08-18")
-◊(define-meta topics "Windows,virtual memory")
+◊(define-meta topics "Windows problems,virtual memory")
 
 Solution for persisting “Windows created a temporary paging file on your computer” error
 
@@ -40,8 +40,6 @@ Here’s how I cleared it up:
 ◊strong{A summary of what this does:} By temporarily turning off virtual memory, you allow yourself to delete the (now-corrupt) paging file. Then when you re-enable virtual memory, Windows automatically builds a new paging file from scratch, and ◊emph{voilà}, problem solved.
 
 I was helped by ◊link["http://www.geekstogo.com/forum/topic/41071-paging-file-is-gone%3B-correspondng-error-at-startup/"]{this thread at geekstogo.com} although I did not find it necessary to do any editing of the Registry or any of that jazz. Try the simplest solution first, I always say.
-
-◊section{Comments}
 
 ◊comment[#:author "Dave"
          #:datetime "January 10, 2012"

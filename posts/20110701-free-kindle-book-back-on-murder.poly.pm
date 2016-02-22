@@ -2,7 +2,6 @@
 
 ◊(define-meta title "Free Kindle Book: Back On Murder")
 ◊(define-meta published "2011-07-01")
-◊(define-meta topics "Kindle,fiction,ebooks")
 
 J. Mark Bertrand, having just released ◊emph{◊amazon["B0054Z7L58"]{Pattern of Wounds}} , the second in a series of mystery novels, is giving away the Kindle edition of ◊emph{◊amazon["B008BTH59Q"]{Back on Murder}} (the first book in the series) for free for a limited time.
 

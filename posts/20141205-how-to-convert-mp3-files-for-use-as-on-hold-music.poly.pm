@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to convert mp3 files for use as on-hold music")
 ◊(define-meta published "2014-12-05")
-◊(define-meta topics "phones,voip,mp3,ffmpeg")
+◊(define-meta topics "phones,audio")
 
 If you administer your company’s VoIP system, you probably want to change the default on-hold music. Our company just started using a new system this year and the hold music was awful; it sounded like a 2nd grade piano recital. And whatever you do, you don’t want to make your callers suffer through any more of ◊link["https://www.youtube.com/watch?v=6g4dkBF5anU"]{this}.
 

@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Formatting and Typesetting your Book in MS Word")
 ◊(define-meta published "2012-03-12")
-◊(define-meta topics "Typography,Word")
+◊(define-meta topics "typography,Word")
 
 You can actually get some good-quality typesetting from Microsoft Word if you just change a few options.
 
@@ -61,8 +61,6 @@ These tips are compiled from many sources, and in many cases updated for clarity
 ◊item{◊link["http://www.selfpublishing.com/design/downloads/articles/typesetting.pdf"]{Typesetting in Microsoft Word} by Jack Lyon}
 ◊item{◊link["http://www.pearsonified.com/2011/12/golden-ratio-typography.php"]{Golden Ratio typography} by Chris Pearson}
 }
-
-◊section{Comments}
 
 ◊comment[#:author "Rundy"
          #:datetime "March 12, 2012"

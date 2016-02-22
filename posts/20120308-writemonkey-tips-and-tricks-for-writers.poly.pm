@@ -58,8 +58,6 @@ The upcoming version (2.3.5.0 as of this writing), however, will have some great
 
 Let us know of any additional tips in the comments!
 
-◊section{Comments}
-
 ◊comment[#:author "Kabi Park"
          #:datetime "April 02, 2013"
          #:authorlink "https://www.blogger.com/profile/06871116148520330540"]{I like writing using ◊link["https://draftin.com/"]{Draft} which is online editor and supporting markdown & version control instead of WriteMonkey.}

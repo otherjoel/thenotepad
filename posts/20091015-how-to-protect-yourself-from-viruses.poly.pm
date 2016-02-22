@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to protect yourself from viruses without installing anti-virus software.")
 ◊(define-meta published "2009-10-15")
-◊(define-meta topics "security,Windows,antivirus,malware")
+◊(define-meta topics "security")
 
 You don’t really need antivirus software on your Windows computer. Over the past several years, antivirus scanning has become much more centralized. Most of what you download over email or at work has already been scanned for viruses and malware anyway — why pay Norton or McAffee to have it scanned again once it reaches your hard drive? And why have another program running on your computer, slowing it down and wasting resources?
 
@@ -39,8 +39,6 @@ The main principal here is to clean and verify all the ways that you exchange in
 Comments and proposed changes/additions welcome!
 
 ◊emph{◊strong{Update}, Nov 11 2009} — After I submitted this post a couple of times at Lifehacker, they came up with their own variant: ◊link["http://lifehacker.com/5401453/stop-paying-for-windows-security-microsofts-security-tools-are-good-enough?skyline=true&s=x"]{Stop Paying for Windows Security; Microsoft’s Security Tools Are Good Enough} [sic]. (Not suggesting there’s a relationship there. Well OK maybe I am.) I still believe Microsoft’s security tools are ◊emph{unnecessary}, however supremely adequate they may be for the job they’re supposed to do, but there are a lot of good points in the article, and I highly recommend it.
-
-◊section{Comments}
 
 ◊comment[#:author "Larry"
          #:datetime "November 06, 2009"

@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Creating and sharing a video on Vimeo using Windows Movie Maker")
 ◊(define-meta published "2009-06-27")
-◊(define-meta topics "video,Windows,Vimeo")
+◊(define-meta topics "video")
 
 These are just the bare basics. Windows Movie Maker comes free with Windows and is simple to use for creating a basic video.
 

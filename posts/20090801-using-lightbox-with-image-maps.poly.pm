@@ -46,8 +46,6 @@ start: function(imageLink) {
 
 Save the file. Now all you have to do is add ◊code{rel="lightbox"} to your ◊code{<area>} tags, just as you would with normal links.
 
-◊section{Comments}
-
 ◊comment[#:author "Jean"
          #:datetime "April 30, 2011"
          #:authorlink "http://deepthoughtsbyjean.wordpress.com/"]{Thanks for this! Exactly what I was looking for. I’m using v2.05 of the script.}

@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to embed and subset your own webfonts")
 ◊(define-meta published "2015-02-06")
-◊(define-meta topics "fonts,CSS,web fonts")
+◊(define-meta topics "fonts,CSS")
 
 These days many of us use ◊link["http://typekit.com"]{Typekit} for serving web fonts; and should you need to create and serve them yourself, most of the advice out there will point you to use FontSquirrel’s well-known ◊link["http://www.fontsquirrel.com/tools/webfont-generator"]{Webfont Generator}. However, I’m a big fan of not relying on third-party sites and services if you can avoid it. What happens in five years when those sites are no longer available? It’s best to know how to do get the same result yourself using basic tools, and the result will often get you better performance.
 

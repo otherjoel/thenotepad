@@ -2,7 +2,7 @@
 
 ◊(define-meta title "A look at project management platforms")
 ◊(define-meta published "2009-03-10")
-◊(define-meta topics "activeCollab,SharePoint,Basecamp,Project management")
+◊(define-meta topics "Project management")
 
 I had a question from Stephen, and thought I’d post my response here for public benefit and/or comment. The core of the question:
 
@@ -19,8 +19,6 @@ It all comes down to, what do you need? A communications and scheduling tool? Or
 ◊strong{Where most solutions break down for me} is the perfect storm of requirements that any engineering firm runs into: the need to share ◊emph{large} groups of ◊emph{large} files with a large number of people from different companies, with a fine-grained level of control. That last requirement is a particularly hard one — take it out and a simple FTP site will do. (In fact, a lot of contractors do just that.) One tool that does ◊emph{just} file sharing that I was interested to see was ◊link["https://bigfilebox.com/pages/index"]{BigFileBox}. One of the founders told me it had been designed with A/E firms in mind (see my comments, and the founder’s response, on the forum ◊link["http://discuss.joyent.com/viewtopic.php?id=15712"]{here}). The only thing that precluded me from pursuing it was our requirement for hosting in-house. Also, engineering reproduction firms like ◊link["http://www.ersdigital.com/Services/PlanWellOnlineServices/ManageyourprojectwithPlanWell/tabid/93/Default.aspx"]{ERS Digital/PlanWell} have their own hosted platforms that can be tailored to anything requiring this kind of high-volume file sharing with versioning, fine-grained permissions, access tracking, etc. At the extreme end of this group is AutoDesk’s ◊link["http://usa.autodesk.com/adsk/servlet/index?siteID=123112&id=2407898"]{BuzzSaw}, which (last I checked) is prohibitively expensive for small- to mid-size firms.
 
 Other than that, there is this ◊link["http://en.wikipedia.org/wiki/List_of_project_management_software"]{list of project management software}, but I of course have not experimented with any of those in depth. I don’t get the impression that industrial-quality file management is a big component of any of them, however. Finally, the biggest part of any solution is getting people to use it. If you can discern what your users really want (e.g., mainly want to shuffle files around, or track schedules), then it is probably better to find a tool that scratches just that one itch really well. Whereas more “comprehensive” products often require an overhaul of everyone’s workflow — if you are in a position to “sell” a new approach and get everyone to buy in on it and actually open up their browsers and ◊emph{use} it every day, so much the better.
-
-◊section{Comments}
 
 ◊comment[#:author "jjriv"
          #:datetime "March 16, 2009"

@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Siri: Slow, unreliable, and maybe not a priority at Apple")
 ◊(define-meta published "2012-02-17")
-◊(define-meta topics "Siri,Apple,iPhone")
+◊(define-meta topics "Siri,Apple,iOS")
 
 ◊link["http://www.apple.com/iphone/features/siri.html"]{Siri} had a lot of promise when it was released as a feature of the new iPhone 4S. It wowed everyone at the ◊link["http://www.apple.com/apple-events/october-2011/"]{WWDC keynote in October 2011}.
 

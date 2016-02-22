@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Encryption and DropBox: Comparing TrueCrypt and BoxCryptor")
 ◊(define-meta published "2012-01-04")
-◊(define-meta topics "encryption,BoxCryptor,Dropbox,TrueCrypt")
+◊(define-meta topics "encryption,security")
 
 If you’re a ◊link["http://dropbox.com"]{DropBox} user, you may have heard about the security weakpoints associated with their cloud storage service (or any such service):
 
@@ -56,8 +56,6 @@ The most commonly offered solution is to place your sensitive files in a ◊link
 ◊item{No form of plausible deniability is available in either the desktop or mobile versions of the software.}
 ◊item{BoxCryptor is not open-source, so ultimately your trust in the software comes down to your faith in ◊link["http://blog.robert.freudenreich.eu/"]{Robert Freudenreich}’s ability to correctly implement the security algorithms, to keep maintaining the software, and not to spy on his users. I’m not saying he’s untrustworthy, just that non-open software comes with risks and weaknesses. The security community at large does not have a way of thoroughly and independently evaluating the software, and that represents a security weakness, for one. Furthermore, if Robert or his company lose interest in the software (which can happen for any of a dozen reasons) you will need to take notice and migrate to another solution before you lose all ability to support the now-defunct software.}
 }
-
-◊section{Comments}
 
 ◊comment[#:author "Conversation Communications"
          #:datetime "October 23, 2012"

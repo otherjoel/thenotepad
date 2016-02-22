@@ -2,11 +2,11 @@
 
 ◊(define-meta title "How To Get Inexpensive Data Roaming For International Travel on Verizon")
 ◊(define-meta published "2012-07-10")
-◊(define-meta topics "Travel,Verizon,cell phone data")
-
-◊strong{Update, Sep 17 2012:} Also read this excellent article: ◊link["http://duncandavidson.com/blog/2012/09/which_iphone5"]{Which iPhone 5 for a Global Traveller?}
+◊(define-meta topics "travel,Verizon,cell phones")
 
 If you’re a U.S. Verizon customer with a smartphone, here’s the lowdown on keeping data roaming charges to a minimum for any trips outside the country.
+
+◊updatebox["Sep 2012"]{ Also read this excellent article: ◊link["http://duncandavidson.com/blog/2012/09/which_iphone5"]{Which iPhone 5 for a Global Traveller?}}
 
 Keep in mind, it’s not uncommon for Verizon to alter the options they offer. If this article hasn’t been updated in more than 6 months, things may have changed; in that case, look around further online or call customer service and ask them how best to handle it.
 

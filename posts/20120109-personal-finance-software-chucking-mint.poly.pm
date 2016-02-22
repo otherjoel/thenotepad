@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Personal finance software: chucking Mint for YNAB")
 ◊(define-meta published "2012-01-09")
-◊(define-meta topics "Mint,finance,Quicken,YNAB")
+◊(define-meta topics "finance")
 
 A cousin recently put me on to ◊link["http://www.youneedabudget.com/"]{You Need A Budget} — a personal finance software package. I just spent some time this weekend setting it up with my wife. Maybe we’re still in the ‘honeymoon phase’ of budgeting, but it feels really good to be on top of our finances and to have a ◊emph{flexible} plan for our spending.
 
@@ -23,8 +23,6 @@ YNAB tries to strike a middle course by supplying iPhone and Android apps that l
 Ideally, a YNAB mobile app would allow automatic background syncing between two phones, so that my wife and I would have quick, seamless access to where our budgets are at, but YNAB’s app isn’t there yet. But in my view, it all goes back to a focus on ◊emph{planning} rather than ◊emph{capture}. If my wife and I actually have a plan in place for our monthly spending, we pretty much know going into the day where our money is going to go, and up-to-the-minute syncing becomes much less important. Again, I wonder if this is one of those situations where automatic syncing — an inherent “feature” of the cloud approach — would actually be counterproductive in this field, by allowing you to take the easy road and ◊emph{react} to spending events, rather than relying on proactive planning.
 
 ◊emph{NB: I’m not an affiliate of YNAB in any way, nor am I being compensated in any way for this overview.}
-
-◊section{Comments}
 
 ◊comment[#:author "Devony"
          #:datetime "January 09, 2012"

@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to Record With a Yeti and Audacity (and eliminate background noise)")
 ◊(define-meta published "2014-11-28")
-◊(define-meta topics "Yeti,podcasting,recording audio,Audacity")
+◊(define-meta topics "podcasting,audio")
 
 Maybe you saw renowned podcaster Marco Arment’s tweet this morning:
 

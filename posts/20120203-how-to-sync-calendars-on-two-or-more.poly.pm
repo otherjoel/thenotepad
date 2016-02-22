@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to Sync Calendars on Two (or more) iPhones or iPads")
 ◊(define-meta published "2012-02-03")
-◊(define-meta topics "iCloud,iOS,iPhone,calendars")
+◊(define-meta topics "iOS,calendars")
 
 My wife and I each use an iPhone, but it wasn’t until recently that I got around to syncing our calendars. Now that we actually have a synced calendar system that we can both view and update from our phones, we’ve begun actually using it for planning and apponintments. In this how-to, I’ll show you how to do the same thing for yourself.
 
@@ -53,8 +53,6 @@ Voila, you now have a calendar shared between two devices. Any events or appoint
 ◊section{3. Get a Better Calendar App}
 
 The calendar app that comes with iOS is plain, and has many shortcomings: the interface for creating new appointments is clumsy, the colour-coding is not visible in month view, and there’s no week view at all, to name a few. For notes and recommendations on iOS calendar apps, read my post on ◊link["20120203-recommended-calendar-apps-for-iphone.html"]{iOS Calendar App Recommendations}.
-
-◊section{Comments}
 
 ◊comment[#:author "Brent"
          #:datetime "February 03, 2012"

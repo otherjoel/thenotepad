@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to get more use out of your Kindle")
 ◊(define-meta published "2011-06-15")
-◊(define-meta topics "Calibri,Kindle,eBooks")
+◊(define-meta topics "Calibri,Kindle,ebooks")
 
 So you’ve had your ◊amazon["B002Y27P3M"]{Kindle} for a few months now, and it’s been sitting in your pack, unused for the last few weeks. What happened? Here’s how can you get more use out of this gadget you used to be so excited about.
 

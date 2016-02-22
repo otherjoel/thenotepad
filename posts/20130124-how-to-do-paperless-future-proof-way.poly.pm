@@ -2,7 +2,7 @@
 
 ◊(define-meta title "How to go paperless the future-proof way (without using Evernote)")
 ◊(define-meta published "2013-01-24")
-◊(define-meta topics "tags,eye-fi,doxie,evernote,pdf,paperless,scanning")
+◊(define-meta topics "paperless,scanning,PDF")
 
 The short version:
 
@@ -42,12 +42,10 @@ I agree it must be nice to have someone else run OCR on my documents and host th
 ◊item{Handing off responsibility for your sensitive documents to someone else’s computers — this is just asking for trouble. Data corruption, security breaches, warrantless searches. Over the next 10 years, it’s almost a given that your hosted service of choice will be hit by at least one of them.}
 }
 
-◊section{Comments}
-
 ◊comment[#:author "Noel"
          #:datetime "January 11, 2014"
          #:authorlink "https://www.blogger.com/profile/13989236703149454350"]{You are that one person I was looking for, who went paperless without Evernote.
-             
+
 I have a question about your tags. Does your file name really look like you suggest in your format? If yes, how do you search these files in Windows OS? I do have Everything installed and use it quite often, still I can’t figure out, how can I use hashtags to search? Any pointers?
 Thanks in advance.}
 

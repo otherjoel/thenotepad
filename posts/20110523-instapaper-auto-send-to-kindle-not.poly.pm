@@ -30,8 +30,6 @@ I conclude that Instapaper simply is not sending the emails for some reason. Any
 
 If you’re still having problems, let us know in the comments!
 
-◊section{Comments}
-
 ◊comment[#:author "nickv"
          #:datetime "May 24, 2011"
          #:authorlink "https://www.blogger.com/profile/18399331908951458413"]{I’m having the same problem, but no solution. Please keep us updated if you figure anything out.}

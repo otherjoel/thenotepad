@@ -87,8 +87,6 @@ These methods use Flash programs for the audio players, which don’t run on iPh
 
 After you’ve gotten your production groove down and can demonstrate that your episodes come out at least somewhat regularly, it’s worth trying to get your podcast added into the iTunes store. Read Apple’s ◊link["http://www.apple.com/itunes/whatson/podcasts/creatorfaq.html"]{FAQ for Podcast Makers}.
 
-◊section{Comments}
-
 ◊comment[#:author "Steve Vorass"
          #:datetime "February 11, 2013"
          #:authorlink "https://www.blogger.com/profile/11355795396029699047"]{Very good info. I have a question though - how do you get tags to show up in a Tumblr Feed - such as This here, etc…? thanks!}

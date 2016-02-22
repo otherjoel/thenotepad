@@ -2,7 +2,7 @@
 
 ◊(define-meta title "Outlook 2003: Warn if Subject Line Empty")
 ◊(define-meta published "2005-07-01")
-◊(define-meta topics "email,VBA,Outlook")
+◊(define-meta topics "Outlook")
 
 Outlook does not have a built-in option to warn you if the subject line is empty. (Outlook ◊emph{Express} does, but for some reason Outlook doesn’t.) Here’s how to put one in.
 
@@ -24,8 +24,6 @@ End Sub}}
 }
 
 You can test this by creating a message with a blank subject and clicking Send. You will be warned that the subject line is empty and asked if you want to send the message anyway. This macro is a simplified version of ◊link["http://www.outlookcode.com/codedetail.aspx?id=553"]{this code at outlookcode.com}. I tested it on Outlook 2003 and it runs with no problems with macro security set to High. (To check your macro security level, click the menu ◊noun{Tools → Macro → Security}.)
-
-◊section{Comments}
 
 ◊comment[#:author "chriswue"
          #:datetime "September 10, 2012"

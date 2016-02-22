@@ -2,7 +2,6 @@
 
 ◊(define-meta title "Accessing BBC Coverage from the U.S.")
 ◊(define-meta published "2012-07-29")
-◊(define-meta topics "ssh,putty,linode")
 
 You live in the U.S., you don’t have a cable subscription but you want to watch the Olympics live? Here’s how to do it.
 

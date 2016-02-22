@@ -2,7 +2,7 @@
 
 ◊(define-meta title "The Best Data Collection App (And Format) for iPhone")
 ◊(define-meta published "2011-11-08")
-◊(define-meta topics "Daytum,quantified self,data collection")
+◊(define-meta topics "quantified self,data collection")
 
 I’ve long been intrigued by ◊link["http://feltron.com"]{Nick Felton’s Annual Reports}. Felton has become the poster child for a new kind of a ◊link["http://quantifiedself.com/"]{subculture} growing up around this idea of “personal metrics.” Measuring and reporting esoteric and insane amounts of data about your personal habits can be a great way to Meet People And Make Friends.
 

@@ -1,8 +1,8 @@
 #lang pollen
 
-◊(define-meta title "Ready for the Desktop")
+◊(define-meta title "Is Windows ready for the desktop?")
 ◊(define-meta published "2009-08-28")
-◊(define-meta topics "Sony,Windows,Linux")
+◊(define-meta topics "Windows problems,Linux")
 
 I’ve been having issues on my Sony VGN TZ190 ever since I installed a certain operating system on it, shortly after I bought it in 2007(Yes, even I have computer problems I can’t seem to solve):
 

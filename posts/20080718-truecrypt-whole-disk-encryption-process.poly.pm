@@ -2,7 +2,7 @@
 
 ◊(define-meta title "TrueCrypt whole disk encryption: process and performance")
 ◊(define-meta published "2008-07-18")
-◊(define-meta topics "TrueCrypt,encryption")
+◊(define-meta topics "encryption")
 
 ◊link["http://www.truecrypt.org/"]{TrueCrypt} now offers ◊link["http://en.wikipedia.org/wiki/Full_disk_encryption"]{whole disk encryption}. I’ve used this software regularly for the past three years for its standard encryption functionality (which is awesome) but was cautious about using it for the whole disk. But after scanning through ◊link["http://www.grc.com/sn/sn-133.htm"]{this transcript} I decided that TrueCrypt is probably robust enough for the job by now, so I gave it a whirl on my laptop. I won’t explain the full rationale for whole disk encryption here, just relate the results and offer some comparisons with other whole-disk encryption products I’ve used.
 
@@ -29,8 +29,6 @@ Here is the “after” shot:
 The access time is still pretty low, but the average transfer rate has droppped by 40% and CPU usage has roughly quintupled.
 
 It’s possible that a normal spinning disk would actually experience gains as a byproduct of TrueCrypt encryption, but I haven’t had time to try it out and I probably won’t get to it anytime soon.
-
-◊section{Comments}
 
 ◊comment[#:author "eric"
          #:datetime "August 13, 2009"
