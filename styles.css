@@ -164,6 +164,26 @@ footer.main {
     line-height: 2.25em;
     padding: 2.25em 0;
 }
+
+table.post-list {
+    padding: 0;
+    width: 100%;
+}
+
+table.post-list td.date-col {
+    width: 8em;
+    font-family: triplicate;
+    font-size: 0.666666667em;
+    line-height: 2.25em;
+    text-align: right;
+    vertical-align: top;
+}
+
+table.post-list td.post-col {
+    vertical-align: top;
+    padding-left: 1em;
+}
+
 article header {
     font-family: triplicate, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -280,7 +300,7 @@ code {
     font-size: .8em;
     border-radius: 2px;
 }
-pre.code, table {
+pre.code, article table {
     font-size: .75em;
     line-height: 1.6em;
     padding-top: 0.8em;
@@ -342,6 +362,56 @@ div.comment-box:last-of-type {
         0 0 0 20px hsl(200, 100%, 90%);
 }
 .updateBox p:first-child { margin-bottom: 0em; }
+
+dl.topic-list {
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+}
+.topic-list dt {
+    font-family: triplicate;
+    color: navy;
+    float: left;
+    width: 23%;
+    clear: both;
+    padding: 0 2% 15px 0;
+    position: relative;
+}
+.topic-list dt a { text-decoration: none; }
+.topic-list dd {
+    float: right;
+    width: 72%;
+    padding: 0 0 15px 3%;
+    margin: 0;
+}
+.topic-list:before {
+    content: "";
+    width: 1px;
+    position: absolute;
+    border-left: 1px solid #999;
+    top: 0;
+    bottom: 0;
+    left: 25%;
+}
+.topic-list dt:before {
+    content: "";
+    width: 30px;
+    position: absolute;
+    border-top: 1px solid #999;
+    top: -5px;
+    right: -15px;
+}
+.topic-list dt:after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background: #333;
+    border: 1px solid #999;
+    position: absolute;
+    border-radius: 6px;
+    top: -8px;
+    right: -4px;
+}
 
 .sidenote, .marginnote {
     float: right;
