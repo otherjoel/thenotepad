@@ -18,13 +18,13 @@ The pre-boot authentication is very simple. The screen is plain-text, no graphic
 
 My laptop is a bit unusual because it has a small 32GB SSD flash drive instead of a spinning-disc hard drive. This means it is a ◊emph{lot} faster than a normal hard disk to start with. Here is the “before” benchmark:
 
-◊figure["/img/unset.png"]{SSD performance prior to encryption}
+◊figure["img/unset.png"]{SSD performance prior to encryption}
 
 (As you’ll see if you check out some comparison shots from ◊link["http://www.hdtune.com/faq_2.html"]{HD Tune’s website}, a 0.3 msec seek time is pretty durn fast. Also an SSD’s performance doesn’t vary depending on the location of the file, while on a normal disk the files on the outside of the spinning disk come up faster. But I disgress.)
 
 Here is the “after” shot:
 
-◊figure["/img/unset02.png"]{SSD performance after the whole disk has been encrypted}
+◊figure["img/unset02.png"]{SSD performance after the whole disk has been encrypted}
 
 The access time is still pretty low, but the average transfer rate has droppped by 40% and CPU usage has roughly quintupled.
 

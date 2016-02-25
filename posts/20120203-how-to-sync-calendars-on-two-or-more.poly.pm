@@ -31,7 +31,7 @@ This is an easy process, but not entirely obvious because you have to use a lapt
 ◊item{Open your web browser on your desktop or laptop computer and go to ◊link["http//icloud.com"]{icloud.com}.}
 ◊item{Sign in using the account of the “owner” and click on ◊code{Calendar}.}
 ◊item{Click on the small circle to the right of the calendar you wish to share. Under ◊code{Private Calendar}, enter the email address for the user of the “other” iPhone/iPad. It can be any email address for that person (it doesn’t have to be the one they use to sign in to iCloud) but it should be one that they have set up on their iPhone/iPad.
-◊figure["/img/20120203icloudsharing1.jpg"]{iCloud sharing}}
+◊figure["img/20120203icloudsharing1.jpg"]{iCloud sharing}}
 ◊item{After entering the email address, click ◊code{Share}.}
 }
 

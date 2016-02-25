@@ -26,7 +26,7 @@ If you’re a Windows user, follow the instructions below, which I’ve adapted 
 
 ◊ul{
 ◊item{If you use IE or Chrome, configure this by going to Network and Sharing Center, and clicking Internet Options. Go to ◊noun{Connections} tab, click ◊noun{LAN Settings} button. Make sure ◊noun{Use a proxy server for your LAN} is checked, and click the “Advanced” button. Enter ◊code{127.0.0.1} next to the “Socks” field, and enter ◊code{8080} for the port. ◊strong{Leave the other fields blank} as shown (HTTP, Secure, and FTP).
-◊figure["/img/20120729proxysettings.png"]{ }}
+◊figure["img/20120729proxysettings.png"]{ }}
 ◊item{If you use Firefox, go to “Connection Settings”, select “Manual proxy configuration” and follow the same procedure, entering ◊code{127.0.0.1} next to the “Socks host” field, and ◊code{8080} for the port, and ensure the other fields are blank.}
 }}
 }

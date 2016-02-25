@@ -6,7 +6,7 @@
 
 This is a current, unresolved problem: ◊link["http://instapaper.com/"]{Instapaper} does not automatically send new articles to my ◊amazon["B002Y27P3M"]{Kindle} every day. This, despite the fact that my Instapaper account is correctly set up to auto-send new articles to my Kindle, and my Kindle account is properly set up to receive them.
 
-◊figure["/img/kindle.jpg"]{◊i{Manage Your Kindle} on Instapaper's web site}
+◊figure["img/kindle.jpg"]{◊i{Manage Your Kindle} on Instapaper's web site}
 
 Here’s the scenario:
 
