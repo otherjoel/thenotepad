@@ -45,7 +45,7 @@ Most times you’ll need to do this four times for each typeface: once each for 
 
 Once you’ve done all that, you can include the above stylesheet in your HTML (make sure it comes before any other stylesheets) and reference the font in your other CSS styles.
 
-◊strong{Note:} The original font file needs to have its &quot;embeddable&quot; flag set to ◊code{0x0000} or the font loading will fail in Internet Explorer (at least in versions 9 through 11). Other browsers do not seem to check for this value. If your font license allows embedding, you can find some more Python code for modifying the flag here: ◊link["http://www.typophile.com/node/102671"]{http://www.typophile.com/node/102671}.
+◊strong{Note:} The original font file needs to have its “embeddable” flag set to ◊code{0x0000} or the font loading will fail in Internet Explorer (at least in versions 9 through 11). Other browsers do not seem to check for this value. If your font license allows embedding, you can find some more Python code for modifying the flag here: ◊link["http://www.typophile.com/node/102671"]{http://www.typophile.com/node/102671}.
 
 ◊section{Subsetting your fonts}
 
@@ -90,7 +90,7 @@ for charset in charsets:
     for x in range(charset[0],charset[1]+1):
         print(unichr(x).encode('utf-8'),end='')}
 
-Some notes on customizing this script: If you want to include any additional character blocks in your font, simply add the hex ranges to the ◊code{charsets} list (see the complete ◊link["http://www.fileformat.info/info/unicode/block/index.htm"]{list of Unicode blocks}). Single characters can be added by making the first and second numbers of the &quot;range&quot; identical.
+Some notes on customizing this script: If you want to include any additional character blocks in your font, simply add the hex ranges to the ◊code{charsets} list (see the complete ◊link["http://www.fileformat.info/info/unicode/block/index.htm"]{list of Unicode blocks}). Single characters can be added by making the first and second numbers of the “range” identical.
 
 Including the ligatures (if the font supports them) makes for a better result on some platforms. On Mac, for example, Safari will make use of the ligatures but Chrome doesn’t use them at all.
 
