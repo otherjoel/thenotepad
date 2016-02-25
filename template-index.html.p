@@ -1,3 +1,5 @@
+◊(local-require "util-template.rkt")
+
 <!DOCTYPE html>
 <html lang="en" class="gridded">
     <head>
@@ -17,13 +19,11 @@
             </nav>
         </header>
         <section class="main">
-            <h1>Examples</h1>
-            <ul>
-            ◊(map (λ(node)(->html `(li (a [[href ,(symbol->string node)]] ,(select-from-metas 'title node)))))
-              (children 'index.html))
-            </ul>
-            <pre class="code">◊(format "~a" (current-pagetree))</pre>
-            ◊(map ->html (select-from-doc 'body here))
+        ◊(map ->html (select-from-doc 'body here))
+
+        <table class="post-list">
+            ◊(map post->tablerow (posts-by-date-desc #:limit 10))
+        </table>
         </section>
         <footer class="main">
             <p>RSS &middot; <a href="mailto:joel@jdueck.net">joel@jdueck.net</a> &middot; <a href="https://twitter.com/joeld">@joeld</a>

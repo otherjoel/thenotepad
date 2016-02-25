@@ -270,8 +270,8 @@ handle it at the Pollen processing level.
 
 (define (section title)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\section{" ,title "}"
-                 "\\label{sec:" ,title ,(symbol->string (gensym)) "}")]
+    [(ltx pdf) `(txt "\\section{" ,title "}")]
+                 ;"\\label{sec:" ,title ,(symbol->string (gensym)) "}")]
     [else `(h2 ,title)]))
 
 (define (subsection title)
@@ -319,7 +319,7 @@ handle it at the Pollen processing level.
 
 (define (blockcode . text)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\begin{verbatim}" ,@text "\\end{verbatim}")]
+    [(ltx pdf) `(txt-noescape "\\begin{lstlisting}\n" ,@text "\n\\end{lstlisting}")]
     [else `(pre [[class "code"]] ,@text)]))
 
 (define (ol . elements)
