@@ -60,14 +60,15 @@
   (regexp-replace* #px"([$#%&])" str "\\\\\\1"))
 
 #|
-`txt` is called by root when targeting LaTeX/PDF. It converts all elements inside
-a ◊txt tag into a single concatenated string. ◊txt is not intended to be used in
-normal markup; its sole purpose is to allow other tag functions to return LaTeX
-code as a valid X-expression rather than as a string.
+`txt-decode` is called by root when targeting LaTeX/PDF. It simply returns all
+all elements contained inside ◊txt tag or a ◊txt-noescape tag. ◊txt is not
+intended to be used in normal markup; its sole purpose is to allow other tag
+functions to return LaTeX code as a valid tagged X-expression rather than as a
+naked string.
 |#
 (define (txt-decode xs)
     (if (member (get-tag xs) '(txt txt-noescape))
-        (apply string-append (get-elements xs))
+        (get-elements xs)
         xs))
 
 #|
