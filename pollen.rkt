@@ -27,7 +27,7 @@
 (define (root . elements)
   (case (current-poly-target)
     [(ltx pdf)
-     (define first-pass (decode-elements elements
+     (define first-pass (decode-elements (get-elements (wrap-comment-section (txexpr 'root null elements)))
                                          #:inline-txexpr-proc (compose1 txt-decode hyperlink-decoder)
                                          #:string-proc (compose1 ltx-escape-str smart-quotes smart-dashes)
                                          #:exclude-tags '(script style figure txt-noescape)))
@@ -44,15 +44,30 @@
                                            #:exclude-tags '(script style pre code)))
       (wrap-comment-section (txexpr 'body null second-pass))]))
 
+#|
+   If an article has comments, we want to be able to split those out from the
+   rest of the article without requiring the writer to add a ◊comment-section
+   tag or anything dumb like that. This way we can add a heading before the
+   comments or add other markup around them.
+|#
 (define (wrap-comment-section txpr)
+  ; Helper function identifies comments for us. Returns true for any txexpr
+  ; whose tag is 'txt-comment, or which is a 'div with class "comment-box".
   (define (is-comment? tx)
     (and (txexpr? tx)
-         (equal? 'div (get-tag tx))
-         (attrs-have-key? tx 'class)
-         (string=? "comment-box" (attr-ref tx 'class))))
+         (or (equal? 'txt-comment (get-tag tx))
+             (and (equal? 'div (get-tag tx))
+                  (attrs-have-key? tx 'class)
+                  (string=? "comment-box" (attr-ref tx 'class))))))
+  ; Split the comments out from the rest of the doc
   (let-values ([(splut comments) (splitf-txexpr txpr is-comment?)])
     (if (not (empty? comments))
-        (txexpr 'body null (apply append (list (get-elements splut) `(,(apply comment-section comments)))))
+        ; Reconstitute the doc with the freshly marked-up comment section
+        ; at the end
+        (txexpr 'body null (apply append (list (get-elements splut)
+                                               `(,(apply comment-section comments)))))
+
+        ; Or if no comments exist, return the original txexpr
         txpr)))
 
 ; Escape $,%,# and & for LaTeX
@@ -67,7 +82,7 @@ functions to return LaTeX code as a valid tagged X-expression rather than as a
 naked string.
 |#
 (define (txt-decode xs)
-    (if (member (get-tag xs) '(txt txt-noescape))
+    (if (member (get-tag xs) '(txt txt-noescape txt-comment))
         (get-elements xs)
         xs))
 
@@ -224,14 +239,14 @@ handle it at the Pollen processing level.
 
 (define (comment-section . contents)
   (case (current-poly-target)
-    [(ltx pdf) `(txt ,(section "Comments") ,@contents)]
-    [else `(section [[class "comments"]] ,@contents)]))
+    [(ltx pdf) `(txt ,(section "Responses") ,@contents)]
+    [else `(section [[class "comments"]] ,(section "Responses") ,@contents)]))
 
 (define (comment #:author author #:datetime comment-date #:authorlink author-url . comment-text)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\begin {quote}" ,@comment-text
-                     "\n\\attrib{" ,author ", " ,comment-date "}"
-                     "\\end{quote}")]
+    [(ltx pdf) `(txt-comment "\\begin {quote}" ,@comment-text
+                             "\n\\attrib{" ,author ", " ,comment-date "}"
+                             "\\end{quote}")]
     [else `(div [[class "comment-box"]]
                 (p [[class "comment-meta"]]
                    (span [[class "comment-name"]]
