@@ -3,51 +3,53 @@
 ◊(define (print-if thing fmt)
    (if thing (format fmt thing) ""))
 ◊(define latex-source ◊string-append{
-    \documentclass[11pt]{article}
+    \documentclass[12pt]{article}
 
     \usepackage{amssymb,amsmath}
-    \usepackage{fixltx2e} % provides \textsubscript
 
     \usepackage[T1]{fontenc}
-    \usepackage[utf8]{inputenc}
-    \usepackage{eurosym}
+    %\usepackage[utf8]{inputenc}
 
+    \usepackage{eurosym}
+    \usepackage{fancyvrb}
+    \usepackage{longtable,booktabs}
+    \usepackage{attrib}
+    \usepackage{graphicx}
     \usepackage{mathspec}
     \usepackage{xltxtra,xunicode}
-    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
 
-    % use upquote if available, for straight quotes in verbatim environments
-    \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-    % use microtype if available
-    \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+    \defaultfontfeatures{Scale=MatchLowercase}
+
+    \usepackage{microtype}
+    \usepackage{fontspec}
 
     %% Typography defaults
-    \setsansfont{Fira Sans OT}
-    \setmainfont{Charter}
+    \newfontfamily\linenumberfont[Mapping=tex-text]{Fira Mono OT}
+
+    \setsansfont[Mapping=tex-text]{Fira Sans OT}
+    \setmainfont[Mapping=tex-text]{Charter}
     \setmonofont{Triplicate T4c}
 
     \usepackage{color}
     \definecolor{mygray}{rgb}{0.7,0.7,0.7}
     \definecolor{light-gray}{gray}{0.95}
 
+    \usepackage{textcomp}
+    \usepackage{upquote}
     \usepackage{listings}
     \lstset{
         basicstyle=\small\ttfamily,
         columns=flexible,
         breaklines=true,
         numbers=left,
+        upquote=true,
         backgroundcolor=\color{light-gray},
         numbersep=5pt,
         xleftmargin=.25in,
         xrightmargin=.25in,
-        numberstyle=\small\color{mygray}\ttfamily\itshape
+        framexleftmargin=.25in,
+        numberstyle=\small\color{mygray}\linenumberfont
     }
-
-    \usepackage{fancyvrb}
-
-    \usepackage{longtable,booktabs}
-
-    \usepackage{graphicx}
 
     \makeatletter
     \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -76,6 +78,9 @@
 
     % Make links footnotes instead of hotlinks:
     \renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+
+    % Make margin notes (from Tufte-LaTeX) into regular footnotes
+    \newcommand{\marginnote}[1]{\footnote{#1}}
 
     \setlength{\parindent}{0pt}
     \setlength{\parskip}{6pt plus 2pt minus 1pt}
@@ -112,7 +117,7 @@
         \hb@xt@0em{\hss\normalfont\@thefnmark.} #1}
     \def\splitfootnoterule{\kern-3\p@ \hrule width 1in \kern2.6\p@}
     \makeatother
-    \renewcommand\footnotesize{\fontsize{8}{10} \selectfont}
+    \renewcommand\footnotesize{\fontsize{10}{12} \selectfont}
     \renewcommand{\thefootnote}{\arabic{footnote}}
 
     %% Main doc
