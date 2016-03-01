@@ -72,7 +72,7 @@
 
 ; Escape $,%,# and & for LaTeX
 (define (ltx-escape-str str)
-  (regexp-replace* #px"([$#%&])" str "\\\\\\1"))
+  (regexp-replace* #px"([$#%&_|^])" str "\\\\\\1"))
 
 #|
 `txt-decode` is called by root when targeting LaTeX/PDF. It simply returns all
