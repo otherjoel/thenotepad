@@ -81,6 +81,7 @@
 
     % Make margin notes (from Tufte-LaTeX) into regular footnotes
     \newcommand{\marginnote}[1]{\footnote{#1}}
+    \newcommand{\smallcaps}[1]{\textsc{#1}}
 
     \setlength{\parindent}{0pt}
     \setlength{\parskip}{6pt plus 2pt minus 1pt}
