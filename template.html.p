@@ -37,8 +37,8 @@
             ◊(map ->html (select-from-doc 'body here))
         </article>
         <footer class="main">
-            <p>RSS &middot; <a href="mailto:joel@jdueck.net">joel@jdueck.net</a> &middot; <a href="https://twitter.com/joeld">@joeld</a>
-            <br>Valid HTML5 + CSS. Produced with <a href="http://pollenpub.com">Pollen</a>. Source code on Github.</p>
+            <p><a href="/feed.xml">RSS</a> &middot; <a href="mailto:comments@thenotepad.org">comments@thenotepad.org</a> &middot; <a href="https://twitter.com/joeld">@joeld</a>
+            <br>Produced with <a href="http://pollenpub.com">Pollen</a>. Source code <a href="https://github.com/otherjoel/thenotepad">on Github</a>. Valid HTML5 + CSS. </p>
         </footer>
     </body>
 </html>
