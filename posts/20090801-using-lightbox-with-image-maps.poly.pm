@@ -4,7 +4,7 @@
 ◊(define-meta published "2009-08-01")
 ◊(define-meta topics "JavaScript")
 
-I ran across this while assembling the website for my brothers’ new film ◊em{The Little Red Plane}. Don’t ask why I needed to do use image maps in this day and age. But I did.
+I ran across this while assembling the website for my brothers’ new film ◊emph{The Little Red Plane}. Don’t ask why I needed to do use image maps in this day and age. But I did.
 
 I decided to use the fairly awesome ◊link["http://www.lokeshdhakar.com/projects/lightbox2/"]{LightBox} script (version 2.04) for certain aspects of the site, but the links that would trigger it were in an image map, which uses ◊code{<area>} tags instead of ◊code{<a>} tags. When I clicked on the links, the page would go dark but no image overlay was displayed.
 

@@ -12,7 +12,7 @@ There are probably completely free ways to do this, but the straightforward way 
 
 Because I’m kooky, I like to create both MP3 and unprotected iTunes Audiobook (◊code{.m4b}) versions of my audiobooks. I’ll show you how to do both here.
 
-◊h4[#:id "method-one-converting-aa-to-mp3"]{Method One: Converting AA to MP3}
+◊section{Method One: Converting AA to MP3}
 
 This is the easy one. Just set DRM converter to use the MP3 format.
 
@@ -28,7 +28,7 @@ You may also want to copy and paste the album artwork from the original Audible 
 
 If you want to add chapter breaks, you’ll need to create a ◊code{.m4b} file instead. Here’s how:
 
-◊h4[#:id "method-two-converting-aa-to-m4b-with-chapter-breaks"]{Method Two: Converting AA to M4B with chapter breaks}
+◊section{Method Two: Converting AA to M4B with chapter breaks}
 
 This method involves the use of an additional program, ◊link["http://lodensoftware.com/chapter-and-verse/"]{Chapter and Verse}, which is free. Download and install it before continuing!
 

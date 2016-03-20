@@ -50,7 +50,7 @@ Lots of folks use iTunes, so it’s nice to provide an iTunes instant-subscribe 
 
 ◊section{Record and upload your podcast episodes}
 
-I use ◊link["http://audacity.sourceforge.net/"]{Audacity} to record, then upload the MP3 to my website using ◊span[#:class "caps"]{FTP}. If you don’t have any hosted space, you can use a free ◊link["http://dropbox.com"]{Dropbox} account and host your files in a public folder. The bonus with this approach is that uploading is automatic.
+I use ◊link["http://audacity.sourceforge.net/"]{Audacity} to record, then upload the MP3 to my website using FTP. If you don’t have any hosted space, you can use a free ◊link["http://dropbox.com"]{Dropbox} account and host your files in a public folder. The bonus with this approach is that uploading is automatic.
 
 ◊section{Format your podcast posts properly}
 
