@@ -9,7 +9,9 @@
          pollen/tag
          pollen/template
          pollen/pagetree
-         racket/date)
+         racket/date
+         "util-date.rkt"
+         "util-template.rkt")
 
 (provide add-between
          attr-ref
@@ -17,7 +19,8 @@
          make-txexpr
          string-split
          get-markup-source
-         string-contains?)
+         string-contains?
+         (all-from-out "util-date.rkt" "util-template.rkt"))
 (provide (all-defined-out))
 
 (module setup racket/base
@@ -31,7 +34,8 @@
                                          #:inline-txexpr-proc (compose1 txt-decode hyperlink-decoder)
                                          #:string-proc (compose1 ltx-escape-str smart-quotes smart-dashes)
                                          #:exclude-tags '(script style figure txt-noescape)))
-     (txexpr 'body null (decode-elements first-pass #:inline-txexpr-proc txt-decode))]
+     (txexpr 'body null (decode-elements first-pass #:inline-txexpr-proc txt-decode
+                                         #:string-proc ltx-escape-str))]
 
     [else
       (define first-pass (decode-elements elements
@@ -72,7 +76,9 @@
 
 ; Escape $,%,# and & for LaTeX
 (define (ltx-escape-str str)
-  (regexp-replace* #px"([$#%&_|^])" str "\\\\\\1"))
+  ; matches special characters not already preceeded by a slash
+  ;(define str-2nd (regexp-replace* #px"\\\\" str "\\textbackslash"))
+  (regexp-replace* #px"(?<!\\\\)([$#%&_|^])" str "\\\\\\1"))
 
 #|
 `txt-decode` is called by root when targeting LaTeX/PDF. It simply returns all
@@ -323,9 +329,14 @@ handle it at the Pollen processing level.
     [(ltx pdf) `(txt "\\includegraphics{" ,src "}")]
     [else `(img [[src ,src]])]))
 
+; Note that because of the need to escape backslashes in LaTeX, you
+; cannot use any other commands inside a ◊code tag
 (define (code . text)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\texttt{" ,@text "}")]
+    [(ltx pdf)
+     `(txt "\\texttt{"
+           ,(string-replace (apply string-append text) "\\" "\\textbackslash ")
+           "}")]
     [else `(code ,@text)]))
 
 (define (noun . text)
