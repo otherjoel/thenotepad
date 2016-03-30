@@ -66,7 +66,7 @@
 \hypersetup{breaklinks=true,
             bookmarks=true,
             pdfauthor={◊(print-if (select-from-metas 'author metas) "~a")},
-            pdftitle={◊(print-if (select-from-metas 'title metas) "~a")},
+            pdftitle={◊when/splice[(select-from-metas 'title metas)]{◊(ltx-escape-str (select-from-metas 'title metas))}},
             colorlinks=true,
             citecolor=blue,
             urlcolor=blue,
@@ -79,6 +79,7 @@
 
 % Make margin notes (from Tufte-LaTeX) into regular footnotes
 \newcommand{\marginnote}[1]{\footnote{#1}}
+\newcommand{\smallcaps}[1]{\textsc{#1}}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt plus 2pt minus 1pt}
@@ -88,7 +89,7 @@
 
 \VerbatimFootnotes % allows verbatim text in footnotes
 
-\title{◊(print-if (select-from-metas 'title metas) "~a")}
+\title{◊when/splice[(select-from-metas 'title metas)]{◊(ltx-escape-str (select-from-metas 'title metas))}}
 \author{◊(print-if (select-from-metas 'author metas) "~a")}
 \date{◊(unless (not (select-from-metas 'published metas)) (pubdate->english (select-from-metas 'published metas)))}
 

@@ -68,7 +68,7 @@
     \hypersetup{breaklinks=true,
                 bookmarks=true,
                 pdfauthor={◊(print-if (select-from-metas 'author metas) "~a")},
-                pdftitle={◊(print-if (select-from-metas 'title metas) "~a")},
+                pdftitle={◊(ltx-escape-str (select-from-metas 'title metas))},
                 colorlinks=true,
                 citecolor=blue,
                 urlcolor=blue,
@@ -91,7 +91,7 @@
 
     \VerbatimFootnotes % allows verbatim text in footnotes
 
-    \title{◊(print-if (select-from-metas 'title metas) "~a")}
+    \title{◊(ltx-escape-str (select-from-metas 'title metas))}
     \author{◊(print-if (select-from-metas 'author metas) "~a")}
     \date{◊(unless (not (select-from-metas 'published metas)) (pubdate->english (select-from-metas 'published metas)))}
 
