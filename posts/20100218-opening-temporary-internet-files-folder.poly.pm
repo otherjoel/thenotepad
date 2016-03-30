@@ -11,13 +11,13 @@ I found the solution ◊link["http://www.groovypost.com/howto/microsoft/outlook/
 Open Registry Editor (Click ◊noun{Start → Run}, type ◊code{regedit} and hit ◊code{Enter}). Browse to the following location in the registry structure, depending on the version of Outlook you use:
 
 ◊table{
-◊tr{◊th{Version} ◊th{Registry Key}}
-◊tr{◊td{Outlook 97} ◊td{◊code{HKEY_CURRENT_USER\Software\Microsoft\Office\8.0\Outlook\Security}}}
-◊tr{◊td{Outlook 98} ◊td{◊code{HKEY_CURRENT_USER\Software\Microsoft\Office\8.5\Outlook\Security}}}
-◊tr{◊td{Outlook 2000} ◊td{◊code{HKEY_CURRENT_USER\Software\Microsoft\Office\9.0\Outlook\Security}}}
-◊tr{◊td{Outlook 2002/XP} ◊td{◊code{HKEY_CURRENT_USER\Software\Microsoft\Office\10.0\Outlook\Security}}}
-◊tr{◊td{Outlook 2003} ◊td{◊code{HKEY_CURRENT_USER\Software\Microsoft\Office\11.0\Outlook\Security}}}
-◊tr{◊td{Outlook 2007} ◊td{◊code{HKEY_CURRENT_USER\Software\Microsoft\Office\12.0\Outlook\Security}}}
+    Version         | Registry Key
+    Outlook 97      | ◊code{HKEY_CURRENT_USER\Software\Microsoft\Office\8.0\Outlook\Security}
+    Outlook 98      | ◊code{HKEY_CURRENT_USER\Software\Microsoft\Office\8.5\Outlook\Security}
+    Outlook 2000    | ◊code{HKEY_CURRENT_USER\Software\Microsoft\Office\9.0\Outlook\Security}
+    Outlook 2002/XP | ◊code{HKEY_CURRENT_USER\Software\Microsoft\Office\10.0\Outlook\Security}
+    Outlook 2003    | ◊code{HKEY_CURRENT_USER\Software\Microsoft\Office\11.0\Outlook\Security}
+    Outlook 2007    | ◊code{HKEY_CURRENT_USER\Software\Microsoft\Office\12.0\Outlook\Security}
 }
 
 Double click the ◊code{OutlookSecureTempFolder} value, and copy that value to the clipboard (i.e., select all the text, right-click and hit Copy on the popup menu).
