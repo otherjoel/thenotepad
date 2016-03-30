@@ -27,6 +27,13 @@
     (provide (all-defined-out))
     (define poly-targets '(html ltx pdf)))
 
+(define (split-by lst x)
+  (foldr (lambda (element next)
+           (if (eqv? element x)
+               (cons empty next)
+               (cons (cons element (first next)) (rest next))))
+         (list empty) lst))
+
 (define (root . elements)
   (case (current-poly-target)
     [(ltx pdf)
@@ -259,6 +266,126 @@ handle it at the Pollen processing level.
                          (a [[href ,author-url]] ,author))
                    (span [[class "comment-time"]] ,comment-date))
                 ,@comment-text)]))
+
+#|
+  ◊table : allows the creation of basic tables from a simplified notation.
+  Modified from ◊quick-table in MB’s Typography for Lawyers source
+  (http://docs.racket-lang.org/pollen-tfl/_pollen_rkt_.html#%28elem._%28chunk._~3cquick-table~3e~3a1%29%29)
+
+  I’ve updated this tag so that A. it can produce both LaTeX and HTML tables,
+  B. it allows you to specify the text-alignment for columns in both those
+  formats, and C. it allows you to include tags inside table cells (not just strings)
+
+  This necessarily made things a bit more complex.
+|#
+
+; Our ◊table will support an optional argument specifying the text alignment for
+; each column in the table: E.g. "llrc" means two left-aligned columns, a right-
+; aligned column, and a center-aligned column (4 columns total).
+
+; This function is for use in a contract, allowing me to spike the ball if
+; a writer uses characters other than l, r, or c in the columns argument of my
+; ◊quick-table tag.
+(define (column-alignments-string? s)
+  (subset? (string->list s) '(#\l #\r #\c)))
+
+; Since LaTeX is involved, we once again must manually define our tag functions.
+; These are not called by authors; rather they are for use within the ◊quick-table
+; tag function.
+;    A normal cell and a header cell appear in HTML as different tags (<td> and
+; <th> but in LaTeX both are just strings; the headers are differentiated from
+; normal cells only by surrounding visual cues that will have to be added by the
+; surrounding “row” function one level up.
+(define (td-tag . tx-els)
+  (case (current-poly-target)
+    [(ltx pdf) `(txt ,@tx-els)]
+    [else `(td ,@tx-els)]))
+
+(define (th-tag . tx-els)
+  (case (current-poly-target)
+    [(ltx pdf) `(txt ,@tx-els)]
+    [else `(th ,@tx-els)]))
+
+; tr-tag takes a column-alignment string (e.g. "llrc") and a list of cells.
+; In LaTeX it returns a 'txt expression with the cells separated by " & " and
+; ending with ‘\\’.
+; In HTML it returns a <tr> tag containing <td> tags, using the column-alignment
+; string to set the CSS text-alignment property on each cell that is not left-aligned.
+(define (tr-tag #:columns [columns #f] . tx-elems)
+  (define column-alignments #hash(("l" . "left") ("r" . "right") ("c" . "center")))
+  (case (current-poly-target)
+    [(ltx pdf) `(txt ,@(add-between tx-elems " & ") " \\\\\n")]
+    [else (if columns
+              (cons 'tr (for/list ([cell (in-list tx-elems)]
+                                   [c-a columns])
+                                  (if (not (equal? c-a #\l))
+                                      (attr-set cell
+                                                'style
+                                                (string-append "text-align: "
+                                                               (hash-ref column-alignments (string c-a))
+                                                               ";"))
+                                      cell)))
+              `(tr ,@tx-elems))]))
+;
+; Ladies and gentlemen may I direct your attention to the center ring:
+;
+(define/contract (table #:columns [c-aligns #f] . tx-elements)
+  (() (#:columns column-alignments-string?) #:rest (listof txexpr-element?) . ->* . txexpr?)
+
+  ; Helper function which takes a list and effectively removes any sub-list
+  ; which is not a txexpr. This way a row contains only a flat list of values
+  ; and txexprs.
+  (define (clean-cells-in-row lst)
+    (foldr (lambda (x rest-of-list)
+             (if (and (list? x) (not (txexpr? x)))
+                 (append x rest-of-list)
+                 (cons x rest-of-list)))
+           empty
+           lst))
+
+  ; Split the arguments into rows (at "\n"), and split any string values into
+  ; separate cells (at "|") and remove extra whitespace.
+  (define rows-parsed (for/list ([row (in-list (split-by tx-elements "\n"))])
+                                (for/list ([cell (in-list row)])
+                                          (if (string? cell)
+                                              (map string-trim (filter-not whitespace? (string-split cell "|")))
+                                              cell))))
+
+  ; Clean things up using the helper function above
+  (define rows-of-cells (map clean-cells-in-row rows-parsed))
+
+  ; Create lists of individual cells using the tag functions defined previously.
+  ; These will be formatted according to the current target format.
+  ;   LaTeX: '((txt "Cell 1") " & " (txt "Cell 2") "\\\n")
+  ;   HTML:  '((td "Cell 1") (td "Cell 2"))
+  (define table-rows
+    (match-let ([(cons header-row other-rows) rows-of-cells])
+      (cons (map th-tag header-row)
+            (for/list ([row (in-list other-rows)])
+                      (map td-tag row)))))
+
+  ; With the rows prepared, it only remains for us to format the cells inside
+  ; rows and the rows inside the table structure.
+  (case (current-poly-target)
+    [(ltx pdf)
+     ; LaTeX requires a column alignment string in the table. So if none was
+     ; specified, generate one, using one ‘l’ character for each cell in the
+     ; first row (thus defaulting to left-alignment).
+     (define col-args (if (not c-aligns) (make-string (length (first table-rows)) #\l) c-aligns))
+     (match-let ([(cons header-row other-rows) rows-of-cells])
+       `(txt "\\begin{table}[ht]\n"
+             "  \\centering\n"
+             "  \\begin{tabular}{" ,col-args "}\n"
+             "    \\toprule\n"
+             ,(apply tr-tag #:columns col-args header-row)
+             "    \\midrule\n"
+             ,@(for/list ([row (in-list other-rows)]) (apply tr-tag #:columns col-args row))
+             "    \\bottomrule\n"
+             "  \\end{tabular}\n"
+             "\\end{table}\n"))]
+    [else (cons 'table (for/list ([table-row (in-list table-rows)])
+                         (apply tr-tag #:columns c-aligns table-row)))]))
+
 
 (define (p . words)
   (case (current-poly-target)
