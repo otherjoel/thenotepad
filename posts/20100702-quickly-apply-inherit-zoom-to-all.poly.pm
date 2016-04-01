@@ -23,7 +23,7 @@ The next time you open the modified document with Acrobat you will get a message
 I don’t have UltraEdit but I was able to make this work using ◊link["http://sourceforge.net/projects/notepad-plus/"]{Notepad++}. The exact search/replace text was slightly different for my PDF files (note the added space) but the principle is the same:
 
 ◊ol{
-◊item{In Notead++, click the ◊code{TextFX} menu, then ◊code{TextFX Quick} → ◊code{Find/Replace} (the standard find/replace tool will not help you here). Make sure you check the “Regular Expr” check box on the right.}
+◊item{In Notepad++, click the ◊code{TextFX} menu, then ◊code{TextFX Quick} → ◊code{Find/Replace} (the standard find/replace tool will not help you here). Make sure you check the “Regular Expr” check box on the right.}
 ◊item{Use ◊code{R/XYZ(.*)]} as your search string and ◊code{R/XYZ]} as your replace string and replace all instances.}
 ◊item{Do it again using ◊code{R/Fit(.*)]} as your search string and the same replace string as above.}
 }
