@@ -37,16 +37,15 @@
 (define (root . elements)
   (case (current-poly-target)
     [(ltx pdf)
-     (define first-pass (decode-elements (get-elements (wrap-comment-section (txexpr 'root null elements)))
+     (define first-pass (decode-elements (get-elements (wrap-comment-section (txexpr 'root null (esc elements))))
                                          #:inline-txexpr-proc (compose1 txt-decode hyperlink-decoder)
-                                         #:string-proc (compose1 ltx-escape-str smart-quotes smart-dashes)
+                                         #:string-proc (compose1 smart-quotes smart-dashes)
                                          #:exclude-tags '(script style figure txt-noescape)))
-     (txexpr 'body null (decode-elements first-pass #:inline-txexpr-proc txt-decode
-                                         #:string-proc ltx-escape-str))]
+     (txexpr 'body null (decode-elements first-pass #:inline-txexpr-proc txt-decode))]
 
     [else
       (define first-pass (decode-elements elements
-                                          #:txexpr-elements-proc detect-paragraphs
+                                          #:txexpr-elements-proc decode-paragraphs
                                           #:exclude-tags '(script style figure table)))
       (define second-pass (decode-elements first-pass
                                            #:block-txexpr-proc detect-newthoughts
@@ -84,8 +83,14 @@
 ; Escape $,%,# and & for LaTeX
 (define (ltx-escape-str str)
   ; matches special characters not already preceeded by a slash
+  ; # $ % & ~ _ ^ \ { }
   ;(define str-2nd (regexp-replace* #px"\\\\" str "\\textbackslash"))
-  (regexp-replace* #px"(?<!\\\\)([$#%&_|^])" str "\\\\\\1"))
+  (regexp-replace* #px"(?<!\\\\)([$#%&_])" str "\\\\\\1"))
+
+(define (esc elems)
+  (and (not (member (current-poly-target) '(ltx pdf))) (error "WRONG"))
+  (for/list ([e (in-list elems)])
+            (if (string? e) (ltx-escape-str e) e)))
 
 #|
 `txt-decode` is called by root when targeting LaTeX/PDF. It simply returns all
@@ -189,7 +194,7 @@ handle it at the Pollen processing level.
                              (list url)
                              words))
     (case (current-poly-target)
-      [(ltx pdf) `(txt "\\href{" ,url "}" "{" ,@tag-contents "}")]
+      [(ltx pdf) `(txt "\\href{" ,(ltx-escape-str url) "}" "{" ,@(esc tag-contents) "}")]
       [else `(a [[href ,url]] ,@tag-contents)]))
 
   (if (eq? 'link (get-tag inline-tx))
@@ -212,7 +217,7 @@ handle it at the Pollen processing level.
        (if (and (txexpr? t) (equal? 'link (get-tag t))) (get-elements t) t))
 
      `(txt "\\begin{quote}"
-                     ,@(map zap-links contents)
+                     ,@(esc (map zap-links contents))
                      "\n\\attrib{" ,tweeter-IRL " (@" ,tweeter
                      "), \\href{" ,tweet-link "}{" ,tweet-time "}}"
 
@@ -233,7 +238,7 @@ handle it at the Pollen processing level.
 (define (retweet #:id tweet-id #:handle tweeter #:realname tweeter-IRL
                #:permlink tweet-link #:timestamp tweet-time . contents)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\n\n(@" ,tweeter ", " ,tweet-time ": " ,@contents)]
+    [(ltx pdf) `(txt "\n\n(@" ,tweeter ", " ,tweet-time ": " ,@(esc contents))]
     [else
       `(blockquote [[class "retweet"]]
         (p [[class "twRetweetMeta"]] (b ,tweeter-IRL)
@@ -243,7 +248,7 @@ handle it at the Pollen processing level.
 
 (define (updatebox d . contents)
   (case (current-poly-target)
-    [(ltx pdf) `(txt ,@contents)]
+    [(ltx pdf) `(txt ,@(esc contents))]
     [else
       `(div [[class "updateBox"]]
             (p (b (span [[class "smallcaps"]] "Update, " ,d)))
@@ -252,14 +257,14 @@ handle it at the Pollen processing level.
 
 (define (comment-section . contents)
   (case (current-poly-target)
-    [(ltx pdf) `(txt ,(section "Responses") ,@contents)]
+    [(ltx pdf) `(txt ,(section "Responses") ,@(esc contents))]
     [else `(section [[class "comments"]] ,(section "Responses") ,@contents)]))
 
 (define (comment #:author author #:datetime comment-date #:authorlink author-url . comment-text)
   (case (current-poly-target)
-    [(ltx pdf) `(txt-comment "\\begin {quote}" ,@comment-text
-                             "\n\\attrib{" ,author ", " ,comment-date "}"
-                             "\\end{quote}")]
+    [(ltx pdf) `(txt-comment "\\begin{quote}\n" ,@(esc comment-text)
+                             "\n\\attrib{" ,(ltx-escape-str author) ", " ,comment-date "}"
+                             "\n\\end{quote}\n\n")]
     [else `(div [[class "comment-box"]]
                 (p [[class "comment-meta"]]
                    (span [[class "comment-name"]]
@@ -298,12 +303,12 @@ handle it at the Pollen processing level.
 ; surrounding “row” function one level up.
 (define (td-tag . tx-els)
   (case (current-poly-target)
-    [(ltx pdf) `(txt ,@tx-els)]
+    [(ltx pdf) `(txt ,@(esc tx-els))]
     [else `(td ,@tx-els)]))
 
 (define (th-tag . tx-els)
   (case (current-poly-target)
-    [(ltx pdf) `(txt ,@tx-els)]
+    [(ltx pdf) `(txt ,@(esc tx-els))]
     [else `(th ,@tx-els)]))
 
 ; tr-tag takes a column-alignment string (e.g. "llrc") and a list of cells.
@@ -334,7 +339,7 @@ handle it at the Pollen processing level.
 
   ; Helper function which takes a list and effectively removes any sub-list
   ; which is not a txexpr. This way a row contains only a flat list of values
-  ; and txexprs.
+  ; and/or txexprs.
   (define (clean-cells-in-row lst)
     (foldr (lambda (x rest-of-list)
              (if (and (list? x) (not (txexpr? x)))
@@ -373,7 +378,7 @@ handle it at the Pollen processing level.
      ; first row (thus defaulting to left-alignment).
      (define col-args (if (not c-aligns) (make-string (length (first table-rows)) #\l) c-aligns))
      (match-let ([(cons header-row other-rows) rows-of-cells])
-       `(txt "\\begin{table}[ht]\n"
+       `(txt "\\begin{table}[h!]\n"
              "  \\centering\n"
              "  \\begin{tabular}{" ,col-args "}\n"
              "    \\toprule\n"
@@ -386,25 +391,24 @@ handle it at the Pollen processing level.
     [else (cons 'table (for/list ([table-row (in-list table-rows)])
                          (apply tr-tag #:columns c-aligns table-row)))]))
 
-
 (define (p . words)
   (case (current-poly-target)
-    [(ltx pdf) `(txt ,@words)]
+    [(ltx pdf) `(txt ,@(esc words) "\n\n")]
     [else `(p ,@words)]))
 
 (define (blockquote . words)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\begin{quote}" ,@words "\\end{quote}")]
+    [(ltx pdf) `(txt "\\begin{quote}" ,@(esc words) "\\end{quote}")]
     [else `(blockquote ,@words)]))
 
 (define (newthought . words)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\newthought{" ,@words "}")]
+    [(ltx pdf) `(txt "\\newthought{" ,@(esc words) "}")]
     [else `(span [[class "newthought"]] ,@words)]))
 
 (define (smallcaps . words)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\smallcaps{" ,@words "}")]
+    [(ltx pdf) `(txt "\\smallcaps{" ,@(esc words) "}")]
     [else `(span [[class "smallcaps"]] ,@words)]))
 
 (define (∆ . elems)
@@ -414,23 +418,23 @@ handle it at the Pollen processing level.
 
 (define (center . words)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\begin{center}" ,@words "\\end{center}")]
+    [(ltx pdf) `(txt "\\begin{center}" ,@(esc words) "\\end{center}")]
     [else `(div [[style "text-align: center"]] ,@words)]))
 
 (define (section title)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\section{" ,title "}")]
+    [(ltx pdf) `(txt "\\section{" ,@(esc (list title)) "}")]
                  ;"\\label{sec:" ,title ,(symbol->string (gensym)) "}")]
     [else `(h2 ,title)]))
 
 (define (subsection title)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\subsection{" ,title "}")]
+    [(ltx pdf) `(txt "\\subsection{" ,@(esc (list title)) "}")]
     [else `(h3 ,title)]))
 
 (define (index-entry entry . text)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\index{" ,entry "}" ,@text)]
+    [(ltx pdf) `(txt "\\index{" ,entry "}" ,@(esc text))]
     [else
       (case (apply string-append text)
         [("") `(a [[id ,entry] [class "index-entry"]])]
@@ -442,7 +446,7 @@ handle it at the Pollen processing level.
      (define figure-env (if fullwidth "figure*" "figure"))
      `(txt "\\begin{" ,figure-env "}"
            "\\includegraphics{" ,source "}"
-           "\\caption{" ,@(latex-no-hyperlinks-in-margin caption) "}"
+           "\\caption{" ,@(esc (latex-no-hyperlinks-in-margin caption)) "}"
            "\\end{" ,figure-env "}")]
     [else (if fullwidth
               ; Note the syntax for calling another tag function, margin-note,
@@ -462,13 +466,13 @@ handle it at the Pollen processing level.
   (case (current-poly-target)
     [(ltx pdf)
      `(txt "\\texttt{"
-           ,(string-replace (apply string-append text) "\\" "\\textbackslash ")
+           ,@(esc (list (string-replace (apply string-append text) "\\" "\\textbackslash ")))
            "}")]
     [else `(code ,@text)]))
 
 (define (noun . text)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\texttt{" ,@text "}")]
+    [(ltx pdf) `(txt "\\texttt{" ,@(esc text) "}")]
     [else `(span [[class "noun"]] ,@text)]))
 
 (define (blockcode . text)
@@ -488,12 +492,12 @@ handle it at the Pollen processing level.
 
 (define (item . elements)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\item " ,@elements)]
+    [(ltx pdf) `(txt "\\item " ,@(esc elements))]
     [else `(li ,@elements)]))
 
 (define (sup . text)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\textsuperscript{" ,@text "}")]
+    [(ltx pdf) `(txt "\\textsuperscript{" ,@(esc text) "}")]
     [else `(sup ,@text)]))
 
 #|
@@ -520,22 +524,22 @@ handle it at the Pollen processing level.
 ;
 (define (i . text)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "{\\itshape " ,@text "}")]
+    [(ltx pdf) `(txt "{\\itshape " ,@(esc text) "}")]
     [else `(i ,@text)]))
 
 (define (emph . text)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\emph{" ,@text "}")]
+    [(ltx pdf) `(txt "\\emph{" ,@(esc text) "}")]
     [else `(em ,@text)]))
 
 (define (b . text)
   (case (current-poly-target)
-    [(ltf pdf) `(txt "{\\bfseries " ,@text "}")]
+    [(ltf pdf) `(txt "{\\bfseries " ,@(esc text) "}")]
     [else `(b ,@text)]))
 
 (define (strong . text)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\textbf{" ,@text "}")]
+    [(ltx pdf) `(txt "\\textbf{" ,@(esc text) "}")]
     [else `(strong ,@text)]))
 
 
@@ -553,7 +557,7 @@ purposes, and replace double-spaces with \vin to indent lines.
                               ""))
 
        ; Replace double spaces with "\vin " to indent lines
-       (define poem-text (string-replace (apply string-append text) "  " "\\vin "))
+       (define poem-text (ltx-escape-str (string-replace (apply string-append text) "  " "\\vin ")))
 
        ; Optionally italicize poem text
        (define fmt-text (if italic (format "{\\itshape ~a}" (latex-poem-linebreaks poem-text))
@@ -593,5 +597,5 @@ in LaTeX we need to tell it what the longest line is.
 
 (define (color c . text)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\textcolor{" ,c "}{" ,@text "}")]
+    [(ltx pdf) `(txt "\\textcolor{" ,c "}{" ,@(esc text) "}")]
     [else `(span [[style ,(string-append "color: " c)]] ,@text)]))
