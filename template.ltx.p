@@ -15,6 +15,7 @@
 \usepackage{graphicx}
 \usepackage{mathspec}
 \usepackage{xltxtra,xunicode}
+\usepackage{xspace}
 
 \defaultfontfeatures{Scale=MatchLowercase}
 
