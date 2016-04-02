@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for f in ./out/*.txt; do \
+     pandoc --template=pandoc-pollen-template.pm -t pollen.lua "$f" > "$f.poly.pm"
+done
