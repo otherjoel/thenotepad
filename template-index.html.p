@@ -34,7 +34,9 @@
                 <li class="rss"><a href="/feed.xml">RSS</a></li>
                 <li><a href="mailto:comments@thenotepad.org">comments@thenotepad.org</a></li>
                 <li><a href="https://twitter.com/joeld">@joeld</a></li>
-                <li>Produced with <a href="http://pollenpub.com">Pollen</a>. Source code <a href="https://github.com/otherjoel/thenotepad">on Github</a>. Valid HTML5 + CSS.</li>
+                <li>Produced with <a href="http://pollenpub.com">Pollen</a></li>
+                <li>Source code <a href="https://github.com/otherjoel/thenotepad">on Github</a></li>
+                <li>Valid HTML5 + CSS</li>
             </ul>
         </footer>
     </body>
