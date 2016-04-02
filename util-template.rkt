@@ -37,7 +37,8 @@
 
   (->html `(tr (td [[class "date-col"]] ,(pubdate->english (select-from-metas 'published pnode)))
                (td [[class "post-col"]]
-                   (p (a [[href ,(symbol->string pnode)]]
-                         (b ,(select-from-metas 'title pnode))))
+                   (h2 [[style "margin: 0"]] (a [[href ,(symbol->string pnode)]]
+                                                ,(select-from-metas 'title pnode)))
                    ,(findf-txexpr (get-doc pnode) paragraph)
+                   ;,get-post-body pnode
                    (p (i (a [[href ,(symbol->string pnode)]] " (Read more…)")))))))
