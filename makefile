@@ -26,11 +26,13 @@ posts-sourcelistings := $(patsubst %.poly.pm,%.pollen.html,$(posts-sourcefiles))
 posts-html := $(patsubst %.poly.pm,%.html,$(posts-sourcefiles))
 posts-pdf := $(patsubst %.poly.pm,%.pdf,$(posts-sourcefiles))
 
-other-html := books.html about.html topics.html
+other-sourcefiles := books.html.pm about.html.pm
+other-html := $(patsubst %.html.pm,%.html,$(other-sourcefiles))
+other-sourcelistings := $(patsubst %.html.pm,%.pollen.html,$(other-sourcefiles))
 
 # The ‘all’ rule references the rules BELOW it (the above are just variable
 # definitions, not rules).
-all: $(posts-sourcelistings) $(posts-html) $(posts-pdf) $(other-html) index.html feed.xml
+all: $(posts-sourcelistings) $(posts-html) $(posts-pdf) $(other-html) $(other-sourcelistings) index.html feed.xml
 all: ## Re-generate site including PDFs and RSS
 
 # My dependencies are roughly as follows: for each .poly.pm file I want to
@@ -45,13 +47,13 @@ $(posts-sourcelistings): util/make-html-source.sh
 $(posts-sourcelistings): %.pollen.html: %.poly.pm
 	util/make-html-source.sh $< > $@
 
-$(posts-html): $(core-files) template.html.p
+$(posts-html): $(core-files) template.html.p util-template.rkt
 $(posts-html): %.html: %.poly.pm
 	raco pollen render -t html $<
 
 # My pdf files depend on pollen.rkt, but are not particularly affected by
 # changes to index.ptree. So I just use pollen.rkt instead of $(core-files) here.
-$(posts-pdf): pollen.rkt template.pdf.p
+$(posts-pdf): pollen.rkt template.pdf.p util-template.rkt
 $(posts-pdf): %.pdf: %.poly.pm
 	raco pollen render -t pdf $<
 
@@ -71,6 +73,13 @@ index.html: $(core-files) $(posts-sourcefiles) \
 $(other-html): pollen.rkt template.html.p
 $(other-html): %.html: %.html.pm
 	raco pollen render $@
+
+$(other-sourcelistings): util/make-html-source.sh
+$(other-sourcelistings): %.pollen.html: %.html.pm
+	util/make-html-source.sh $< > $@
+
+topics.html: topics.html.pp $(core-fils) $(posts-sourcefiles)
+	raco pollen render topics.html.pp
 
 .PHONY: all publish spritz zap help
 
