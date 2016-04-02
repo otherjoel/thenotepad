@@ -59,6 +59,7 @@ h1, h2 {
     margin-top: 1.08em;
     margin-bottom: 0em;
 }
+
 h3 {
     font-size: 1em;
     line-height: 1.5em;
@@ -94,6 +95,8 @@ sub {
 a:link, a:visited {
     color: inherit;
 }
+
+h2 a { text-decoration: none; }
 
 footer.main, section.main, article {
     max-width: 40rem;
@@ -165,8 +168,29 @@ footer.main {
     padding: 2.25em 0;
 }
 
+footer.main ul {
+    list-style: outside none;
+}
+
+footer.main ul li {
+    display: inline;
+    padding-right: 1px;
+    margin: 0;
+}
+
+footer.main ul li:after {
+    content: "·";
+    padding-left: 6px;
+}
+
+li.rss {
+    background: url('/css/feed.png') no-repeat 0 2px;
+    padding-left: 16px;
+}
+
 table.post-list {
     padding: 0;
+    margin-top: 1.5em;
     width: 100%;
 }
 
@@ -315,6 +339,7 @@ pre.code {
     border: solid #cacaca 1px;
     font-family: triplicate, monospace;
     border-radius: 3px;
+    background: #ffffef;
 }
 @media (min-width: 749px) {
   pre.code { width: 130%; }
