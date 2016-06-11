@@ -6,6 +6,6 @@
 
 The site is written with ◊link["//pollenpub.com"]{Pollen}, which means it’s basically a LISP program that spits out a website and a book from the same source◊numbered-note{I have written about this dual-publishing approach in the article ◊link["http://tilde.club/~joeld/secretary/posts/web-books.html"]{The Unbearable Lightness of Web Pages}.}. You can see ◊link["https://github.com/otherjoel/thenotepad"]{the source code on Github}.
 
-The fonts used on this site are ◊link["http://practicaltypography.com/charter.html"]{Charter} (free) for headings and body, and Triplicate (licensed from Matthew Butterick) for code.
+The fonts used on this site are ◊link["http://adobe-fonts.github.io/source-sans-pro/"]{Source Sans Pro} (free) for headings and body, and Triplicate (licensed from Matthew Butterick) for code.
 
 Previous incarnations of the site can be found at ◊link["http://notely.blogspot.com/2008/07/resurrected.html"]{blogspot.com} (2012) and ◊link["http://web.archive.org/web/20061105132534/http://notepadexe.blogspot.com/index.html"]{the Wayback Machine} (2006).

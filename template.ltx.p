@@ -26,7 +26,7 @@
 \newfontfamily\linenumberfont[Mapping=tex-text]{Fira Mono OT}
 
 \setsansfont[Mapping=tex-text]{Fira Sans OT}
-\setmainfont[Mapping=tex-text]{Charter}
+\setmainfont[Mapping=tex-text]{Source Sans Pro}
 \setmonofont{Triplicate T4c}
 
 \usepackage{color}
@@ -37,7 +37,7 @@
 \usepackage{upquote}
 \usepackage{listings}
 \lstset{
-    basicstyle=\small\ttfamily,
+    basicstyle=\footnotesize\ttfamily,
     columns=flexible,
     breaklines=true,
     numbers=left,
@@ -47,7 +47,7 @@
     xleftmargin=.25in,
     xrightmargin=.25in,
     framexleftmargin=.25in,
-    numberstyle=\small\color{mygray}\linenumberfont
+    numberstyle=\footnotesize\color{mygray}\linenumberfont
 }
 
 \makeatletter
