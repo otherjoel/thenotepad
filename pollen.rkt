@@ -218,14 +218,13 @@ handle it at the Pollen processing level.
        (if (and (txexpr? t) (equal? 'link (get-tag t))) (cadr (get-elements t)) t))
 
      `(txt "\\begin{mdframed}[style=tweet]\n"
-                     "{\\NHLight\\raggedright "
-                     ,@(esc (map zap-links contents))
-                     "}\n\\textcolor[RGB]{220,220,220}{\\hrule}\n"
-                     "{\\sffamily " ,tweeter-IRL "} • {\\NHLight\\raggedleft\\small @" ,tweeter
-                     " \\hfill " ,tweet-time "\\footnotemark}" 
-                     ;", \\href{" ,tweet-link "}{" ,tweet-time "}}"
-
-                     "\n\\end{mdframed}\n\\footnotetext{\\url{" ,tweet-link "}}\n")]
+           "{\\NHLight\\raggedright\\small "
+           ,@(esc (map zap-links contents))
+           "}\n\\textcolor[RGB]{220,220,220}{\\hrule}\n"
+           "{\\sffamily\\small " ,tweeter-IRL
+           "} • {\\NHLight\\raggedleft\\footnotesize @" ,tweeter
+           " \\hfill " ,tweet-time "\\footnotemark}" 
+           "\n\\end{mdframed}\n\\footnotetext{\\url{" ,tweet-link "}}\n")]
     [else
       `(blockquote [[id ,(string-append "t" tweet-id)] [class "tweet"]]
         (div [[class "twContent"]] ,@contents)

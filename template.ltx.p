@@ -29,7 +29,7 @@
     ItalicFont     = HelveticaNeue-Italic,
     BoldFont       = HelveticaNeue-Bold,
     BoldItalicFont = HelveticaNeue-BoldItalic]{HelveticaNeue}
-\setmainfont[Mapping=tex-text]{Source Sans Pro}
+\setmainfont[Mapping=tex-text,SmallCapsFeatures={LetterSpace=5.5}]{Source Sans Pro}
 \setmonofont{Triplicate T4c}
 \newfontfamily\NHLight[
    ItalicFont     = HelveticaNeue-LightItalic,
@@ -44,7 +44,7 @@
 \usepackage[framemethod=PSTricks]{mdframed}  % used for embedding tweets
 \global\mdfdefinestyle{tweet}{% 
     linecolor=tweet-cyan,middlelinewidth=6pt,%
-    leftmargin=1.5cm,rightmargin=1.5cm,roundcorner=10
+    leftmargin=2.5cm,rightmargin=2.5cm,roundcorner=10
 }
 
 \usepackage{textcomp}
@@ -104,8 +104,11 @@
 
 \VerbatimFootnotes % allows verbatim text in footnotes
 
+%% Titling package allows for macros \thetitle \theauthor, etc
+\usepackage{titling}
+
 \title{◊when/splice[(select-from-metas 'title metas)]{◊(ltx-escape-str (select-from-metas 'title metas))}}
-\author{◊(print-if (select-from-metas 'author metas) "~a")}
+◊(print-if (select-from-metas 'author metas) "\\author{~a}")
 \date{◊(unless (not (select-from-metas 'published metas)) (pubdate->english (select-from-metas 'published metas)))}
 
 %% Reduced margins
@@ -137,7 +140,12 @@
 %% Main doc
 \begin{document}
 
-\maketitle
+\begingroup  
+  \centering
+  {\LARGE\bf \thetitle}\\[1em]
+  \normalsize\sc \thedate\\[1.5em]
+  \par
+\endgroup
 
 ◊(local-require racket/list)
 ◊(apply string-append (filter string? (flatten doc)))
