@@ -481,6 +481,9 @@ label.margin-toggle:not(.sidenote-number) {
     display: none;
 }
 @media (max-width: 750px) {
+    label.margin-toggle {
+        color: red;
+    }
     label.margin-toggle:not(.sidenote-number) {
         display: inline;
     }
