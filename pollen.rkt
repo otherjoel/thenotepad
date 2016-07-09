@@ -213,15 +213,19 @@ handle it at the Pollen processing level.
                #:permlink tweet-link #:timestamp tweet-time . contents)
   (case (current-poly-target)
     [(ltx pdf)
+     ; Replaces any link with just the link's second element
      (define (zap-links t)
-       (if (and (txexpr? t) (equal? 'link (get-tag t))) (get-elements t) t))
+       (if (and (txexpr? t) (equal? 'link (get-tag t))) (cadr (get-elements t)) t))
 
-     `(txt "\\begin{quote}"
+     `(txt "\\begin{mdframed}[style=tweet]\n"
+                     "{\\NHLight\\raggedright "
                      ,@(esc (map zap-links contents))
-                     "\n\\attrib{" ,tweeter-IRL " (@" ,tweeter
-                     "), \\href{" ,tweet-link "}{" ,tweet-time "}}"
+                     "}\n\\textcolor[RGB]{220,220,220}{\\hrule}\n"
+                     "{\\sffamily " ,tweeter-IRL "} • {\\NHLight\\raggedleft\\small @" ,tweeter
+                     " \\hfill " ,tweet-time "\\footnotemark}" 
+                     ;", \\href{" ,tweet-link "}{" ,tweet-time "}}"
 
-                     "\\end{quote}")]
+                     "\n\\end{mdframed}\n\\footnotetext{\\url{" ,tweet-link "}}\n")]
     [else
       `(blockquote [[id ,(string-append "t" tweet-id)] [class "tweet"]]
         (div [[class "twContent"]] ,@contents)
@@ -457,7 +461,7 @@ handle it at the Pollen processing level.
 
 (define (image src)
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\\includegraphics{" ,src "}")]
+    [(ltx pdf) `(txt "\n\n\\frame{\\includegraphics{" ,src "}}")]
     [else `(img [[src ,src]])]))
 
 ; Note that because of the need to escape backslashes in LaTeX, you

@@ -27,14 +27,28 @@
     %% Typography defaults
     \newfontfamily\linenumberfont[Mapping=tex-text]{Fira Mono OT}
 
-    \setsansfont[Mapping=tex-text]{Fira Sans OT}
+    \setsansfont[
+        ItalicFont     = HelveticaNeue-Italic,
+        BoldFont       = HelveticaNeue-Bold,
+        BoldItalicFont = HelveticaNeue-BoldItalic]{HelveticaNeue}
     \setmainfont[Mapping=tex-text]{Source Sans Pro}
     \setmonofont{Triplicate T4c}
+    \newfontfamily\NHLight[
+       ItalicFont     = HelveticaNeue-LightItalic,
+       BoldFont       = HelveticaNeue-UltraLight,
+       BoldItalicFont = HelveticaNeue-UltraLightItalic]{HelveticaNeue-Light}
 
-    \usepackage{color}
+    \usepackage{xcolor}
     \definecolor{mygray}{rgb}{0.7,0.7,0.7}
     \definecolor{light-gray}{gray}{0.95}
-
+    \definecolor{tweet-cyan}{RGB}{154,228,232}
+    
+    \usepackage[framemethod=PSTricks]{mdframed}  % used for embedding tweets
+    \global\mdfdefinestyle{tweet}{% 
+        linecolor=tweet-cyan,middlelinewidth=6pt,%
+        leftmargin=1.5cm,rightmargin=1.5cm,roundcorner=10
+    }
+    
     \usepackage{textcomp}
     \usepackage{upquote}
     \usepackage{listings}
