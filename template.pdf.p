@@ -1,4 +1,4 @@
-◊(local-require racket/file racket/system racket/list)
+◊(local-require racket/file racket/system racket/list racket/string)
 ◊(local-require "../util-date.rkt")
 ◊(define (print-if thing fmt)
    (if thing (format fmt thing) ""))
@@ -157,9 +157,13 @@
     (build-path (current-directory) "pollen-latex-work"))
 ◊(unless (directory-exists? working-directory)
     (make-directory working-directory))
-◊(define temp-ltx-path (build-path working-directory "temp.ltx"))
+◊(define ltx-source (string-replace 
+                       (pdfname (select-from-metas 'here-path metas))
+                       "pdf"
+                       "ltx"))
+◊(define temp-ltx-path (build-path working-directory ltx-source))
 ◊(display-to-file latex-source temp-ltx-path #:exists 'replace)
-◊(define command (format "xelatex -output-directory='~a' '~a'" working-directory temp-ltx-path))
+◊(define command (format "xelatex -jobname=temp -output-directory='~a' '~a'" working-directory temp-ltx-path))
 ◊(if (system command)
-    (file->bytes (build-path working-directory "temp.pdf"))
-    (error "xelatex: rendering error"))
+     (file->bytes (build-path working-directory "temp.pdf"))
+     (error "xelatex: rendering error"))

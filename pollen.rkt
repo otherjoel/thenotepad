@@ -28,7 +28,7 @@
 
 (module setup racket/base
     (provide (all-defined-out))
-    (define poly-targets '(html ltx pdf)))
+    (define poly-targets '(html pdf)))
 
 (define (split-by lst x)
   (foldr (lambda (element next)
