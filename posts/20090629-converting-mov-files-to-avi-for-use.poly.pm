@@ -10,7 +10,7 @@ First, download and install ◊link["http://www.cocoonsoftware.com/index.php?opt
 
 Here is a pic of Quick Media Converter’s main screen, with some annotation:
 
-◊figure["img/image2.jpg"]{Quick Media Converter}
+◊figure["image2.jpg"]{Quick Media Converter}
 
 ◊ol{
 ◊item{Click the DivX button (1) and select the “Win Media Player Compatible” option.}

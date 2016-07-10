@@ -16,11 +16,11 @@ Because I’m kooky, I like to create both MP3 and unprotected iTunes Audiobook 
 
 This is the easy one. Just set DRM converter to use the MP3 format.
 
-◊figure["img/drmmp3setting.png"]{DRM Converter MP3 settings}
+◊figure["drmmp3setting.png"]{DRM Converter MP3 settings}
 
 When it has finished, there are a couple more steps to take to get the file into the proper place in iTunes. Add the file to your library (using ◊noun{File} menu, → ◊noun{Add File to Library}), and it will show up in your ◊emph{Music} section, not in your audiobooks. Right click the file in iTunes, select ◊noun{Get Info} and go to the ◊noun{Options} tab.
 
-◊figure["img/itunesmp3setting.png"]{iTunes --- MP3 settings}
+◊figure["itunesmp3setting.png"]{iTunes --- MP3 settings}
 
 Select the ◊noun{Audiobook} and ◊noun{Remember Playback Position} options as shown above. Voila! The file will now appear in the Audiobooks section of iTunes.
 
@@ -34,7 +34,7 @@ This method involves the use of an additional program, ◊link["http://lodensoft
 
 The first step is to use convert the ◊code{.aa} file to an ◊code{.m4a} file using DRM Converter. Use the following settings:
 
-◊figure["img/drmm4asetting.png"]{DRM Converter --- M4A setting}
+◊figure["drmm4asetting.png"]{DRM Converter --- M4A setting}
 
 Most of my audible.com audiobooks are encoded at 32kbps anyways so there’s not much point in going higher.
 
@@ -42,23 +42,23 @@ After you have your ◊code{.m4a} file, open Chapter and Verse, and add that fil
 
 If you’re picky about having chapter breaks in the actual spots between chapters in the audiobook, you’ll have the chance to poke through the audio and insert chapter breaks in the right spots. Myself, I just have it automatically insert chapter breaks at 30-minute intervals (most of mine are fiction so there’s not much call to go skipping back and forth between chapters):
 
-◊figure["img/chverse.png"]{Chapter and Verse}
+◊figure["chverse.png"]{Chapter and Verse}
 
 Once ready (don’t forget title/artist metadata and cover art!), click ◊noun{Build Audiobook} as shown above, and the program will produce an M4B audiobook and offer to add it to your iTunes library for you. Once there, it will immediately be in the Audiobooks section of your library, no additional tweaking required.
 
 ◊strong{“Not recognized as a valid audiofile”} — If Chapter and Verse gives you this error when attempting to open your m4a file, it is probably because the sample rate is too high given the length of the audio.
 
-◊figure["img/chverseerror.png"]{Chapter and Verse error message}
+◊figure["chverseerror.png"]{Chapter and Verse error message}
 
 ◊link["http://lodensoftware.com/forum/index.php?topic=5.0"]{This is explained by the program’s author in detail here}, but in our scenario, the problem comes because DRM Converter saves its m4a files at 44.1khz (not configurable). When the file reaches a certain length in minutes, it becomes too big for Chapter and Verse to handle at that sample rate.
 
 To solve this problem, you can use iTunes to downsample the m4a file. in iTunes, go to ◊noun{Edit} menu → ◊noun{Preferences} and on the General tab, click ◊noun{Import Settings…}.
 
-◊figure["img/itunesprefs.png"]{iTunes Preferences}
+◊figure["itunesprefs.png"]{iTunes Preferences}
 
 Set the import settings as follows: AAC encoder, 22.050kHz sample rate, 32kbps bit rate.
 
-◊figure["img/itunesdownsample.png"]{Using iTunes import for downsampling audiobook files}
+◊figure["itunesdownsample.png"]{Using iTunes import for downsampling audiobook files}
 
 Click OK to close all the dialog boxes. Now go to the ◊code{.m4a} file in iTunes (or the ◊code{.mp3} file you may have created earlier for that matter, it’s up to you), right-click it and click ◊noun{Create AAC version}. iTunes will re-encode the file using your new settings and you should be able to open that new ◊code{.m4a} file in Chapter and Verse.
 

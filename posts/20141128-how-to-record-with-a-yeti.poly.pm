@@ -22,7 +22,7 @@ In my experience, you can get a very clean signal with very little background no
     ◊item{Speak super close to the mic}
 }
 
-◊figure["img/mymicsetup.jpg"]{My super inexpensive, terrible mic setup.}
+◊figure["mymicsetup.jpg"]{My super inexpensive, terrible mic setup.}
 
 Yes, the pop filter (the $10 ◊amazon["B0002CZW0Y"]{Nady MPF-6}) is simply held in place with a heavy object. I own no booms or shock-mounts. Not to say I wouldn’t love to have them, but I’m just not about to buy them for now (see further notes below).
 
@@ -30,7 +30,7 @@ Using the above placement, I set the gain knob on my Yeti at 40-45%, and set the
 
 Additionally, I run Chris’s Dynamic Compressor plugin on voice tracks after all other editing has been done:
 
-◊figure["img/audacity-compress.png"]{My settings for Chris’s Dynamic Compressor}
+◊figure["audacity-compress.png"]{My settings for Chris’s Dynamic Compressor}
 
 ◊ul{
 ◊item{Compress Ratio: ◊code{0.7}}

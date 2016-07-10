@@ -19,7 +19,7 @@ So evidently, it simply couldn’t find the ◊code{net} program, which is weird
 ◊item{In the list at the bottom, click on the Path entry}
 }
 
-◊figure["img/image1.jpg"]{Environment variables dialog}
+◊figure["image1.jpg"]{Environment variables dialog}
 
 The first thing in that string should be ◊code{C:\WINDOWS\system32;C:\WINDOWS;} and — wouldn’t you know it — in this case it wasn’t. It turns out the user had had to run a “repair installation” tool for AutoCAD the day before, and apparently this tool had ◊emph{replaced} the ◊code{Path} setting with it’s own value instead of simply adding its value on to the end as it should have done. The result was that the ◊code{Windows} and ◊code{system32} folders, where all the standard commands reside, was no longer on Windows’ own list of places to check for commands & programs to run. To fix: select Path (still in the window shown above), click the Edit button, and paste the following string ◊emph{into the beginning} of the “Variable Value” field (◊strong{do not replace the entire string}):
 

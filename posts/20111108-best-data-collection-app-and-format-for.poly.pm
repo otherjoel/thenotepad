@@ -62,9 +62,9 @@ I don’t recommend trying to record your moment-to-moment moods for any reason 
 
 ◊section{The App is Nebulous Notes}
 
-◊figure["img/photonov082c111447am.png"]{ }
+◊figure["photonov082c111447am.png"]{ }
 
-◊figure["img/photonov082c111548am.png"]{ }
+◊figure["photonov082c111548am.png"]{ }
 
 ◊link["http://itunes.apple.com/us/app/nebulous-notes-for-dropbox/id375006422?mt=8#"]{Nebulous Notes} has a couple of great features that make it great for this kind of data collection:
 
