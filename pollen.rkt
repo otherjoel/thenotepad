@@ -23,6 +23,9 @@
          (all-from-out "util-date.rkt" "util-template.rkt"))
 (provide (all-defined-out))
 
+(define image-dir "img/")
+(define image-originals-dir "img/originals/")
+
 (module setup racket/base
     (provide (all-defined-out))
     (define poly-targets '(html ltx pdf)))
@@ -149,15 +152,17 @@ handle it at the Pollen processing level.
             (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
             (span [(class "sidenote")] ,@text))]))
 
-(define (margin-figure source . caption)
+(define (margin-figure src #:has-print-version [print-ver #f] . caption)
     (define refid (symbol->string (gensym 'marginfigure)))
     (case (current-poly-target)
       [(ltx pdf)
+       (define source (string-append (if print-ver image-originals-dir image-dir) src))
        `(txt "\\begin{marginfigure}"
              "\\includegraphics{" ,source "}"
              "\\caption{" ,@(latex-no-hyperlinks-in-margin caption) "}"
              "\\end{marginfigure}")]
       [else
+        (define source (string-append image-dir src))
         `(@ (label [[for ,refid] [class "margin-toggle"]] 8853)
             (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
             (span [[class "marginnote"]] (img [[src ,source]]) ,@caption))]))
@@ -443,25 +448,32 @@ handle it at the Pollen processing level.
         [("") `(a [[id ,entry] [class "index-entry"]])]
         [else `(a [[id ,entry] [class "index-entry"]] ,@text)])]))
 
-(define (figure source #:fullwidth [fullwidth #f] . caption)
+(define (figure src #:fullwidth [fullwidth #f] #:has-print-version [print-ver #f] . caption)
   (case (current-poly-target)
     [(ltx pdf)
+     (define source (string-append (if print-ver image-originals-dir image-dir) src))
      (define figure-env (if fullwidth "figure*" "figure"))
      `(txt "\\begin{" ,figure-env "}"
            "\\includegraphics{" ,source "}"
            "\\caption{" ,@(esc (latex-no-hyperlinks-in-margin caption)) "}"
            "\\end{" ,figure-env "}")]
-    [else (if fullwidth
-              ; Note the syntax for calling another tag function, margin-note,
-              ; from inside this one. Because caption is a list, we need to use
-              ; (apply) to pass the values in that list as individual arguments.
-              `(figure [[class "fullwidth"]] ,(apply margin-note caption) (img [[src ,source]]))
-              `(figure ,(apply margin-note caption) (img [[src ,source]])))]))
+    [else
+      (define source (string-append image-dir src))
+      (if fullwidth
+          ; Note the syntax for calling another tag function, margin-note,
+          ; from inside this one. Because caption is a list, we need to use
+          ; (apply) to pass the values in that list as individual arguments.
+          `(figure [[class "fullwidth"]] ,(apply margin-note caption) (img [[src ,source]]))
+          `(figure ,(apply margin-note caption) (img [[src ,source]])))]))
 
-(define (image src)
+(define (image src #:has-print-version [print-ver #f])
   (case (current-poly-target)
-    [(ltx pdf) `(txt "\n\n\\frame{\\includegraphics{" ,src "}}")]
-    [else `(img [[src ,src]])]))
+    [(ltx pdf) 
+     (define source (string-append (if print-ver image-originals-dir image-dir) src))
+     `(txt "\n\n\\frame{\\includegraphics{" ,source "}}")]
+    [else 
+      (define source (string-append image-dir src))
+      `(img [[src ,source]])]))
 
 ; Note that because of the need to escape backslashes in LaTeX, you
 ; cannot use any other commands inside a ◊code tag
