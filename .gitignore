@@ -11,3 +11,4 @@ compiled/
 pollen-cache/
 pollen.cache
 .DS_Store
+drafts/
