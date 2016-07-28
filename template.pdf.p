@@ -1,5 +1,5 @@
 ◊(local-require racket/file racket/system racket/list racket/string)
-◊(local-require "../util-date.rkt")
+
 ◊(define (print-if thing fmt)
    (if thing (format fmt thing) ""))
 ◊(define latex-source ◊string-append{
@@ -163,7 +163,7 @@
                        "ltx"))
 ◊(define temp-ltx-path (build-path working-directory ltx-source))
 ◊(display-to-file latex-source temp-ltx-path #:exists 'replace)
-◊(define command (format "xelatex -jobname=temp -output-directory='~a' '~a'" working-directory temp-ltx-path))
+◊(define command (format "xelatex -jobname=temp -halt-on-error -interaction=batchmode -output-directory='~a' '~a'" working-directory temp-ltx-path))
 ◊(if (system command)
      (file->bytes (build-path working-directory "temp.pdf"))
      (error "xelatex: rendering error"))
