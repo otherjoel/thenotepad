@@ -11,11 +11,12 @@ SHELL = /bin/bash
 # files in our particular project. We can now just type ‘make’ from the
 # project directory to re-generate only those files that actually need it.
 
-# This makefile is more complicated than it would need to be in a ‘normal’
-# project because I have a bunch of different kinds of content in various
-# directories.
-
-core-files := pollen.rkt index.ptree util-date.rkt
+core-files := pollen.rkt \
+              index.ptree \
+			  util-date.rkt \
+			  pollen-local/polytag.rkt \
+			  pollen-local/common-helpers.rkt \
+			  pollen-local/publication-vals.rkt
 
 # Create variables with lists of all source files in the posts/ folder,
 # then generate lists of target files.
@@ -38,7 +39,7 @@ all: ## Re-generate site including PDFs and RSS
 # My dependencies are roughly as follows: for each .poly.pm file I want to
 # generate an HTML file, a PDF file, and a .pollen.html file (so people can see
 # the Pollen source). The index.html, book-index and Atom feed should be rebuilt
-# if any of the source files change. Pretty much
+# if any of the source files change. 
 
 # The two rules allow us to say, in effect, “each source listing .pollen.html
 # depends on its corresponding .poly.pm file, but also on util/make-html-source.sh.”
@@ -47,13 +48,11 @@ $(posts-sourcelistings): util/make-html-source.sh
 $(posts-sourcelistings): %.pollen.html: %.poly.pm
 	util/make-html-source.sh $< > $@
 
-$(posts-html): $(core-files) template.html.p util-template.rkt
+$(posts-html): $(core-files) template.html.p util-template.rkt pollen-local/tags-html.rkt
 $(posts-html): %.html: %.poly.pm
 	raco pollen render -t html $<
 
-# My pdf files depend on pollen.rkt, but are not particularly affected by
-# changes to index.ptree. So I just use pollen.rkt instead of $(core-files) here.
-$(posts-pdf): pollen.rkt template.pdf.p util-template.rkt
+$(posts-pdf): $(core-files) template.pdf.p util-template.rkt pollen-local/tags-pdf.rkt
 $(posts-pdf): %.pdf: %.poly.pm
 	raco pollen render -t pdf $<
 
@@ -63,14 +62,14 @@ $(posts-pdf): %.pdf: %.poly.pm
 #flatland/flatland-book.ltx: $(core-files) $(flatland-sourcefiles) flatland/flatland-book.ltx.pp
 #	raco pollen render $@
 
-feed.xml: $(core-files) $(posts-sourcefiles) feed.xml.pp util-template.rkt
+feed.xml: $(core-files) $(posts-sourcefiles) feed.xml.pp util-template.rkt pollen-local/tags-html.rkt
 	raco pollen render feed.xml.pp
 
 index.html: $(core-files) $(posts-sourcefiles) \
 	template-index.html.p index.html.pm util-template.rkt
 	raco pollen render $@
 
-$(other-html): pollen.rkt template.html.p
+$(other-html): pollen.rkt template.html.p pollen-local/tags-html.rkt
 $(other-html): %.html: %.html.pm
 	raco pollen render $@
 
@@ -78,7 +77,7 @@ $(other-sourcelistings): util/make-html-source.sh
 $(other-sourcelistings): %.pollen.html: %.html.pm
 	util/make-html-source.sh $< > $@
 
-topics.html: topics.html.pp $(core-fils) $(posts-sourcefiles)
+topics.html: topics.html.pp $(core-fils) $(posts-sourcefiles) pollen-local/tags-html.rkt
 	raco pollen render topics.html.pp
 
 .PHONY: all publish spritz zap help
