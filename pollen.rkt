@@ -1,30 +1,18 @@
 #lang racket
 
 (require pollen/decode
-         pollen/core
-         pollen/cache
          pollen/setup       ; For current-poly-target
-         pollen/file
+         pollen/file        ; get-markup-source
          txexpr
-         pollen/tag
-         pollen/template
-         pollen/pagetree
-         racket/date
+         pollen/tag         ; default-tag-function
          "util-date.rkt"
          "util-template.rkt"
          "pollen-local/polytag.rkt"
          "pollen-local/tags-html.rkt"
          "pollen-local/tags-pdf.rkt")
 
-(provide add-between
-         attr-ref
-         attrs-have-key?
-         make-txexpr
-         string-split
-         get-markup-source
-         string-contains?
+(provide string-split
          (all-from-out "util-date.rkt" "util-template.rkt")
-         (all-from-out "pollen-local/tags-html.rkt")
          (all-from-out "pollen-local/tags-pdf.rkt"))
 (provide (all-defined-out))
 
