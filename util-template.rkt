@@ -21,7 +21,7 @@
     (> (date->seconds (datestring->date (select-from-metas 'published p1)))
        (date->seconds (datestring->date (select-from-metas 'published p2)))))
   (if (not limit) (sort (children 'index.html) postdate-desc)
-      (take (sort (children 'index.html) postdate-desc) limit)))
+                  (take (sort (children 'index.html) postdate-desc) limit)))
 
 (define (get-post-body pnode)
   (define (is-comment? tx)
@@ -39,6 +39,6 @@
                (td [[class "post-col"]]
                    (h2 [[style "margin: 0"]] (a [[href ,(symbol->string pnode)]]
                                                 ,(select-from-metas 'title pnode)))
-                   ,(findf-txexpr (get-doc pnode) paragraph)
+                   ,(first (rest (get-doc pnode)))
                    ;,get-post-body pnode
                    (p (i (a [[href ,(symbol->string pnode)]] " (Read more…)")))))))
