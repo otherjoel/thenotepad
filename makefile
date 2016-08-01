@@ -102,9 +102,9 @@ spritz: ## Just cleans up LaTeX working folders
 
 zap: ## Resets Pollen cache, deletes LaTeX working folders, feed.xml and all .html, .ltx files
 	rm -rf posts/pollen-latex-work pollen-latex-work; \
-	rm posts/*.html posts/*.ltx; \
+	rm posts/*.html posts/*.pdf; \
 	rm feed.xml; \
-	rm *.html *.pdf *.xml *.ltx; \
+	rm *.html *.pdf; \
 	raco pollen reset
 
 # Self-documenting make file (http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html)
