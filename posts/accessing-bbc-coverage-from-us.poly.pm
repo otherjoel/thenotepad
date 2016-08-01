@@ -49,8 +49,7 @@ Now every thing is set up.
 
 I did attempt to use a VPN service to do essentially the same thing, but it was far too slow.
 
-◊strong{Update, July 30 2012:}
-
+◊updatebox["July 30 2012"]{
 ◊ul{
 ◊item{If you use Chrome or Firefox, installing a “proxy switcher” extension for your browser will make between enabling and disabling the proxy setting much easier. Use ◊link["https://chrome.google.com/webstore/detail/caehdcpeofiiigpdhbabniblemipncjj"]{Proxy Switchy} for Chrome, or ◊link["https://addons.mozilla.org/en-us/firefox/addon/quickproxy/"]{QuickProxy} for Firefox.}
 ◊item{A couple more good articles about this issue have popped up:
@@ -59,4 +58,4 @@ I did attempt to use a VPN service to do essentially the same thing, but it was 
 ◊item{A post by ◊link["http://iamnotaprogrammer.com/Watch-olympics-streaming-free.html"]{Colin Nederkoorn}, in which he initially advocates the VPN method, but also mentions the ◊link["http://unblock-us.com/"]{Unblock Us} service. He’s not sure how it works (and neither am I) but he says it works great.}
 ◊item{Dan Parsons advocates ◊link["https://gist.github.com/3195652"]{setting up OpenVPN on your Linode server}, but I haven’t seen any reason why one should go to the additional step of installing OpenVPN when a simple SOCKS proxy seems to work fine.}
 }}
-}
+}}
