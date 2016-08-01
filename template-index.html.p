@@ -1,10 +1,12 @@
+◊(local-require racket/list)
+◊(define (source-listing p)
+    (regexp-replace #px"(\\.html$)" (symbol->string p) ".pollen.html"))
 <!DOCTYPE html>
 <html lang="en" class="gridded">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>◊;(select-from-metas 'title here)
-        </title>
+        <title>◊(select-from-metas 'title here)</title>
         <link rel="stylesheet" href="/styles.css" media="screen" charset="utf-8">
     </head>
     <body>
@@ -18,19 +20,24 @@
                 </ul>
             </nav>
         </header>
+    
+        ◊(define top-ten
+            (for/list ([post (in-list (take (posts-by-date-desc) 10))])
+              `(article (header "\n" (h1 (a [[href ,(symbol->string post)]] ,(select-from-metas 'title post))) "\n"
+                                (p "Scribbled " 
+                                   (a [[class "permlink"] [href ,(symbol->string post)]]
+                                      (time [[datetime ,(select-from-metas 'published post)]
+                                             [pubdate "pubdate"]]
+                                            ,(pubdate->english (select-from-metas 'published post))))
+                                   nbsp middot nbsp
+                                   (a [[class "pdf"] 
+                                      [href ,(string-append "posts/" (pdfname (select-from-metas 'here-path post)))]] "PDF")
+                                   nbsp middot nbsp
+                                   (a [[class "source-link"] [href ,(source-listing post)]]
+                                      loz nbsp "Pollen" nbsp "source")))
+                        "\n\n" ,@(cdr (get-post-body post)))))
+        ◊(map ->html (add-between top-ten '("\n\n" (hr)  "\n\n")))
 
-        ◊;(map ->html (select-from-doc 'body here))
-
-        ◊(define latest-post (car (posts-by-date-desc #:limit 1)))
-        ◊(define source-file (select-from-metas 'here-path latest-post))
-        ◊(define pollen-source-listing
-            (regexp-replace #px"(.*)\\/(.+).html" (symbol->string latest-post) "\\2.pollen.html"))
-        <section class="main">
-            <h1>Recent Posts</h1>
-            <table class="post-list">
-                ◊(map post->tablerow (posts-by-date-desc #:limit 10))
-            </table>
-        </section>
         <footer class="main">
             <ul>
                 <li class="rss"><a href="/feed.xml">RSS</a></li>
