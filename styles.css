@@ -78,7 +78,8 @@ ul ul, ol ol, ul ol, ol ul {
 }
 hr {
     border: 1px solid;
-    margin: -1px 0;
+    /* margin: -1px 0; */
+    margin: 3em 0;
 }
 b, strong, em, small, code {
     line-height: 1;
