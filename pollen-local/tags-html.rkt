@@ -10,6 +10,8 @@
 
 (provide (all-defined-out))
 
+(define html-image-dir (string-append "/posts/" image-dir))
+
 (define/contract (html-p attrs elems)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(p ,@elems))
@@ -86,14 +88,14 @@
     
 (define/contract (html-figure src attrs elements)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
-  (define source (string-append image-dir src))
+  (define source (string-append html-image-dir src))
   (if (attr-val 'fullwidth attrs)
       `(figure [[class "fullwidth"]] ,(html-margin-note '() elements) (img [[src ,source]]))
       `(figure ,(html-margin-note '() elements) (img [[src ,source]]))))
 
 (define/contract (html-image src attrs elems)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
-  (define source (string-append image-dir src))
+  (define source (string-append html-image-dir src))
   `(img [[src ,source]]))
 
 (define/contract (html-code attrs text)
@@ -142,7 +144,7 @@
 (define/contract (html-margin-figure src attrs elems)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
   (define refid (symbol->string (gensym 'marginfigure)))
-  (define source (string-append image-dir src))
+  (define source (string-append html-image-dir src))
   `(@ (label [[for ,refid] [class "margin-toggle"]] 8853)
       (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
       (span [[class "marginnote"]] (img [[src ,source]]) ,@elems)))
