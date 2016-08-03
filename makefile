@@ -56,17 +56,11 @@ $(posts-pdf): $(core-files) template.pdf.p util-template.rkt pollen-local/tags-p
 $(posts-pdf): %.pdf: %.poly.pm
 	raco pollen render -t pdf $<
 
-#flatland/flatland-book.pdf: flatland/flatland-book.pdf.pp flatland/flatland-book.ltx
-#	raco pollen render $@
-
-#flatland/flatland-book.ltx: $(core-files) $(flatland-sourcefiles) flatland/flatland-book.ltx.pp
-#	raco pollen render $@
-
 feed.xml: $(core-files) $(posts-sourcefiles) feed.xml.pp util-template.rkt pollen-local/tags-html.rkt
 	raco pollen render feed.xml.pp
 
 index.html: $(core-files) $(posts-sourcefiles) \
-	template-index.html.p index.html.pm util-template.rkt
+	index.html.pp util-template.rkt pollen-local/tags-html.rkt
 	raco pollen render $@
 
 $(other-html): pollen.rkt template.html.p pollen-local/tags-html.rkt

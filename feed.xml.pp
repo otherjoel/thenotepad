@@ -128,8 +128,9 @@
   This version simply tests for the existence of a publish date in the metas.
 |#
 (define (syndicate? sym)
-   (if (not (select-from-metas sym-pubdate
-                               (dynamic-require (get-markup-source (symbol->string sym)) 'metas)))
+   (if (or (string=? "index.html" (symbol->string sym))
+           (not (select-from-metas sym-pubdate
+                               (dynamic-require (get-markup-source (symbol->string sym)) 'metas))))
        #f
        #t))
 
