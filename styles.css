@@ -211,6 +211,7 @@ table.post-list td.post-col {
 
 article header {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 1.5em;
 }
 
 article header h1 a {
