@@ -171,6 +171,7 @@ footer.main {
 
 footer.main ul {
     list-style: outside none;
+    padding-left: 0;
 }
 
 footer.main ul li {
@@ -184,9 +185,19 @@ footer.main ul li:after {
     padding-left: 6px;
 }
 
-li.rss {
-    background: url('/css/feed.png') no-repeat 0 2px;
-    padding-left: 16px;
+a.rss {
+    background: url('/css/feed.png') no-repeat 2px 0.4em;
+    padding-left: 18px !important;
+    margin-left: 20px;
+    border-color: #ccc;
+    border-radius: 4px;
+    color: gray;
+    font-family: triplicate;
+}
+
+footer a.rss {
+    background: url('/css/feed.png') no-repeat 2px 0;
+    margin-left: 0;
 }
 
 table.post-list {

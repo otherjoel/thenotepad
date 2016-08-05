@@ -18,6 +18,7 @@
                     <li><a href="/topics.html">Topics</a></li>
                     <li><a href="/books.html">Books to Read</a></li>
                     <li><a href="/about.html">About</a></li>
+                    <li><a href="/feed.xml" class="rss">Use RSS?</a></li>
                 </ul>
             </nav>
         </header>
@@ -38,10 +39,8 @@
         </article>
         <footer class="main">
             <ul>
-                <li class="rss"><a href="/feed.xml">RSS</a></li>
+                <li><a class="rss" href="/feed.xml">RSS</a></li>
                 <li><a href="mailto:comments@thenotepad.org">comments@thenotepad.org</a></li>
-                <li><a href="https://twitter.com/joeld">@joeld</a></li>
-                <li>Produced with <a href="http://pollenpub.com">Pollen</a></li>
                 <li>Source code <a href="https://github.com/otherjoel/thenotepad">on Github</a></li>
                 <li>Valid HTML5 + CSS</li>
             </ul>
