@@ -161,6 +161,12 @@ nav li a:link {
     border-radius: 4px;
     padding: .2em .5em;
 }
+
+nav li a:hover {
+    color: #c00;
+    border-color: #c00;
+}
+
 footer.main {
     font-family: triplicate, monospace;
     border-top: solid gray 1px;
@@ -185,7 +191,7 @@ footer.main ul li:after {
     padding-left: 6px;
 }
 
-nav li a.rss:link {
+nav li a.rss {
     background: url('/css/feed.png') no-repeat 2px 0.4em;
     padding-left: 18px;
     margin-left: 20px;
@@ -193,6 +199,11 @@ nav li a.rss:link {
     border-radius: 4px;
     color: gray;
     font-family: triplicate;
+}
+
+nav li a.rss:hover {
+    border-color: #083;
+    color: #083;
 }
 
 footer a.rss {
