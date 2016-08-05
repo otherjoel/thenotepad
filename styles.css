@@ -185,9 +185,9 @@ footer.main ul li:after {
     padding-left: 6px;
 }
 
-a.rss {
+nav li a.rss:link {
     background: url('/css/feed.png') no-repeat 2px 0.4em;
-    padding-left: 18px !important;
+    padding-left: 18px;
     margin-left: 20px;
     border-color: #ccc;
     border-radius: 4px;
@@ -198,6 +198,7 @@ a.rss {
 footer a.rss {
     background: url('/css/feed.png') no-repeat 2px 0;
     margin-left: 0;
+    padding-left: 18px;
 }
 
 table.post-list {

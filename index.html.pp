@@ -29,7 +29,7 @@
 
         <footer class="main">
             <ul>
-                <li class="rss"><a href="/feed.xml">RSS</a></li>
+                <li><a href="/feed.xml" class="rss" title="Subscribe to feed">RSS</a></li>
                 <li><a href="mailto:comments@thenotepad.org">comments@thenotepad.org</a></li>
                 <li>Source code <a href="https://github.com/otherjoel/thenotepad">on Github</a></li>
                 <li>Valid HTML5 + CSS</li>
