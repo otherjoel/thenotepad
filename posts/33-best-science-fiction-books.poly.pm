@@ -1,8 +1,8 @@
 #lang pollen
 
-◊(define-meta title "For Kindle: The 33 Best Science Fiction Novels Ever")
+◊(define-meta title "The 33 Best Science Fiction Novels Ever")
 ◊(define-meta published "2011-09-14")
-◊(define-meta topics "Kindle,ebooks,books")
+◊(define-meta topics "books")
 
 Another “best of” list for your Kindle, brought to you this time by ◊link["http://www.reddit.com/r/AskReddit/comments/k70dh/whats_the_best_scifi_novel_you_have_ever_read/"]{this Ask Reddit post}.
 
