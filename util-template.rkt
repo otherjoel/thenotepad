@@ -43,8 +43,8 @@
                                  [pubdate "pubdate"]])
                          ,(pubdate->english (select-from-metas 'published post)))
                        nbsp middot nbsp
-                       (a [[class "pdf" 
-                            [href ,(string-append "posts/" (pdfname (select-from-metas 'here-path post)))]]] 
+                       (a [[class "pdf"] 
+                           [href ,(string-append "posts/" (pdfname (select-from-metas 'here-path post)))]] 
                           "PDF")
                        nbsp middot nbsp
                        (a [[class "source-link"] [href ,(source-listing post)]]
