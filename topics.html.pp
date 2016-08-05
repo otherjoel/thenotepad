@@ -18,6 +18,7 @@
                     <li><a href="/topics.html">Topics</a></li>
                     <li><a href="/books.html">Books to Read</a></li>
                     <li><a href="/about.html">About</a></li>
+                    <li><a href="/feed.xml" class="rss" title="Subscribe to feed">Use RSS?</a></li>
                 </ul>
             </nav>
         </header>
@@ -35,8 +36,12 @@
             </dl>
         </section>
         <footer class="main">
-            <p>RSS &middot; <a href="mailto:joel@jdueck.net">joel@jdueck.net</a> &middot; <a href="https://twitter.com/joeld">@joeld</a>
-            <br>Produced with <a href="http://pollenpub.com">Pollen</a>. Source code on Github. Valid HTML5 + CSS. </p>
+            <ul>
+                <li><a href="/feed.xml" class="rss" title="Subscribe to feed">RSS</a></li>
+                <li><a href="mailto:comments@thenotepad.org">comments@thenotepad.org</a></li>
+                <li>Source code <a href="https://github.com/otherjoel/thenotepad">on Github</a></li>
+                <li>Valid <a href="http://validator.w3.org/check?uri=referer">HTML5</a> + CSS</li>
+            </ul>
         </footer>
     </body>
 </html>

@@ -42,7 +42,7 @@
                 <li><a class="rss" href="/feed.xml">RSS</a></li>
                 <li><a href="mailto:comments@thenotepad.org">comments@thenotepad.org</a></li>
                 <li>Source code <a href="https://github.com/otherjoel/thenotepad">on Github</a></li>
-                <li>Valid HTML5 + CSS</li>
+                <li>Valid <a href="http://validator.w3.org/check?uri=referer">HTML5</a> + CSS</li>
             </ul>
         </footer>
     </body>
