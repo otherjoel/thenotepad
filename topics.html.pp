@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <title>Topics (The Notepad)</title>
-        <link rel="stylesheet" href="/styles.css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="/styles.css" media="screen">
     </head>
     <body>
         <header class="main">

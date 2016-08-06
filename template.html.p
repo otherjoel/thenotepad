@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>◊(select-from-metas 'title here)</title>
-        <link rel="stylesheet" href="/styles.css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="/styles.css" media="screen">
     </head>
     <body>
         <header class="main">
@@ -26,7 +26,7 @@
         <article>
             <header>
                 <h1>◊(select-from-metas 'title here)</h1>
-                <p>◊when/splice[(select-from-metas 'published here)]{Scribbled <a href="/◊(symbol->string here)" class="permlink"><time datetime="◊(select-from-metas 'published here)" pubdate="pubdate">◊(pubdate->english (select-from-metas 'published here))</time></a>}
+                <p>◊when/splice[(select-from-metas 'published here)]{Scribbled <a href="/◊(symbol->string here)" class="permlink"><time datetime="◊(select-from-metas 'published here)">◊(pubdate->english (select-from-metas 'published here))</time></a>}
                 ◊when/splice[(select-from-metas 'updated here)]{&middot; <em>Updated <time datetime="◊(select-from-metas 'updated here)">◊(pubdate->english (select-from-metas 'updated here))</time></em>}
                 ◊when/splice[(pdfable? source-file)]{&middot;&nbsp;<a class="pdf" href="◊pdfname[source-file]">PDF</a>&nbsp;}
                 &middot;&nbsp;<a href="/◊|pollen-source-listing|" class="source-link">&loz;&nbsp;Pollen&nbsp;Source</a></p>

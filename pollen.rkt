@@ -32,7 +32,7 @@
     [else
       (define first-pass (decode-elements elements
                                           #:txexpr-elements-proc decode-paragraphs
-                                          #:exclude-tags '(script style figure table)))
+                                          #:exclude-tags '(script style figure table pre)))
       (define second-pass (decode-elements first-pass
                                            #:block-txexpr-proc detect-newthoughts
                                            #:inline-txexpr-proc hyperlink-decoder

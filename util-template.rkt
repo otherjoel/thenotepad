@@ -39,9 +39,8 @@
                     (h1 (a [[href ,(symbol->string post)]] ,(select-from-metas 'title post))) "\n" 
                     (p "Scribbled " 
                        (a [[class "permlink"] [href ,(symbol->string post)]]
-                          (time [[datetime ,(select-from-metas 'published post)]
-                                 [pubdate "pubdate"]])
-                         ,(pubdate->english (select-from-metas 'published post)))
+                          (time [[datetime ,(select-from-metas 'published post)]]
+                                ,(pubdate->english (select-from-metas 'published post))))
                        nbsp middot nbsp
                        (a [[class "pdf"] 
                            [href ,(string-append "posts/" (pdfname (select-from-metas 'here-path post)))]] 
