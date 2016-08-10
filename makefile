@@ -77,8 +77,8 @@ topics.html: topics.html.pp $(core-fils) $(posts-sourcefiles) pollen-local/tags-
 .PHONY: all publish spritz zap help
 
 # Doing ‘make publish’ automatically upload everything except the Pollen source
-# files to the public web server. The SECRETARY_SRV is defined as an environment
-# variable for security reasons (never put credentials in a script if you can avoid it!)
+# files to the public web server. The NOTEPAD_SRV is defined as an environment
+# variable for security reasons (never put credentials in a script!)
 # Make sure yours is of the form ‘username@serverdomain.com:public_html/’
 # See also the docs for ‘raco pollen publish’:
 #  http://pkg-build.racket-lang.org/doc/pollen/raco-pollen.html
@@ -86,7 +86,7 @@ topics.html: topics.html.pp $(core-fils) $(posts-sourcefiles) pollen-local/tags-
 publish: ## Rsync the website to the public web server (does not rebuild site first)
 	rm -rf posts/pollen-latex-work flatland/pollen-latex-work; \
 	raco pollen publish; \
-    rsync -av ~/Desktop/publish/ -e 'ssh -p $(WEB_SRV_PORT)' $(NOTEPAD_SRV) --exclude=.git --exclude=.DS_Store --exclude=.gitignore --exclude 'template*.*' --exclude=util; \
+    rsync -av ~/Desktop/publish/ -e 'ssh -p $(WEB_SRV_PORT)' $(NOTEPAD_SRV) --exclude=.git --exclude=drafts --exclude=pollen-local --exclude=.DS_Store --exclude=.gitignore --exclude='template*.*' --exclude=util; \
     rm -rf ~/Desktop/publish
 
 # ‘make spritz’ just cleans up the pollen-latex-work files; ‘make zap’ deletes
