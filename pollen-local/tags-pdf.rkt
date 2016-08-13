@@ -10,6 +10,13 @@
 
 (provide (all-defined-out))
 
+(define (pdf-root attrs elements)
+  (define first-pass (decode-elements (get-elements (wrap-comment-section (txexpr 'root null (esc elements)) esc))
+                                      #:inline-txexpr-proc (compose1 txt-decode pdf-link-decoder)
+                                      #:string-proc (compose1 smart-quotes smart-dashes)
+                                      #:exclude-tags '(script style figure txt-noescape)))
+  (txexpr 'body null (decode-elements first-pass #:inline-txexpr-proc txt-decode)))
+
 #|
   `txt-decode` is called by root when targeting LaTeX/PDF. It simply returns all
   all elements contained inside ◊txt tag or a ◊txt-noescape tag. ◊txt is not
@@ -32,6 +39,13 @@
   (for/list ([e (in-list elems)])
             (if (string? e) (ltx-escape-str e) e)))
 
+(define (pdf-link-decoder inline-txpr)
+  (if (eq? 'zlink (get-tag inline-txpr))
+      (let ([elems (get-elements inline-txpr)])
+           `(txt "\\href{" ,(ltx-escape-str (first elems)) "}"
+                 "{" ,@(esc (rest elems))))
+      inline-txpr))
+
 (define (pdf-p attrs elems)     `(txt ,@(esc elems) "\n\n"))
 (define (pdf-i attrs text)      `(txt "{\\itshape " ,@(esc text) "}"))
 (define (pdf-emph attrs text)   `(txt "\\emph{" ,@(esc text) "}"))
@@ -44,6 +58,9 @@
 (define (pdf-item attrs elements)   `(txt "\\item " ,@(esc elements)))
 
 (define (pdf-sup attrs text)        `(txt "\\textsuperscript{" ,@(esc text) "}"))
+
+; preserve as zlink for possible processing by enclosing tags; see also pdf-root
+(define (pdf-link url attrs elems)   `(zlink ,url ,@elems))
 
 (define (pdf-blockquote attrs elems) `(txt "\\begin{quote}" ,@(esc elems) "\\end{quote}"))
 (define (pdf-newthought attrs elems) `(txt "\\newthought{" ,@(esc elems) "}"))
@@ -128,7 +145,7 @@
 (define (latex-no-hyperlinks-in-margin txpr-elems)
   ; First define a local function that will transform each ◊hyperlink
   (define (cleanlinks inline-tx)
-      (if (eq? 'link (get-tag inline-tx))
+      (if (eq? 'zlink (get-tag inline-tx))
         `(txt ,@(cdr (get-elements inline-tx))
               ; Return the text with the URI in parentheses
               " (\\url{" ,(ltx-escape-str (car (get-elements inline-tx))) "})")
@@ -175,7 +192,7 @@
   
   ; Helper: replaces any link with just the link's second element
   (define (zap-links t)
-     (if (and (txexpr? t) (equal? 'link (get-tag t))) (cadr (get-elements t)) t))
+     (if (and (txexpr? t) (equal? 'zlink (get-tag t))) (cadr (get-elements t)) t))
        
   `(txt "\\begin{mdframed}[style=tweet]\n"
         "{\\NHLight\\raggedright\\small "

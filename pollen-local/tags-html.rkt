@@ -12,6 +12,17 @@
 
 (define html-image-dir (string-append "/posts/" image-dir))
 
+(define (html-root attrs elements)
+  (define first-pass (decode-elements elements
+                                      #:txexpr-elements-proc decode-paragraphs
+                                      #:exclude-tags '(script style figure table pre)))
+  (define second-pass (decode-elements first-pass
+                                       ; see towards end of file for detect-newthoughts
+                                       #:block-txexpr-proc detect-newthoughts
+                                       #:string-proc (compose1 smart-quotes smart-dashes)
+                                       #:exclude-tags '(script style pre code)))
+  (wrap-comment-section (txexpr 'body null second-pass) identity))   
+
 (define/contract (html-p attrs elems)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(p ,@elems))
@@ -51,6 +62,10 @@
 (define/contract (html-sup attrs text)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(sup ,@text))
+
+(define/contract (html-link url attrs elements)
+  (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
+  `(a [[href ,url]] ,@elements))
 
 (define/contract (html-blockquote attrs elems)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
