@@ -102,7 +102,7 @@
 
   `(feed [[xml:lang "en-us"] [xmlns "http://www.w3.org/2005/Atom"]]
          (title ,title)
-         (link [[rel "self"] [href ,link]])
+         (link [[rel "self"] [href ,(string-append link "feed.xml")]])
          (generator [[uri "http://pollenpub.com/"]] "Pollen (custom feed)")
          (id ,link)
          (updated ,(date->rfc3339 (current-date)))
