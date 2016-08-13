@@ -40,7 +40,7 @@
                 <li><a href="/feed.xml" class="rss" title="Subscribe to feed">RSS</a></li>
                 <li><a href="mailto:comments@thenotepad.org">comments@thenotepad.org</a></li>
                 <li>Source code <a href="https://github.com/otherjoel/thenotepad">on Github</a></li>
-                <li>Valid <a href="http://validator.w3.org/check?uri=referer">HTML5</a> + CSS</li>
+                <li>Valid <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fthenotepad.org%2F">HTML5</a> + CSS</li>
             </ul>
         </footer>
     </body>
