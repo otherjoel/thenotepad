@@ -5,6 +5,7 @@
          "common-helpers.rkt")
          
 (require txexpr
+         file/md5
          pollen/decode
          pollen/setup)
 
@@ -144,23 +145,30 @@
                                    ,@text)))
        `(div [[class "poem"]] ,poem-xpr)))
 
+(define/contract (fingerprint elems)
+  (txexpr-elements? . -> . string?)
+  (let* ([els (map (λ (ss) (if (symbol? ss) (symbol->string ss) ss)) (flatten elems))]
+         [els (apply string-append els)]
+         [els (take-right (bytes->list (md5 els)) 6)])
+        (bytes->string/utf-8 (list->bytes els))))
+
 (define/contract (html-margin-note attrs elems)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
-  (define refid (symbol->string (gensym 'marginnote)))
+  (define refid (fingerprint elems))
   `(@ (label [[for ,refid] [class "margin-toggle"]] 8853)
       (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
       (span [[class "marginnote"]] ,@elems)))
 
 (define/contract (html-numbered-note attrs elems)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
-  (define refid (symbol->string (gensym 'footnote)))
+  (define refid (fingerprint elems))
   `(@ (label [[for ,refid] [class "margin-toggle sidenote-number"]])
       (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
       (span [(class "sidenote")] ,@elems)))
 
 (define/contract (html-margin-figure src attrs elems)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
-  (define refid (symbol->string (gensym 'marginfigure)))
+  (define refid (fingerprint elems))
   (define source (string-append html-image-dir src))
   (define alt-text (apply string-append (filter string? (flatten elems))))
   `(@ (label [[for ,refid] [class "margin-toggle"]] 8853)
