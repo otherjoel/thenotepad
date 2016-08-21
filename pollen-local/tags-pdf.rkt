@@ -43,7 +43,7 @@
   (if (eq? 'zlink (get-tag inline-txpr))
       (let ([elems (get-elements inline-txpr)])
            `(txt "\\href{" ,(ltx-escape-str (first elems)) "}"
-                 "{" ,@(esc (rest elems))))
+                 "{" ,@(esc (rest elems)) "}"))
       inline-txpr))
 
 (define (pdf-p attrs elems)     `(txt ,@(esc elems) "\n\n"))
