@@ -164,7 +164,7 @@
 ◊(define temp-ltx-path (build-path working-directory ltx-source))
 ◊(display-to-file latex-source temp-ltx-path #:exists 'replace)
 ◊(define echo-sep "echo \"\e[1;32m────────────────\e[0m\"")
-◊(define command (format "~a; xelatex -jobname=temp -halt-on-error -interaction=batchmode -output-directory='~a' '~a'; ~a" echo-sep working-directory temp-ltx-path echo-sep))
+◊(define command (format "~a; xelatex -jobname=temp -halt-on-error -interaction=batchmode -output-directory='~a' '~a'" echo-sep working-directory temp-ltx-path))
 ◊(if (system command)
      (file->bytes (build-path working-directory "temp.pdf"))
      (error "xelatex: rendering error"))
