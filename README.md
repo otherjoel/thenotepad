@@ -6,7 +6,7 @@ A blog created with [Pollen](https://docs.racket-lang.org/pollen/index.html). Th
 
 Pollen is really optimized for *books*, where the sections are finite and can be prearranged according to the logic of the subject matter. It takes some extra work to put it to use as a *blog*, which by analogy is a loose sheaf of papers that need constant reshuffling before any use can be made of them.
 
-Nonetheless, it works pretty well as a static blog generator for a blog, and Pollen gives me capabilities I can no longer live without — first among which is, it allows you to design your own markup and control how it works, forever. More thoroughly tedious rationale for my design choices will eventually go on the site’s [About page](https://thenotepad.org/about.html).
+Nonetheless, it works pretty well as a static blog generator. Pollen comes with no opinions about your site so there's no cruft to clean out or hack around. Pollen also gives me capabilities I can no longer live without — first among which is, it allows you to design your own markup and control how it works, forever. More thoroughly tedious rationale for my design choices will eventually go on the site’s [About page](https://thenotepad.org/about.html).
 
 ## Features
 
