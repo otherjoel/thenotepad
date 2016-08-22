@@ -86,7 +86,7 @@ topics.html: topics.html.pp $(core-fils) $(posts-sourcefiles) pollen-local/tags-
 publish: ## Rsync the website to the public web server (does not rebuild site first)
 	rm -rf posts/pollen-latex-work flatland/pollen-latex-work; \
 	raco pollen publish; \
-    rsync -av ~/Desktop/publish/ -e 'ssh -p $(WEB_SRV_PORT)' $(NOTEPAD_SRV) --exclude=.git --exclude=drafts --exclude=pollen-local --exclude=.DS_Store --exclude=.gitignore --exclude='template*.*' --exclude=util; \
+    rsync -av ~/Desktop/publish/ -e 'ssh -p $(WEB_SRV_PORT)' $(NOTEPAD_SRV) --delete --delete-excluded --exclude=.git --exclude=drafts --exclude=pollen-local --exclude=.DS_Store --exclude=.gitignore --exclude='template*.*' --exclude=makefile --exclude=util --exclude='posts/img/originals'; \
     rm -rf ~/Desktop/publish
 
 # ‘make spritz’ just cleans up the pollen-latex-work files; ‘make zap’ deletes
