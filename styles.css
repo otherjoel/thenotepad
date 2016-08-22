@@ -289,6 +289,16 @@ figure img {
     max-width: 100%;
 }
 
+figcaption {
+    font-size: 0.75em;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 1px; */
+    margin-top: -0.5em;
+    color: gray;
+    text-align: left;
+    font-style: italic;
+}
+
 blockquote:before {
     content: '“';
     font-size: 4em;

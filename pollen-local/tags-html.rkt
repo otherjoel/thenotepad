@@ -107,8 +107,8 @@
   (define source (string-append html-image-dir src))
   (define alt-text (apply string-append (filter string? (flatten elements))))
   (if (attr-val 'fullwidth attrs)
-      `(figure [[class "fullwidth"]] ,(html-margin-note '() elements) (img [[src ,source] [alt ,alt-text]]))
-      `(figure ,(html-margin-note '() elements) (img [[src ,source] [alt ,alt-text]]))))
+      `(figure [[class "fullwidth"]] (img [[src ,source] [alt ,alt-text]]) (figcaption ,@elements))
+      `(figure (img [[src ,source] [alt ,alt-text]]) (figcaption ,@elements))))
 
 (define/contract (html-image src attrs elems)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
