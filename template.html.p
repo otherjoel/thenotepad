@@ -35,7 +35,7 @@
                           (string-split (select-from-metas 'topics here) ","))</ul>}
             </header>
 
-            ◊(map ->html (select-from-doc 'body here))
+◊(map ->html (select-from-doc 'body here))
         </article>
         <footer class="main">
             <ul>
