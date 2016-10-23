@@ -1,7 +1,7 @@
 #lang Pollen
 
 ◊(define-meta title "Books to Read")
-◊(define-meta updated "2016-08-03")
+◊(define-meta updated "2016-09-30")
 
 ◊strong{"Best-of" Lists:}
 
@@ -12,4 +12,4 @@
 
 ◊strong{Good Recent Reads}
 
-◊amazon["1455561789"]{◊image["book-beforethefall.jpg"]{Before the Fall}} ◊amazon["0547572484"]{◊image["book-maninhighcastle.jpg"]{Man in High Castle}}
+◊amazon["0575127724"]{◊image["book-thething.jpg"]{The Thing Itself}} ◊amazon["1455561789"]{◊image["book-beforethefall.jpg"]{Before the Fall}} ◊amazon["0547572484"]{◊image["book-maninhighcastle.jpg"]{Man in High Castle}}
