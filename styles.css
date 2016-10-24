@@ -378,6 +378,18 @@ pre.code, article table {
     width: 100%;
 }
 
+div.listing-filename {
+    font-family: triplicate, monospace;
+    font-size: 0.75em;
+    color: #555;
+    border: solid lightgray 1px;
+    background: #eee;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding-left: 0.5em;
+    padding-top: 2px;
+}
+
 pre.code {
     padding-left: 2.5%;
     overflow-x: scroll;
@@ -387,6 +399,14 @@ pre.code {
     border-radius: 3px;
     background: #ffffef;
 }
+
+.listing-filename + pre.code {
+    margin-top: -1px;
+    padding-top: 0;
+    border-top-left-radius: 0px;
+    border-top-style: double;
+}
+
 @media (min-width: 749px) {
   pre.code { width: 130%; }
   table { max-width: 130%; }

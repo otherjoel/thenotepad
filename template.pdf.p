@@ -18,6 +18,10 @@
     \usepackage{mathspec}
     \usepackage{xltxtra,xunicode}
     \usepackage{xspace}
+    
+    \def\faFileAlt{\symbol{"F0F6}}    %"
+    \newfontfamily{\FA}{FontAwesome}
+    \def\fileicon{{\FA\faFileAlt}}
 
     \defaultfontfeatures{Scale=MatchLowercase}
 
@@ -53,18 +57,33 @@
     \usepackage{upquote}
     \usepackage{listings}
     \lstset{
-        basicstyle=\footnotesize\ttfamily,
+        basicstyle=\scriptsize\ttfamily,
         columns=flexible,
         breaklines=true,
         numbers=left,
         upquote=true,
         backgroundcolor=\color{light-gray},
         numbersep=5pt,
-        xleftmargin=.25in,
-        xrightmargin=.25in,
+        frame=single,
+        framesep=\fboxsep,
+        framerule=\fboxrule,
+        rulecolor=\color{black},
+        xleftmargin=\dimexpr\fboxsep+\fboxrule,
+        xrightmargin=\dimexpr\fboxsep+\fboxrule,
         framexleftmargin=.25in,
-        numberstyle=\footnotesize\color{mygray}\linenumberfont
+        % belowcaptionskip=0pt,
+        numberstyle=\scriptsize\color{mygray}\linenumberfont
     }
+    
+    % see http://tex.stackexchange.com/questions/11263/how-can-i-remove-listing-from-listings-caption
+    % and http://tex.stackexchange.com/questions/209764/how-can-i-make-the-width-of-the-caption-match-that-of-the-listing
+    \usepackage{calc}
+    \usepackage[skip=0pt,position=auto]{caption}
+    \DeclareCaptionFont{white}{\scriptsize\color{white}\ttfamily}
+    \DeclareCaptionFormat{listing}{%
+        \fcolorbox{black}{gray}{\parbox{\textwidth-2\fboxsep-2\fboxrule}{#1#2#3}}%
+    }
+    \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
 
     \makeatletter
     \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}

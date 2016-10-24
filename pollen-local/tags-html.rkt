@@ -126,7 +126,11 @@
 
 (define/contract (html-blockcode attrs text)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
-  `(pre [[class "code"]] ,@text))
+  (define filename (attr-val 'filename attrs))
+  (define codeblock `(pre [[class "code"]] ,@text))
+  (cond
+    [(string>? filename "") `(@ (div [[class "listing-filename"]] 128196 " " ,filename) ,codeblock)]
+    [else codeblock]))
 
 (define (html-Latex attrs text)
   `(span [[class "latex"]]

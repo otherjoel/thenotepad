@@ -54,7 +54,7 @@
 ; cannot use any other commands inside a ◊code tag
 (poly-branch-tag code)
 (poly-branch-tag noun)
-(poly-branch-tag blockcode)
+(poly-branch-tag blockcode (filename ""))
 
 (poly-branch-tag Latex)
 (poly-branch-tag verse (title "") (italic #f))

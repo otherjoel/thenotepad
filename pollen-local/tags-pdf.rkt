@@ -104,7 +104,12 @@
  `(txt "\\texttt{" ,@(esc text) "}"))
 
 (define (pdf-blockcode attrs text)
-  `(txt-noescape "\\begin{lstlisting}\n" ,@text "\n\\end{lstlisting}"))
+  (define filename (attr-val 'filename attrs))
+  (define caption 
+          ; Note that using title= instead of caption= prevents listings from showing up in
+          ; the "List of Listings" in the table of contents
+          (if (string>? filename "") (string-append "[title={\\fileicon{} " filename "}]") ""))
+  `(txt-noescape "\\begin{lstlisting}" ,caption "\n" ,@text "\n\\end{lstlisting}"))
 
 (define (pdf-Latex attrs text)
   `(txt "\\LaTeX\\xspace"))      ; \xspace adds a space if the next char is not punctuation
