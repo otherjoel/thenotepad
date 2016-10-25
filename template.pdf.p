@@ -4,6 +4,7 @@
    (if thing (format fmt thing) ""))
 ◊(define latex-source ◊string-append{
     \documentclass[12pt]{article}
+    \usepackage{ragged2e}  % For \RaggedRight immediately following \begin
 
     \usepackage{amssymb,amsmath}
 
@@ -159,6 +160,7 @@
 
     %% Main doc
     \begin{document}
+    \RaggedRight
 
     \begingroup  
       \centering
