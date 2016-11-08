@@ -37,7 +37,7 @@
         BoldFont       = HelveticaNeue-Bold,
         BoldItalicFont = HelveticaNeue-BoldItalic]{HelveticaNeue}
     \setmainfont[Mapping=tex-text,SmallCapsFeatures={LetterSpace=5.5}]{Source Sans Pro}
-    \setmonofont{Triplicate T4c}
+    \setmonofont[Scale=0.8]{Triplicate T4c}
     \newfontfamily\NHLight[
        ItalicFont     = HelveticaNeue-LightItalic,
        BoldFont       = HelveticaNeue-UltraLight,
