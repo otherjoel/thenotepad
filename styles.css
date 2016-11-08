@@ -27,8 +27,9 @@
     box-shadow: 1px 0px 0px hsla(200, 100%, 50%, .3), -1px 0px 0px hsla(200, 100%, 50%, .3);
 }
 body {
-    background-color: #fefefe;
+    background-color: #fffbef;
     font-family: 'Source Sans Pro', sans-serif;
+    border: solid 8px #c65635;
     color: #333;
     font-size: 1em;
     line-height: 1.5em;
@@ -42,11 +43,15 @@ body {
         /* 18px */
         line-height: 1.5em;
         padding: 1.5em;
+        border-width: 15px;
     }
 }
 h1, h2, h3, h4, h5 {
     font-family: 'Source Sans Pro';
 }
+
+h2 { font-style: italic; } 
+
 /*h1 {
     font-size: 2em;
     line-height: 1.5em;
@@ -64,7 +69,7 @@ h3 {
     font-size: 1em;
     line-height: 1.5em;
     margin-top: 1.5em;
-    font-weight: normal;
+    font-weight: bold;
     font-style: italic;
     margin-bottom: 0rem;
 }
@@ -95,6 +100,30 @@ sub {
 }
 a:link, a:visited {
     color: inherit;
+    text-decoration: none;
+}
+
+article a:link, article a:visited {
+    color: #9f7433;
+}
+
+h1 a:link, h1 a:visited {
+    color: #333;
+}
+
+a::after {
+    content: '★';
+    vertical-align: baseline;
+    position: relative;
+    top: -0.6em;
+    font-size:0.6em;
+    color: orange;
+    display: inline-block;
+    font-style: normal;
+}
+
+h1 a::after, a.home::after, a.rss::after {
+    content: none;
 }
 
 h2 a { text-decoration: none; }
@@ -141,6 +170,16 @@ header.main a.home:before {
     background-position: top left;
 }
 
+.tagline {
+    display: none;
+}
+
+@media only screen and (min-width: 541px) {
+    .tagline {
+        display: inline;
+    }
+}
+
 nav {
     padding-bottom: 1.5em;
 }
@@ -148,23 +187,23 @@ nav ul {
     padding: 0;
     margin: 0;
     height: 1.5em;
+    line-height: 2em;
 }
 nav li {
-    font-size: 0.777777778em;
-    line-height: 1.928571429em;
     display: inline;
+    font-style: italic;
 }
 nav li a:link {
-    text-decoration: none;
-    color: #700;
-    border: solid #755 1px;
-    border-radius: 4px;
-    padding: .2em .5em;
+    padding: .2em .5em; 
 }
 
+nav li::before      { content: '• '; }
+nav li:last-child::before, nav li:first-child::before { content: ''; }
+nav li:first-child a:link { padding-left: 0; }
+
 nav li a:hover {
-    color: #c00;
-    border-color: #c00;
+    /* border-color: #083; */
+    color: #083;
 }
 
 footer.main {
@@ -192,16 +231,13 @@ footer.main ul li:after {
 }
 
 nav li a.rss {
-    background: url('/css/feed.png') no-repeat 2px 0.4em;
+    background: url('/css/feed.png') no-repeat 0 0.55em;
     padding-left: 18px;
-    margin-left: 20px;
-    border-color: #ccc;
-    border-radius: 4px;
+    margin-left: 1em;
     color: gray;
-    font-family: triplicate;
 }
 
-nav li a.rss:hover {
+a.rss:hover {
     border-color: #083;
     color: #083;
 }
@@ -233,7 +269,7 @@ table.post-list td.post-col {
 }
 
 article header {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-bottom: 1.5em;
 }
 
@@ -287,6 +323,7 @@ figure { margin: 1.5em 0; padding: 0; width: 100%; text-align: center;}
 figure img {
     margin: 0 auto;
     max-width: 100%;
+    border: solid #e0e0e0 1px;
 }
 
 figcaption {
@@ -325,6 +362,7 @@ blockquote.tweet {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 300;
     padding: 1em;
+    background: #fff;
 }
 blockquote.tweet p, .twContent { width: 100% }
 blockquote.tweet img {
@@ -364,9 +402,9 @@ blockquote.retweet {
 
 code {
     font-family: triplicate, monospace;
-    background: #f1f1f1;
+    background: #fafafa;
     border: solid #e0e0e0 1px;
-    padding: 1px;
+    padding: 0 2px 0 2px;
     font-size: .8em;
     border-radius: 2px;
 }
@@ -511,7 +549,7 @@ dl.topic-list {
     width: 30%;
     margin-top: .4rem;
     margin-bottom: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Scala Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: .75em;
     line-height: 1.6em;
     color: gray;

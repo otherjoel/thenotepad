@@ -11,7 +11,7 @@
     </head>
     <body>
         <header class="main">
-            <p><a href="/" class="home">The Notepad</a>’s full of ballpoint hypertext</p>
+            <p><a href="/" class="home">The Notepad</a> <span class="tagline">’s full&nbsp;of&nbsp;ballpoint&nbsp;hypertext</span></p>
             <nav>
                 <ul>
                     <li class="current-section"><a href="/topics.html">Topics</a></li>

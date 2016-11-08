@@ -12,13 +12,13 @@
     </head>
     <body>
         <header class="main">
-            <p><a href="/index.html" class="home">The Notepad</a> is old and grody</p>
+            <p><a href="/index.html" class="home">The Notepad</a> <span class="tagline">is old&nbsp;and&nbsp;grody</span></p>
             <nav>
                 <ul>
                     <li><a href="/topics.html">Topics</a></li>
                     <li><a href="/books.html">Books to Read</a></li>
                     <li><a href="/about.html">About</a></li>
-                    <li><a href="/feed.xml" class="rss">Use RSS?</a></li>
+                    <li><a href="/feed.xml" class="rss">Use&nbsp;RSS?</a></li>
                 </ul>
             </nav>
         </header>
