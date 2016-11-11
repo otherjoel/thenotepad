@@ -74,7 +74,11 @@ h3 {
     margin-bottom: 0rem;
 }
 
-h2 code, h3 code { font-style: normal; }
+h2 code, h3 code { 
+    font-style: normal; 
+    background: none;
+    border: none;
+}
 
 p, ul, ol, pre, table, blockquote {
     margin-top: 0em;
