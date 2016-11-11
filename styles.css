@@ -121,7 +121,6 @@ a::after {
     top: -0.6em;
     font-size:0.6em;
     color: orange;
-    display: inline-block;
     font-style: normal;
 }
 
