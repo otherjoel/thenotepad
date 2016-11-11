@@ -1,6 +1,6 @@
 #lang pollen
 
-◊(define-meta title "Flattening a Site: From DB/CMS to Static Files")
+◊(define-meta title "Flattening a Site: From Database to Static Files")
 ◊(define-meta published "2016-11-11")
 
 I just finished converting ◊link["https://howellcreekradio.com"]{a site} from running on a database-driven CMS (Textpattern in this case) to a bunch of static HTML files. No, I don’t mean I switched to a static site generator like Jekyll or Octopress, I mean it’s just plain HTML files and nothing else. I call this “flattening” a site.◊margin-note{I wanted a way to refer to this process that would distinguish it from “archiving”, which to me also connotes taking the site offline. I passed on “embalming” and “mummifying” for similar reasons.}
