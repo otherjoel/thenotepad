@@ -73,6 +73,9 @@ h3 {
     font-style: italic;
     margin-bottom: 0rem;
 }
+
+h2 code, h3 code { font-style: normal; }
+
 p, ul, ol, pre, table, blockquote {
     margin-top: 0em;
     margin-bottom: 1.5em;
