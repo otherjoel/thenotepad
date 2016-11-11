@@ -549,7 +549,7 @@ dl.topic-list {
     width: 30%;
     margin-top: .4rem;
     margin-bottom: 0;
-    font-family: 'Scala Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: .75em;
     line-height: 1.6em;
     color: gray;
@@ -561,7 +561,7 @@ dl.topic-list {
 }
 .sidenote-number:after, .sidenote:before {
     content: counter(sidenote-counter) " ";
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
     position: relative;
     vertical-align: baseline;
 }
