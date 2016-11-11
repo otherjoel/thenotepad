@@ -26,13 +26,13 @@ cat << EOF
 <body>
     <article>
         <header>
-          <h1>$FILENAME</h1>
           <p>
             <a href="/$(echo $FILENAME | sed -e "s/poly\.pm/html/g;s/html\.pm/html/g")">Back to page</a>
             &middot;
             <a href="https://github.com/otherjoel/thenotepad/commits/master/$FILENAME">View history on Github</a>
           </p>
         </header>
+        <div class="listing-filename">&#128196; $FILENAME</div>
         <div class="fullwidth code sourcebox" style="white-space: pre-wrap;">$(cat $FILENAME)</div>
     </article>
 </body>
