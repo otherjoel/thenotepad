@@ -2,13 +2,14 @@
 
 (require pollen/tag pollen/setup)
 (require (for-syntax racket/syntax
-                     syntax/parse))
+                     syntax/parse
+                     pollen/setup))
 
 (provide (all-defined-out))
 (provide poly-branch-tag)
 
 ; This needs to match the definition of poly-targets in pollen.rkt
-(define-for-syntax site-poly-targets '(html pdf))
+#;(define-for-syntax site-poly-targets '(html pdf))
 
 ; For use in contracts, this is somewhat looser than txexpr-attribute? in that it allows
 ; for any value, not just strings.
@@ -58,7 +59,7 @@
     ; tag function with no special arguments or defaults
     [(_ TAG:id)
      (with-syntax ([((POLY-TARGET POLY-FUNC) ...) 
-                    (for/list ([target (in-list site-poly-targets)])
+                    (for/list ([target (in-list (setup:poly-targets))])
                               (list target (format-id stx "~a-~a" target #'TAG)))]
                    [DEFAULT-TARGET (format-id stx "html-~a" #'TAG)])
        #'(define-tag-function (TAG attributes elems)
@@ -69,7 +70,7 @@
     ; tag function with no positional arguments but with specified defaults
     [(_ TAG:id ATTRS:keyval ...+)
      (with-syntax ([((POLY-TARGET POLY-FUNC) ...) 
-                    (for/list ([target (in-list site-poly-targets)])
+                    (for/list ([target (in-list (setup:poly-targets))])
                               (list target (format-id stx "~a-~a" target #'TAG)))]
                    [DEFAULT-TARGET (format-id stx "html-~a" #'TAG)])
       #'(define-tag-function (TAG attributes elems)
@@ -81,7 +82,7 @@
     ; tag function with one positional argument and no defaults
     [(_ TAG:id ARG:id)
      (with-syntax ([((POLY-TARGET POLY-FUNC) ...) 
-                    (for/list ([target (in-list site-poly-targets)])
+                    (for/list ([target (in-list (setup:poly-targets))])
                               (list target (format-id stx "~a-~a" target #'TAG)))]
                    [DEFAULT-TARGET (format-id stx "html-~a" #'TAG)])
        #'(define-tag-function (TAG attributes elems)
@@ -93,7 +94,7 @@
     ; tag function with one positional argument and specified defaults
     [(_ TAG:id ARG:id ATTRS:keyval ...+)
      (with-syntax ([((POLY-TARGET POLY-FUNC) ...)
-                    (for/list ([target (in-list site-poly-targets)])
+                    (for/list ([target (in-list (setup:poly-targets))])
                               (list target (format-id stx "~a-~a" target #'TAG)))]
                    [DEFAULT-TARGET (format-id stx "html-~a" #'TAG)])
        #'(define-tag-function (TAG attributes elems)
