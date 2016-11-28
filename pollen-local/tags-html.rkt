@@ -13,7 +13,7 @@
 
 (define html-image-dir (string-append "/posts/" image-dir))
 
-(define (html-root attrs elements)
+(define (root attrs elements)
   (define first-pass (decode-elements elements
                                       #:txexpr-elements-proc decode-paragraphs
                                       #:exclude-tags '(script style figure table pre)))
@@ -24,85 +24,85 @@
                                        #:exclude-tags '(script style pre code)))
   (wrap-comment-section (txexpr 'body null second-pass) identity))   
 
-(define/contract (html-p attrs elems)
+(define/contract (p attrs elems)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(p ,@elems))
 
-(define/contract (html-i attrs text)
+(define/contract (i attrs text)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(i ,@text))
 
-(define/contract (html-emph attrs text)
+(define/contract (emph attrs text)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(em ,@text))
 
-(define/contract (html-b attrs text)
+(define/contract (b attrs text)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(b ,@text))
 
-(define/contract (html-strong attrs text)
+(define/contract (strong attrs text)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(strong ,@text))
 
-(define/contract (html-color c attrs text)
+(define/contract (color c attrs text)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
   `(span [[style ,(string-append "color: " c)]] ,@text))
 
-(define/contract (html-ol attrs elements)
+(define/contract (ol attrs elements)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(ol ,@elements))
 
-(define/contract (html-ul attrs elements)
+(define/contract (ul attrs elements)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(ul ,@elements))
 
-(define/contract (html-item attrs elements)
+(define/contract (item attrs elements)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(li ,@elements))
 
-(define/contract (html-sup attrs text)
+(define/contract (sup attrs text)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(sup ,@text))
 
-(define/contract (html-link url attrs elements)
+(define/contract (link url attrs elements)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
   `(a [[href ,url]] ,@elements))
 
-(define/contract (html-blockquote attrs elems)
+(define/contract (blockquote attrs elems)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(blockquote ,@elems))
 
-(define/contract (html-newthought attrs elems)
+(define/contract (newthought attrs elems)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(span [[class "newthought"]] ,@elems))
 
-(define/contract (html-smallcaps attrs elems)
+(define/contract (smallcaps attrs elems)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(span [[class "smallcaps"]] ,@elems))
 
-(define/contract (html-inline-math attrs elems)
+(define/contract (inline-math attrs elems)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(span "\\(" ,@elems "\\)"))
 
-(define/contract (html-center attrs words)
+(define/contract (center attrs words)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(div [[style "text-align: center"]] ,@words))
 
-(define/contract (html-section attrs title)
+(define/contract (section attrs title)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(h2 ,@title))
 
-(define/contract (html-subsection attrs title)
+(define/contract (subsection attrs title)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(h3 ,@title))
 
-(define/contract (html-index-entry entry attrs text)
+(define/contract (index-entry entry attrs text)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
   (case (apply string-append text)
     [("") `(a [[id ,entry] [class "index-entry"]])]
     [else `(a [[id ,entry] [class "index-entry"]] ,@text)]))
     
-(define/contract (html-figure src attrs elements)
+(define/contract (figure src attrs elements)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
   (define source (string-append html-image-dir src))
   (define alt-text (apply string-append (filter string? (flatten elements))))
@@ -110,21 +110,21 @@
       `(figure [[class "fullwidth"]] (img [[src ,source] [alt ,alt-text]]) (figcaption ,@elements))
       `(figure (img [[src ,source] [alt ,alt-text]]) (figcaption ,@elements))))
 
-(define/contract (html-image src attrs elems)
+(define/contract (image src attrs elems)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
   (define source (string-append html-image-dir src))
   (define alt-text (apply string-append (filter string? (flatten elems))))
   `(img [[src ,source] [alt ,alt-text]]))
 
-(define/contract (html-code attrs text)
+(define/contract (code attrs text)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(code ,@text))
   
-(define/contract (html-noun attrs text)
+(define/contract (noun attrs text)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(span [[class "noun"]] ,@text))
 
-(define/contract (html-blockcode attrs text)
+(define/contract (blockcode attrs text)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   (define filename (attr-val 'filename attrs))
   (define codeblock `(pre [[class "code"]] ,@text))
@@ -132,12 +132,12 @@
     [(string>? filename "") `(@ (div [[class "listing-filename"]] 128196 " " ,filename) ,codeblock)]
     [else codeblock]))
 
-(define (html-Latex attrs text)
+(define (Latex attrs text)
   `(span [[class "latex"]]
          "L" (span [[class "latex-sup"]] "a")
           "T" (span [[class "latex-sub"]] "e") "X"))
 
-(define (html-verse attrs text)
+(define (verse attrs text)
   (let ([title  (attr-val 'title attrs)]
         [italic (attr-val 'italic attrs)])
        (define pre-attrs (if italic '([class "verse"] [style "font-style: italic"])
@@ -156,21 +156,21 @@
          [els (take-right (bytes->list (md5 els)) 6)])
         (bytes->string/utf-8 (list->bytes els))))
 
-(define/contract (html-margin-note attrs elems)
+(define/contract (margin-note attrs elems)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   (define refid (fingerprint elems))
   `(@ (label [[for ,refid] [class "margin-toggle"]] 8853)
       (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
       (span [[class "marginnote"]] ,@elems)))
 
-(define/contract (html-numbered-note attrs elems)
+(define/contract (numbered-note attrs elems)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   (define refid (fingerprint elems))
   `(@ (label [[for ,refid] [class "margin-toggle sidenote-number"]])
       (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
       (span [(class "sidenote")] ,@elems)))
 
-(define/contract (html-margin-figure src attrs elems)
+(define/contract (margin-figure src attrs elems)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
   (define refid (fingerprint elems))
   (define source (string-append html-image-dir src))
@@ -179,7 +179,7 @@
       (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
       (span [[class "marginnote"]] (img [[src ,source] [alt ,alt-text]]) ,@elems)))
 
-(define/contract (html-tweet attrs contents)
+(define/contract (tweet attrs contents)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   (check-required-attributes 'tweet '(id handle realname permlink timestamp) attrs)
   `(blockquote [[id ,(string-append "t" (attr-val 'id attrs))] [class "tweet"]]
@@ -195,7 +195,7 @@
        (span [[class "twTimeStamp"]]
          (a [[href ,(attr-val 'permlink attrs)]] ,(attr-val 'timestamp attrs))))))
 
-(define (html-retweet attrs contents)
+(define (retweet attrs contents)
   (check-required-attributes 'retweet '(permlink handle realname timestamp) attrs)
   `(blockquote [[class "retweet"]]
     (p [[class "twRetweetMeta"]] (b ,(attr-val 'realname attrs))
@@ -203,13 +203,13 @@
        (span [[class "twTimeStamp"]] (a [[href ,(attr-val 'permlink attrs)]]))
        ,@contents)))
 
-(define/contract (html-updatebox datestr attr contents)
+(define/contract (updatebox datestr attr contents)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
   `(div [[class "updateBox"]]
         (p (b (span [[class "smallcaps"]] "Update, " ,datestr)))
         ,@contents))
   
-(define/contract (html-comment attrs contents)
+(define/contract (comment attrs contents)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   (check-required-attributes 'comment '(author datetime authorlink) attrs)
   (let ([author (attr-val 'author attrs)]
@@ -250,9 +250,9 @@ handle it at the Pollen processing level.
   B. it allows you to specify the text-alignment for columns in both those
   formats, and C. it allows you to include tags inside table cells (not just strings)
 |#
-(define (html-td-tag . tx-els) `(td ,@tx-els))
-(define (html-th-tag . tx-els) `(th ,@tx-els))
-(define (html-tr-tag columns . tx-elems)
+(define (td-tag . tx-els) `(td ,@tx-els))
+(define (th-tag . tx-els) `(th ,@tx-els))
+(define (tr-tag columns . tx-elems)
   (define column-alignments #hash(("l" . "left") ("r" . "right") ("c" . "center")))
   
   (cons 'tr (for/list ([cell (in-list tx-elems)]
@@ -264,7 +264,7 @@ handle it at the Pollen processing level.
                                                    ";"))
                           cell))))
 
-(define/contract (html-table attrs elems)
+(define/contract (table attrs elems)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   (define c-aligns (attr-val 'columns attrs))
   (cond [(not (or (equal? #f c-aligns) (column-alignments-string? c-aligns)))
@@ -289,10 +289,10 @@ handle it at the Pollen processing level.
   ;   HTML:  '((td "Cell 1") (td "Cell 2"))
   (define table-rows
     (match-let ([(cons header-row other-rows) rows-of-cells])
-      (cons (map html-th-tag header-row)
+      (cons (map th-tag header-row)
             (for/list ([row (in-list other-rows)])
-                      (map html-td-tag row)))))
+                      (map td-tag row)))))
   
   (define col-args (if (not c-aligns) (make-string (length (first table-rows)) #\l) c-aligns))
   (cons 'table (for/list ([table-row (in-list table-rows)])
-                         (apply html-tr-tag col-args table-row))))
+                         (apply tr-tag col-args table-row))))

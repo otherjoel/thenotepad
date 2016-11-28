@@ -10,9 +10,10 @@
 
 (provide (all-defined-out))
 
-(define (pdf-root attrs elements)
+
+(define (root attrs elements)
   (define first-pass (decode-elements (get-elements (wrap-comment-section (txexpr 'root null (esc elements)) esc))
-                                      #:inline-txexpr-proc (compose1 txt-decode pdf-link-decoder)
+                                      #:inline-txexpr-proc (compose1 txt-decode link-decoder)
                                       #:string-proc (compose1 smart-quotes smart-dashes)
                                       #:exclude-tags '(script style figure txt-noescape)))
   (txexpr 'body null (decode-elements first-pass #:inline-txexpr-proc txt-decode)))
@@ -39,42 +40,42 @@
   (for/list ([e (in-list elems)])
             (if (string? e) (ltx-escape-str e) e)))
 
-(define (pdf-link-decoder inline-txpr)
+(define (link-decoder inline-txpr)
   (if (eq? 'zlink (get-tag inline-txpr))
       (let ([elems (get-elements inline-txpr)])
            `(txt "\\href{" ,(ltx-escape-str (first elems)) "}"
                  "{" ,@(esc (rest elems)) "}"))
       inline-txpr))
 
-(define (pdf-p attrs elems)     `(txt ,@(esc elems) "\n\n"))
-(define (pdf-i attrs text)      `(txt "{\\itshape " ,@(esc text) "}"))
-(define (pdf-emph attrs text)   `(txt "\\emph{" ,@(esc text) "}"))
-(define (pdf-b attrs text)      `(txt "{\\bfseries " ,@(esc text) "}"))
-(define (pdf-strong attrs text) `(txt "\\textbf{" ,@(esc text) "}"))
-(define (pdf-color c attrs text) `(txt "\\textcolor{" ,c "}{" ,@(esc text) "}"))
+(define (p attrs elems)     `(txt ,@(esc elems) "\n\n"))
+(define (i attrs text)      `(txt "{\\itshape " ,@(esc text) "}"))
+(define (emph attrs text)   `(txt "\\emph{" ,@(esc text) "}"))
+(define (b attrs text)      `(txt "{\\bfseries " ,@(esc text) "}"))
+(define (strong attrs text) `(txt "\\textbf{" ,@(esc text) "}"))
+(define (color c attrs text) `(txt "\\textcolor{" ,c "}{" ,@(esc text) "}"))
   
-(define (pdf-ol attrs elements)     `(txt "\\begin{enumerate}" ,@elements "\\end{enumerate}"))
-(define (pdf-ul attrs elements)     `(txt "\\begin{itemize}" ,@elements "\\end{itemize}"))
-(define (pdf-item attrs elements)   `(txt "\\item " ,@(esc elements)))
+(define (ol attrs elements)     `(txt "\\begin{enumerate}" ,@elements "\\end{enumerate}"))
+(define (ul attrs elements)     `(txt "\\begin{itemize}" ,@elements "\\end{itemize}"))
+(define (item attrs elements)   `(txt "\\item " ,@(esc elements)))
 
-(define (pdf-sup attrs text)        `(txt "\\textsuperscript{" ,@(esc text) "}"))
+(define (sup attrs text)        `(txt "\\textsuperscript{" ,@(esc text) "}"))
 
-; preserve as zlink for possible processing by enclosing tags; see also pdf-root
-(define (pdf-link url attrs elems)   `(zlink ,url ,@elems))
+; preserve as zlink for possible processing by enclosing tags; see also root
+(define (link url attrs elems)   `(zlink ,url ,@elems))
 
-(define (pdf-blockquote attrs elems) `(txt "\\begin{quote}" ,@(esc elems) "\\end{quote}"))
-(define (pdf-newthought attrs elems) `(txt "\\newthought{" ,@(esc elems) "}"))
-(define (pdf-smallcaps attrs elems)  `(txt "\\smallcaps{" ,@(esc elems) "}"))
+(define (blockquote attrs elems) `(txt "\\begin{quote}" ,@(esc elems) "\\end{quote}"))
+(define (newthought attrs elems) `(txt "\\newthought{" ,@(esc elems) "}"))
+(define (smallcaps attrs elems)  `(txt "\\smallcaps{" ,@(esc elems) "}"))
 
-(define (pdf-inline-math attrs elems) `(txt-noescape "$" ,@elems "$"))
+(define (inline-math attrs elems) `(txt-noescape "$" ,@elems "$"))
 
-(define (pdf-center attrs words)     `(txt "\\begin{center}" ,@(esc words) "\\end{center}"))
-(define (pdf-section attrs title)    `(txt "\\section{" ,@(esc title) "}"))
-(define (pdf-subsection attrs title) `(txt "\\subsection{" ,@(esc title) "}"))
+(define (center attrs words)     `(txt "\\begin{center}" ,@(esc words) "\\end{center}"))
+(define (section attrs title)    `(txt "\\section{" ,@(esc title) "}"))
+(define (subsection attrs title) `(txt "\\subsection{" ,@(esc title) "}"))
 
-(define (pdf-index-entry entry attrs text) `(txt "\\index{" ,entry "}" ,@(esc text)))
+(define (index-entry entry attrs text) `(txt "\\index{" ,entry "}" ,@(esc text)))
 
-(define (pdf-figure src attrs elements)
+(define (figure src attrs elements)
   (define source (string-append (if (attr-val 'has-print-version attrs) 
                                     image-originals-dir 
                                     image-dir) 
@@ -85,7 +86,7 @@
         "\\caption{" ,@(esc (latex-no-hyperlinks-in-margin elements)) "}"
         "\\end{" ,figure-env "}"))
 
-(define (pdf-image src attrs elems)
+(define (image src attrs elems)
   (define source (string-append (if (attr-val 'has-print-version attrs) 
                                     image-originals-dir 
                                     image-dir) 
@@ -94,16 +95,16 @@
 
 ; Note that because of the need to escape backslashes in LaTeX, you
 ; cannot use any other commands inside a ◊code tag
-(define (pdf-code attrs text)
+(define (code attrs text)
   `(txt "\\texttt{"
         ,@(esc (list (string-replace (apply string-append text) "\\" "\\textbackslash ")))
         "}"))
 
 ;
-(define (pdf-noun attrs text)
+(define (noun attrs text)
  `(txt "\\texttt{" ,@(esc text) "}"))
 
-(define (pdf-blockcode attrs text)
+(define (blockcode attrs text)
   (define filename (attr-val 'filename attrs))
   (define caption 
           ; Note that using title= instead of caption= prevents listings from showing up in
@@ -111,10 +112,10 @@
           (if (string>? filename "") (string-append "[title={\\fileicon{} " filename "}]") ""))
   `(txt-noescape "\\begin{lstlisting}" ,caption "\n" ,@text "\n\\end{lstlisting}"))
 
-(define (pdf-Latex attrs text)
+(define (Latex attrs text)
   `(txt "\\LaTeX\\xspace"))      ; \xspace adds a space if the next char is not punctuation
 
-(define (pdf-verse attrs text)
+(define (verse attrs text)
   (let ([title (attr-val 'title attrs)]
         [italic (attr-val 'italic attrs)])
        (define poem-title (if (non-empty-string? title)
@@ -174,14 +175,14 @@
   sit outside any of these three tags.
 |#
 
-(define (pdf-margin-note attrs elems)
+(define (margin-note attrs elems)
   `(txt "\\marginnote{" ,@(latex-no-hyperlinks-in-margin elems) "}"))
 
-(define (pdf-numbered-note attrs elems)
+(define (numbered-note attrs elems)
   `(txt "\\footnote{" ,@(latex-no-hyperlinks-in-margin elems) "}"))
 
 ;
-(define (pdf-margin-figure src attrs elems)
+(define (margin-figure src attrs elems)
   (define source (string-append (if (attr-val 'has-print-version attrs) 
                                     image-originals-dir 
                                     image-dir) 
@@ -192,7 +193,7 @@
         "\\end{marginfigure}"))
 
 ;
-(define (pdf-tweet attrs contents)
+(define (tweet attrs contents)
   (check-required-attributes 'tweet '(id handle realname permlink timestamp) attrs)
   
   ; Helper: replaces any link with just the link's second element
@@ -209,14 +210,14 @@
         "\n\\end{mdframed}\n\\footnotetext{\\url{" ,(attr-val 'permlink attrs) "}}\n"))
 
 ;
-(define (pdf-retweet attrs contents)
+(define (retweet attrs contents)
   (check-required-attributes 'retweet '(permlink handle realname timestamp) attrs)
   `(txt "\n\n@" ,(attr-val 'handle attrs) ", " ,(attr-val 'timestamp attrs) ": " ,@(esc contents)))
 
-(define (pdf-updatebox datestr attrs contents)
+(define (updatebox datestr attrs contents)
   `(txt ,@(esc contents)))
   
-(define (pdf-comment attrs contents)
+(define (comment attrs contents)
   (check-required-attributes 'comment '(author datetime authorlink) attrs)
   (let ([author (attr-val 'author attrs)]
         [comment-date (attr-val 'datetime attrs)])
@@ -224,14 +225,14 @@
                      "\n\\attrib{" ,(ltx-escape-str author) ", " ,comment-date "}"
                      "\n\\end{quote}\n\n")))
 
-(define (pdf-td-tag . tx-els) `(txt ,@(esc tx-els)))
-(define (pdf-th-tag . tx-els) `(txt ,@(esc tx-els)))
-(define (pdf-tr-tag . tx-elems) `(txt ,@(add-between tx-elems " & ") " \\\\\n"))
+(define (td-tag . tx-els) `(txt ,@(esc tx-els)))
+(define (th-tag . tx-els) `(txt ,@(esc tx-els)))
+(define (tr-tag . tx-elems) `(txt ,@(add-between tx-elems " & ") " \\\\\n"))
   
 ; A lot of code duplicated between this function and the HTML one.
 ; Decided to do it this way to get complete independence between the
 ; HTML and PDF paths.
-(define (pdf-table attrs elems)
+(define (table attrs elems)
   (define c-aligns (attr-val 'columns attrs))
   (cond [(not (or (equal? #f c-aligns) (column-alignments-string? c-aligns)))
          (raise-argument-error 'table "#:columns must be a string containing 'l', 'r', or 'c'" (assq 'columns attrs))])
@@ -253,9 +254,9 @@
   ;   HTML:  '((td "Cell 1") (td "Cell 2"))
   (define table-rows
     (match-let ([(cons header-row other-rows) rows-of-cells])
-      (cons (map pdf-th-tag header-row)
+      (cons (map th-tag header-row)
             (for/list ([row (in-list other-rows)])
-                      (map pdf-td-tag row)))))
+                      (map td-tag row)))))
   
   (define col-args (if (not c-aligns) (make-string (length (first table-rows)) #\l) c-aligns))
   
@@ -264,9 +265,9 @@
           "  \\centering\n"
           "  \\begin{tabular}{" ,col-args "}\n"
           "    \\toprule\n"
-          ,(apply pdf-tr-tag header-row)
+          ,(apply tr-tag header-row)
           "    \\midrule\n"
-          ,@(for/list ([row (in-list other-rows)]) (apply pdf-tr-tag row))
+          ,@(for/list ([row (in-list other-rows)]) (apply tr-tag row))
           "    \\bottomrule\n"
           "  \\end{tabular}\n"
           "\\end{table}\n")))
