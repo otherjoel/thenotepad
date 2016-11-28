@@ -22,6 +22,7 @@ Nonetheless, it works pretty well as a static blog generator. Pollen comes with 
 * You'll need `xelatex` installed and in your `PATH` to generate PDFs. On Mac, installing [MacTeX](https://tug.org/mactex/) is easy and will do the job.
 * You'll need to install [Racket](http://racket-lang.org), and the [Pollen package](https://docs.racket-lang.org/pollen/Installation.html)
 * Ideally you'll be on a system that can run Bash scripts and the GNU `make` utility
+* If you do use the included makefile to build the site, you will want to install [HTML5 Tidy](http://www.html-tidy.org) — or remove references to the `tidy` command in the makefile.
 
 Then just plop all the files from this repository in a folder.
 

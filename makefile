@@ -46,11 +46,13 @@ all: ## Re-generate site including PDFs and RSS
 # So it will run its recipe if any of those dependencies have changed.
 $(posts-sourcelistings): util/make-html-source.sh
 $(posts-sourcelistings): %.pollen.html: %.poly.pm
-	util/make-html-source.sh $< > $@
+	util/make-html-source.sh $< > $@; \
+	tidy -quiet -modify -indent --wrap 0 --tidy-mark no --drop-empty-elements no $@ || true
 
 $(posts-html): $(core-files) template.html.p util-template.rkt pollen-local/tags-html.rkt
 $(posts-html): %.html: %.poly.pm
-	raco pollen render -t html $<
+	raco pollen render -t html $<; \
+	tidy -quiet -modify -indent --wrap 0 --tidy-mark no --drop-empty-elements no $@ || true
 
 $(posts-pdf): $(core-files) template.pdf.p util-template.rkt pollen-local/tags-pdf.rkt
 $(posts-pdf): %.pdf: %.poly.pm
@@ -61,18 +63,21 @@ feed.xml: $(core-files) $(posts-sourcefiles) feed.xml.pp util-template.rkt polle
 
 index.html: $(core-files) $(posts-sourcefiles) \
 	index.html.pp util-template.rkt pollen-local/tags-html.rkt
-	raco pollen render $@
+	raco pollen render $@; \
+	tidy -quiet -modify -indent --wrap 0 --tidy-mark no --drop-empty-elements no $@ || true
 
 $(other-html): pollen.rkt template.html.p pollen-local/tags-html.rkt
 $(other-html): %.html: %.html.pm
-	raco pollen render $@
+	raco pollen render $@; \
+	tidy -quiet -modify -indent --wrap 0 --tidy-mark no --drop-empty-elements no $@ || true
 
 $(other-sourcelistings): util/make-html-source.sh
 $(other-sourcelistings): %.pollen.html: %.html.pm
 	util/make-html-source.sh $< > $@
 
 topics.html: topics.html.pp $(core-fils) $(posts-sourcefiles) pollen-local/tags-html.rkt
-	raco pollen render topics.html.pp
+	raco pollen render topics.html.pp; \
+	tidy -quiet -modify -indent --wrap 0 --tidy-mark no --drop-empty-elements no $@ || true
 
 .PHONY: all publish spritz zap help
 
