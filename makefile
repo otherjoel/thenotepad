@@ -33,7 +33,7 @@ other-sourcelistings := $(patsubst %.html.pm,%.pollen.html,$(other-sourcefiles))
 
 # The ‘all’ rule references the rules BELOW it (the above are just variable
 # definitions, not rules).
-all: $(posts-sourcelistings) $(posts-html) $(posts-pdf) $(other-html) $(other-sourcelistings) index.html feed.xml
+all: $(posts-sourcelistings) $(posts-html) $(posts-pdf) $(other-html) $(other-sourcelistings) index.html feed.xml topics.html
 all: ## Re-generate site including PDFs and RSS
 
 # My dependencies are roughly as follows: for each .poly.pm file I want to
