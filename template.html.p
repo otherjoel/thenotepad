@@ -2,10 +2,12 @@
 ◊(define source-file (select-from-metas 'here-path metas))
 ◊(define pollen-source-listing
     (regexp-replace #px"(\\.html$)" (symbol->string here) ".pollen.html"))
+◊(local-require pollen/private/version)
 <!DOCTYPE html>
 <html lang="en" class="gridded">
     <head>
         <meta charset="utf-8">
+        <meta name="generator" content="Racket ◊(version) + Pollen ◊|pollen:version|">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>◊(select-from-metas 'title here)</title>
         <link rel="stylesheet" href="/styles.css" media="screen">

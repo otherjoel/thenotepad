@@ -1,10 +1,11 @@
 #lang pollen
 ◊(current-pagetree (dynamic-require "index.ptree" 'doc))
-◊(require racket/list pollen/pagetree pollen/template)
+◊(require racket/list pollen/pagetree pollen/template pollen/private/version)
 <!DOCTYPE html>
 <html lang="en" class="gridded">
     <head>
         <meta charset="utf-8">
+        <meta name="generator" content="Racket ◊(version) + Pollen ◊|pollen:version|">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>The Notepad</title>
         <link rel="stylesheet" href="/styles.css" media="screen">

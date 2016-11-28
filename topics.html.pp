@@ -1,12 +1,13 @@
 #lang pollen
 
-◊(local-require "util-topics.rkt" pollen/template pollen/pagetree)
+◊(local-require "util-topics.rkt" pollen/template pollen/pagetree pollen/private/version)
 ◊(define main-pagetree (dynamic-require "index.ptree" 'doc))
 
 <!DOCTYPE html>
 <html lang="en" class="gridded">
     <head>
         <meta charset="utf-8">
+        <meta name="generator" content="Racket ◊(version) + Pollen ◊|pollen:version|">
         <title>Topics (The Notepad)</title>
         <link rel="stylesheet" href="/styles.css" media="screen">
     </head>
