@@ -52,7 +52,7 @@ Voila, you now have a calendar shared between two devices. Any events or appoint
 
 ◊section{3. Get a Better Calendar App}
 
-The calendar app that comes with iOS is plain, and has many shortcomings: the interface for creating new appointments is clumsy, the colour-coding is not visible in month view, and there’s no week view at all, to name a few. For notes and recommendations on iOS calendar apps, read my post on ◊link["20120203-recommended-calendar-apps-for-iphone.html"]{iOS Calendar App Recommendations}.
+The calendar app that comes with iOS is plain, and has many shortcomings: the interface for creating new appointments is clumsy, the colour-coding is not visible in month view, and there’s no week view at all, to name a few. For notes and recommendations on iOS calendar apps, read my post on ◊link["recommended-calendar-apps-for-iphone.html"]{iOS Calendar App Recommendations}.
 
 ◊comment[#:author "Brent"
          #:datetime "February 03, 2012"

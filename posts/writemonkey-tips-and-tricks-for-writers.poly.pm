@@ -6,7 +6,7 @@
 
 I use WriteMonkey for almost all my writing. It’s the best Windows-based text editor I have found for writing prose (as opposed to programming code).
 
-WriteMonkey is extremely ◊link["http://daringfireball.net/projects/markdown/"]{Markdown}-friendly — useful if, for example, like me you ◊link["20110818-how-to-use-markdown-in-blogspot-posts.html"]{write all your blog posts in Markdown format}.
+WriteMonkey is extremely ◊link["http://daringfireball.net/projects/markdown/"]{Markdown}-friendly — useful if, for example, like me you ◊link["how-to-use-markdown-in-blogspot-posts.html"]{write all your blog posts in Markdown format}.
 
 Not all of WriteMonkey’s features are well-explained or documented, so I’m writing them up here.
 

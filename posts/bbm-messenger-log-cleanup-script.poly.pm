@@ -4,11 +4,11 @@
 ◊(define-meta published "2010-02-17")
 ◊(define-meta topics "Blackberry Messenger,VBscript")
 
-As ◊link["20100212-blackberry-messenger-logs-timestamp.html"]{mentioned previously}, the CSV files produced by Blackberry Messenger 5.0+ need some cleaning up before they can be properly used. I finally wrote a short script for doing just that.
+As ◊link["blackberry-messenger-logs-timestamp.html"]{mentioned previously}, the CSV files produced by Blackberry Messenger 5.0+ need some cleaning up before they can be properly used. I finally wrote a short script for doing just that.
 
 You can download the VBScript here: ◊link["https://docs.google.com/leaf?id=0B9SDJ22NRBkrNzdjYTIzYWMtNjcwNi00ZjlhLWE1ZDEtNWU0NTQ1ZmEwYjc5&hl=en"]{◊code{bbmcleaner-1.1.zip}}. This code is released to the public domain.
 
-Once you have the BBM log file on your computer (email it there from your phone, again, see the ◊link["20100212-blackberry-messenger-logs-timestamp.html"]{last post} on this subject), just drag and drop it onto this ◊code{.vbs} file, and a “clean” version will be produced as a separate file in the same directory. The new file will have human-readable dates and the message will be properly escaped – in short, it will be something you can just open and use in Excel (e.g.).
+Once you have the BBM log file on your computer (email it there from your phone, again, see the ◊link["blackberry-messenger-logs-timestamp.html"]{last post} on this subject), just drag and drop it onto this ◊code{.vbs} file, and a “clean” version will be produced as a separate file in the same directory. The new file will have human-readable dates and the message will be properly escaped – in short, it will be something you can just open and use in Excel (e.g.).
 
 ◊section{Change Log}
 

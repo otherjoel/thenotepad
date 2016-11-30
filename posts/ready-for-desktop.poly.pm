@@ -12,7 +12,7 @@ I’ve been having issues on my Sony VGN TZ190 ever since I installed a certain 
 ◊item{The Fn keys for screen brightness do not work at all. The Fn keys for volume control work but do not provide any visual feedback.}
 ◊item{After working for two years both the programs that play DVDs now crash when I try to play a DVD.}
 ◊item{Printing to a network printer is essentially broken. If you try, the program from which you are printing will hang for a good 5-10 minutes before sending the job, and then it will only print half the time.}
-◊item{Wifi connnects easily to wireless routers, but every once in awhile will not allow connections all the way out to the internet. I have to ◊link["20100212-no-internet-access-over-wifi-infamous.html"]{run a command-line program} to get it working again.}
+◊item{Wifi connnects easily to wireless routers, but every once in awhile will not allow connections all the way out to the internet. I have to ◊link["no-internet-access-over-wifi-infamous.html"]{run a command-line program} to get it working again.}
 }
 
 Looking at this list, you’d think I was running a Linux distribution from 2005. ◊strong{No, these are all problems I’m having with Vista, SP2 no less.}
