@@ -43,18 +43,18 @@ To handle this part, I wrote a macro, ◊code{poly-branch-tag}, which allows you
 
 To use this macro, first copy the ◊link["https://github.com/otherjoel/thenotepad/blob/master/pollen-local/polytag.rkt"]{◊code{polytag.rkt} file} from this blog’s source code into your project.
 
-You then need to make one edit to the top of this file, to ensure the ◊code{site-poly-targets} list matches the definition of ◊code{poly-targets} in your own ◊code{pollen.rkt} file. It would have been nice to find a way to have them match up automatically, but since the two live in different modules and in different ◊link["http://docs.racket-lang.org/reference/syntax-model.html#%28tech._phase._level%29"]{phase levels}, it looked like a non-trivial amount of work. I decided this was good enough for now:
-
-◊blockcode[#:filename "polytag.rkt"]{
-; This needs to match the definition of poly-targets in pollen.rkt
-; Note that you can omit 'html if you like, it will still be the default format
-(define-for-syntax site-poly-targets '(html pdf))}
-
 You then include ◊code{polytag.rkt} and declare your Pollen tags using the macro. The first argument is the tag name, optionally followed by a single required attribute and/or as any number of optional attributes with default values:
 
 ◊blockcode[#:filename "pollen.rkt"]{
+#lang racket
+(require pollen/setup)
 (require "polytag.rkt")
 (require "html-tags.rkt" "pdf-tags.rkt")
+
+; Define our poly targets as usual
+(module setup racket/base
+    (provide (all-defined-out))
+    (define poly-targets '(html pdf)))
 
 ; Simple tag with no required or default attributes
 (poly-branch-tag strong)
@@ -65,7 +65,7 @@ You then include ◊code{polytag.rkt} and declare your Pollen tags using the mac
 ; Tag with required attribute + some optional attrs w/defaults
 (poly-branch-tag figure src (fullwidth #f) (link-url ""))}
 
-For every tag function declared this way, write the additional functions needed for each output type in your ◊code{site-poly-targets}. E.g., for ◊code{strong} above, we would define ◊code{html-strong} and ◊code{pdf-strong} inside their respective ◊code{.rkt} files.
+For every tag function declared this way, write the additional functions needed for each output type in your ◊code{(setup:poly-targets)}. E.g., for ◊code{strong} above, we would define ◊code{html-strong} and ◊code{pdf-strong} inside their respective ◊code{.rkt} files.
 
 These tag functions should always accept exactly two arguments: a list of attributes and a list of elements. The macro will ensure that any required attribute is present and any default values are applied. Here's an example:
 
