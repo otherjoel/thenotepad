@@ -217,6 +217,11 @@ end
 
 -- lev is an integer, the header level.
 function Header(lev, s, attr)
+  if lev == 2 then
+    return "◊section\[" .. attributes(attr) ..  "\]{" .. s .. "}"
+  elseif  lev == 3 then
+    return "◊subsection\[" .. attributes(attr) ..  "\]{" .. s .. "}"
+  end
   return "◊h" .. lev .."\[" .. attributes(attr) ..  "\]{" .. s .. "}"
 end
 
