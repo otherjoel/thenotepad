@@ -11,11 +11,12 @@ cat << EOF
   <link rel="stylesheet" href="/styles.css" media="screen" charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style type="text/css">
-    .sourcebox {
+    pre.sourcebox {
         padding: 1em;
         border: solid 1px #efefef;
         background: #f5fff0;
         font-size: smaller;
+        width: auto;
         }
     body { font-family: triplicate; }
     h1 { font-family: triplicate; }
@@ -33,7 +34,7 @@ cat << EOF
           </p>
         </header>
         <div class="listing-filename">&#128196; $FILENAME</div>
-        <div class="fullwidth code sourcebox" style="white-space: pre-wrap;">$(cat $FILENAME)</div>
+        <pre class="fullwidth code sourcebox" style="white-space: pre-wrap;">$(cat $FILENAME)</pre>
     </article>
 </body>
 </html>
