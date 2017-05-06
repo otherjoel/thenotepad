@@ -16,6 +16,7 @@ Nonetheless, it works pretty well as a static blog generator. Pollen comes with 
 * Makefile for incremental builds
 * Pollen tags for perma-embedding Tweets (no JavaScript)
 * Example dynamically generated `index.ptree` — no need to edit every time you add a new post
+* [Semantic line wrapping](https://github.com/otherjoel/thenotepad/commit/d35f0d40d2d1ce9e1f41086c69fe9fa6183af803)
 
 ## Setting up your own copy
 
