@@ -13,9 +13,16 @@
 
 (define html-image-dir (string-append "/posts/" image-dir))
 
+; Customized paragraph decoder replaces newlines within paragraphs
+; with single spaces instead of <br> tags
+(define (decode-paras-nolinebreaks xs)
+  (define (no-linebreaks xs)
+    (decode-linebreaks xs " "))
+  (decode-paragraphs xs #:linebreak-proc no-linebreaks))
+
 (define (html-root attrs elements)
   (define first-pass (decode-elements elements
-                                      #:txexpr-elements-proc decode-paragraphs
+                                      #:txexpr-elements-proc decode-paras-nolinebreaks
                                       #:exclude-tags '(script style figure table pre)))
   (define second-pass (decode-elements first-pass
                                        ; see towards end of file for detect-newthoughts
