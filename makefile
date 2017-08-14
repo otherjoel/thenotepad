@@ -94,10 +94,11 @@ publish: ## Rsync the website to the public web server (does not rebuild site fi
     rsync -av ~/Desktop/publish/ -e 'ssh -p $(WEB_SRV_PORT)' $(NOTEPAD_SRV) --delete --exclude=projects --exclude=.git --exclude=drafts --exclude=pollen-local --exclude=.DS_Store --exclude=.gitignore --exclude='template*.*' --exclude=makefile --exclude=util --exclude='posts/img/originals'; \
     rm -rf ~/Desktop/publish
 
-# ‘make spritz’ just cleans up the pollen-latex-work files; ‘make zap’ deletes
-# all output files as well.
+# ‘make spritz’ just cleans up the pollen-latex-work files and clears the Pollen cache; 
+# ‘make zap’ deletes all output files as well.
 spritz: ## Just cleans up LaTeX working folders
-	rm -rf posts/pollen-latex-work pollen-latex-work
+	rm -rf posts/pollen-latex-work pollen-latex-work; \
+	raco pollen reset
 
 zap: ## Resets Pollen cache, deletes LaTeX working folders, feed.xml and all .html, .ltx files
 	rm -rf posts/pollen-latex-work pollen-latex-work; \
