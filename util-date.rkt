@@ -23,8 +23,8 @@
                                                                        month
                                                                        year))])]))
 #|
-  Converts a string "2015-12-19" or "2015-12-19 16:02" to a string
-  "Saturday, December 19th, 2015" by way of the datestring->date function above
+Converts a string "2015-12-19" or "2015-12-19 16:02" to a string
+"Saturday, December 19th, 2015" by way of the datestring->date function above
 |#
 (define (pubdate->english datetime)
   (date->string (datestring->date datetime)))
