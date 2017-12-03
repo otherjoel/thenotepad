@@ -4,7 +4,9 @@
     racket/date
     pollen/template
     pollen/core
+    pollen/cache
     pollen/pagetree
+    pollen/file
     "util-date.rkt"
     txexpr)
 
@@ -32,18 +34,19 @@
          (attrs-have-key? tx 'class)
          (string=? (attr-ref tx 'class) "comments")))
 
-  (let-values ([(splut matched) (splitf-txexpr (get-doc pnode) is-comment?)]) splut))
+  (let-values ([(splut matched) (splitf-txexpr (cached-doc (get-source pnode)) is-comment?)]) splut))
 
 (define (post-format post)
+  (define c-metas (cached-metas (get-source post)))
   `(article (header "\n" 
-                    (h1 (a [[href ,(symbol->string post)]] ,(select-from-metas 'title post))) "\n" 
+                    (h1 (a [[href ,(symbol->string post)]] ,(select-from-metas 'title c-metas))) "\n" 
                     (p "Scribbled " 
                        (a [[class "permlink"] [href ,(symbol->string post)]]
-                          (time [[datetime ,(select-from-metas 'published post)]]
-                                ,(pubdate->english (select-from-metas 'published post))))
+                          (time [[datetime ,(select-from-metas 'published c-metas)]]
+                                ,(pubdate->english (select-from-metas 'published c-metas))))
                        nbsp middot nbsp
                        (a [[class "pdf"] 
-                           [href ,(string-append "posts/" (pdfname (select-from-metas 'here-path post)))]] 
+                           [href ,(string-append "posts/" (pdfname (select-from-metas 'here-path c-metas)))]] 
                           "PDF")
                        nbsp middot nbsp
                        (a [[class "source-link"] [href ,(source-listing post)]]

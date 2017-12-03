@@ -1,6 +1,6 @@
 #lang racket
 
-(require racket/string txexpr pollen/core)
+(require racket/string txexpr pollen/core pollen/cache pollen/file)
 
 (provide (all-defined-out))
 #|
@@ -15,11 +15,12 @@ Index functionality: allows creation of a book-style keyword index.
 ; Given a file, returns a list of links to that file, one for each topic
 ; listed in the metas
 (define (get-index-links pnode)
-  (define pnode-tags (select-from-metas 'topics pnode))
+  (define p-metas (cached-metas (get-source pnode)))
+  (define pnode-tags (select-from-metas 'topics p-metas))
   (define (make-index-link itag)
     `(a [[href ,(symbol->string pnode)]
          [title ,itag]]
-        ,(select-from-metas 'title pnode)))
+        ,(select-from-metas 'title p-metas)))
   (if pnode-tags
     (map make-index-link (string-split pnode-tags ","))
     '()))

@@ -15,6 +15,7 @@
          txexpr
          pollen/template
          pollen/file
+         pollen/cache
          racket/date
          racket/format)   ; For ~r
 
@@ -148,12 +149,12 @@
     - Pub date has no default, it’s required!
 |#
 (define feed-item-structs
-  (let* ([rss-items (filter syndicate? (flatten (cdr (dynamic-require opt-feed-ptree 'doc))))]
+  (let* ([rss-items (filter syndicate? (flatten (cdr (cached-doc (string->path opt-feed-ptree)))))]
          [rss-unsorted-item-structs (map
                                      (λ(ri)
                                        (define item-link (symbol->string ri))
                                        (define item-path (get-markup-source item-link))
-                                       (define item-metas (dynamic-require item-path 'metas))
+                                       (define item-metas (cached-metas item-path))
                                        (define item-author (or (select-from-metas sym-author item-metas) opt-author-name))
                                        (define item-summary (->html (get-elements (get-post-body ri))))
                                        (define item-pubdate (select-from-metas sym-pubdate item-metas))

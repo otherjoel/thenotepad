@@ -1,7 +1,7 @@
 #lang pollen
 
-◊(local-require "util-topics.rkt" pollen/template pollen/pagetree pollen/private/version)
-◊(define main-pagetree (dynamic-require "index.ptree" 'doc))
+◊(local-require "util-topics.rkt" pollen/template pollen/pagetree pollen/private/version pollen/cache)
+◊(define main-pagetree (cached-doc (string->path "index.ptree")))
 
 <!DOCTYPE html>
 <html lang="en" class="gridded">
