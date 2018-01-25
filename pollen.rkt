@@ -27,6 +27,7 @@
 (poly-branch-tag emph)
 (poly-branch-tag b)
 (poly-branch-tag strong)
+(poly-branch-tag strike)
 (poly-branch-tag color c)
 (poly-branch-tag ol)
 (poly-branch-tag ul)

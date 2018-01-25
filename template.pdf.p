@@ -158,6 +158,9 @@
     \renewcommand\footnotesize{\fontsize{10}{12} \selectfont}
     \renewcommand{\thefootnote}{\arabic{footnote}}
 
+    % Allow use of \st for strikethrough
+    \usepackage{soul}
+
     %% Main doc
     \begin{document}
     \RaggedRight

@@ -51,6 +51,10 @@
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
   `(strong ,@text))
 
+(define/contract (html-strike attrs text)
+  ((listof attribute?) txexpr-elements? . -> . txexpr?)
+  `(s ,@text))
+
 (define/contract (html-color c attrs text)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
   `(span [[style ,(string-append "color: " c)]] ,@text))

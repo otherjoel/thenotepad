@@ -51,6 +51,7 @@
 (define (pdf-emph attrs text)   `(txt "\\emph{" ,@(esc text) "}"))
 (define (pdf-b attrs text)      `(txt "{\\bfseries " ,@(esc text) "}"))
 (define (pdf-strong attrs text) `(txt "\\textbf{" ,@(esc text) "}"))
+(define (pdf-strike attrs text) `(txt "\\st{" ,@(esc text) "}"))
 (define (pdf-color c attrs text) `(txt "\\textcolor{" ,c "}{" ,@(esc text) "}"))
   
 (define (pdf-ol attrs elements)     `(txt "\\begin{enumerate}" ,@elements "\\end{enumerate}"))
