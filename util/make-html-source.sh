@@ -34,7 +34,7 @@ cat << EOF
           </p>
         </header>
         <div class="listing-filename">&#128196; $FILENAME</div>
-        <pre class="fullwidth code sourcebox" style="white-space: pre-wrap;">$(cat $FILENAME)</pre>
+        <pre class="fullwidth code sourcebox" style="white-space: pre-wrap;">$(perl -C -MHTML::Entities -pe 'encode_entities($_);' < $FILENAME)</pre>
     </article>
 </body>
 </html>
