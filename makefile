@@ -58,11 +58,15 @@ $(posts-pdf): $(core-files) template.pdf.p util-template.rkt pollen-local/tags-p
 $(posts-pdf): %.pdf: %.poly.pm
 	raco pollen render -t pdf $<
 
+# touch command forces Pollen to ignore any cached compile
 feed.xml: $(core-files) $(posts-sourcefiles) feed.xml.pp util-template.rkt pollen-local/tags-html.rkt
+	touch feed.xml.pp; \
 	raco pollen render feed.xml.pp
 
-index.html: $(core-files) $(posts-sourcefiles) \
-	index.html.pp util-template.rkt pollen-local/tags-html.rkt
+# touch command forces Pollen to ignore any cached compile
+index.html: $(core-files) $(posts-sourcefiles) 
+index.html: index.html.pp util-template.rkt pollen-local/tags-html.rkt
+	touch index.html.pp; \
 	raco pollen render $@; \
 	tidy -quiet -modify -indent --wrap 0 --tidy-mark no --drop-empty-elements no $@ || true
 
@@ -76,6 +80,7 @@ $(other-sourcelistings): %.pollen.html: %.html.pm
 	util/make-html-source.sh $< > $@
 
 topics.html: topics.html.pp $(core-fils) $(posts-sourcefiles) pollen-local/tags-html.rkt
+	touch topics.html.pp; \
 	raco pollen render topics.html.pp; \
 	tidy -quiet -modify -indent --wrap 0 --tidy-mark no --drop-empty-elements no $@ || true
 
