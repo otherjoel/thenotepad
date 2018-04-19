@@ -1,3 +1,6 @@
+*.rkt~
+*.p~
+*.pm~
 *.swp
 *.html
 *.ltx
