@@ -112,14 +112,24 @@
   (case (apply string-append text)
     [("") `(a [[id ,entry] [class "index-entry"]])]
     [else `(a [[id ,entry] [class "index-entry"]] ,@text)]))
-    
+
+(require racket/draw)
+(define (get-image-size filename)
+  (define bmp (make-object bitmap% filename))
+  (print filename)
+  (list (send bmp get-width) (send bmp get-height)))
+
 (define/contract (html-figure src attrs elements)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
   (define source (string-append html-image-dir src))
   (define alt-text (apply string-append (filter string? (flatten elements))))
-  (if (attr-val 'fullwidth attrs)
-      `(figure [[class "fullwidth"]] (img [[src ,source] [alt ,alt-text]]) (figcaption ,@elements))
-      `(figure (img [[src ,source] [alt ,alt-text]]) (figcaption ,@elements))))
+  (cond
+    [(attr-val 'fullwidth attrs)
+      `(figure [[class "fullwidth"]] (img [[src ,source] [alt ,alt-text]]) (figcaption ,@elements))]
+    [else
+      (match-define (list img-width img-height) (get-image-size (string-append image-dir src)))
+      (define style-str (format "max-width: ~apx; max-height: ~apx" (/ img-width 2.0) (/ img-height 2.0)))
+      `(figure (img [[src ,source] [alt ,alt-text] [style ,style-str]]) (figcaption ,@elements))]))
 
 (define/contract (html-image src attrs elems)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
