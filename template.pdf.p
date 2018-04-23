@@ -53,7 +53,20 @@
         linecolor=tweet-cyan,middlelinewidth=6pt,%
         leftmargin=2.5cm,rightmargin=2.5cm,roundcorner=10
     }
-    
+   
+    % Manually reimplement \newthought from Tufte-LaTeX
+    \newskip\tufteskipamount
+    \tufteskipamount=1.0\baselineskip plus 0.5ex minus 0.2ex
+
+    \newcommand{\tuftebreak}{\par\ifdim\lastskip<\tufteskipamount
+      \removelastskip\penalty-100\tufteskip\fi}
+
+    \newcommand{\tufteskip}{\vspace\tufteskipamount}
+    \newcommand{\newthought}[1]{%
+       \tuftebreak
+       \noindent\textsc{#1}%
+    }
+
     \usepackage{textcomp}
     \usepackage{upquote}
     \usepackage{listings}
