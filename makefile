@@ -33,8 +33,8 @@ other-sourcelistings := $(patsubst %.html.pm,%.pollen.html,$(other-sourcefiles))
 
 # The ‘all’ rule references the rules BELOW it (the above are just variable
 # definitions, not rules).
-all: $(posts-sourcelistings) $(posts-html) $(posts-pdf) $(other-html) $(other-sourcelistings) index.html feed.xml topics.html
-all: ## Re-generate site including PDFs and RSS
+all: $(posts-sourcelistings) $(posts-html) $(other-html) $(other-sourcelistings) index.html feed.xml topics.html
+all: ## Re-generate all web content (not PDFs)
 
 # My dependencies are roughly as follows: for each .poly.pm file I want to
 # generate an HTML file, a PDF file, and a .pollen.html file (so people can see
@@ -57,6 +57,9 @@ $(posts-html): %.html: %.poly.pm
 $(posts-pdf): $(core-files) template.pdf.p util-template.rkt pollen-local/tags-pdf.rkt
 $(posts-pdf): %.pdf: %.poly.pm
 	raco pollen render -t pdf $<
+
+pdfs: ## Regenerate all PDF files
+pdfs: $(posts-pdf)
 
 # touch command forces Pollen to ignore any cached compile
 feed.xml: $(core-files) $(posts-sourcefiles) feed.xml.pp util-template.rkt pollen-local/tags-html.rkt
@@ -84,7 +87,7 @@ topics.html: topics.html.pp $(core-fils) $(posts-sourcefiles) pollen-local/tags-
 	raco pollen render topics.html.pp; \
 	tidy -quiet -modify -indent --wrap 0 --tidy-mark no --drop-empty-elements no $@ || true
 
-.PHONY: all publish spritz zap help
+.PHONY: all pdfs publish spritz zap help
 
 # Doing ‘make publish’ automatically upload everything except the Pollen source
 # files to the public web server. The NOTEPAD_SRV is defined as an environment
