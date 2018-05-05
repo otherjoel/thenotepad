@@ -25,7 +25,7 @@
   (define (postdate-desc p1 p2)
     (> (date->seconds (datestring->date (select-from-metas 'published p1)))
        (date->seconds (datestring->date (select-from-metas 'published p2)))))
-  (sort (children 'index.html) postdate-desc))
+  (sort (cdr (current-pagetree)) postdate-desc))
 
 (define (get-post-body pnode)
   (define (is-comment? tx)
