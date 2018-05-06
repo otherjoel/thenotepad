@@ -26,7 +26,7 @@
         <section class="main">
             ◊; Get two lists: one of all index links in the current pagetree,
             ◊; another of all the unique headings used in the first list.
-            ◊(define tlinks (collect-index-links (children 'index.html main-pagetree)))
+            ◊(define tlinks (collect-index-links (cdr main-pagetree)))
             ◊(define topics (index-headings tlinks))
             <dl class="topic-list">
                 ◊(define (ddlink lnk) `(dd ,lnk))
