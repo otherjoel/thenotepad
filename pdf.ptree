@@ -1,0 +1,10 @@
+#lang pollen
+◊(require racket/string)
+◊(define (include-files folder extension)
+   (map (λ(str)(string->symbol (format "~a/~a" folder (string-replace str extension "pdf"))))
+        (filter (λ(str) (string-suffix? str extension))
+                (map path->string (directory-list folder)))))
+
+◊(define this-pagetree `(@ ,@(include-files "posts" "poly.pm")))
+
+◊this-pagetree

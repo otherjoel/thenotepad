@@ -17,3 +17,4 @@ pollen.cache
 .DS_Store
 drafts/
 posts/img/originals
+*.rebuild
