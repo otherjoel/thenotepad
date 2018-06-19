@@ -7,12 +7,13 @@
          pollen/tag         ; default-tag-function
          "util-date.rkt"
          "util-template.rkt"
+         "util-db.rkt"
          "pollen-local/polytag.rkt"
          "pollen-local/tags-html.rkt"
          "pollen-local/tags-pdf.rkt")
 
 (provide string-split
-         (all-from-out "util-date.rkt" "util-template.rkt")
+         (all-from-out "util-date.rkt" "util-template.rkt" "util-db.rkt")
          (all-from-out "pollen-local/tags-pdf.rkt"))
 (provide (all-defined-out))
 

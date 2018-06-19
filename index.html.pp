@@ -1,5 +1,4 @@
 #lang pollen
-◊(current-pagetree (dynamic-require "index.ptree" 'doc))
 ◊(require racket/list pollen/pagetree pollen/template pollen/private/version)
 <!DOCTYPE html>
 <html lang="en" class="gridded">
@@ -24,10 +23,13 @@
             </nav>
         </header>
         
-        ◊(let* ([top-ten (take (posts-by-date-desc) 10)]
-                [top-ten-formed (map post-format top-ten)])
-               (apply string-append 
-                      (map ->html (add-between top-ten-formed '("\n\n" (hr)  "\n\n")))))
+        ◊for/splice[[(post (in-list (latest-posts 10)))]]{
+           <article>
+           ◊(hash-ref post 'header_html)
+           ◊(hash-ref post 'html)
+           </article>
+           <hr>
+        }
 
         <footer class="main">
             <ul>

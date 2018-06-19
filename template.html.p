@@ -3,6 +3,10 @@
 ◊(define pollen-source-listing
     (regexp-replace #px"(\\.html$)" (symbol->string here) ".pollen.html"))
 ◊(local-require pollen/private/version)
+◊(init-db)
+◊(define doc-body (->html (select-from-doc 'body here)))
+◊(define doc-header (->html (post-header here metas)))
+◊(save-post here metas doc-header doc-body)
 <!DOCTYPE html>
 <html lang="en" class="gridded">
     <head>
@@ -27,18 +31,8 @@
         </header>
 
         <article>
-            <header>
-                <h1>◊(select-from-metas 'title here)</h1>
-                <p>◊when/splice[(select-from-metas 'published here)]{Scribbled <a href="/◊(symbol->string here)" class="permlink"><time datetime="◊(select-from-metas 'published here)">◊(pubdate->english (select-from-metas 'published here))</time></a>}
-                ◊when/splice[(select-from-metas 'updated here)]{&middot; <em>Updated <time datetime="◊(select-from-metas 'updated here)">◊(pubdate->english (select-from-metas 'updated here))</time></em>}
-                ◊when/splice[(pdfable? source-file)]{&middot;&nbsp;<a class="pdf" href="◊pdfname[source-file]">PDF</a>&nbsp;}
-                &middot;&nbsp;<a href="/◊|pollen-source-listing|" class="source-link">&loz;&nbsp;Pollen&nbsp;Source</a></p>
-                ◊when/splice[(select-from-metas 'topics here)]{<ul>
-                    ◊(map (λ(t-str)(->html `(li (a [[href ,(string-append "/topics.html#" t-str)]] "#" ,t-str))))
-                          (string-split (select-from-metas 'topics here) ","))</ul>}
-            </header>
-
-◊(map ->html (select-from-doc 'body here))
+            ◊doc-header
+            ◊doc-body
         </article>
         <footer class="main">
             <ul>

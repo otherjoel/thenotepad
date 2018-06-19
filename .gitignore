@@ -1,3 +1,4 @@
+*.sqlite
 *.rkt~
 *.p~
 *.pm~

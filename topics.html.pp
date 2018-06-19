@@ -24,17 +24,17 @@
             </nav>
         </header>
         <section class="main">
-            ◊; Get two lists: one of all index links in the current pagetree,
-            ◊; another of all the unique headings used in the first list.
-            ◊(define tlinks (collect-index-links (cdr main-pagetree)))
-            ◊(define topics (index-headings tlinks))
-            <dl class="topic-list">
-                ◊(define (ddlink lnk) `(dd ,lnk))
-                ◊(->html (apply append (for/list([topic topics])
-                                         `((dt (a [[href ,(string-append "#" topic)]
-                                                   [name ,topic]] ,topic))
-                                           ,@(map ddlink (match-index-links topic tlinks))))))
-            </dl>
+            <table>
+              ◊for/splice[([topic (in-list (topic-list))])]{
+              <tr>
+                <td><a name="#◊(car topic)">◊(car topic)</a></td>
+                <td><ul>                   
+                 ◊for/splice[([post (in-list (cdr topic))])]{
+                  <li><a href="/◊(list-ref post 0)">◊(list-ref post 1)</a></li>
+                 }</ul></td>
+               </tr> 
+                }
+            </table>
         </section>
         <footer class="main">
             <ul>

@@ -1,14 +1,14 @@
 #lang racket
 
 (require
-    racket/date
-    pollen/template
-    pollen/core
-    pollen/cache
-    pollen/pagetree
-    pollen/file
-    "util-date.rkt"
-    txexpr)
+  racket/date
+  pollen/template
+  pollen/core
+  pollen/cache
+  pollen/pagetree
+  pollen/file
+  "util-date.rkt"
+  txexpr)
 
 (provide (all-defined-out))
 
@@ -19,13 +19,44 @@
                                        "poly.pm" "pdf"))
                                        
 (define (source-listing p)
-    (regexp-replace #px"(\\.html$)" (symbol->string p) ".pollen.html"))
+  (regexp-replace #px"(\\.html$)" (symbol->string p) ".pollen.html"))
 
 (define (posts-by-date-desc)
   (define (postdate-desc p1 p2)
     (> (date->seconds (datestring->date (select-from-metas 'published p1)))
        (date->seconds (datestring->date (select-from-metas 'published p2)))))
   (sort (cdr (current-pagetree)) postdate-desc))
+
+(define (post-header post metas)
+  (define updated (select-from-metas 'updated metas))
+  (define updated-xexpr
+    (cond [updated `((em "Updated " (time [[datetime ,updated]] ,(pubdate->english updated))) nbsp middot nbsp)]
+          [else '("")]))
+
+  (define topics (select-from-metas 'topics metas))
+  (define topics-xexpr
+    (cond [topics
+           (define topic-listitems
+             (map (λ(t) `(li (a [[href ,(string-append "/topics.html#" t)]] ,t)))
+                  (string-split topics ",")))
+           `(ul ,@topic-listitems)]
+          [else ""]))
+  
+  `(header
+    (h1 (a [[href ,(string-append "/" (symbol->string post))]] ,(select-from-metas 'title metas)))
+    (p "Scribbled "
+       (a [[class "permlink"] [href ,(symbol->string post)]]
+          (time [[datetime ,(select-from-metas 'published metas)]]
+                ,(pubdate->english (select-from-metas 'published metas))))
+       nbsp middot nbsp
+       ,@updated-xexpr
+       (a [[class "pdf"]
+           [href ,(string-append "/posts/" (pdfname (select-from-metas 'here-path metas)))]]
+          "PDF")
+       nbsp middot nbsp
+       (a [[class "source-link"] [href ,(source-listing post)]]
+          loz "Pollen" nbsp "source"))
+    ,topics-xexpr))
 
 (define (get-post-body pnode)
   (define (is-comment? tx)
@@ -38,24 +69,12 @@
 
 (define (post-format post)
   (define c-metas (cached-metas (get-source post)))
-  `(article (header "\n" 
-                    (h1 (a [[href ,(symbol->string post)]] ,(select-from-metas 'title c-metas))) "\n" 
-                    (p "Scribbled " 
-                       (a [[class "permlink"] [href ,(symbol->string post)]]
-                          (time [[datetime ,(select-from-metas 'published c-metas)]]
-                                ,(pubdate->english (select-from-metas 'published c-metas))))
-                       nbsp middot nbsp
-                       (a [[class "pdf"] 
-                           [href ,(string-append "posts/" (pdfname (select-from-metas 'here-path c-metas)))]] 
-                          "PDF")
-                       nbsp middot nbsp
-                       (a [[class "source-link"] [href ,(source-listing post)]]
-                          loz nbsp "Pollen" nbsp "source")))
+  `(article ,@(post-header post c-metas)
             "\n\n" 
             ,@(cdr (get-post-body post))))
 
 (define meta-favicons
-    "<link rel=\"apple-touch-icon-precomposed\" sizes=\"57x57\" href=\"/css/favicon/apple-touch-icon-57x57.png\" />
+  "<link rel=\"apple-touch-icon-precomposed\" sizes=\"57x57\" href=\"/css/favicon/apple-touch-icon-57x57.png\" />
     <link rel=\"apple-touch-icon-precomposed\" sizes=\"114x114\" href=\"/css/favicon/apple-touch-icon-114x114.png\" />
     <link rel=\"apple-touch-icon-precomposed\" sizes=\"72x72\" href=\"/css/favicon/apple-touch-icon-72x72.png\" />
     <link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"/css/favicon/apple-touch-icon-144x144.png\" />
