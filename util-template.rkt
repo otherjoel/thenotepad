@@ -21,12 +21,6 @@
 (define (source-listing p)
   (regexp-replace #px"(\\.html$)" (symbol->string p) ".pollen.html"))
 
-(define (posts-by-date-desc)
-  (define (postdate-desc p1 p2)
-    (> (date->seconds (datestring->date (select-from-metas 'published p1)))
-       (date->seconds (datestring->date (select-from-metas 'published p2)))))
-  (sort (cdr (current-pagetree)) postdate-desc))
-
 (define (post-header post metas)
   (define updated (select-from-metas 'updated metas))
   (define updated-xexpr
@@ -58,20 +52,15 @@
           loz "Pollen" nbsp "source"))
     ,topics-xexpr))
 
-(define (get-post-body pnode)
+;; Retrieve post doc with any comments stripped out
+(define (get-post-body post-doc)
   (define (is-comment? tx)
     (and (txexpr? tx)
          (eq? (get-tag tx) 'section)
          (attrs-have-key? tx 'class)
          (string=? (attr-ref tx 'class) "comments")))
 
-  (let-values ([(splut matched) (splitf-txexpr (cached-doc (get-source pnode)) is-comment?)]) splut))
-
-(define (post-format post)
-  (define c-metas (cached-metas (get-source post)))
-  `(article ,@(post-header post c-metas)
-            "\n\n" 
-            ,@(cdr (get-post-body post))))
+  (let-values ([(splut _) (splitf-txexpr post-doc is-comment?)]) (cdr splut)))
 
 (define meta-favicons
   "<link rel=\"apple-touch-icon-precomposed\" sizes=\"57x57\" href=\"/css/favicon/apple-touch-icon-57x57.png\" />
