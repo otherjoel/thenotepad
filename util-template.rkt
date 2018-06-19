@@ -52,15 +52,14 @@
           loz "Pollen" nbsp "source"))
     ,topics-xexpr))
 
-;; Retrieve post doc with any comments stripped out
-(define (get-post-body post-doc)
+(define (split-body-comments post-doc)
   (define (is-comment? tx)
     (and (txexpr? tx)
          (eq? (get-tag tx) 'section)
          (attrs-have-key? tx 'class)
          (string=? (attr-ref tx 'class) "comments")))
 
-  (let-values ([(splut _) (splitf-txexpr post-doc is-comment?)]) (cdr splut)))
+  (splitf-txexpr post-doc is-comment?))
 
 (define meta-favicons
   "<link rel=\"apple-touch-icon-precomposed\" sizes=\"57x57\" href=\"/css/favicon/apple-touch-icon-57x57.png\" />
