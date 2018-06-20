@@ -1,7 +1,3 @@
-◊(define path-prefix (if (string-contains (symbol->string here) "/") "../" ""))
-◊(define source-file (select-from-metas 'here-path metas))
-◊(define pollen-source-listing
-    (regexp-replace #px"(\\.html$)" (symbol->string here) ".pollen.html"))
 ◊(local-require pollen/private/version)
 ◊(init-db)
 ◊(define-values (doc-body comments) (split-body-comments doc))
