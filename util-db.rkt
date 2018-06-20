@@ -11,8 +11,9 @@
          topic-list)
 
 ;; What follows is the cheapest ORM ever made.
-;; You give it table names and field names. It makes sure the table exists in the database.
+;; You give it table names and field names. 
 ;; When you query it, it gives you rows as hash tables instead of vectors.
+;; This is generic SQL stuff. None of it is provided outside the module.
 
 (define DBFILE (build-path (current-project-root) "notepad.sqlite"))
 (define QUERY-DEBUG (make-parameter #t))
@@ -21,6 +22,10 @@
 (define (list->sql-fields fields) (apply string-append (add-between (map backtick fields) ", ")))
 (define (list->sql-parameters fields)
   (apply string-append (add-between (map (λ(x) (format "?~a" (add1 x))) (range (length fields))) ", ")))
+
+(define dbc (sqlite3-connect #:database DBFILE #:mode 'create))
+
+(define (log-query q) (unless (not (QUERY-DEBUG)) (println q)))
 
 (define (table-schema tablename fields #:primary-key-cols [primary-cols '()])
   (define primary-key
@@ -53,13 +58,6 @@
           table
           where-clause))
 
-(define posts-fields       '("pagenode" "published" "title" "header_html" "html"))
-(define posts-insert-query (make-insert-query "posts" posts-fields))
-(define topics-fields `("pagenode" "topic"))
-
-(define dbc (sqlite3-connect #:database DBFILE #:mode 'create))
-(define (log-query q) (unless (not (QUERY-DEBUG)) (println q)))
-
 (define (query-exec-logging q . args)
   (log-query q)
   (apply query-exec dbc q args))
@@ -70,6 +68,14 @@
   (cond [(empty? result) result]
         [else (map (curryr row->hash fields) result)]))
 
+;; Now the non-generic stuff.
+;; Our database schema:
+(define posts-fields       '("pagenode" "published" "title" "header_html" "html"))
+(define posts-insert-query (make-insert-query "posts" posts-fields))
+(define topics-fields `("pagenode" "topic"))
+
+;; Now the provided (public) functions.
+
 ;; Templates that will write to the DB must call this function to ensure the tables
 ;; are set up with the most current schema. This is a compromise between A) having to
 ;; run some manual task when the schema changes, and B) running these queries every
@@ -79,7 +85,13 @@
   (query-exec-logging (table-schema "posts-topics" topics-fields #:primary-key-cols topics-fields)))
 
 (define (save-post pnode metas header-html body-html)
-  (query-exec-logging posts-insert-query (symbol->string pnode) (hash-ref metas 'published) (hash-ref metas 'title) header-html body-html)
+  (query-exec-logging posts-insert-query
+                      (symbol->string pnode)
+                      (hash-ref metas 'published)
+                      (hash-ref metas 'title)
+                      header-html
+                      body-html)
+  
   (define topics (select-from-metas 'topics metas))
   (cond [topics
          (query-exec-logging "DELETE FROM `posts-topics` WHERE `pagenode`=?1" (symbol->string pnode))
@@ -106,9 +118,9 @@
 (define (topic-list)
   (define query
     (string-append "SELECT `topic`, p.pagenode, p.title "
-                               "FROM `posts-topics` t INNER JOIN `posts` p "
-                               "ON t.pagenode = p.pagenode "
-                               "ORDER BY `topic` ASC"))
+                   "FROM `posts-topics` t INNER JOIN `posts` p "
+                   "ON t.pagenode = p.pagenode "
+                   "ORDER BY `topic` ASC"))
   (log-query query)
   (define everything (query-rows dbc query))
   (define hashed-topics  
