@@ -70,7 +70,7 @@
 
 ;; Now the non-generic stuff.
 ;; Our database schema:
-(define posts-fields       '("pagenode" "published" "title" "header_html" "html"))
+(define posts-fields       '("pagenode" "published" "updated" "title" "header_html" "html"))
 (define posts-insert-query (make-insert-query "posts" posts-fields))
 (define topics-fields `("pagenode" "topic"))
 
@@ -88,6 +88,7 @@
   (query-exec-logging posts-insert-query
                       (symbol->string pnode)
                       (hash-ref metas 'published)
+                      (hash-ref metas 'updated "")
                       (hash-ref metas 'title)
                       header-html
                       body-html)
