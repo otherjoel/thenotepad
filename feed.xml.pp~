@@ -55,11 +55,11 @@
        (define post-url (string-append opt-feed-site (hash-ref post 'pagenode)))
        (define post-updated
          (let ([updated (hash-ref post 'updated)])
-           (if (non-empty-string? updated) updated (hash-ref post 'published))))
+           (if (non-empty-string? updated) `(updated ,(date->rfc3339 (datestring->date updated))) "")))
        `(entry
          (author (name ,opt-author-name))
          (published ,(date->rfc3339 (datestring->date (hash-ref post 'published))))
-         (updated ,(date->rfc3339 (datestring->date post-updated)))
+         ,post-updated
          (title ,(hash-ref post 'title))
          (link [[rel "alternate"] [href ,post-url]])
          (id ,post-url)
