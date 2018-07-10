@@ -23,7 +23,7 @@
             </nav>
         </header>
         
-        ◊for/splice[[(post (in-list (latest-posts 10)))]]{
+        ◊for/s[post (latest-posts 10)]{
            <article>
            ◊(hash-ref post 'header_html)
            ◊(hash-ref post 'html)

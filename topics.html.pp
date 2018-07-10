@@ -25,11 +25,11 @@
         </header>
         <section class="main">
             <table>
-              ◊for/splice[([topic (in-list (topic-list))])]{
+              ◊for/s[topic (topic-list)]{
               <tr>
                 <td><a name="#◊(car topic)">◊(car topic)</a></td>
                 <td><ul>                   
-                 ◊for/splice[([post (in-list (cdr topic))])]{
+                 ◊for/s[post (cdr topic)]{
                   <li><a href="/◊(list-ref post 0)">◊(list-ref post 1)</a></li>
                  }</ul></td>
                </tr> 
