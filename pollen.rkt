@@ -3,6 +3,7 @@
 (require pollen/decode
          pollen/setup       ; For current-poly-target
          pollen/file        ; get-markup-source
+         pollen/core
          txexpr
          pollen/tag         ; default-tag-function
          "util-date.rkt"
@@ -16,6 +17,7 @@
          (all-from-out "util-date.rkt" "util-template.rkt" "util-db.rkt")
          (all-from-out "pollen-local/tags-pdf.rkt"))
 (provide (all-defined-out))
+(provide for/s)
 
 (module setup racket/base
     (provide (all-defined-out))
@@ -79,3 +81,8 @@
 (define (amazon product-id . contents)
   (define affiliate-id "thloya-20")
   (apply link (format "https://amzn.com/~a/?tag=~a" product-id affiliate-id) contents))
+
+(define-syntax (for/s stx)
+  (syntax-case stx ()
+    [(_ thing listofthings result-expr ...)
+     #'(for/splice ([thing (in-list listofthings)]) result-expr ...)]))
