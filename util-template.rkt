@@ -32,7 +32,7 @@
     (cond [topics
            (define topic-listitems
              (map (λ(t) `(li (a [[href ,(string-append "/topics.html#" t)]] ,t)))
-                  (string-split topics ",")))
+                  (string-split (regexp-replace* #px"\\s*,\\s*" topics ",") ",")))
            `(ul ,@topic-listitems)]
           [else ""]))
   
