@@ -3,7 +3,7 @@
 ◊(define-values (doc-body comments) (split-body-comments doc))
 ◊(define doc-body-html (->html (cdr doc-body)))
 ◊(define doc-header (->html (post-header here metas)))
-◊(save-post here metas doc-header doc-body-html)
+◊(cond [(select-from-metas 'published metas) (save-post here metas doc-header doc-body-html)])
 <!DOCTYPE html>
 <html lang="en" class="gridded">
     <head>

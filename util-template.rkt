@@ -35,14 +35,18 @@
                   (string-split (regexp-replace* #px"\\s*,\\s*" topics ",") ",")))
            `(ul ,@topic-listitems)]
           [else ""]))
+  (define timestamp-raw (select-from-metas 'published metas))
+  (define timestamp
+    (cond [timestamp-raw
+           `("Scribbled " 
+             (time [[datetime ,timestamp-raw]]
+                   ,(pubdate->english timestamp-raw))
+             nbsp middot nbsp)]
+          [else '("")]))
   
   `(header
     (h1 (a [[href ,(string-append "/" (symbol->string post))]] ,(select-from-metas 'title metas)))
-    (p "Scribbled "
-       (a [[class "permlink"] [href ,(symbol->string post)]]
-          (time [[datetime ,(select-from-metas 'published metas)]]
-                ,(pubdate->english (select-from-metas 'published metas))))
-       nbsp middot nbsp
+    (p ,@timestamp
        ,@updated-xexpr
        (a [[class "pdf"]
            [href ,(string-append "/posts/" (pdfname (select-from-metas 'here-path metas)))]]
