@@ -1,8 +1,8 @@
 #lang pollen
 
-◊(define-meta title "A Quick Pollen Macro")
+◊(define-meta title "A Quick Macro for Pollen")
 ◊(define-meta published "2018-07-07")
-◊(define-meta topics "Pollen")
+◊(define-meta topics "Pollen, Racket")
 
 One of Pollen’s
 ◊link["https://groups.google.com/d/msg/pollenpub/FdWdGgL9jSk/1VWpX_nsAAAJ"]{somewhat recent}
@@ -62,4 +62,3 @@ This cuts down on the parentheses quite a bit:
    <hr>
 }
 ...}
-
