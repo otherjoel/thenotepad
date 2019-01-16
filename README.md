@@ -25,7 +25,9 @@ Nonetheless, it works pretty well as a static blog generator. Pollen comes with 
 * Ideally you'll be on a system that can run Bash scripts and the GNU `make` utility
 * If you do use the included makefile to build the site, you will want to install [HTML5 Tidy](http://www.html-tidy.org) — or remove references to the `tidy` command in the makefile.
 
-Then just plop all the files from this repository in a folder.
+Next, just plop all the files from this repository in a folder.
+Move my `posts` directory out of the way to start writing your own content, e.g. `mv posts posts.example ; make spritz`
+Edit `feed.xml.pp`, filling in your own RSS metadata.
 
 ## Tinkering
 
