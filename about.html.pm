@@ -1,4 +1,4 @@
-#lang Pollen
+#lang pollen
 
 ◊(define-meta title "About The Notepad")
 
