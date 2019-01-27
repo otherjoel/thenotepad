@@ -23,11 +23,17 @@ Nonetheless, it works pretty well as a static blog generator. Pollen comes with 
 * You'll need `xelatex` installed and in your `PATH` to generate PDFs. On Mac, installing [MacTeX](https://tug.org/mactex/) is easy and will do the job.
 * You'll need to install [Racket](http://racket-lang.org), and the [Pollen package](https://docs.racket-lang.org/pollen/Installation.html)
 * Ideally you'll be on a system that can run Bash scripts and the GNU `make` utility
-* If you do use the included makefile to build the site, you will want to install [HTML5 Tidy](http://www.html-tidy.org) — or remove references to the `tidy` command in the makefile.
+* If you do use the included makefile to build the site, you will want to install [HTML5 Tidy](http://www.html-tidy.org) — or remove references to the `tidy` command in the makefile. (**Note:** Many operating systems come with a version of `tidy` pre-installed, but it is usually very out of date and will throw errors when used with this repo.)
 
-Next, just plop all the files from this repository in a folder.
-Move my `posts` directory out of the way to start writing your own content, e.g. `mv posts posts.example ; make spritz`
-Edit `feed.xml.pp`, filling in your own RSS metadata.
+Next, just plop all the files from this repository in a folder. Run `make all` from the command line in this folder to build all the static HTML files. Run `make pdfs` to build the PDF versions of each post. (This is done separately because it is so much slower than building the HTML.)
+
+To start writing your own content, move the included `posts` directory out of the way. You may wish to keep it around under a different name in order to refer to it for examples:
+
+    mv posts posts.example; make zap;
+
+The `make zap` cleans out the top-level pages and the SQLite cache used to build them.
+
+Finally, edit `feed.xml.pp`, filling in your own RSS metadata.
 
 ## Tinkering
 
@@ -37,8 +43,26 @@ If you really want to customize anything, you will need to [learn all about Poll
 
 As in any Pollen project, you can test-run the site locally by running `raco pollen start` from the project folder. Then browse to `http://localhost:8080` in your browser.
 
-From the project folder, run `make all` to generate all the static files for the site. This is an incremental rebuild: if you’ve built the site once and since done nothing but add a new post, `make all` will build the HTML and PDF files for that post, rebuild the Index and Topics HTML pages, and rebuild the RSS feed. If you change any of the Racket code (`.rkt` files) or any of the template files, it will rebuild the HTML files for every single post, or the PDF files for every post, or both, depending on what you changed.
+From the project folder, run `make all` to generate all the static HTML files for the site. This is an incremental rebuild: if you’ve built the site once and since done nothing but add a new post, `make all` will build the HTML files for that post, rebuild the Index and Topics HTML pages, and rebuild the RSS feed. If you change any of the Racket code (`.rkt` files) or any of the template files, it will rebuild the HTML files for every single post, depending on what you changed.
 
 Use `make zap` to clean out all the generated pages, which will force a complete rebuild next time you do `make all`.
 
+In order to speed up rendering of `index.html` and other top-level pages, I have implemented an additional caching system in an SQLite database. See the post [Using SQLite to Speed Up Pollen Renders](https://thenotepad.org/posts/pollen-and-sqlite.html) to understand how it works.
+
 Finally, you can use `make publish` to push all necessary static files to your web server. See `makefile` for more details; you'll need to configure a couple of environment variables and you also need to be able to ssh into your server passwordlessly.
+
+## Contributing
+
+See [Contributions](CONTRIBUTIONS.md) for guidance on submitting issues and pull requests to this repo.
+
+## Forking
+
+Please feel free to fork this repo! If you do so, be sure to edit `CONTRIBUTIONS.md` to reflect your preferred guidance for potential contributors. Also note you must abide by the [license terms](LICENSE.md), so please review those carefully.
+
+If you want your improvements and customizations to be more generally known, feel free to let me know; I’ll be happy to add a link to it in the section below. (Alternatively, add a link to it in this file yourself and submit a pull request.)
+
+### Existing forks
+
+None yet!
+
+
