@@ -14,9 +14,15 @@ Nonetheless, it works pretty well as a static blog generator. Pollen comes with 
 * Generates PDF versions of every post
 * Includes “Topics”, a tagging system
 * Makefile for incremental builds
-* Pollen tags for perma-embedding Tweets (no JavaScript)
+* Pollen tags for perma-embedding Tweets in web and PDF output (no JavaScript)
 * Example dynamically generated `index.ptree` — no need to edit every time you add a new post
 * [Semantic line wrapping](https://github.com/otherjoel/thenotepad/commit/d35f0d40d2d1ce9e1f41086c69fe9fa6183af803)
+
+### Support
+
+If you find this project helpful, please consider chipping a few bucks towards the author!
+
+<a href='https://ko-fi.com/B0B1MJ3B' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ## Setting up your own copy
 
