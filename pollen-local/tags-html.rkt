@@ -11,8 +11,6 @@
 
 (provide (all-defined-out))
 
-(define html-image-dir (string-append "/posts/" image-dir))
-
 ; Customized paragraph decoder replaces newlines within paragraphs
 ; with single spaces instead of <br> tags
 (define (decode-paras-nolinebreaks xs)
@@ -120,19 +118,19 @@
 
 (define/contract (html-figure src attrs elements)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
-  (define source (string-append html-image-dir src))
+  (define source (path->string (build-path image-dir src)))
   (define alt-text (apply string-append (filter string? (flatten elements))))
   (cond
     [(attr-val 'fullwidth attrs)
       `(figure [[class "fullwidth"]] (img [[src ,source] [alt ,alt-text]]) (figcaption ,@elements))]
     [else
-      (match-define (list img-width img-height) (get-image-size (string-append image-dir src)))
+      (match-define (list img-width img-height) (get-image-size source))
       (define style-str (format "width: ~apx;" (/ img-width 2.0)))
       `(figure (img [[src ,source] [alt ,alt-text] [style ,style-str]]) (figcaption ,@elements))]))
 
 (define/contract (html-image src attrs elems)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
-  (define source (string-append html-image-dir src))
+  (define source (path->string (build-path image-dir src)))
   (define alt-text (apply string-append (filter string? (flatten elems))))
   `(img [[src ,source] [alt ,alt-text]]))
 
@@ -193,7 +191,7 @@
 (define/contract (html-margin-figure src attrs elems)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
   (define refid (fingerprint elems))
-  (define source (string-append html-image-dir src))
+  (define source (path->string (build-path image-dir src)))
   (define alt-text (apply string-append (filter string? (flatten elems))))
   `(@ (label [[for ,refid] [class "margin-toggle"]] 8853)
       (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])

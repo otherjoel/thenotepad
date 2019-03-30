@@ -2,5 +2,5 @@
 
 (provide (all-defined-out))
 
-(define image-dir "img/")
-(define image-originals-dir "img/originals/")
+(define image-dir (build-path "img"))
+(define image-originals-dir (build-path "img" "originals"))

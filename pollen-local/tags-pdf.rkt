@@ -75,23 +75,24 @@
 
 (define (pdf-index-entry entry attrs text) `(txt "\\index{" ,entry "}" ,@(esc text)))
 
+; Returns a relative path string to the image in `image-originals-dir` if it exists, otherwise
+; uses `image-dir` regardless of whether the image exists there.
+(define (maybe-hidpi-image basename)
+  (cond [(file-exists? (build-path (current-project-root) image-originals-dir basename))
+         (displayln (format "maybe-hidpi-image: ~a not found in image-originals-dir, falling back" basename)
+                    (current-error-port))
+         (path->string (build-path image-originals-dir basename))]
+        [else (path->string (build-path image-dir basename))]))
+
 (define (pdf-figure src attrs elements)
-  (define source (string-append (if (attr-val 'has-print-version attrs) 
-                                    image-originals-dir 
-                                    image-dir) 
-                                src))
   (define figure-env (if (attr-val 'fullwidth attrs) "figure*" "figure"))
   `(txt "\\begin{" ,figure-env "}"
-        "\\includegraphics{" ,source "}"
+        "\\includegraphics{" ,(maybe-hidpi-image src) "}"
         "\\caption{" ,@(esc (latex-no-hyperlinks-in-margin elements)) "}"
         "\\end{" ,figure-env "}"))
 
 (define (pdf-image src attrs elems)
-  (define source (string-append (if (attr-val 'has-print-version attrs) 
-                                    image-originals-dir 
-                                    image-dir) 
-                                src))
-  `(txt "\n\n\\frame{\\includegraphics{" ,source "}}"))
+  `(txt "\n\n\\frame{\\includegraphics{" ,(maybe-hidpi-image src) "}}"))
 
 ; Note that because of the need to escape backslashes in LaTeX, you
 ; cannot use any other commands inside a ◊code tag
@@ -183,12 +184,8 @@
 
 ;
 (define (pdf-margin-figure src attrs elems)
-  (define source (string-append (if (attr-val 'has-print-version attrs) 
-                                    image-originals-dir 
-                                    image-dir) 
-                                src))
   `(txt "\\begin{marginfigure}"
-        "\\includegraphics{" ,source "}"
+        "\\includegraphics{" ,(maybe-hidpi-image src) "}"
         "\\caption{" ,@(latex-no-hyperlinks-in-margin elems) "}"
         "\\end{marginfigure}"))
 
