@@ -1,6 +1,12 @@
 #lang pollen
 
-◊(local-require "util-topics.rkt" pollen/template pollen/pagetree pollen/private/version pollen/cache)
+◊(require "util-topics.rkt"
+          pollen/template
+          pollen/pagetree
+          pollen/private/version
+          pollen/cache
+          net/uri-codec)
+
 ◊(define main-pagetree (cached-doc (string->path "index.ptree")))
 
 <!DOCTYPE html>
@@ -27,7 +33,7 @@
             <table>
               ◊for/s[topic (topic-list)]{
               <tr>
-                <td><a name="◊(car topic)">◊(car topic)</a></td>
+                <td><a id="◊(uri-encode (car topic))">◊(car topic)</a></td>
                 <td><ul>                   
                  ◊for/s[post (cdr topic)]{
                   <li><a href="/◊(list-ref post 0)">◊(list-ref post 1)</a></li>

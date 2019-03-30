@@ -1,12 +1,8 @@
 #lang racket
 
 (require
-  racket/date
-  pollen/template
   pollen/core
-  pollen/cache
-  pollen/pagetree
-  pollen/file
+  net/uri-codec
   "util-date.rkt"
   txexpr)
 
@@ -31,7 +27,7 @@
   (define topics-xexpr
     (cond [topics
            (define topic-listitems
-             (map (λ(t) `(li (a [[href ,(string-append "/topics.html#" t)]] ,t)))
+             (map (λ(t) `(li (a [[href ,(string-append "/topics.html#" (uri-encode t))]] ,t)))
                   (string-split (regexp-replace* #px"\\s*,\\s*" topics ",") ",")))
            `(ul ,@topic-listitems)]
           [else ""]))
