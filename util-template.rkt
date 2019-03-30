@@ -43,15 +43,17 @@
                    ,(pubdate->english timestamp-raw))
              nbsp middot nbsp)]
           [else '("")]))
-  
+  (define pdflink
+    (cond [(string-prefix? (symbol->string post) "posts")
+           `((a [[class "pdf"]
+                [href ,(string-append "/posts/" (pdfname (select-from-metas 'here-path metas)))]]
+               "PDF") nbsp middot nbsp)]
+          [else '("")]))
   `(header
     (h1 (a [[href ,(string-append "/" (symbol->string post))]] ,(select-from-metas 'title metas)))
     (p ,@timestamp
        ,@updated-xexpr
-       (a [[class "pdf"]
-           [href ,(string-append "/posts/" (pdfname (select-from-metas 'here-path metas)))]]
-          "PDF")
-       nbsp middot nbsp
+       ,@pdflink
        (a [[class "source-link"] [href ,(source-listing post)]]
           loz "Pollen" nbsp "source"))
     ,topics-xexpr))
