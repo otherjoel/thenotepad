@@ -20,8 +20,22 @@
 (provide for/s)
 
 (module setup racket/base
-    (provide (all-defined-out))
-    (define poly-targets '(html pdf)))
+  (provide (all-defined-out))
+  ;; Possible target output formats
+  (define poly-targets '(html pdf))
+  
+  ;; Specify additional files for the Pollen server to watch
+  (require syntax/modresolve)
+  (define cache-watchlist
+    (map resolve-module-path
+         '("util-date.rkt"
+           "util-db.rkt"
+           "util-template.rkt"
+           "pollen-local/common-helpers.rkt"
+           "pollen-local/polytag.rkt"
+           "pollen-local/publication-vals.rkt"
+           "pollen-local/tags-html.rkt"
+           "pollen-local/tags-pdf.rkt"))))
 
 (poly-branch-tag root)
     
