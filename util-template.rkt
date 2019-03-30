@@ -50,7 +50,7 @@
     (p ,@timestamp
        ,@updated-xexpr
        ,@pdflink
-       (a [[class "source-link"] [href ,(source-listing post)]]
+       (a [[class "source-link"] [href ,(string-append "/" (source-listing post))]]
           loz "Pollen" nbsp "source"))
     ,topics-xexpr))
 
