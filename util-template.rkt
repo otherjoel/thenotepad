@@ -1,10 +1,11 @@
-#lang racket
+#lang racket/base
 
-(require
-  pollen/core
-  net/uri-codec
-  "util-date.rkt"
-  txexpr)
+(require racket/string
+         racket/path
+         pollen/core
+         net/uri-codec
+         "util-date.rkt"
+         txexpr)
 
 (provide (all-defined-out))
 
@@ -42,8 +43,8 @@
   (define pdflink
     (cond [(string-prefix? (symbol->string post) "posts")
            `((a [[class "pdf"]
-                [href ,(string-append "/posts/" (pdfname (select-from-metas 'here-path metas)))]]
-               "PDF") nbsp middot nbsp)]
+                 [href ,(string-append "/posts/" (pdfname (select-from-metas 'here-path metas)))]]
+                "PDF") nbsp middot nbsp)]
           [else '("")]))
   `(header
     (h1 (a [[href ,(string-append "/" (symbol->string post))]] ,(select-from-metas 'title metas)))

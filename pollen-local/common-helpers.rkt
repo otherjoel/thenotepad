@@ -1,6 +1,8 @@
-#lang racket
+#lang racket/base
 
 (require rackunit
+         racket/set
+         racket/list
          txexpr
          pollen/setup)
 
@@ -16,8 +18,7 @@
    tag or anything dumb like that. This way we can add a heading before the
    comments or add other markup around them.
 |#
-(define/contract (wrap-comment-section txpr escaper)
-  (txexpr? (list? . -> . list?) . -> . txexpr?)
+(define (wrap-comment-section txpr escaper)
   ; Helper - Returns true for any txexpr whose tag is 'txt-comment, 
   ; or which is a 'div with class "comment-box".
   (define (is-comment? tx)
@@ -33,7 +34,7 @@
       
   ; Split the comments out from the rest of the doc
   (let-values ([(splut comments) (splitf-txexpr txpr is-comment?)])
-    (if (not (empty? comments))
+    (if (not (null? comments))
         ; Reconstitute the doc with the freshly marked-up
         ; comment section at the end
         (txexpr 'body null (apply append (list (get-elements splut)
@@ -50,8 +51,7 @@
   (subset? (string->list s) '(#\l #\r #\c)))
 
 ; Split a list into multiple lists at every occurence of x
-(define/contract (split-by lst x)
-  (list? any/c . -> . (listof list?))
+(define (split-by lst x)
   (foldr (lambda (element next)
            (if (eqv? element x)
                (cons empty next)
@@ -63,8 +63,7 @@
 ; Helper function which takes a list and effectively removes any sub-list
 ; which is not a txexpr. This way a row contains only a flat list of values
 ; and/or txexprs.
-(define/contract (clean-cells-in-row lst)
-  (list? . -> . list?)
+(define (clean-cells-in-row lst)
   (foldr (lambda (x rest-of-list)
            (if (and (list? x) (not (txexpr? x)))
                (append x rest-of-list)

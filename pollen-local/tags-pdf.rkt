@@ -1,10 +1,13 @@
-#lang racket
+#lang racket/base
 
 (require "polytag.rkt"
          "publication-vals.rkt"  
          "common-helpers.rkt")
          
-(require txexpr
+(require racket/list
+         racket/string
+         racket/match
+         txexpr
          pollen/decode
          pollen/setup)
 
@@ -101,7 +104,6 @@
         ,@(esc (list (string-replace (apply string-append text) "\\" "\\textbackslash ")))
         "}"))
 
-;
 (define (pdf-noun attrs text)
  `(txt "\\texttt{" ,@(esc text) "}"))
 
@@ -189,7 +191,6 @@
         "\\caption{" ,@(latex-no-hyperlinks-in-margin elems) "}"
         "\\end{marginfigure}"))
 
-;
 (define (pdf-tweet attrs contents)
   (check-required-attributes 'tweet '(id handle realname permlink timestamp) attrs)
   
@@ -206,7 +207,6 @@
         " \\hfill " ,(attr-val 'timestamp attrs) "\\footnotemark}" 
         "\n\\end{mdframed}\n\\footnotetext{\\url{" ,(attr-val 'permlink attrs) "}}\n"))
 
-;
 (define (pdf-retweet attrs contents)
   (check-required-attributes 'retweet '(permlink handle realname timestamp) attrs)
   `(txt "\n\n@" ,(attr-val 'handle attrs) ", " ,(attr-val 'timestamp attrs) ": " ,@(esc contents)))

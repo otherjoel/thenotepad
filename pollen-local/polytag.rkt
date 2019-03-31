@@ -10,18 +10,15 @@
 
 ; For use in contracts, this is somewhat looser than txexpr-attribute? in that it allows
 ; for any value, not just strings.
-(define/contract (attribute? x)
-  (any/c . -> . boolean?)
+(define (attribute? x)
   (and (pair? x) (symbol? (first x))))
 
 ; Gives tag functions a quick way to look up values in standalone attribute lists 
-(define/contract (attr-val key attributes)
-  (symbol? (listof attribute?) . -> . any/c)
+(define (attr-val key attributes)
   (let ([result (assq key attributes)])
        (if result (second result) #f)))
 
-(define/contract (check-required-attributes tagname required-attrs attrs)
-  (symbol? (listof symbol?) (listof attribute?) . -> . void)
+(define (check-required-attributes tagname required-attrs attrs)
   (define (missing? a) (if (not (attr-val a attrs)) #t #f))
   (define required-list (apply string-append "attributes must include " (add-between (map symbol->string required-attrs) ", ")))
   (define missed-list (filter missing? required-attrs))
@@ -29,8 +26,7 @@
       [(not (empty? missed-list))
        (raise-argument-error tagname required-list attrs)]))
 
-(define/contract (apply-default-attributes attrs defaults)
-  ((listof attribute?) (listof attribute?) . -> . (listof attribute?))
+(define (apply-default-attributes attrs defaults)
   (define (not-in-attrs a) (if (not (member (first a) (map first attrs))) #t #f))
   (append attrs (filter not-in-attrs defaults)))
 
@@ -47,11 +43,10 @@
    Tag with positional argument and default attributes:
       (poly-branch-tag newlink url (external #t))
 |#
-(define-syntax (poly-branch-tag stx)
-  (define-syntax-class keyval
-    #:description "key-value pair"
-    (pattern (KEY:id VAL:expr)))
 
+
+(define-syntax (poly-branch-tag stx)
+  (define-syntax-class keyval #:description "key-value pair" (pattern (KEY:id VAL:expr)))
   (syntax-parse stx
     ; tag function with no special arguments or defaults
     [(_ TAG:id)

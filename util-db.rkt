@@ -1,7 +1,7 @@
-#lang racket
+#lang racket/base
 
 ;; Provides a connection to a database of posts.
-(require db/sqlite3 db/base)
+(require db/sqlite3 db/base racket/list racket/match racket/function racket/string)
 (require pollen/setup pollen/core)
 
 (provide QUERY-DEBUG
@@ -16,7 +16,7 @@
 ;; This is generic SQL stuff. None of it is provided outside the module.
 
 (define DBFILE (build-path (current-project-root) "notepad.sqlite"))
-(define QUERY-DEBUG (make-parameter #t))
+(define QUERY-DEBUG (make-parameter #f))
 
 (define (backtick str) (format "`~a`" str))
 (define (list->sql-fields fields) (apply string-append (add-between (map backtick fields) ", ")))

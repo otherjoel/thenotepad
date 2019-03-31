@@ -1,6 +1,11 @@
-#lang racket
+#lang racket/base
 
-(require racket/string txexpr pollen/core pollen/cache pollen/file)
+(require racket/string
+         racket/list
+         txexpr
+         pollen/core
+         pollen/cache
+         pollen/file)
 
 (provide (all-defined-out))
 #|
