@@ -7,6 +7,7 @@
 (require txexpr
          file/md5
          pollen/decode
+         pollen/core
          pollen/setup)
 
 (provide (all-defined-out))
@@ -111,6 +112,19 @@
     [("") `(a [[id ,entry] [class "index-entry"]])]
     [else `(a [[id ,entry] [class "index-entry"]] ,@text)]))
 
+;; Builds a path to an image in the [image-dir] subfolder of the current document's folder,
+;; relative to the current document’s folder
+(define (image-source basename)
+  (cond [(current-metas)
+         (define-values (_ here-rel-path-parts)
+           (drop-common-prefix (explode-path (current-project-root))
+                               (explode-path (string->path (select-from-metas 'here-path (current-metas))))))
+         (let* ([folder-parts (drop-right here-rel-path-parts 1)]
+                [img-path-parts (append folder-parts (list image-dir basename))]
+                [img-path (apply build-path/convention-type 'unix img-path-parts)])
+           (path->string img-path))]
+        [else basename]))
+
 (require racket/draw)
 (define (get-image-size filename)
   (define bmp (make-object bitmap% filename))
@@ -118,21 +132,20 @@
 
 (define/contract (html-figure src attrs elements)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
-  (define source (path->string (build-path image-dir src)))
   (define alt-text (apply string-append (filter string? (flatten elements))))
+  (define source (image-source src))
   (cond
     [(attr-val 'fullwidth attrs)
-      `(figure [[class "fullwidth"]] (img [[src ,source] [alt ,alt-text]]) (figcaption ,@elements))]
+      `(figure [[class "fullwidth"]] (img [[src ,(string-append site-root source)] [alt ,alt-text]]) (figcaption ,@elements))]
     [else
-      (match-define (list img-width img-height) (get-image-size source))
+      (match-define (list img-width img-height) (get-image-size (build-path (current-project-root) source)))
       (define style-str (format "width: ~apx;" (/ img-width 2.0)))
-      `(figure (img [[src ,source] [alt ,alt-text] [style ,style-str]]) (figcaption ,@elements))]))
+      `(figure (img [[src ,(string-append site-root source)] [alt ,alt-text] [style ,style-str]]) (figcaption ,@elements))]))
 
 (define/contract (html-image src attrs elems)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
-  (define source (path->string (build-path image-dir src)))
   (define alt-text (apply string-append (filter string? (flatten elems))))
-  `(img [[src ,source] [alt ,alt-text]]))
+  `(img [[src ,(string-append site-root (image-source src))] [alt ,alt-text]]))
 
 (define/contract (html-code attrs text)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
@@ -191,11 +204,10 @@
 (define/contract (html-margin-figure src attrs elems)
   (string? (listof attribute?) txexpr-elements? . -> . txexpr?)
   (define refid (fingerprint elems))
-  (define source (path->string (build-path image-dir src)))
   (define alt-text (apply string-append (filter string? (flatten elems))))
   `(@ (label [[for ,refid] [class "margin-toggle"]] 8853)
       (input [[type "checkbox"] [id ,refid] [class "margin-toggle"]])
-      (span [[class "marginnote"]] (img [[src ,source] [alt ,alt-text]]) ,@elems)))
+      (span [[class "marginnote"]] (img [[src ,(string-append site-root (image-source src))] [alt ,alt-text]]) ,@elems)))
 
 (define/contract (html-tweet attrs contents)
   ((listof attribute?) txexpr-elements? . -> . txexpr?)
