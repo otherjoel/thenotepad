@@ -25,17 +25,26 @@
   (define poly-targets '(html pdf))
   
   ;; Specify additional files for the Pollen server to watch
-  (require syntax/modresolve)
+  (require syntax/modresolve racket/runtime-path)
+  (define-runtime-path util-date.rkt "util-date.rkt")
+  (define-runtime-path util-db.rkt "util-db.rkt")
+  (define-runtime-path util-template.rkt "util-template.rkt")
+  (define-runtime-path pollen-local/common-helpers.rkt "pollen-local/common-helpers.rkt")
+  (define-runtime-path pollen-local/polytag.rkt "pollen-local/polytag.rkt")
+  (define-runtime-path pollen-local/publication-vals.rkt "pollen-local/publication-vals.rkt")
+  (define-runtime-path pollen-local/tags-html.rkt "pollen-local/tags-html.rkt")
+  (define-runtime-path pollen-local/tags-pdf.rkt "pollen-local/tags-pdf.rkt")
+  
   (define cache-watchlist
     (map resolve-module-path
-         '("util-date.rkt"
-           "util-db.rkt"
-           "util-template.rkt"
-           "pollen-local/common-helpers.rkt"
-           "pollen-local/polytag.rkt"
-           "pollen-local/publication-vals.rkt"
-           "pollen-local/tags-html.rkt"
-           "pollen-local/tags-pdf.rkt"))))
+         (list util-date.rkt
+               util-db.rkt
+               util-template.rkt
+               pollen-local/common-helpers.rkt
+               pollen-local/polytag.rkt
+               pollen-local/publication-vals.rkt
+               pollen-local/tags-html.rkt
+               pollen-local/tags-pdf.rkt))))
 
 (poly-branch-tag root)
     
