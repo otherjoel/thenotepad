@@ -198,10 +198,11 @@
                        (pdfname (select-from-metas 'here-path metas))
                        "pdf"
                        "ltx"))
+◊(define pdf-temp (string-replace ltx-source ".ltx" ""))
 ◊(define temp-ltx-path (build-path working-directory ltx-source))
 ◊(display-to-file latex-source temp-ltx-path #:exists 'replace)
 ◊(define echo-sep "echo \"\e[1;32m────────────────\e[0m\"")
-◊(define command (format "~a; xelatex -jobname=temp -halt-on-error -interaction=batchmode -output-directory='~a' '~a'" echo-sep working-directory temp-ltx-path))
+◊(define command (format "~a; xelatex -jobname=~a -halt-on-error -interaction=batchmode -output-directory='~a' '~a'" echo-sep pdf-temp working-directory temp-ltx-path))
 ◊(if (system command)
-     (file->bytes (build-path working-directory "temp.pdf"))
+     (file->bytes (build-path working-directory (format "~a.pdf" pdf-temp)))
      (error "xelatex: rendering error"))

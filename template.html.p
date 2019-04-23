@@ -1,4 +1,3 @@
-◊(local-require pollen/private/version)
 ◊(init-db)
 ◊(define-values (doc-body comments) (split-body-comments doc))
 ◊(define doc-body-html (->html (cdr doc-body)))

@@ -37,7 +37,8 @@ all: ## Update all web content (not PDFs)
 last_html.rebuild: $(core-files) template.html.p util-template.rkt pollen-local/tags-html.rkt
 	touch -r pollen.rkt _save_timestamp
 	touch pollen.rkt
-	raco pollen render index.ptree
+	raco pollen setup posts/
+	raco pollen render -p -t html posts/*.poly.pm 
 	tidy -quiet -modify -indent --wrap 0 --tidy-mark no --drop-empty-elements no posts/*.html || true
 	touch -r _save_timestamp pollen.rkt; rm _save_timestamp
 	touch last_html.rebuild
@@ -61,7 +62,8 @@ pdfs: last_pdf.rebuild $(posts-pdf)
 last_pdf.rebuild: $(core-files) template.pdf.p util-template.rkt pollen-local/tags-pdf.rkt
 	touch -r pollen.rkt _save_timestamp
 	touch pollen.rkt
-	raco pollen render pdf.ptree
+	raco pollen setup posts/
+	raco pollen render -p -t pdf posts/*.poly.pm
 	touch -r _save_timestamp pollen.rkt; rm _save_timestamp
 	touch last_pdf.rebuild
 

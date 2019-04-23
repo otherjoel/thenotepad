@@ -4,6 +4,7 @@
          pollen/setup       ; For current-poly-target
          pollen/file        ; get-markup-source
          pollen/core
+         pollen/private/version
          txexpr
          pollen/tag         ; default-tag-function
          "util-date.rkt"
@@ -14,6 +15,7 @@
          "pollen-local/tags-pdf.rkt")
 
 (provide string-split
+         pollen:version
          (all-from-out "util-date.rkt" "util-template.rkt" "util-db.rkt")
          (all-from-out "pollen-local/tags-pdf.rkt"))
 (provide (all-defined-out))
