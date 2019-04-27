@@ -107,7 +107,7 @@ topics.html: topics.html.pp $(core-fils) $(posts-sourcefiles) pollen-local/tags-
 #  http://pkg-build.racket-lang.org/doc/pollen/raco-pollen.html
 
 publish: ## Rsync the website to the public web server (does not rebuild site first)
-	rm -rf posts/pollen-latex-work flatland/pollen-latex-work
+	rm -rf latex-tmp 
 	raco pollen publish
 	rsync -av ~/Desktop/publish/ -e 'ssh -p $(WEB_SRV_PORT)' $(NOTEPAD_SRV) \
 		--delete \
@@ -115,6 +115,9 @@ publish: ## Rsync the website to the public web server (does not rebuild site fi
 		--exclude=.git \
 		--exclude=drafts \
 	    --exclude=pollen-local \
+		--exclude='*.sqlite' \
+		--exclude='*.ltx' \
+		--exclude='*.swp' \
 		--exclude='*.rebuild' \
 		--exclude=.DS_Store \
 		--exclude=.gitignore \
@@ -124,10 +127,10 @@ publish: ## Rsync the website to the public web server (does not rebuild site fi
 		--exclude='posts/img/originals'
 	rm -rf ~/Desktop/publish
 
-# ‘make spritz’ just cleans up the pollen-latex-work files and clears the Pollen cache; 
+# ‘make spritz’ just cleans up temporary LaTeX files and clears the Pollen cache; 
 # ‘make zap’ deletes all output files as well.
 spritz: ## Just cleans up LaTeX working folders and Pollen cache
-	rm -rf posts/pollen-latex-work pollen-latex-work
+	rm -rf latex-tmp
 	raco pollen reset
 
 zap: spritz ## Does a spritz and also deletes all HTML and PDF output

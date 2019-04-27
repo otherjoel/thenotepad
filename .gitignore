@@ -19,3 +19,4 @@ pollen.cache
 drafts/
 posts/img/originals
 *.rebuild
+latex-tmp/

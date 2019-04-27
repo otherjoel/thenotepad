@@ -191,7 +191,7 @@
 })
 
 ◊(define working-directory
-    (build-path (current-directory) "pollen-latex-work"))
+    (build-path (current-project-root) "latex-tmp"))
 ◊(unless (directory-exists? working-directory)
     (make-directory working-directory))
 ◊(define ltx-source (string-replace 
