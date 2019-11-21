@@ -130,14 +130,14 @@ publish: ## Rsync the website to the public web server (does not rebuild site fi
 # ‘make spritz’ just cleans up temporary LaTeX files and clears the Pollen cache; 
 # ‘make zap’ deletes all output files as well.
 spritz: ## Just cleans up LaTeX working folders and Pollen cache
-	rm -rf latex-tmp
+	-rm -rf latex-tmp
 	raco pollen reset
 
 zap: spritz ## Does a spritz and also deletes all HTML and PDF output
-	rm posts/*.html posts/*.pdf
-	rm feed.xml
-	rm *.html *.pdf
-	rm -f notepad.sqlite
+	-rm posts/*.html posts/*.pdf
+	-rm feed.xml
+	-rm *.html *.pdf
+	-rm -f notepad.sqlite
 	raco pollen reset
 
 post: ## Quickly start a new post from template
