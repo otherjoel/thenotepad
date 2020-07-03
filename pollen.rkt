@@ -22,10 +22,10 @@
 (provide for/s)
 
 (module setup racket/base
-  (provide (all-defined-out))
-  ;; Possible target output formats
-  (define poly-targets '(html pdf))
-  
+  (require "pollen-local/target.rkt")
+  (provide (all-defined-out)
+           poly-targets)
+
   ;; Specify additional files for the Pollen server to watch
   (require syntax/modresolve racket/runtime-path)
   (define-runtime-path util-date.rkt "util-date.rkt")
