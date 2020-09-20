@@ -69,8 +69,10 @@
 
     \usepackage{textcomp}
     \usepackage{upquote}
-    \usepackage{listings}
+    \usepackage{listingsutf8}
     \lstset{
+        inputencoding=utf8,
+        extendedchars=true,
         basicstyle=\scriptsize\ttfamily,
         columns=flexible,
         breaklines=true,
@@ -88,6 +90,21 @@
         % belowcaptionskip=0pt,
         numberstyle=\scriptsize\color{mygray}\linenumberfont
     }
+
+% Add the lozenge to the list of extended characters in the `listings`
+% environment. This is a limited workaround for a problem where Unicod
+% characters appear out of order in code listings.
+% See https://tex.stackexchange.com/q/81674
+%
+\begingroup
+  \catcode0=12 %
+  \makeatletter
+  \g@addto@macro\lst@DefEC{%
+    \lst@CCECUse\lst@ProcessLetter
+    ◊"◊"% *** add Unicode characters ***
+    ^^00% end marker
+  }%
+\endgroup
     
     % see http://tex.stackexchange.com/questions/11263/how-can-i-remove-listing-from-listings-caption
     % and http://tex.stackexchange.com/questions/209764/how-can-i-make-the-width-of-the-caption-match-that-of-the-listing
