@@ -1,4 +1,4 @@
-#lang Pollen
+#lang pollen
 
 ◊(define-meta title "Books to Read")
 ◊(define-meta updated "2016-09-30")
