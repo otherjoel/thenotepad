@@ -1,0 +1,168 @@
+#lang punct notepad
+
+---
+title: How to publish a better podcast using Tumblr, Textpattern, or anything else
+date: 2011-07-01
+topics: FeedBurner,iTunes,Textpattern,podcasting,Tumblr
+---
+
+This isn’t about
+[equipment](http://hivelogic.com/articles/podcasting-equipment-software-guide-2011/)
+or [recording technique](http://ftrain.com/LearningToSpeak.html), but just the
+cranky details of *publishing* a podcast that I have found by trial and error.
+This article assumes you have some basic computer/web/HTML know-how.
+
+I publish a couple of podcasts: [Howell Creek Radio](http://jdueck.net/radio)
+uses Textpattern, and [Anything
+Good](http://anythingandeverythinggood.tumblr.com) uses Tumblr. So in some of
+the steps I have given some examples that are specific to those CMSs, in order
+to help you along; but the important thing is that these steps can be easily
+adapted to any CMS such as Blogger, WordPress, etc.
+
+## Create a separate tag or category for your podcast posts on your blog.
+
+This is optional; I recommend it because it allows the website for your podcast
+to be more flexible. For example, if you use Tumblr, you can create a `podcast`
+tag, and then continue posting a mix of videos, photos, quotes, etc. alongside
+your podcast episodes. This way your podcast subscribers will get a clean feed
+containing only audio downloads, while your website readers will be able to see
+all your other posts as well.
+
+Even if your website is pretty much exclusively a vehicle for your podcast, you
+may want to publish other kinds of things posts now and then for administrative
+purposes, and this will give you the freedom to keep those posts separate.
+
+## Make sure you have cover art where you need it
+
+You need to create and use cover art in **two places**: first you create cover
+art for your podcast as a whole, and then you also embed cover art in every
+individual podcast recording. **If you use nothing else from this article,
+please:** add cover art to your mp3 files. Without it, your episodes show up
+with blank covers in iPods and most mp3 players! Your podcast episodes will look
+dorky without it! It’s not enough to add cover art to your itunes feed, you need
+to embed the cover art in every finished mp3 file. This is easy to do, yet many
+beginners forget to do it.
+
+**Set up your podcast feed with cover art:** Create a 600×600px cover art image
+for your podcast and upload it to your site, or somewhere publicly accessible.
+(In some places Apple says 300px is OK but their [technical
+spec](http://www.apple.com/itunes/whatson/podcasts/specs.html) says 600.) I
+recommend using JPEG\&lt;lt;, not PNG—the latter is allowed but will look blocky
+when viewed at reduced sizes in iTunes.
+
+1. Get a [FeedBurner](http://feedburner.com) account and set up your podcast
+   feed:
+
+   1. Tumblr: Set the “original feed” on FeedBurner to the RSS feed for the
+      specific tag you created for your podcast. To get this feed, add
+      `tagged/YOURTAG/rss` to your tumblr’s address. (Example:
+      `http://mytumblr.tumblr.comn/tagged/podcast/rss`)
+   2. Textpattern: Set the “original feed” on FeedBurner to Textpattern’s atom
+      feed for that category (e.g.,
+      `http://foopaux.com/atom/?category=podcast`).
+   3. Blogger: Set the “original feed” on FeedBurner to
+      `http://www.YOURBLOG.blogspot.com/feeds/posts/default/-/PODCASTTAG` (per
+      [these instructions from
+      Google](http://www.google.com/support/blogger/bin/answer.py?hl=en&answer=97933)).
+
+2. Under FeedBurner’s `Optimize` tab, add the `SmartCast` service to make your
+   feed podcast-friendly. Set the cover art to the URL of your covert art image
+   and add as much description, keywords and categories as you can muster.
+
+**Embed cover art for individual episodes:** You’ll find that iTunes does *not*
+automatically use your cover art for downloaded episodes when they are playing
+in your iPod. The cover art you created in the steps above is only used in the
+iTunes *store listing* for your podcast (if you get one). In order for your
+cover art to actually display in people’s iPods when your episodes are playing,
+you need to embed the cover art into each episode’s MP3 file. Luckily, this is
+easy to do using only the iTunes (the simplest way I know how):
+
+1. Prior to uploading, open add the episode’s MP3 to your iTunes library.
+2. Right-click the episode in iTunes, click Get Info.
+3. Go to the Artwork tab, manually add your cover art to the file, and click OK.
+   (Tip: in Windows you can actually copy/paste the artwork JPG file from
+   Explorer directly into this tab.)
+4. The cover art is now embedded, you can now upload your MP3 file.
+
+## Create a “subscribe” link on your website.
+
+Lots of folks use iTunes, so it’s nice to provide an iTunes instant-subscribe
+link for them and a standard RSS link for everyone else. To create an iTunes
+link, just prefix the URL of your FeedBurner feed with `itpc://` instead of
+`http://`. So, for example, you could place this prominently on your website:
+
+> `Subscribe in <a href="itpc://feeds.feedburner.com/MyPodcast">iTunes</a> or <a href="http://feeds.feedburner.com/MyPodcast">RSS</a>`
+
+## Record and upload your podcast episodes
+
+I use [Audacity](http://audacity.sourceforge.net/) to record, then upload the
+MP3 to my website using FTP. If you don’t have any hosted space, you can use a
+free [Dropbox](http://dropbox.com) account and host your files in a public
+folder. The bonus with this approach is that uploading is automatic.
+
+## Format your podcast posts properly
+
+A properly-formatted post ensures that your subscribers will get their episodes
+automatically with no hiccups.
+
+1. Don’t forget to set the post’s category (or tag) to the podcast category you
+   created earlier.
+
+2. Each podcast post should contain a manual, direct download link to the MP3
+   file for that episode. This is non-optional, and it should be the first link
+   in the post. This will allow FeedBurner to correctly detect and include your
+   audio in the podcast feed. For the text of the link, I recommend something
+   like “Download MP3 audio (14.76 mb, 19:32)” (**Update, Sep 13, 2011:** this
+   link doesn’t have to be at the very front of your post, it just has to be the
+   first *link* in the post. Also, when using Tumblr, to ensure cleaner
+   descriptions see [this follow-up
+   post](http://notely.blogspot.com/2011/09/cleaner-titles-for-podcast-posts-in.html).)
+
+3. One nice thing to do if you will be syndicating onto another service, such as
+   Facebook notes etc., is to create a special CSS class called `for-syndicate`
+   and set it to `display: none`. Then add a little “helper” boilerplate on the
+   bottom of each post, in a paragraph set to that class:
+
+   > `<p class="for-syndicate">This is a podcast post: <a href="http://site.com/episode.mp3">click here</a> to download the MP3 audio, or visit <a href="http://site.com/podcast">site.com</a> to listen online and subscribe in iTunes.</p>`
+
+   The `for-syndicate` class will render the paragraph invisible on your
+   website, but it will be visible when imported into Facebook or when the feed
+   is viewed in a newsreader, since these other sites do not import your CSS
+   styles. (If you like, this quasi-hidden paragraph can also serve as the
+   required MP3 link.)
+
+## Letting people listen from your website
+
+People will listen to your podcast in one of two ways: by subscribing in iTunes
+or some similar program (which we’ve already covered) or by going to your web
+page and listening on their computer. Although they can click to listen to the
+MP3 file using the link you provided, it’s nice to embed some kind of player
+that will stream the audio and let them listen right there.
+
+There are lots of ways to do this:
+
+1. In Textpattern, install the
+   [jnm:audio](http://textpattern.org/plugins/603/jnm_audio) textpattern plugin
+   and include a `<txp:jnm_audio>` tag in each podcast post.
+2. In Tumblr, create your podcast post as an “audio post” and Tumblr will
+   automatically embed an audio player. (Don’t forget to also include the
+   download link in the text portion of the post though.)
+3. Other platforms (WordPress, etc): Let me know how you do it in the comments!
+
+These methods use Flash programs for the audio players, which don’t run on
+iPhone or iPad browsers. I’ve been tinkering with ways to use HTML5 audio
+players when the browser supports them, but HTML5 audio support is still flaky
+for the time being. Check back again in a year or so and maybe I’ll have
+something for you.
+
+## Get listed in the iTunes Store
+
+After you’ve gotten your production groove down and can demonstrate that your
+episodes come out at least somewhat regularly, it’s worth trying to get your
+podcast added into the iTunes store. Read Apple’s [FAQ for Podcast
+Makers](http://www.apple.com/itunes/whatson/podcasts/creatorfaq.html).
+
+•comment[#:author "Steve Vorass" #:date "February 11, 2013" #:link "https://www.blogger.com/profile/11355795396029699047"]{
+Very good info. I have a question though - how do you get tags to show up in a
+Tumblr Feed - such as This here, etc…? thanks!
+}

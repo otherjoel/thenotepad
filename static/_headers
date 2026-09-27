@@ -1,0 +1,5 @@
+# Cloudflare Workers static assets: extra response headers. deploy.sh copies this into publish/.
+/posts/*.md
+  Content-Type: text/markdown; charset=utf-8
+/feed.atom
+  Content-Type: application/atom+xml; charset=utf-8

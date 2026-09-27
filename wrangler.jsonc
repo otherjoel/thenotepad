@@ -1,0 +1,21 @@
+// thenotepad.org: publish/ as static assets, plus worker/index.js (directory indexes, redirects for
+// Pollen-era URLs, 404 page, /repos/* proxy). Deployed by deploy.sh. Route thenotepad.org/* since the
+// cutover (2026-09-27); www.thenotepad.org redirects here (jdcom-redirect Worker).
+{
+  "name": "thenotepad-site",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-27",
+  "assets": {
+    "directory": "./publish",
+    "binding": "ASSETS",
+    // Exact paths only; worker/index.js adds directory indexes. The default (auto-trailing-slash)
+    // would redirect every …/page.html to …/page.
+    "html_handling": "none",
+    "run_worker_first": ["/repos", "/repos/*"]
+  },
+  "vars": {
+    "ORIGIN": "https://origin.thenotepad.org"
+  },
+  "routes": [{ "pattern": "thenotepad.org/*", "zone_name": "thenotepad.org" }],
+  "workers_dev": true
+}
