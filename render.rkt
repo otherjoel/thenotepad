@@ -250,5 +250,5 @@
                                 `((span [[class "tp"]] ,(string-join topics ", ")))))))
             ;; A year's rule is its own grid row, so baseline alignment of the text can't shift it
             (if (and new-year? prev-pl)
-                (list* row '(div [[class "yearrule"] [aria-hidden "true"]] (span) (span) (span)) out)
+                (list* row '(div [[class "yearrule"] [aria-hidden "true"]] (span) (span [[class "md"]]) (span)) out)
                 (cons row out)))))
