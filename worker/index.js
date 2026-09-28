@@ -1,7 +1,7 @@
 // thenotepad-site: thenotepad.org on Cloudflare. Static files come from publish/ (wrangler.jsonc).
 // This script runs only when no file matches the path exactly (html_handling is "none", so
 // /posts/x.html stays /posts/x.html). It handles:
-//   directory indexes (/ → /index.html)
+//   directory indexes (/ → /index.html; /dir → /dir/)
 //   URLs from the Pollen site that no longer exist:
 //     /posts/<slug>.pollen.html  (source listings)  → /posts/<slug>.md
 //     /posts/<slug>.pdf          (PDF editions)     → /posts/<slug>.html
@@ -34,6 +34,10 @@ export default {
     if (path.endsWith("/")) {
       const index = await env.ASSETS.fetch(new Request(new URL(path + "index.html", url), request));
       if (index.status !== 404) return index;
+    } else {
+      // A directory without its slash (e.g. /projects/aoc2016): add it, as Apache did
+      const index = await env.ASSETS.fetch(new Request(new URL(path + "/index.html", url), request));
+      if (index.ok) return Response.redirect(`${url.origin}${path}/${url.search}`, 301);
     }
     return notFound(url, env);
   },
